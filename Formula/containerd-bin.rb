@@ -13,7 +13,6 @@ class ContainerdBin < Formula
   bottle :unneeded
 
   conflicts_with "nicholasdille/tap/containerd"
-  conflicts_with "nicholasdille/tap/docker-bin"
 
   def install
     bin.install "containerd"

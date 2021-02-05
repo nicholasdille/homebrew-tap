@@ -12,7 +12,6 @@ class Containerd < Formula
   depends_on "pkg-config" => :build
 
   conflicts_with "nicholasdille/tap/containerd-bin"
-  conflicts_with "nicholasdille/tap/docker-bin"
 
   def install
     system "make"
