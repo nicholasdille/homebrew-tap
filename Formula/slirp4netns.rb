@@ -9,10 +9,10 @@ class Slirp4netns < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "gcc" => :build
+  depends_on "glib" => :build
   depends_on "libcap" => :build
   depends_on "libseccomp" => :build
   depends_on "libslirp" => :build
-  depends_on "glib" => :build
   depends_on "pkg-config" => :build
 
   conflicts_with "nicholasdille/tap/slirp4netns-bin"
