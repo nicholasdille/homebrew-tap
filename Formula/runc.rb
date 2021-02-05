@@ -7,10 +7,10 @@ class Runc < Formula
   license "Apache-2.0"
   head "https://github.com/opencontainers/runc.git"
 
-  depends_on "pkg-config" => :build
   depends_on "go" => :build
   depends_on "go-md2man" => :build
   depends_on "libseccomp" => :build
+  depends_on "pkg-config" => :build
 
   def install
     ENV["GOPATH"] = buildpath
@@ -18,7 +18,7 @@ class Runc < Formula
     dir.install (buildpath/"").children
     cd dir do
       buildtags = [
-        "seccomp"
+        "seccomp",
       ]
       commit = Utils.git_short_head
       ENV["CGO_ENABLED"] = "1"
@@ -29,10 +29,15 @@ class Runc < Formula
         "-X",
         "main.gitCommit=#{commit}",
         "-X",
-        "main.version=#{version}"
+        "main.version=#{version}",
       ]
-      system "go", "build", "-trimpath", "-tags", "#{buildtags} netgo osusergo", "-ldflags", ldflags.join(" "), "-o", bin/"runc", "."
-  
+      system "go", "build",
+        "-trimpath",
+        "-tags", "#{buildtags} netgo osusergo",
+        "-ldflags", ldflags.join(" "),
+        "-o", bin/"runc",
+        "."
+
       Pathname.glob("man/*.[1-8].md") do |md|
         section = md.to_s[/\.(\d+)\.md\Z/, 1]
         (man/"man#{section}").mkpath
