@@ -1,6 +1,7 @@
 class Slirp4netnsBin < Formula
   desc "User-mode networking for unprivileged network namespaces"
   homepage "https://github.com/rootless-containers/slirp4netns"
+  license "GPL-2.0-only"
 
   if Hardware::CPU.intel?
     url "https://github.com/rootless-containers/slirp4netns/releases/download/v1.1.8/slirp4netns-x86_64"
@@ -9,8 +10,6 @@ class Slirp4netnsBin < Formula
     odie "The following architectures has not been implemented yet: aarch64, armv7l, ppc64le, s390x."
   end
   version "1.1.8"
-
-  license ""
 
   bottle :unneeded
 
