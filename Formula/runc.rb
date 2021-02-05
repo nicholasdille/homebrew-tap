@@ -17,6 +17,9 @@ class Runc < Formula
   depends_on "libseccomp" => :build
   depends_on "pkg-config" => :build
 
+  conflicts_with "nicholasdille/tap/runc-bin", because: "both install `runc` binary"
+  conflicts_with "nicholasdille/tap/docker-bin", because: "both install `runc` binary"
+
   def install
     ENV["GOPATH"] = buildpath
     dir = buildpath/"src/github.com/opencontainers/runc"

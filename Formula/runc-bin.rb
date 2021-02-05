@@ -13,6 +13,7 @@ class RuncBin < Formula
   bottle :unneeded
 
   conflicts_with "nicholasdille/tap/runc", because: "both install `runc` binary"
+  conflicts_with "nicholasdille/tap/docker-bin", because: "both install `runc` binary"
 
   def install
     bin.install "runc.amd64" => "runc"
