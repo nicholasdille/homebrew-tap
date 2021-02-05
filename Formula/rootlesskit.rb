@@ -9,7 +9,6 @@ class Rootlesskit < Formula
 
   depends_on "go" => :build
 
-  conflicts_with "nicholasdille/tap/docker-rootless-bin"
   conflicts_with "nicholasdille/tap/rootlesskit-bin"
 
   def install

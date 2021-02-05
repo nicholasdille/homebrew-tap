@@ -12,7 +12,6 @@ class RootlesskitBin < Formula
 
   bottle :unneeded
 
-  conflicts_with "nicholasdille/tap/docker-rootless-bin"
   conflicts_with "nicholasdille/tap/rootlesskit"
 
   def install
