@@ -18,7 +18,6 @@ class Runc < Formula
   depends_on "pkg-config" => :build
 
   conflicts_with "nicholasdille/tap/runc-bin", because: "both install `runc` binary"
-  conflicts_with "nicholasdille/tap/docker-bin", because: "both install `runc` binary"
 
   def install
     ENV["GOPATH"] = buildpath
