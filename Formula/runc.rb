@@ -9,13 +9,15 @@ class Runc < Formula
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/runc-1.0.0-rc92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3d13c5b4498b128047c40cac6d3e9497c56318ae39c8b12afa14e354d3cf4e6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "52938d6847319fc6a1eb0242f150b33635bf249b8c0556c639c2f0950c9d807c"
   end
 
   depends_on "go" => :build
   depends_on "go-md2man" => :build
   depends_on "libseccomp" => :build
   depends_on "pkg-config" => :build
+
+  conflicts_with "nicholasdille/tap/runc-bin", because: "both install `runc` binary"
 
   def install
     ENV["GOPATH"] = buildpath
