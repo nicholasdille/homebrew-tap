@@ -19,6 +19,6 @@ class RuncBin < Formula
   end
 
   test do
-    system "#{bin}/runc --version"
+    system "#{bin}/runc", "--version"
   end
 end
