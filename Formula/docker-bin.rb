@@ -22,6 +22,7 @@ class DockerBin < Formula
 
   conflicts_with "docker", because: "both install `docker` binary"
   if build.with? "dockerd"
+    depends_on "immortal"
     conflicts_with "nicholasdille/tap/runc"
     conflicts_with "nicholasdille/tap/runc-bin"
     conflicts_with "nicholasdille/tap/containerd"
@@ -40,6 +41,34 @@ class DockerBin < Formula
       bin.install "docker-init"
       bin.install "docker-proxy"
       bin.install "dockerd"
+
+      (buildpath/"daemon.json").write <<~EOS
+      {
+        "features": {
+          "buildkit": true
+        }
+      }
+      EOS
+      (etc/"docker").install "daemon.json"
+
+      (buildpath/"dockerd.yaml").write <<~EOS
+      cmd: dockerd --config-file #{etc}/docker/daemon.json --host #{var}/run/docker.sock --containerd=/run/containerd/sock
+      cwd: #{etc/"docker"}
+      pid:
+          follow: #{var}/run/docker/unicorn.pid
+          parent: #{var}/run/docker/parent.pid
+          child: #{var}/run/docker/child.pid
+      log:
+          file: #{var}/var/log/dockerd.log
+          age: 86400
+          num: 7
+          size: 1
+          timestamp: true
+      logger: logger -t dockerd
+      user: root
+      wait: 1   
+      EOS
+      (etc/"immortal").install "dockerd.yaml"
     end
   end
 
