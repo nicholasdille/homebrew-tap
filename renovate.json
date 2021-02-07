@@ -23,7 +23,7 @@
   "regexManagers": [
     {
       "fileMatch": [
-        "^renovate/*.sh"
+        "^renovate/.*\\.sh"
       ],
       "matchStrings": [
         "DATASOURCE=(?<datasource>.+?)\\nREPO=(?<depName>.+?)\\nVERSION=(?<currentValue>.*)\\n"
@@ -35,7 +35,7 @@
   "packageRules": [
     {
       "matchPaths": [
-        "^renovate/.*\\.sh"
+        "^renovate/*.sh"
       ]
     },
     {
