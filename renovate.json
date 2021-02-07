@@ -35,7 +35,7 @@
   "packageRules": [
     {
       "matchPaths": [
-        "^renovate/*.sh"
+        "^renovate/.*\\.sh"
       ]
     },
     {
