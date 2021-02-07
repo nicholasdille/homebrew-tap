@@ -1,5 +1,43 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base"
+  ],
+
+  "major": {
+    "labels": ["type/renovate", "bump/major"]
+  },
+  "minor": {
+    "labels": ["type/renovate", "bump/minor"]
+  },
+  "patch": {
+    "labels": ["type/renovate", "bump/patch"]
+  },
+  "pin": {
+    "labels": ["type/renovate", "bump/pin"]
+  },
+  "digest": {
+    "labels": ["type/renovate", "bump/digest"]
+  },
+
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "^renovate/*.sh"
+      ],
+      "matchStrings": [
+        "DATASOURCE=(?<datasource>.+?)\\nREPO=(?<depName>.+?)\\nVERSION=(?<currentValue>.*)\\n"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
+  ],
+
+  "packageRules": [
+    {
+      "packageNames": [
+        "docker/cli"
+      ],
+      "extractVersion": "^v(?<version>.+)$"
+    }
   ]
 }
