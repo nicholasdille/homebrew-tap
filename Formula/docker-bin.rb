@@ -9,7 +9,7 @@ class DockerBin < Formula
     sha256 "4dcd105f721297f314bb53622e67dd981a743d72f4b2bfe4f42a8790e0892c82"
   elsif Hardware::CPU.ppc64le?
     url "https://download.docker.com/linux/static/stable/ppc64le/docker-20.10.3.tgz"
-    sha256 "a59e8344df2211a15f550fbb6c65e6e2960254aceb8ce4ff22a557145ad96ddd"
+    sha256 "4d7d9978e0eed361b413e4381c734360b88ece6510dd1a2925149964b43994ee"
   else
     odie "Processor architecture is not supported."
   end
