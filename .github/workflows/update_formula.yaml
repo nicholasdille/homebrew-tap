@@ -49,6 +49,11 @@ jobs:
                   jq --raw-output '.[].filename'
           )
           echo "Files updated in this PR:"
+          STARTS_WITH="renovate/"
           for FILE in ${FILES}; do
-              echo "${FILE}"
+              if test "${FILE:0:${#STARTS_WITH}}" == "${STARTS_WITH}"; then
+                  bash "${FILE}"
+              fi
           done
+
+          git --short status
