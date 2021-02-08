@@ -84,7 +84,7 @@ jobs:
           echo "Running for PR #${PR}"
 
           curl "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${PR}/labels" \
-              --method "POST" \
+              --request "POST" \
               --header "Accept: application/vnd.github.v3+json" \
               --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
               --data '{ "labels": [ "ready-for/testing" ] }'
