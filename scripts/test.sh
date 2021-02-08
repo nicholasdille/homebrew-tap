@@ -12,7 +12,7 @@ function brew() {
         --interactive \
         --rm \
         --user "$(id -u):$(id -g)" \
-        --mount type=bind,src=/home/linuxbrew,dst=/home/linuxbrew \
+        --mount "type=bind,src=${PWD},dst=/home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/${GITHUB_REPOSITORY}" \
         homebrew/brew \
         brew "$@"
 }
