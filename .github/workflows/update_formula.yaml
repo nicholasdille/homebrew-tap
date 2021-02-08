@@ -76,3 +76,15 @@ jobs:
         with:
           add: 'Formula/*.rb'
           message: 'Updated formulae'
+
+      - name: Label PR
+        id: label-pr
+        run: |
+          PR="${{ steps.get-pr-number.outputs.pr-number }}"
+          echo "Running for PR #${PR}"
+
+          curl "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${PR}/labels" \
+              --method "POST" \
+              --header "Accept: application/vnd.github.v3+json" \
+              --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+              --data '{ "labels": [ "ready-for/testing" ] }'
