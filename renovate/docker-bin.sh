@@ -7,7 +7,7 @@ VERSION=20.10.2
 # Update version
 for FORMULA in docker-bin docker-rootless-bin; do
     if test -f "Formula/${FORMULA}.rb"; then
-        sed -E -i "s|/docker-(.+).tgz|/docker-${VERSION}.tgz|" "Formula/${FORMULA}.rb"
+        sed -E -i "s|/docker-((.+)-)?([^-]+).tgz|/docker-\1${VERSION}.tgz|" "Formula/${FORMULA}.rb"
     fi
 done
 
