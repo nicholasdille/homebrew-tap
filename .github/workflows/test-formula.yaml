@@ -1,0 +1,65 @@
+name: Test formula
+
+on:
+  label:
+    types:
+      - created
+
+jobs:
+
+  build:
+    name: Test formula
+    runs-on: ubuntu-20.04
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Get PR number
+        id: get-pr-number
+        run: |
+          PR=$(echo "${GITHUB_REF}" | cut -d'/' -f3)
+          echo "Running for PR #${PR}"
+          echo "::set-output name=pr-number::${PR}"
+
+      - name: Check for label
+        id: check-label
+        run: |
+          PR="${{ steps.get-pr-number.outputs.pr-number }}"
+          echo "Running for PR #${PR}"
+
+          LABELS=$(
+              curl "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${PR}" \
+                      --silent \
+                      --location | \
+                  jq --raw-output '.labels[].name'
+          )
+          IS_READY_FOR_TESTING=false
+          for LABEL in ${LABELS}; do
+              if test "${LABEL}" == "ready-for/testing"; then
+                  IS_READY_FOR_TESTING=true
+                  echo "::set-output name=is-ready-for-testing::${IS_READY_FOR_TESTING}"
+                  break
+              fi
+          done
+
+      - name: Test formula
+        id: test-formula
+        if: ${{ steps.check-renovate-label.outputs.is-renovate-pr }} == "true"
+        run: |
+          PR="${{ steps.get-pr-number.outputs.pr-number }}"
+          echo "Running for PR #${PR}"
+
+          FILES=$(
+              curl "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${PR}/files" \
+                      --silent \
+                      --location \
+                      --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | \
+                  jq --raw-output '.[].filename'
+          )
+          STARTS_WITH="Formula/"
+          for FILE in ${FILES}; do
+              if test "${FILE:0:${#STARTS_WITH}}" == "${STARTS_WITH}"; then
+                  bash scripts/test.sh "$(basename "${FILE}")"
+              fi
+          done
