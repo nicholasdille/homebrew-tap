@@ -2,7 +2,7 @@
 
 DATASOURCE=github-tags
 REPO=docker/cli
-VERSION=20.10.2
+VERSION=20.10.3
 
 # Update url
 for FORMULA in docker-bin docker-rootless-bin; do
