@@ -17,6 +17,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Debug
+        run: |
+          printenv | sort
+
       - name: Get PR number
         id: get-pr-number
         run: |
