@@ -47,7 +47,7 @@ jobs:
 
       - name: Update formula
         id: update-formula
-        if: steps.check-renovate-label.outputs.is-renovate-pr == "true"
+        if: ${{ steps.check-renovate-label.outputs.is-renovate-pr == "true" }}
         run: |
           PR="${{ steps.get-pr-number.outputs.pr-number }}"
           echo "Running for PR #${PR}"
