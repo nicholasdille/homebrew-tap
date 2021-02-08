@@ -1,4 +1,4 @@
-name: Update Formula
+name: Update formula
 
 on:
   pull_request:
@@ -10,21 +10,28 @@ on:
 jobs:
 
   build:
-    name: Update Formula
+    name: Update formula
     runs-on: ubuntu-20.04
     steps:
 
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Update formula
-        id: check-for-changes
+      - name: Get PR number
+        id: get-pr-number
         run: |
           PR=$(echo "${GITHUB_REF}" | cut -d'/' -f3)
           echo "Running for PR #${PR}"
+          echo "::set-output name=pr-number::${PR}"
+
+      - name: Check for renovate label
+        id: check-renovate-label
+        run: |
+          PR="${{ steps.get-pr-number.outputs.pr-number }}"
+          echo "Running for PR #${PR}"
 
           LABELS=$(
-              curl "https://api.github.com/repos/nicholasdille/homebrew-tap/pulls/11" \
+              curl "https://api.github.com/repos/nicholasdille/homebrew-tap/pulls/${PR}" \
                       --silent \
                       --location | \
                   jq --raw-output '.labels[].name'
@@ -33,13 +40,17 @@ jobs:
           for LABEL in ${LABELS}; do
               if test "${LABEL}" == "type/renovate"; then
                   IS_RENOVATE_PR=true
+                  echo "::set-output name=is-renovate-pr::${IS_RENOVATE_PR}"
                   break
               fi
           done
-          if ! ${IS_RENOVATE_PR}; then
-              echo "Pull request was not created by renovate"
-              exit
-          fi
+
+      - name: Update formula
+        id: update-formula
+        if: steps.check-renovate-label.outputs.is-renovate-pr == "true"
+        run: |
+          PR="${{ steps.get-pr-number.outputs.pr-number }}"
+          echo "Running for PR #${PR}"
 
           FILES=$(
               curl "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${PR}/files" \
@@ -48,7 +59,6 @@ jobs:
                       --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | \
                   jq --raw-output '.[].filename'
           )
-          echo "Files updated in this PR:"
           STARTS_WITH="renovate/"
           for FILE in ${FILES}; do
               if test "${FILE:0:${#STARTS_WITH}}" == "${STARTS_WITH}"; then
@@ -57,6 +67,7 @@ jobs:
           done
 
       - name: Commit changes
+        id: add-and-commit
         uses: EndBug/add-and-commit@v7
         with:
           add: 'Formula/*.rb'
