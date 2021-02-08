@@ -46,8 +46,8 @@ jobs:
               fi
           done
 
-      - name: Label PR
-        id: label-pr
+      - name: Remove label from PR
+        id: unlabel-pr
         run: |
           PR="${{ steps.get-pr-number.outputs.pr-number }}"
           echo "Running for PR #${PR}"
