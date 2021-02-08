@@ -17,7 +17,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Check for changes
+      - name: Update formula
         id: check-for-changes
         run: |
           PR=$(echo "${GITHUB_REF}" | cut -d'/' -f3)
@@ -56,4 +56,8 @@ jobs:
               fi
           done
 
-          git status --short
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          add: 'Formula/*.rb'
+          message: 'Updated formulae'
