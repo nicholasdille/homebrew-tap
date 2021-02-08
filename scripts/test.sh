@@ -7,15 +7,22 @@ if test -z "${FORMULA}"; then
     exit 1
 fi
 
-function brew() {
+function run() {
     docker run \
         --interactive \
         --rm \
         --user "$(id -u):$(id -g)" \
         --mount "type=bind,src=${PWD},dst=/home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/${GITHUB_REPOSITORY}" \
         homebrew/brew \
-        brew "$@"
+        "$@"
 }
+
+function brew() {
+    run brew "$@"
+}
+
+run ls -al "/home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/${GITHUB_REPOSITORY}"
+run find "/home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/${GITHUB_REPOSITORY}" - type f
 
 brew style "${FORMULA}"
 brew audit "${FORMULA}"
