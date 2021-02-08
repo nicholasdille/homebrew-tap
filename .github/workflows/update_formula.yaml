@@ -40,6 +40,7 @@ jobs:
           for LABEL in ${LABELS}; do
               if test "${LABEL}" == "type/renovate"; then
                   IS_RENOVATE_PR=true
+                  echo "Found label type/renovate"
                   echo "::set-output name=is-renovate-pr::${IS_RENOVATE_PR}"
                   break
               fi
@@ -62,6 +63,7 @@ jobs:
           STARTS_WITH="renovate/"
           for FILE in ${FILES}; do
               if test "${FILE:0:${#STARTS_WITH}}" == "${STARTS_WITH}"; then
+                  echo "Updating ${FILE}"
                   bash "${FILE}"
               fi
           done
@@ -79,6 +81,7 @@ jobs:
           PR="${{ steps.get-pr-number.outputs.pr-number }}"
           echo "Running for PR #${PR}"
 
+          echo "Adding label ready-for/testing"
           curl "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${PR}/labels" \
               --request "POST" \
               --header "Accept: application/vnd.github.v3+json" \
