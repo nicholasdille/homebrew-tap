@@ -38,6 +38,7 @@ jobs:
           for LABEL in ${LABELS}; do
               if test "${LABEL}" == "ready-for/testing"; then
                   IS_READY_FOR_TESTING=true
+                  echo "Found label ready-for/testing"
                   echo "::set-output name=is-ready-for-testing::${IS_READY_FOR_TESTING}"
                   break
               fi
@@ -60,6 +61,7 @@ jobs:
           STARTS_WITH="Formula/"
           for FILE in ${FILES}; do
               if test "${FILE:0:${#STARTS_WITH}}" == "${STARTS_WITH}"; then
+                  echo "Running tests for $(basename "${FILE}")"
                   bash scripts/test.sh "$(basename "${FILE}")"
               fi
           done
