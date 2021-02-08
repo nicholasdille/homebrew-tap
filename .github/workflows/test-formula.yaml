@@ -61,7 +61,9 @@ jobs:
           STARTS_WITH="Formula/"
           for FILE in ${FILES}; do
               if test "${FILE:0:${#STARTS_WITH}}" == "${STARTS_WITH}"; then
-                  echo "Running tests for $(basename "${FILE}")"
-                  bash scripts/test.sh "$(basename "${FILE}")"
+                  FORMULA="$(basename "${FILE}" .rb)"
+
+                  echo "Running tests for ${FORMULA}"
+                  bash scripts/test.sh "${FORMULA}"
               fi
           done
