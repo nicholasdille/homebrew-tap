@@ -56,4 +56,4 @@ jobs:
               fi
           done
 
-          git --short status
+          git status --short
