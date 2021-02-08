@@ -17,10 +17,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Debug
-        run: |
-          printenv | sort
-
       - name: Get PR number
         id: get-pr-number
         run: |
@@ -35,7 +31,7 @@ jobs:
           echo "Running for PR #${PR}"
 
           LABELS=$(
-              curl "https://api.github.com/repos/nicholasdille/homebrew-tap/pulls/${PR}" \
+              curl "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${PR}" \
                       --silent \
                       --location | \
                   jq --raw-output '.labels[].name'
