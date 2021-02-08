@@ -1,0 +1,54 @@
+name: Update Formula
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+
+  build:
+    name: Update Formula
+    runs-on: ubuntu-20.04
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Check for changes
+        id: check-for-changes
+        run: |
+          PR=$(echo "${GITHUB_REF}" | cut -d'/' -f3)
+          echo "Running for PR #${PR}"
+
+          LABELS=$(
+              curl "https://api.github.com/repos/nicholasdille/homebrew-tap/pulls/11" \
+                      --silent \
+                      --location | \
+                  jq --raw-output '.labels[].name'
+          )
+          IS_RENOVATE_PR=false
+          for LABEL in ${LABELS}; then
+              if test "${LABEL}" == "type/renovate"; then
+                  IS_RENOVATE_PR=true
+                  break
+              fi
+          done
+          if ! ${IS_RENOVATE_PR}; then
+              echo "Pull request was not created by renovate"
+              exit
+          fi
+
+          FILES=$(
+              curl "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${PR}/files" \
+                      --silent \
+                      --location \
+                      --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | \
+                  jq --raw-output '.[].filename'
+          )
+          echo "Files updated in this PR:"
+          for FILE in ${FILES}; do
+              echo "${FILE}"
+          done
