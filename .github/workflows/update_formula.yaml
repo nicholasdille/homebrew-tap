@@ -30,7 +30,7 @@ jobs:
                   jq --raw-output '.labels[].name'
           )
           IS_RENOVATE_PR=false
-          for LABEL in ${LABELS}; then
+          for LABEL in ${LABELS}; do
               if test "${LABEL}" == "type/renovate"; then
                   IS_RENOVATE_PR=true
                   break
