@@ -21,7 +21,7 @@ class KubeoneBin < Formula
     # zsh completion
     output = Utils.safe_popen_read("#{bin}/kubeone", "completion", "zsh")
     (zsh_completion/"kubeone").write output
-end
+  end
 
   test do
     system "#{bin}/kubeone", "version"
