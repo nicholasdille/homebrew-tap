@@ -46,18 +46,6 @@ jobs:
               fi
           done
 
-      - name: Remove label from PR
-        id: unlabel-pr
-        run: |
-          PR="${{ steps.get-pr-number.outputs.pr-number }}"
-          echo "Running for PR #${PR}"
-
-          echo "Adding label ready-for/testing"
-          curl "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${PR}/labels/ready-for/testing" \
-              --request "DELETE" \
-              --header "Accept: application/vnd.github.v3+json" \
-              --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}'
-
       - name: Update formula
         id: update-formula
         if: ${{ steps.check-renovate-label.outputs.is-renovate-pr }} == "true"

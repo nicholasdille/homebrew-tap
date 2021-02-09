@@ -67,3 +67,29 @@ jobs:
                   bash scripts/test.sh "${FORMULA}"
               fi
           done
+
+      - name: Label PR
+        id: label-pr
+        run: |
+          PR="${{ steps.get-pr-number.outputs.pr-number }}"
+          echo "Running for PR #${PR}"
+
+          echo "Adding label ready-for/review"
+          curl "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${PR}/labels" \
+              --request "POST" \
+              --header "Accept: application/vnd.github.v3+json" \
+              --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+              --data '{ "labels": [ "ready-for/review" ] }'
+
+      - name: Remove label from PR
+        id: unlabel-pr
+        if: ${{ failure }}
+        run: |
+          PR="${{ steps.get-pr-number.outputs.pr-number }}"
+          echo "Running for PR #${PR}"
+
+          echo "Adding label ready-for/testing"
+          curl "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${PR}/labels/ready-for/testing" \
+              --request "DELETE" \
+              --header "Accept: application/vnd.github.v3+json" \
+              --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}'
