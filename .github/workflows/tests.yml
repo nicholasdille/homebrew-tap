@@ -3,7 +3,7 @@ on:
   pull_request:
 jobs:
   test-bot:
-    if: contains(github.event.pull_request.labels.*.name, 'ready-for/testing')
+    #if: contains(github.event.pull_request.labels.*.name, 'ready-for/testing')
     strategy:
       matrix:
         os:
