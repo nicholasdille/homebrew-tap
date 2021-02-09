@@ -2,7 +2,7 @@
 
 DATASOURCE=github-releases
 REPO=opencontainers/runc
-VERSION=1.0.0-rc93
+VERSION=1.0.0-rc92
 
 # Update url
 for FORMULA in runc-bin; do
