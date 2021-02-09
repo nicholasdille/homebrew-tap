@@ -83,7 +83,7 @@ jobs:
 
       - name: Remove label from PR
         id: unlabel-pr
-        if: ${{ failure }}
+        if: ${{ failure() }}
         run: |
           PR="${{ steps.get-pr-number.outputs.pr-number }}"
           echo "Running for PR #${PR}"
