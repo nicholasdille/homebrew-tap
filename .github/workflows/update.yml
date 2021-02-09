@@ -1,0 +1,68 @@
+name: Update formula
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+
+  build:
+    name: Update formula
+    if: contains(github.event.pull_request.labels.*.name, 'type/renovate')
+    runs-on: ubuntu-20.04
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Get PR number
+        id: get-pr-number
+        run: |
+          PR=$(echo "${GITHUB_REF}" | cut -d'/' -f3)
+          echo "Running for PR #${PR}"
+          echo "::set-output name=pr-number::${PR}"
+
+      - name: Update formula
+        id: update-formula
+        if: ${{ steps.check-renovate-label.outputs.is-renovate-pr }} == "true"
+        run: |
+          PR="${{ steps.get-pr-number.outputs.pr-number }}"
+          echo "Running for PR #${PR}"
+
+          FILES=$(
+              curl "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${PR}/files" \
+                      --silent \
+                      --location \
+                      --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | \
+                  jq --raw-output '.[].filename'
+          )
+          STARTS_WITH="renovate/"
+          for FILE in ${FILES}; do
+              if test "${FILE:0:${#STARTS_WITH}}" == "${STARTS_WITH}"; then
+                  echo "Updating ${FILE}"
+                  bash "${FILE}"
+              fi
+          done
+
+      - name: Commit changes
+        id: add-and-commit
+        uses: EndBug/add-and-commit@v7
+        with:
+          add: 'Formula/*.rb'
+          message: 'Updated formulae'
+
+      - name: Label PR
+        id: label-pr
+        run: |
+          PR="${{ steps.get-pr-number.outputs.pr-number }}"
+          echo "Running for PR #${PR}"
+
+          echo "Adding label ready-for/testing"
+          curl "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${PR}/labels" \
+              --request "POST" \
+              --header "Accept: application/vnd.github.v3+json" \
+              --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+              --data '{ "labels": [ "ready-for/testing" ] }'
