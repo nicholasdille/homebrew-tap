@@ -22,6 +22,8 @@ function brew() {
 
 brew style "${FORMULA}"
 brew audit "${FORMULA}"
+
 brew install --build-bottle "${FORMULA}"
-brew test "${FORMULA}"
-brew bottle "${FORMULA}"
+if grep "bottle :unneeded" "Formula/${FORMULA}.rb"; then
+    brew bottle "${FORMULA}"
+fi
