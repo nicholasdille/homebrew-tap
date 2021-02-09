@@ -9,7 +9,7 @@ class DockerRootlessBin < Formula
     sha256 "2a88fdfac090183e7ec545b3141dff0af60d1366bafb37a7bb3037bd7578c377"
   elsif Hardware::CPU.ppc64le?
     url "https://download.docker.com/linux/static/stable/ppc64le/docker-rootless-extras-20.10.3.tgz"
-    sha256 "f6c0740ae5d5ab5c5e70afbbdda8735f057fdd09c2acce03a7370bdff23fc066"
+    sha256 "77e06fce7e989e1f0eb4942bc911160cab67b947dd0e5297f670ef8a173f583c"
   else
     odie "Processor architecture is not supported."
   end
