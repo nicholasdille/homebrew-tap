@@ -1,5 +1,5 @@
 class Kubeone < Formula
-  desc "KubeOne CLI"
+  desc "CLI for KubeOne"
   homepage "https://kubeone.io/"
   url "https://github.com/kubermatic/kubeone.git",
     tag: "v1.2.0-beta.0"

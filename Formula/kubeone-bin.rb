@@ -1,5 +1,5 @@
 class KubeoneBin < Formula
-  desc "KubeOne CLI"
+  desc "CLI for KubeOne"
   homepage "https://kubeone.io/"
   url "https://github.com/kubermatic/kubeone/releases/download/v1.2.0-beta.0/kubeone_1.2.0-beta.0_linux_amd64.zip"
   sha256 "f072b33c11a4b93ca4f9e2067985e19f8f09db2d871af8fb4e35b63cdf11d5ae"
