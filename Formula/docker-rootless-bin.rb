@@ -31,6 +31,6 @@ class DockerRootlessBin < Formula
   end
 
   test do
-    system "#{bin}/docker", "--version"
+    system "#{bin}/rootlesskit", "--version"
   end
 end
