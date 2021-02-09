@@ -11,6 +11,7 @@ jobs:
 
   build:
     name: Update formula
+    if: contains(github.event.pull_request.labels.*.name, 'type/renovate')
     runs-on: ubuntu-20.04
     steps:
 
@@ -23,28 +24,6 @@ jobs:
           PR=$(echo "${GITHUB_REF}" | cut -d'/' -f3)
           echo "Running for PR #${PR}"
           echo "::set-output name=pr-number::${PR}"
-
-      - name: Check for renovate label
-        id: check-renovate-label
-        run: |
-          PR="${{ steps.get-pr-number.outputs.pr-number }}"
-          echo "Running for PR #${PR}"
-
-          LABELS=$(
-              curl "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${PR}" \
-                      --silent \
-                      --location | \
-                  jq --raw-output '.labels[].name'
-          )
-          IS_RENOVATE_PR=false
-          for LABEL in ${LABELS}; do
-              if test "${LABEL}" == "type/renovate"; then
-                  IS_RENOVATE_PR=true
-                  echo "Found label type/renovate"
-                  echo "::set-output name=is-renovate-pr::${IS_RENOVATE_PR}"
-                  break
-              fi
-          done
 
       - name: Update formula
         id: update-formula

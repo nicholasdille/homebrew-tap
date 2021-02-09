@@ -24,6 +24,6 @@ brew style "${FORMULA}"
 brew audit "${FORMULA}"
 
 brew install --build-bottle "${FORMULA}"
-if grep "bottle :unneeded" "Formula/${FORMULA}.rb"; then
+if ! grep -q "bottle :unneeded" "Formula/${FORMULA}.rb"; then
     brew bottle "${FORMULA}"
 fi
