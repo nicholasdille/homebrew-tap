@@ -40,7 +40,8 @@
     },
     {
       "packageNames": [
-        "docker/cli"
+        "docker/cli",
+        "kubermatic/kubeone"
       ],
       "extractVersion": "^v(?<version>.+)$"
     }
