@@ -1,16 +1,14 @@
-name: Update formula
+name: Test formula
 
 on:
   pull_request:
     types:
-      - opened
-      - synchronize
-      - reopened
+      - labeled
 
 jobs:
 
   build:
-    name: Update formula
+    name: Test formula
     runs-on: ubuntu-20.04
     steps:
 
@@ -24,8 +22,8 @@ jobs:
           echo "Running for PR #${PR}"
           echo "::set-output name=pr-number::${PR}"
 
-      - name: Check for renovate label
-        id: check-renovate-label
+      - name: Check for label
+        id: check-label
         run: |
           PR="${{ steps.get-pr-number.outputs.pr-number }}"
           echo "Running for PR #${PR}"
@@ -36,18 +34,18 @@ jobs:
                       --location | \
                   jq --raw-output '.labels[].name'
           )
-          IS_RENOVATE_PR=false
+          IS_READY_FOR_TESTING=false
           for LABEL in ${LABELS}; do
-              if test "${LABEL}" == "type/renovate"; then
-                  IS_RENOVATE_PR=true
-                  echo "Found label type/renovate"
-                  echo "::set-output name=is-renovate-pr::${IS_RENOVATE_PR}"
+              if test "${LABEL}" == "ready-for/testing"; then
+                  IS_READY_FOR_TESTING=true
+                  echo "Found label ready-for/testing"
+                  echo "::set-output name=is-ready-for-testing::${IS_READY_FOR_TESTING}"
                   break
               fi
           done
 
-      - name: Update formula
-        id: update-formula
+      - name: Test formula
+        id: test-formula
         if: ${{ steps.check-renovate-label.outputs.is-renovate-pr }} == "true"
         run: |
           PR="${{ steps.get-pr-number.outputs.pr-number }}"
@@ -60,20 +58,15 @@ jobs:
                       --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | \
                   jq --raw-output '.[].filename'
           )
-          STARTS_WITH="renovate/"
+          STARTS_WITH="Formula/"
           for FILE in ${FILES}; do
               if test "${FILE:0:${#STARTS_WITH}}" == "${STARTS_WITH}"; then
-                  echo "Updating ${FILE}"
-                  bash "${FILE}"
+                  FORMULA="$(basename "${FILE}" .rb)"
+
+                  echo "Running tests for ${FORMULA}"
+                  bash scripts/test.sh "${FORMULA}"
               fi
           done
-
-      - name: Commit changes
-        id: add-and-commit
-        uses: EndBug/add-and-commit@v7
-        with:
-          add: 'Formula/*.rb'
-          message: 'Updated formulae'
 
       - name: Label PR
         id: label-pr
@@ -81,9 +74,22 @@ jobs:
           PR="${{ steps.get-pr-number.outputs.pr-number }}"
           echo "Running for PR #${PR}"
 
-          echo "Adding label ready-for/testing"
+          echo "Adding label ready-for/review"
           curl "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${PR}/labels" \
               --request "POST" \
               --header "Accept: application/vnd.github.v3+json" \
               --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-              --data '{ "labels": [ "ready-for/testing" ] }'
+              --data '{ "labels": [ "ready-for/review" ] }'
+
+      - name: Remove label from PR
+        id: unlabel-pr
+        if: ${{ failure() }}
+        run: |
+          PR="${{ steps.get-pr-number.outputs.pr-number }}"
+          echo "Running for PR #${PR}"
+
+          echo "Adding label ready-for/testing"
+          curl "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${PR}/labels/ready-for/testing" \
+              --request "DELETE" \
+              --header "Accept: application/vnd.github.v3+json" \
+              --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}'

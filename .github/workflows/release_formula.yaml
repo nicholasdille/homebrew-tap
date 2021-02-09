@@ -1,14 +1,14 @@
-name: Test formula
+name: Release formula
 
 on:
   pull_request:
     types:
-      - labeled
+      - closed
 
 jobs:
 
   build:
-    name: Test formula
+    name: Release formula
     runs-on: ubuntu-20.04
     steps:
 
@@ -22,8 +22,8 @@ jobs:
           echo "Running for PR #${PR}"
           echo "::set-output name=pr-number::${PR}"
 
-      - name: Check for label
-        id: check-label
+      - name: Check for release label
+        id: check-release-label
         run: |
           PR="${{ steps.get-pr-number.outputs.pr-number }}"
           echo "Running for PR #${PR}"
@@ -34,19 +34,19 @@ jobs:
                       --location | \
                   jq --raw-output '.labels[].name'
           )
-          IS_READY_FOR_TESTING=false
+          IS_RELEASE_PR=false
           for LABEL in ${LABELS}; do
-              if test "${LABEL}" == "ready-for/testing"; then
-                  IS_READY_FOR_TESTING=true
-                  echo "Found label ready-for/testing"
-                  echo "::set-output name=is-ready-for-testing::${IS_READY_FOR_TESTING}"
+              if test "${LABEL}" == "ready-for/review"; then
+                  IS_RELEASE_PR=true
+                  echo "Found label ready-for/review"
+                  echo "::set-output name=is-release-pr::${IS_RELEASE_PR}"
                   break
               fi
           done
 
-      - name: Test formula
-        id: test-formula
-        if: ${{ steps.check-renovate-label.outputs.is-renovate-pr }} == "true"
+      - name: Create bottle
+        id: create-bottle
+        if: ${{ steps.check-renovate-label.outputs.is-release-pr }} == "true"
         run: |
           PR="${{ steps.get-pr-number.outputs.pr-number }}"
           echo "Running for PR #${PR}"
@@ -58,12 +58,12 @@ jobs:
                       --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | \
                   jq --raw-output '.[].filename'
           )
-          STARTS_WITH="Formula/"
+          STARTS_WITH="renovate/"
           for FILE in ${FILES}; do
               if test "${FILE:0:${#STARTS_WITH}}" == "${STARTS_WITH}"; then
-                  FORMULA="$(basename "${FILE}" .rb)"
-
-                  echo "Running tests for ${FORMULA}"
-                  bash scripts/test.sh "${FORMULA}"
+                  echo "Updating ${FILE}"
+                  bash "${FILE}"
               fi
           done
+
+          ls -l
