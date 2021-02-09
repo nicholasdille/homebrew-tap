@@ -13,7 +13,6 @@ class DockerRootlessBin < Formula
   else
     odie "Processor architecture is not supported."
   end
-  version "20.10.3"
   license "Apache-2.0"
 
   bottle :unneeded
