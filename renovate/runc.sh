@@ -2,13 +2,12 @@
 
 DATASOURCE=github-releases
 REPO=opencontainers/runc
-VERSION=1.0.0-rc92
+VERSION=1.0.0-rc91
 
 # Update url
 for FORMULA in runc-bin; do
     if test -f "Formula/${FORMULA}.rb"; then
         echo "Updating URLs for formula ${FORMULA}"
-        sed -E -i "s|/download/v([^/]+)/runc.amd64|/download/v${VERSION}/runc.amd64|" "Formula/${FORMULA}.rb"
         sed -E -i "s|/download/v([^/]+)/runc.amd64|/download/v${VERSION}/runc.amd64|" "Formula/${FORMULA}.rb"
     fi
 done

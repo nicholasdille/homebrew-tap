@@ -6,11 +6,6 @@ class Runc < Formula
   license "Apache-2.0"
   head "https://github.com/opencontainers/runc.git"
 
-  bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/runc-1.0.0-rc92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "52938d6847319fc6a1eb0242f150b33635bf249b8c0556c639c2f0950c9d807c"
-  end
-
   depends_on "go" => :build
   depends_on "go-md2man" => :build
   depends_on "libseccomp" => :build
