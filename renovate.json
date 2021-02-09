@@ -40,7 +40,8 @@
     },
     {
       "packageNames": [
-        "docker/cli"
+        "docker/cli",
+        "opencontainers/runc"
       ],
       "extractVersion": "^v(?<version>.+)$"
     }
