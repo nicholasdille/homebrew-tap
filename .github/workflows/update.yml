@@ -11,25 +11,19 @@ jobs:
 
   build:
     name: Update formula
-    if: contains(github.event.pull_request.labels.*.name, 'type/renovate')
+    # ...and not contains ready-for/testing
+    if: contains(github.event.pull_request.labels.*.name, 'type/renovate') && !contains(github.event.pull_request.labels.*.name, 'ready-for/testing')
     runs-on: ubuntu-20.04
     steps:
 
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Get PR number
-        id: get-pr-number
-        run: |
-          PR=$(echo "${GITHUB_REF}" | cut -d'/' -f3)
-          echo "Running for PR #${PR}"
-          echo "::set-output name=pr-number::${PR}"
-
       - name: Update formula
         id: update-formula
-        if: ${{ steps.check-renovate-label.outputs.is-renovate-pr }} == "true"
+        env:
+          PR: ${{ github.event.pull_request.number }}
         run: |
-          PR="${{ steps.get-pr-number.outputs.pr-number }}"
           echo "Running for PR #${PR}"
 
           FILES=$(
@@ -53,16 +47,3 @@ jobs:
         with:
           add: 'Formula/*.rb'
           message: 'Updated formulae'
-
-      - name: Label PR
-        id: label-pr
-        run: |
-          PR="${{ steps.get-pr-number.outputs.pr-number }}"
-          echo "Running for PR #${PR}"
-
-          echo "Adding label ready-for/testing"
-          curl "https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${PR}/labels" \
-              --request "POST" \
-              --header "Accept: application/vnd.github.v3+json" \
-              --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-              --data '{ "labels": [ "ready-for/testing" ] }'

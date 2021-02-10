@@ -1,13 +1,16 @@
 name: brew test-bot
 on:
+  #push:
+  #  branches:
+  #    - main
   pull_request:
-    #types:
-    #  - opened
-    #  - synchronize
-    #  - reopened
+    types:
+      - opened
+      - synchronize
+      - reopened
 jobs:
   test-bot:
-    #if: contains(github.event.pull_request.labels.*.name, 'ready-for/testing')
+    if: contains(github.event.pull_request.labels.*.name, 'ready-for/testing')
     strategy:
       matrix:
         os:
