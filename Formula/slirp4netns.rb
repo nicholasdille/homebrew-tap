@@ -2,7 +2,8 @@ class Slirp4netns < Formula
   desc "User-mode networking for unprivileged network namespaces"
   homepage "https://github.com/rootless-containers/slirp4netns"
   url "https://github.com/rootless-containers/slirp4netns.git",
-    tag: "v1.1.8"
+    tag: "v1.1.8",
+    revision: "d361001f495417b880f20329121e3aa431a8f90f"
   license "GPL-2.0-or-later"
   head "https://github.com/rootless-containers/slirp4netns.git"
 
@@ -14,8 +15,6 @@ class Slirp4netns < Formula
   depends_on "libseccomp" => :build
   depends_on "libslirp" => :build
   depends_on "pkg-config" => :build
-
-  conflicts_with "nicholasdille/tap/slirp4netns-bin"
 
   def install
     system "./autogen.sh"

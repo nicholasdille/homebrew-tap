@@ -2,7 +2,8 @@ class Runc < Formula
   desc "CLI tool for spawning and running containers according to the OCI specification"
   homepage "https://www.opencontainers.org/"
   url "https://github.com/opencontainers/runc.git",
-    tag: "v1.0.0-rc93"
+    tag: "v1.0.0-rc93",
+    revision: "12644e614e25b05da6fd08a38ffa0cfe1903fdec"
   license "Apache-2.0"
   head "https://github.com/opencontainers/runc.git"
 
@@ -15,8 +16,6 @@ class Runc < Formula
   depends_on "go-md2man" => :build
   depends_on "libseccomp" => :build
   depends_on "pkg-config" => :build
-
-  conflicts_with "nicholasdille/tap/runc-bin", because: "both install `runc` binary"
 
   def install
     dir = buildpath/"src/github.com/opencontainers/runc"

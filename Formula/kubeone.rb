@@ -2,13 +2,12 @@ class Kubeone < Formula
   desc "CLI for KubeOne"
   homepage "https://kubeone.io/"
   url "https://github.com/kubermatic/kubeone.git",
-    tag: "v1.2.0-beta.0"
+    tag: "v1.2.0-beta.0",
+    revision: "a039926b9838fcbd79424ea0d48c0bb299ee7278"
   license "Apache-2.0"
   head "https://github.com/kubermatic/kubeone.git"
 
   depends_on "go" => :build
-
-  conflicts_with "nicholasdille/tap/kubeone-bin", because: "both install `kubeone` binary"
 
   def install
     system "make", "dist/kubeone"
