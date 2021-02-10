@@ -1,0 +1,22 @@
+class YttBin < Formula
+  desc "YAML templating tool that works on YAML structure instead of text"
+  homepage "https://get-ytt.io/"
+  url "https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.30.0/ytt-linux-amd64"
+  version "0.30.0"
+  sha256 ""
+  license "Apache-2.0"
+  head "https://github.com/vmware-tanzu/carvel-ytt.git"
+
+  depends_on "go" => :build
+  depends_on "zip" => :build
+
+  conflicts_with "nicholasdille/tap/ytt"
+
+  def install
+    bin.install "ytt-linux-amd64" => "ytt"
+  end
+
+  test do
+    system "#{bin}/ytt", "--version"
+  end
+end
