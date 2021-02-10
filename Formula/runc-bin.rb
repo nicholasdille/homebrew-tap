@@ -7,7 +7,7 @@ class RuncBin < Formula
   else
     odie "Only amd64 is supported"
   end
-  version "1.0.0-rc93"
+  version "v1.0.0-rc93"
   license "Apache-2.0"
 
   bottle :unneeded
