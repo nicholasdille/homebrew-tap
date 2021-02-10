@@ -1,9 +1,9 @@
 class YttBin < Formula
   desc "YAML templating tool that works on YAML structure instead of text"
   homepage "https://get-ytt.io/"
-  url "https://github.com/vmware-tanzu/carvel-ytt/releases/download/v0.30.0/ytt-linux-amd64"
+  url "https://github.com/vmware-tanzu/carvel-ytt/archive/v0.31.0.tar.gz"
   version "0.30.0"
-  sha256 "456e58c70aef5cd4946d29ed106c2b2acbb4d0d5e99129e526ecb4a859a36145"
+  sha256 "33257c771f9c067938521c8d3b86968b623242221881a1e92ff17c555d98d034"
   license "Apache-2.0"
   head "https://github.com/vmware-tanzu/carvel-ytt.git"
 
