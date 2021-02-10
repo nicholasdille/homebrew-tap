@@ -1,18 +1,8 @@
 class DockerBin < Formula
   desc "Docker CLI"
   homepage "https://www.docker.com"
-  if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-    url "https://download.docker.com/linux/static/stable/x86_64/docker-20.10.3.tgz"
-    sha256 "47065a47f0692cd5af03073c7386fe090d9ef5ac88a7d8455a884d8e15809be5"
-  elsif Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://download.docker.com/linux/static/stable/aarch64/docker-20.10.3.tgz"
-    sha256 "4dcd105f721297f314bb53622e67dd981a743d72f4b2bfe4f42a8790e0892c82"
-  elsif Hardware::CPU.ppc64le?
-    url "https://download.docker.com/linux/static/stable/ppc64le/docker-20.10.3.tgz"
-    sha256 "67a482439140b10008b8772ede1744139a8f9776d2ae9c28dabee3948c9a2380"
-  else
-    odie "Processor architecture is not supported."
-  end
+  url "https://download.docker.com/linux/static/stable/x86_64/docker-20.10.2.tgz"
+  sha256 "97017e32a8ecbdd1826bb3c7b1424303ee0dea3f900d33591b1df5e394ed4eed"
   license "Apache-2.0"
 
   bottle :unneeded
