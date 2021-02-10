@@ -40,9 +40,12 @@
     },
     {
       "packageNames": [
+        "containerd/containerd",
         "docker/cli",
         "kubermatic/kubeone",
-        "opencontainers/runc"
+        "opencontainers/runc",
+        "rootless-containers/rootlesskit",
+        "rootless-containers/slirp4netns"
       ],
       "extractVersion": "^v(?<version>.+)$"
     }
