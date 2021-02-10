@@ -41,7 +41,8 @@
     {
       "packageNames": [
         "docker/cli",
-        "kubermatic/kubeone"
+        "kubermatic/kubeone",
+        "opencontainers/runc"
       ],
       "extractVersion": "^v(?<version>.+)$"
     }
