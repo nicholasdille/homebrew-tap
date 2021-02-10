@@ -2,7 +2,7 @@ class Runc < Formula
   desc "CLI tool for spawning and running containers according to the OCI specification"
   homepage "https://www.opencontainers.org/"
   url "https://github.com/opencontainers/runc.git",
-    tag: "vv1.0.0-rc93"
+    tag: "v1.0.0-rc93"
   license "Apache-2.0"
   head "https://github.com/opencontainers/runc.git"
 
