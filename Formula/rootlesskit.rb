@@ -9,8 +9,6 @@ class Rootlesskit < Formula
 
   depends_on "go" => :build
 
-  conflicts_with "nicholasdille/tap/rootlesskit-bin"
-
   def install
     system "make"
     system "make", "install", "BINDIR=", "DESTDIR=#{prefix}"

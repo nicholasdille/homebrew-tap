@@ -17,8 +17,6 @@ class Runc < Formula
   depends_on "libseccomp" => :build
   depends_on "pkg-config" => :build
 
-  conflicts_with "nicholasdille/tap/runc-bin", because: "both install `runc` binary"
-
   def install
     dir = buildpath/"src/github.com/opencontainers/runc"
     dir.install (buildpath/"").children

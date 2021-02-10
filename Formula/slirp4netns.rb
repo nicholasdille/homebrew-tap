@@ -16,8 +16,6 @@ class Slirp4netns < Formula
   depends_on "libslirp" => :build
   depends_on "pkg-config" => :build
 
-  conflicts_with "nicholasdille/tap/slirp4netns-bin"
-
   def install
     system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}"

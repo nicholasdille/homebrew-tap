@@ -12,8 +12,6 @@ class Containerd < Formula
   depends_on "libseccomp" => :build
   depends_on "pkg-config" => :build
 
-  conflicts_with "nicholasdille/tap/containerd-bin"
-
   def install
     system "make"
     system "make", "install", "DESTDIR=#{prefix}"

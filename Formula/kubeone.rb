@@ -9,8 +9,6 @@ class Kubeone < Formula
 
   depends_on "go" => :build
 
-  conflicts_with "nicholasdille/tap/kubeone-bin", because: "both install `kubeone` binary"
-
   def install
     system "make", "dist/kubeone"
     bin.install "dist/kubeone"
