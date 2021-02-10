@@ -19,7 +19,6 @@ class Runc < Formula
   conflicts_with "nicholasdille/tap/runc-bin", because: "both install `runc` binary"
 
   def install
-    ENV["GOPATH"] = buildpath
     dir = buildpath/"src/github.com/opencontainers/runc"
     dir.install (buildpath/"").children
     cd dir do
@@ -27,6 +26,7 @@ class Runc < Formula
         "seccomp",
       ]
       commit = Utils.git_short_head
+      ENV["GOPATH"] = buildpath
       ENV["CGO_ENABLED"] = "1"
       ldflags = [
         "-w",
