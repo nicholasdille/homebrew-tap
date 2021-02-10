@@ -11,7 +11,7 @@ on:
       - reopened
 jobs:
   test-bot:
-    if: contains(github.event.pull_request.labels.*.name, 'ready-for/testing')
+    if: contains(github.event.pull_request.labels.*.name, 'ready-for/testing') && ! contains(github.event.pull_request.labels.*.name, 'ready-for/merge')
     strategy:
       matrix:
         os:
