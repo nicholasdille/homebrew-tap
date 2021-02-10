@@ -3,11 +3,11 @@ class RuncBin < Formula
   homepage "https://www.opencontainers.org/"
   if Hardware::CPU.intel?
     url "https://github.com/opencontainers/runc/releases/download/v1.0.0-rc93/runc.amd64"
-    sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+    sha256 "9feaa82be15cb190cf0ed76fcb6d22841abd18088d275a47e894cd1e3a0ee4b6"
   else
     odie "Only amd64 is supported"
   end
-  version "v1.0.0-rc93"
+  version "1.0.0-rc93"
   license "Apache-2.0"
 
   bottle :unneeded
