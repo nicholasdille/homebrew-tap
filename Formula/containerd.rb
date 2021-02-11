@@ -1,6 +1,6 @@
 class Containerd < Formula
   desc "Open and reliable container runtime"
-  homepage "https://containerd.io/"
+  homepage "https://containerd.io"
 
   url "https://github.com/containerd/containerd.git",
     tag:      "v1.4.3",
