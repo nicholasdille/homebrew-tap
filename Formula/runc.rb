@@ -10,7 +10,7 @@ class Runc < Formula
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/runc-1.0.0-rc93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "15143f9b56505aee4e68b1e9e1de66185c07b14ed401e5ef837112ab6294fa6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "78d9d1e617a2b7767bf89853b9d831bfaa3a2b9d25b44a545f6950475c008c6f"
   end
 
   depends_on "go" => :build
