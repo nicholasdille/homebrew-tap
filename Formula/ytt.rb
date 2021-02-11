@@ -8,6 +8,11 @@ class Ytt < Formula
   license "Apache-2.0"
   head "https://github.com/vmware-tanzu/carvel-ytt.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/ytt-0.30.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "794a468595e25dbc0ac78e55b6e7f640be1867c36ccfd5c44a9e389527fd09fc"
+  end
+
   depends_on "go" => :build
   depends_on "zip" => :build
 
