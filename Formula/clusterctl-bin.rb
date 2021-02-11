@@ -23,6 +23,6 @@ class ClusterctlBin < Formula
   end
 
   test do
-    system "#{bin}/clusterctl", "--version"
+    system "#{bin}/clusterctl", "version"
   end
 end
