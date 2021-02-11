@@ -1,5 +1,5 @@
 class Slirp4netns < Formula
-  desc "User-mode networking for unprivileged network namespaces"
+  desc "User-mode networking for unprivileged network namespaces."
   homepage "https://github.com/rootless-containers/slirp4netns"
 
   url "https://github.com/rootless-containers/slirp4netns.git",
