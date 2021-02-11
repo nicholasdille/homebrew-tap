@@ -8,8 +8,8 @@ class Runc < Formula
   head "https://github.com/opencontainers/runc.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/runc-1.0.0-rc92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "52938d6847319fc6a1eb0242f150b33635bf249b8c0556c639c2f0950c9d807c"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/runc-1.0.0-rc93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "15143f9b56505aee4e68b1e9e1de66185c07b14ed401e5ef837112ab6294fa6e"
   end
 
   depends_on "go" => :build
