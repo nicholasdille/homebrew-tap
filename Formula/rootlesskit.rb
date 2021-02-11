@@ -12,7 +12,7 @@ class Rootlesskit < Formula
 
   def install
     system "make"
-    system "make", "install", "BINDIR=", "DESTDIR=#{prefix}"
+    system "make", "install", "BINDIR=#{prefix}"
   end
 
   test do
