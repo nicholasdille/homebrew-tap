@@ -54,6 +54,6 @@ class Runc < Formula
   end
 
   test do
-    assert_match "runc version #{version}", shell_output("#{bin}/runc --version")
+    system "#{bin}/runc", "--version"
   end
 end
