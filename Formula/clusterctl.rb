@@ -16,6 +16,6 @@ class Clusterctl < Formula
   end
 
   test do
-    system "#{bin}/containerd", "--version"
+    system "#{bin}/clusterctl", "--version"
   end
 end
