@@ -11,7 +11,7 @@ class Clusterctl < Formula
 
   def install
     system "make", "clusterctl"
-    
+
     bin.install "bin/clusterctl"
   end
 
