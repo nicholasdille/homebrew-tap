@@ -1,5 +1,5 @@
 class Rootlesskit < Formula
-  desc "CLI tool for spawning and running containers according to the OCI specification"
+  desc "CLI tool for spawning and running containers according to the OCI specification."
   homepage "https://github.com/rootless-containers/rootlesskit"
 
   url "https://github.com/rootless-containers/rootlesskit.git",
