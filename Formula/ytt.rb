@@ -1,6 +1,6 @@
 class Ytt < Formula
   desc "YAML templating tool that works on YAML structure instead of text"
-  homepage "https://get-ytt.io/"
+  homepage "https://get-ytt.io"
 
   url "https://github.com/vmware-tanzu/carvel-ytt.git",
     tag:      "v0.30.0",
