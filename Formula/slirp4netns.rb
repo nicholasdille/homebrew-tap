@@ -24,6 +24,7 @@ class Slirp4netns < Formula
 
   def install
     system "./autogen.sh"
+    ENV["LDFLAGS"] = "-static"
     system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"
