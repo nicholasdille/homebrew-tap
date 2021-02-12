@@ -26,9 +26,9 @@ class BuildkitBin < Formula
     bin.install "buildkit-runc"
     bin.install "buildkitd"
 
-    resource("buildctl-daemonless.sh").stage {
+    resource("buildctl-daemonless.sh").stage do
       bin.install "buildctl-daemonless.sh"
-    }
+    end
 
     (buildpath/"buildkitd.yaml").write <<~EOS
       cmd: buildkitd

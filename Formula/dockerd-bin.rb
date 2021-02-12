@@ -8,11 +8,6 @@ class DockerdBin < Formula
 
   bottle :unneeded
 
-  resource "docker-rootless-extras" do
-    url "https://download.docker.com/linux/static/stable/x86_64/docker-rootless-extras-20.10.2.tgz"
-    sha256 "4ebdad1d4743ccca68d183fccdb978aa8b62e7b24743fff36099bd29e46380e0"
-  end
-
   option "with-dockerd", "Install Docker daemon"
 
   conflicts_with "docker", because: "both install `docker` binary"
@@ -22,6 +17,11 @@ class DockerdBin < Formula
     conflicts_with "nicholasdille/tap/runc-bin"
     conflicts_with "nicholasdille/tap/containerd"
     conflicts_with "nicholasdille/tap/containerd-bin"
+  end
+
+  resource "docker-rootless-extras" do
+    url "https://download.docker.com/linux/static/stable/x86_64/docker-rootless-extras-20.10.2.tgz"
+    sha256 "4ebdad1d4743ccca68d183fccdb978aa8b62e7b24743fff36099bd29e46380e0"
   end
 
   def install
@@ -37,13 +37,13 @@ class DockerdBin < Formula
       bin.install "docker-proxy"
       bin.install "dockerd"
 
-      resource("docker-rootless-extras").stage {
+      resource("docker-rootless-extras").stage do
         bin.install "rootlesskit"
         bin.install "rootlesskit-docker-proxy"
         bin.install "vpnkit"
         bin.install "dockerd-rootless-setuptool.sh"
         bin.install "dockerd-rootless.sh"
-      }
+      end
 
       (buildpath/"daemon.json").write <<~EOS
         {
