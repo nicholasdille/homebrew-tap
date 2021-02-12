@@ -12,7 +12,10 @@ class Rootlesskit < Formula
 
   def install
     system "make"
-    system "make", "install", "BINDIR=#{prefix}"
+
+    bin.install "bin/rootlessctl"
+    bin.install "bin/rootlesskit"
+    bin.install "bin/rootlesskit-docker-proxy"
   end
 
   test do
