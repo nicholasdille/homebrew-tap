@@ -3,7 +3,6 @@ class BuildxBin < Formula
   homepage "https://www.docker.com"
 
   url "https://github.com/docker/buildx/releases/download/v0.5.1/buildx-v0.5.1.linux-amd64"
-  version "0.5.1"
   sha256 "5f1dda3ae598e82c3186c2766506921e6f9f51c93b5ba43f7b42b659db4aa48d"
   license "Apache-2.0"
 
