@@ -9,6 +9,8 @@ class ContainerdBin < Formula
 
   bottle :unneeded
 
+  depends_on "nicholasdille/tap/runc"
+
   conflicts_with "nicholasdille/tap/containerd"
 
   def install
