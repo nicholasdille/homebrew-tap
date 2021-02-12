@@ -3,7 +3,6 @@ class CniBin < Formula
   homepage "https://github.com/containernetworking/plugins"
 
   url "https://github.com/containernetworking/plugins/releases/download/v0.9.1/cni-plugins-linux-amd64-v0.9.1.tgz"
-  version "0.9.1"
   sha256 "962100bbc4baeaaa5748cdbfce941f756b1531c2eadb290129401498bfac21e7"
   license "Apache-2.0"
 
