@@ -1,5 +1,5 @@
 class FaasdBin < Formula
-  desc "A lightweight & portable faas engine"
+  desc "Lightweight & portable faas engine"
   homepage "https://gumroad.com/l/serverless-for-everyone-else"
 
   url "https://github.com/openfaas/faasd/releases/download/0.10.2/faasd"
@@ -9,8 +9,8 @@ class FaasdBin < Formula
 
   bottle :unneeded
 
-  depends_on "nicholasdille/tap/containerd-bin"
   depends_on "nicholasdille/tap/cni-bin"
+  depends_on "nicholasdille/tap/containerd-bin"
   depends_on "faas-cli" => :recommended
 
   def install
