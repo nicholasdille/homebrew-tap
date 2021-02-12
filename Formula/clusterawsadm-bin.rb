@@ -1,6 +1,6 @@
 class ClusterawsadmBin < Formula
   desc "Kubernetes Cluster API Provider AWS provides consistent deployment and day 2"
-  homepage "http://cluster-api-aws.sigs.k8s.io/"
+  homepage "https://cluster-api-aws.sigs.k8s.io/"
   url "https://github.com/kubernetes-sigs/cluster-api-provider-aws/releases/download/v0.6.4/clusterawsadm-linux-amd64"
   version "0.6.4"
   sha256 "6923dfe1af70ebbe61c3fbda91528ebabdec324bccdd22623b8484098c49910c"
