@@ -11,7 +11,7 @@ class BuildxBin < Formula
   depends_on "nicholasdille/tap/docker-bin"
 
   def install
-    bin.install "buildx-v0.5.1.linux-amd64" => "docker-buildx"
+    bin.install "buildx-v#{version}.linux-amd64" => "docker-buildx"
   end
 
   test do
