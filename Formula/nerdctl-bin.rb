@@ -14,11 +14,13 @@ class NerdctlBin < Formula
   depends_on "nicholasdille/tap/cni-bin" => :recommended
   depends_on "nicholasdille/tap/cni-isolation-bin" => :recommended
 
+  conflicts_with "nicholasdille/tap/nerdctl"
+
   def install
     bin.install "nerdctl"
   end
 
   test do
-    system "#{bin}/buildkitd", "--version"
+    system "#{bin}/nerdctl", "--version"
   end
 end
