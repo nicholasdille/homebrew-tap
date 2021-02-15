@@ -8,6 +8,11 @@ class Nerdctl < Formula
   license "Apache-2.0"
   head "https://github.com/AkihiroSuda/nerdctl.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/nerdctl-0.5.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "df0b8d96f2a622878c798591af5da0c243fe2feb235f87ea0710875933857587"
+  end
+
   depends_on "go" => :build
   depends_on "nicholasdille/tap/containerd-bin"
   depends_on "nicholasdille/tap/buildkit-bin" => :recommended
