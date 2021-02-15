@@ -8,6 +8,11 @@ class Buildkit < Formula
   license "Apache-2.0"
   head "https://github.com/moby/buildkit.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildkit-0.8.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "155e3f35fbe374a1486717b0ab7e93f911964a07f9ab98689d4fb38190efb8dd"
+  end
+
   depends_on "go" => :build
 
   def install
