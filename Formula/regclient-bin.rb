@@ -9,6 +9,8 @@ class RegclientBin < Formula
 
   bottle :unneeded
 
+  conflicts_with "nicholasdille/tap/regclient"
+
   resource "regsync" do
     url "https://github.com/regclient/regclient/releases/download/v0.2.1/regsync-linux-amd64"
     sha256 "18fa2f3cc439297685ed69fd6c7506843bdbd960a176451efe7f4765e0130626"
@@ -17,11 +19,22 @@ class RegclientBin < Formula
     url "https://github.com/regclient/regclient/releases/download/v0.2.1/regbot-linux-amd64"
     sha256 "3670c90861647c1074bfb593cd264e20d47377a68ca22beeaec2fe1ee5f1a15b"
   end
+  resource "docker-plugin" do
+    url "https://github.com/regclient/regclient/raw/v0.2.1/docker-plugin/docker-regclient"
+    sha256 "e04c8fc0d634d20cda6185f425a214d1c5246e94566311d7bc6caff03accb302"
+  end
 
   def install
     bin.install "regctl-linux-amd64" => "regctl"
-    resource("regsync").stage { bin.install "regsync-linux-amd64" => "regsync" }
-    resource("regbot").stage { bin.install "regbot-linux-amd64" => "regbot" }
+    resource("regsync").stage do
+      bin.install "regsync-linux-amd64" => "regsync"
+    end
+    resource("regbot").stage do
+      bin.install "regbot-linux-amd64" => "regbot"
+    end
+    resource("docker-plugin").stage do
+      bin.install "docker-regclient"
+    end
   end
 
   test do
