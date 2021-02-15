@@ -14,7 +14,7 @@ class Containerd < Formula
   depends_on "pkg-config" => :build
 
   def install
-    system "make"
+    system "make", "BUILDTAGS=no_btrfs"
     system "make", "install", "DESTDIR=#{prefix}"
   end
 
