@@ -18,8 +18,12 @@ class Containerd < Formula
   depends_on "go-md2man" => :build
   depends_on "libseccomp" => :build
   depends_on "pkg-config" => :build
+<<<<<<< HEAD
   depends_on "nicholasdille/tap/rootlesskit"
   depends_on "nicholasdille/tap/slirp4netns"
+=======
+  #depends_on "btrfs-progs" => [:build, :recommended]
+>>>>>>> Fixed build
 
   def install
     dir = buildpath/"src/github.com/containerd/containerd"
@@ -28,11 +32,16 @@ class Containerd < Formula
       ENV["GOPATH"] = buildpath
 
       buildtags = []
+<<<<<<< HEAD
       buildtags << "no_btrfs"
+=======
+      buildtags << "no_btrfs" #if ! build.with? "btrfs-progs"
+>>>>>>> Fixed build
 
       system "make", "binaries", "BUILDTAGS=#{buildtags.join(" ")}"
       system "make", "install", "DESTDIR=#{prefix}"
     end
+<<<<<<< HEAD
 
     (var/"run/containerd").mkpath
     (var/"log").mkpath
@@ -51,6 +60,8 @@ class Containerd < Formula
         timestamp: true
     EOS
     (etc/"immortal").install "containerd.yml"
+=======
+>>>>>>> Fixed build
   end
 
   test do
