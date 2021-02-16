@@ -5,7 +5,7 @@ class KubeswitchBin < Formula
   url "https://github.com/danielb42/kubeswitch/releases/download/v1.3.2/kubeswitch_linux_amd64.tar.gz"
   version "1.3.2"
   sha256 "65544a7ebd977556b596ec2c4f6f4b9ecfdbc092f82fc19ece13c0b8651153e8"
-  license ""
+  license "MIT"
 
   bottle :unneeded
 
