@@ -36,7 +36,7 @@ class Runc < Formula
     ]
     system "go", "build",
       "-trimpath",
-      "-mod=vendor"
+      "-mod=vendor",
       "-tags", "#{buildtags} netgo osusergo",
       "-ldflags", ldflags.join(" "),
       "-o", "runc",
