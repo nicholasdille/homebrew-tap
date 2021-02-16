@@ -12,10 +12,20 @@ class Containerd < Formula
   depends_on "go-md2man" => :build
   depends_on "libseccomp" => :build
   depends_on "pkg-config" => :build
+  #depends_on "btrfs-progs" => [:build, :recommended]
 
   def install
-    system "make", "BUILDTAGS=no_btrfs"
-    system "make", "install", "DESTDIR=#{prefix}"
+    dir = buildpath/"src/github.com/containerd/containerd"
+    dir.install (buildpath/"").children
+    cd dir do
+      ENV["GOPATH"] = buildpath
+
+      buildtags = []
+      buildtags << "no_btrfs" #if ! build.with? "btrfs-progs"
+
+      system "make", "binaries", "BUILDTAGS=#{buildtags.join(" ")}"
+      system "make", "install", "DESTDIR=#{prefix}"
+    end
   end
 
   test do
