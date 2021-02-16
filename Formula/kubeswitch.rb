@@ -26,6 +26,6 @@ class Kubeswitch < Formula
   end
 
   test do
-    system "#{bin}/kubeswitch", "--help"
+    system "#{bin}/kubeswitch", "foo"
   end
 end
