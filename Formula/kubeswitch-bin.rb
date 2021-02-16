@@ -9,6 +9,8 @@ class KubeswitchBin < Formula
 
   bottle :unneeded
 
+  conflicts_with "nicholasdille/tap/kubeswitch"
+
   def install
     bin.install "kubeswitch"
   end
