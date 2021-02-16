@@ -8,6 +8,8 @@ class KubeoneBin < Formula
 
   bottle :unneeded
 
+  conflicts_with "nicholasdille/tap/kubeone"
+
   def install
     bin.install "kubeone"
 
