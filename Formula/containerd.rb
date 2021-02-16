@@ -6,6 +6,7 @@ class Containerd < Formula
     tag:      "v1.4.3",
     revision: "269548fa27e0089a8b8278fc4fc781d7f65a939b"
   license "Apache-2.0"
+  revision 2
   head "https://github.com/containerd/containerd.git"
 
   depends_on "go" => :build
@@ -14,8 +15,17 @@ class Containerd < Formula
   depends_on "pkg-config" => :build
 
   def install
-    system "make"
-    system "make", "install", "DESTDIR=#{prefix}"
+    dir = buildpath/"src/github.com/containerd/containerd"
+    dir.install (buildpath/"").children
+    cd dir do
+      ENV["GOPATH"] = buildpath
+
+      buildtags = []
+      buildtags << "no_btrfs"
+
+      system "make", "binaries", "BUILDTAGS=#{buildtags.join(" ")}"
+      system "make", "install", "DESTDIR=#{prefix}"
+    end
   end
 
   test do
