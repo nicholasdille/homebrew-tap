@@ -6,12 +6,8 @@ class YttBin < Formula
   version "0.30.0"
   sha256 "456e58c70aef5cd4946d29ed106c2b2acbb4d0d5e99129e526ecb4a859a36145"
   license "Apache-2.0"
-  head "https://github.com/vmware-tanzu/carvel-ytt.git"
 
   bottle :unneeded
-
-  depends_on "go" => :build
-  depends_on "zip" => :build
 
   conflicts_with "nicholasdille/tap/ytt"
 
