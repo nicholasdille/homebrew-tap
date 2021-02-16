@@ -17,6 +17,8 @@ class DockerdBin < Formula
     conflicts_with "nicholasdille/tap/runc-bin"
     conflicts_with "nicholasdille/tap/containerd"
     conflicts_with "nicholasdille/tap/containerd-bin"
+    conflicts_with "nicholasdille/tap/rootlesskit"
+    conflicts_with "nicholasdille/tap/rootlesskit-bin"
   end
 
   resource "docker-rootless-extras" do
@@ -54,15 +56,19 @@ class DockerdBin < Formula
       EOS
       (etc/"docker").install "daemon.json"
 
-      (buildpath/"dockerd.yaml").write <<~EOS
-        cmd: dockerd --config-file #{etc}/docker/daemon.json --host #{var}/run/docker.sock --containerd=/run/containerd/sock
+      (var/"run/dockerd").mkpath
+      (var/"log").mkpath
+      (buildpath/"run.yml").write <<~EOS
+        cmd: dockerd-rootless.sh
         cwd: #{etc/"docker"}
+        env:
+          XDG_RUNTIME_DIR: #{var}/run/dockerd
         pid:
             follow: #{var}/run/dockerd/unicorn.pid
             parent: #{var}/run/dockerd/parent.pid
             child: #{var}/run/dockerd/child.pid
         log:
-            file: #{var}/var/log/dockerd.log
+            file: #{var}/log/dockerd.log
             age: 86400
             num: 7
             size: 1
@@ -71,7 +77,7 @@ class DockerdBin < Formula
         user: root
         wait: 1
       EOS
-      (etc/"immortal").install "dockerd.yaml"
+      (etc/"immortal/dockerd").install "run.yml"
     end
   end
 
