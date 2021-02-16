@@ -9,6 +9,11 @@ class Containerd < Formula
   revision 2
   head "https://github.com/containerd/containerd.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containerd-1.4.3_2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "61745f675690afc4a07be3716688a330f9dd1398afefacb96c52ad7e092f30c4"
+  end
+
   depends_on "go" => :build
   depends_on "go-md2man" => :build
   depends_on "libseccomp" => :build
