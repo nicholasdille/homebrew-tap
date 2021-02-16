@@ -20,6 +20,8 @@ class Runc < Formula
   depends_on "pkg-config" => :build
 
   def install
+    commit = Utils.git_short_head
+    
     buildtags = []
     buildtags << "seccomp" if build.with?("libseccomp")
     buildtags << "nokmem" if build.with?("nokmem")
