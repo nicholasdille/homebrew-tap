@@ -23,7 +23,24 @@ class Runc < Formula
     buildtags = []
     buildtags << "seccomp" if build.with?("libseccomp")
     buildtags << "nokmem" if build.with?("nokmem")
-    system "make", "static", "BUILDTAGS=#{buildtags.join(" ")}"
+
+    ENV["CGO_ENABLED"] = "1"
+    ldflags = [
+      "-w",
+      "-extldflags",
+      "-static",
+      "-X",
+      "main.gitCommit=#{commit}",
+      "-X",
+      "main.version=#{version}",
+    ]
+    system "go", "build",
+      "-trimpath",
+      "-mod=vendor"
+      "-tags", "#{buildtags} netgo osusergo",
+      "-ldflags", ldflags.join(" "),
+      "-o", "runc",
+      "."
     bin.install "runc"
 
     Pathname.glob("man/*.[1-8].md") do |md|
