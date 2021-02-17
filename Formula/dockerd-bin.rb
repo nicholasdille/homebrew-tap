@@ -58,26 +58,22 @@ class DockerdBin < Formula
 
       (var/"run/dockerd").mkpath
       (var/"log").mkpath
-      (buildpath/"run.yml").write <<~EOS
-        cmd: dockerd-rootless.sh
-        cwd: #{etc/"docker"}
+      (buildpath/"dockerd.yml").write <<~EOS
+        cmd: #{bin}/dockerd-rootless.sh --config-file #{etc}/docker/daemon.json
+        cwd: #{etc}/docker
         env:
           XDG_RUNTIME_DIR: #{var}/run/dockerd
         pid:
-            follow: #{var}/run/dockerd/unicorn.pid
-            parent: #{var}/run/dockerd/parent.pid
-            child: #{var}/run/dockerd/child.pid
+          parent: #{var}/run/dockerd/parent.pid
+          child: #{var}/run/dockerd/child.pid
         log:
-            file: #{var}/log/dockerd.log
-            age: 86400
-            num: 7
-            size: 1
-            timestamp: true
-        logger: logger -t dockerd
-        user: root
-        wait: 1
+          file: #{var}/log/dockerd.log
+          age: 86400
+          num: 7
+          size: 1
+          timestamp: true
       EOS
-      (etc/"immortal/dockerd").install "run.yml"
+      (etc/"immortal").install "dockerd.yml"
     end
   end
 

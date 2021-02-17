@@ -8,7 +8,6 @@ class FaasdBin < Formula
 
   bottle :unneeded
 
-  depends_on "nicholasdille/tap/cni-bin"
   depends_on "nicholasdille/tap/containerd-bin"
   depends_on "faas-cli" => :recommended
 

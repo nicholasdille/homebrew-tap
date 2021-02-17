@@ -11,8 +11,6 @@ class NerdctlBin < Formula
 
   depends_on "nicholasdille/tap/containerd-bin"
   depends_on "nicholasdille/tap/buildkit-bin" => :recommended
-  depends_on "nicholasdille/tap/cni-bin" => :recommended
-  depends_on "nicholasdille/tap/cni-isolation-bin" => :recommended
 
   conflicts_with "nicholasdille/tap/nerdctl"
 

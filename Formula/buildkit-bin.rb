@@ -10,6 +10,8 @@ class BuildkitBin < Formula
   bottle :unneeded
 
   depends_on "immortal"
+  depends_on "nicholasdille/tap/rootlesskit-bin"
+  depends_on "nicholasdille/tap/slirp4netns-bin"
 
   resource "buildctl-daemonless.sh" do
     url "https://github.com/moby/buildkit/raw/v0.8.1/examples/buildctl-daemonless/buildctl-daemonless.sh"
@@ -30,24 +32,21 @@ class BuildkitBin < Formula
       bin.install "buildctl-daemonless.sh"
     end
 
-    (buildpath/"buildkitd.yaml").write <<~EOS
-      cmd: buildkitd
-      cwd: #{var}/run/buildkitd
+    (buildpath/"buildkitd.yml").write <<~EOS
+      cmd: #{bin}/rootlesskit --net=slirp4netns --copy-up=/etc --disable-host-loopback #{bin}/buildkitd
+      env:
+        XDG_RUNTIME_DIR: #{var}/run/buildkitd
       pid:
-          follow: #{var}/run/buildkitd/unicorn.pid
-          parent: #{var}/run/buildkitd/parent.pid
-          child: #{var}/run/buildkitd/child.pid
+        parent: #{var}/run/buildkitd/parent.pid
+        child: #{var}/run/buildkitd/child.pid
       log:
-          file: #{var}/var/log/buildkitd.log
-          age: 86400
-          num: 7
-          size: 1
-          timestamp: true
-      logger: logger -t buildkitd
-      user: root
-      wait: 1
+        file: #{var}/log/buildkitd.log
+        age: 86400
+        num: 7
+        size: 1
+        timestamp: true
     EOS
-    (etc/"immortal").install "buildkitd.yaml"
+    (etc/"immortal").install "buildkitd.yml"
   end
 
   test do

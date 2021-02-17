@@ -9,7 +9,11 @@ class ContainerdBin < Formula
 
   bottle :unneeded
 
+  depends_on "immortal"
+  depends_on "nicholasdille/tap/cni-bin"
+  depends_on "nicholasdille/tap/rootlesskit-bin"
   depends_on "nicholasdille/tap/runc-bin"
+  depends_on "nicholasdille/tap/slirp4netns-bin"
 
   conflicts_with "nicholasdille/tap/containerd"
 
@@ -19,6 +23,41 @@ class ContainerdBin < Formula
     bin.install "containerd-shim-runc-v1"
     bin.install "containerd-shim-runc-v2"
     bin.install "ctr"
+
+    unless File.exist? etc/"containerd/config.toml"
+      (var/"run/containerd").mkpath
+      (var/"lib/containerd").mkpath
+      (var/"opt/containerd").mkpath
+
+      output = Utils.safe_popen_read("#{bin}/containerd", "config", "default")
+      (buildpath/"config.toml").write output
+
+      system "sed", "-i", "-E", "s|\"/var/lib/containerd\"|\"#{var}/lib/containerd\"|", buildpath/"config.toml"
+      system "sed", "-i", "-E", "s|\"/run/containerd|\"#{var}/run/containerd|", buildpath/"config.toml"
+      system "sed", "-i", "-E", "s|\"/opt/containerd\"|\"#{var}/opt/containerd\"|", buildpath/"config.toml"
+      system "sed", "-i", "-E", "s|\"/opt/cni/bin\"|\"#{HOMEBREW_PREFIX}/bin\"|", buildpath/"config.toml"
+      system "sed", "-i", "-E", "s|\"/etc/cni/|\"#{etc}/cni/|", buildpath/"config.toml"
+
+      (etc/"containerd").install "config.toml"
+    end
+
+    (var/"log").mkpath
+    (buildpath/"containerd.yml").write <<~EOS
+      cmd: #{bin}/rootlesskit --net=slirp4netns --copy-up=/etc --copy-up=/run --disable-host-loopback #{bin}/containerd --config #{etc}/containerd/config.toml
+      cwd: #{etc}/containerd
+      env:
+        XDG_RUNTIME_DIR: #{var}/run/containerd
+      pid:
+        parent: #{var}/run/containerd/parent.pid
+        child: #{var}/run/containerd/child.pid
+      log:
+        file: #{var}/log/containerd.log
+        age: 86400
+        num: 7
+        size: 1
+        timestamp: true
+    EOS
+    (etc/"immortal").install "containerd.yml"
   end
 
   test do

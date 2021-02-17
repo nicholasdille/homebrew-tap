@@ -10,6 +10,7 @@ class CniBin < Formula
 
   def install
     bin.install buildpath.children
+    (etc/"cni/net.d").mkpath
   end
 
   test do
