@@ -9,9 +9,9 @@ class DockerdBin < Formula
   bottle :unneeded
 
   depends_on "immortal"
-  depends_on "nicholasdille/tap/runc"
   depends_on "nicholasdille/tap/containerd"
   depends_on "nicholasdille/tap/rootlesskit"
+  depends_on "nicholasdille/tap/runc"
 
   resource "docker-rootless-extras" do
     url "https://download.docker.com/linux/static/stable/x86_64/docker-rootless-extras-20.10.2.tgz"
