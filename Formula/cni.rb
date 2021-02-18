@@ -8,6 +8,11 @@ class Cni < Formula
   license "Apache-2.0"
   head "https://github.com/containernetworking/plugins.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cni-0.9.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "16a340804a930e6f2783b18a1842629cab3d2de8424e5afb8c6da1885b9d7faf"
+  end
+
   depends_on "go" => :build
 
   def install
