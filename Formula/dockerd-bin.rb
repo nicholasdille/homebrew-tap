@@ -8,18 +8,10 @@ class DockerdBin < Formula
 
   bottle :unneeded
 
-  option "with-dockerd", "Install Docker daemon"
-
-  conflicts_with "docker", because: "both install `docker` binary"
-  if build.with? "dockerd"
-    depends_on "immortal"
-    conflicts_with "nicholasdille/tap/runc"
-    conflicts_with "nicholasdille/tap/runc-bin"
-    conflicts_with "nicholasdille/tap/containerd"
-    conflicts_with "nicholasdille/tap/containerd-bin"
-    conflicts_with "nicholasdille/tap/rootlesskit"
-    conflicts_with "nicholasdille/tap/rootlesskit-bin"
-  end
+  depends_on "immortal"
+  depends_on "nicholasdille/tap/runc"
+  depends_on "nicholasdille/tap/containerd"
+  depends_on "nicholasdille/tap/rootlesskit"
 
   resource "docker-rootless-extras" do
     url "https://download.docker.com/linux/static/stable/x86_64/docker-rootless-extras-20.10.2.tgz"
@@ -27,59 +19,45 @@ class DockerdBin < Formula
   end
 
   def install
-    bin.install "docker"
+    bin.install "docker-init"
+    bin.install "docker-proxy"
+    bin.install "dockerd"
 
-    if build.with? "dockerd"
-      bin.install "runc"
-      bin.install "containerd"
-      bin.install "containerd-shim"
-      bin.install "containerd-shim-runc-v2"
-      bin.install "ctr"
-      bin.install "docker-init"
-      bin.install "docker-proxy"
-      bin.install "dockerd"
-
-      resource("docker-rootless-extras").stage do
-        bin.install "rootlesskit"
-        bin.install "rootlesskit-docker-proxy"
-        bin.install "vpnkit"
-        bin.install "dockerd-rootless-setuptool.sh"
-        bin.install "dockerd-rootless.sh"
-      end
-
-      (buildpath/"daemon.json").write <<~EOS
-        {
-          "features": {
-            "buildkit": true
-          }
-        }
-      EOS
-      (etc/"docker").install "daemon.json"
-
-      (var/"run/dockerd").mkpath
-      (var/"log").mkpath
-      (buildpath/"dockerd.yml").write <<~EOS
-        cmd: #{bin}/dockerd-rootless.sh --config-file #{etc}/docker/daemon.json
-        cwd: #{etc}/docker
-        env:
-          XDG_RUNTIME_DIR: #{var}/run/dockerd
-        pid:
-          parent: #{var}/run/dockerd/parent.pid
-          child: #{var}/run/dockerd/child.pid
-        log:
-          file: #{var}/log/dockerd.log
-          age: 86400
-          num: 7
-          size: 1
-          timestamp: true
-      EOS
-      (etc/"immortal").install "dockerd.yml"
+    resource("docker-rootless-extras").stage do
+      bin.install "dockerd-rootless-setuptool.sh"
+      bin.install "dockerd-rootless.sh"
     end
+
+    (buildpath/"daemon.json").write <<~EOS
+      {
+        "features": {
+          "buildkit": true
+        }
+      }
+    EOS
+    (etc/"docker").install "daemon.json"
+
+    (var/"run/dockerd").mkpath
+    (var/"log").mkpath
+    (buildpath/"dockerd.yml").write <<~EOS
+      cmd: #{bin}/dockerd-rootless.sh --config-file #{etc}/docker/daemon.json
+      cwd: #{etc}/docker
+      env:
+        XDG_RUNTIME_DIR: #{var}/run/dockerd
+      pid:
+        parent: #{var}/run/dockerd/parent.pid
+        child: #{var}/run/dockerd/child.pid
+      log:
+        file: #{var}/log/dockerd.log
+        age: 86400
+        num: 7
+        size: 1
+        timestamp: true
+    EOS
+    (etc/"immortal").install "dockerd.yml"
   end
 
   test do
-    system "#{bin}/docker", "--version"
-
-    system "#{bin}/dockerd", "--version" if build.with? "dockerd"
+    system "#{bin}/dockerd", "--version"
   end
 end

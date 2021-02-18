@@ -14,8 +14,8 @@ class Nerdctl < Formula
   end
 
   depends_on "go" => :build
-  depends_on "nicholasdille/tap/containerd-bin"
-  depends_on "nicholasdille/tap/buildkit-bin" => :recommended
+  depends_on "nicholasdille/tap/containerd"
+  depends_on "nicholasdille/tap/buildkit" => :recommended
   depends_on "nicholasdille/tap/cni-bin" => :recommended
   depends_on "nicholasdille/tap/cni-isolation-bin" => :recommended
 

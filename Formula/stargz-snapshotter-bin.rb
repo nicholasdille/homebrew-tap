@@ -9,7 +9,7 @@ class StargzSnapshotterBin < Formula
 
   bottle :unneeded
 
-  depends_on "nicholasdille/tap/containerd-bin"
+  depends_on "nicholasdille/tap/containerd"
 
   def install
     bin.install "containerd-stargz-grpc"
