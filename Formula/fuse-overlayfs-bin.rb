@@ -1,6 +1,6 @@
 class FuseOverlayfsBin < Formula
   desc "Simple deployment tool focused on the concept of Kubernetes application"
-  homepage "https://get-kapp.io/"
+  homepage "https://github.com/containers/fuse-overlayfs"
 
   url "https://github.com/containers/fuse-overlayfs/releases/download/v1.4.0/fuse-overlayfs-x86_64"
   version "1.4.0"
