@@ -20,12 +20,13 @@ class Nerdctl < Formula
   depends_on "nicholasdille/tap/cni-isolation" => :recommended
 
   def install
-    ENV["XDG_RUNTIME_DIR"] = var/"lib/nerdctl"
     system "make"
     bin.install "_output/nerdctl"
+    (var/"lib/nerdctl").mkpath
   end
 
   test do
+    ENV["XDG_RUNTIME_DIR"] = var/"lib/nerdctl"
     system "#{bin}/nerdctl", "--version"
   end
 end
