@@ -71,6 +71,6 @@ class Faasd < Formula
   end
 
   test do
-    system "#{bin}/faasd", "--version"
+    system "#{bin}/faasd", "version"
   end
 end
