@@ -14,6 +14,7 @@ class Buildkit < Formula
   end
 
   depends_on "go" => :build
+  depends_on "nicholasdille/tap/fuse-overlayfs-bin"
 
   def install
     system "make"
