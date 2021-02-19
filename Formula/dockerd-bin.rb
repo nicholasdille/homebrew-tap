@@ -12,6 +12,7 @@ class DockerdBin < Formula
   depends_on "nicholasdille/tap/containerd"
   depends_on "nicholasdille/tap/rootlesskit"
   depends_on "nicholasdille/tap/runc"
+  depends_on "nicholasdille/tap/slirp4netns"
 
   resource "docker-rootless-extras" do
     url "https://download.docker.com/linux/static/stable/x86_64/docker-rootless-extras-20.10.2.tgz"
@@ -40,7 +41,7 @@ class DockerdBin < Formula
     (var/"run/dockerd").mkpath
     (var/"log").mkpath
     (buildpath/"dockerd.yml").write <<~EOS
-      cmd: #{bin}/dockerd-rootless.sh --config-file #{etc}/docker/daemon.json
+      cmd: #{HOMEBREW_PREFIX}/bin/dockerd-rootless.sh --config-file #{etc}/docker/daemon.json
       cwd: #{etc}/docker
       env:
         XDG_RUNTIME_DIR: #{var}/run/dockerd
