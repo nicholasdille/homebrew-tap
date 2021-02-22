@@ -2,8 +2,8 @@ class DockerdBin < Formula
   desc "Docker daemon"
   homepage "https://www.docker.com"
 
-  url "https://download.docker.com/linux/static/stable/x86_64/docker-20.10.2.tgz"
-  sha256 "97017e32a8ecbdd1826bb3c7b1424303ee0dea3f900d33591b1df5e394ed4eed"
+  url "https://download.docker.com/linux/static/stable/x86_64/docker-20.10.3.tgz"
+  sha256 "47065a47f0692cd5af03073c7386fe090d9ef5ac88a7d8455a884d8e15809be5"
   license "Apache-2.0"
 
   bottle :unneeded
@@ -15,8 +15,8 @@ class DockerdBin < Formula
   depends_on "nicholasdille/tap/slirp4netns"
 
   resource "docker-rootless-extras" do
-    url "https://download.docker.com/linux/static/stable/x86_64/docker-rootless-extras-20.10.2.tgz"
-    sha256 "4ebdad1d4743ccca68d183fccdb978aa8b62e7b24743fff36099bd29e46380e0"
+    url "https://download.docker.com/linux/static/stable/x86_64/docker-rootless-extras-20.10.3.tgz"
+    sha256 "6a7e2fe34112dfdbec619af4ca4db877133b29f245475df099e812d0d75e8eb5"
   end
 
   def install
