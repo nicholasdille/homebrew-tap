@@ -6,7 +6,7 @@ class Containerd < Formula
     tag:      "v1.4.3",
     revision: "269548fa27e0089a8b8278fc4fc781d7f65a939b"
   license "Apache-2.0"
-  revision 3
+  revision 2
   head "https://github.com/containerd/containerd.git"
 
   bottle do
