@@ -14,13 +14,13 @@ class Buildkit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "155e3f35fbe374a1486717b0ab7e93f911964a07f9ab98689d4fb38190efb8dd"
   end
 
-  conflicts_with "buildkit"
-
   depends_on "go" => :build
   depends_on "immortal"
   depends_on "nicholasdille/tap/fuse-overlayfs-bin"
   depends_on "nicholasdille/tap/rootlesskit"
   depends_on "nicholasdille/tap/slirp4netns"
+
+  conflicts_with "buildkit"
 
   def install
     system "make"
