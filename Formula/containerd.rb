@@ -9,14 +9,13 @@ class Containerd < Formula
   revision 2
   head "https://github.com/containerd/containerd.git"
 
-  bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containerd-1.4.3_2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "61745f675690afc4a07be3716688a330f9dd1398afefacb96c52ad7e092f30c4"
-  end
+  option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
+  option "without-devmapper", "Support device mapper"
+  option "without-cri", "Support CRI"
 
   depends_on "go" => :build
   depends_on "go-md2man" => :build
-  depends_on "libseccomp" => :build
+  depends_on "libseccomp" => [:build, :recommended]
   depends_on "pkg-config" => :build
   depends_on "nicholasdille/tap/rootlesskit"
   depends_on "nicholasdille/tap/slirp4netns"
@@ -28,7 +27,9 @@ class Containerd < Formula
       ENV["GOPATH"] = buildpath
 
       buildtags = []
-      buildtags << "no_btrfs" if ! build.with? "btrfs-progs"
+      buildtags << "no_btrfs" unless build.with? "btrfs"
+      buildtags << "no_devmapper" if build.without? "devmapper"
+      buildtags << "no_cri" if build.without? "cri"
 
       system "make", "binaries", "BUILDTAGS=#{buildtags.join(" ")}"
       system "make", "install", "DESTDIR=#{prefix}"
