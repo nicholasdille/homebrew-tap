@@ -8,6 +8,11 @@ class Kubeswitch < Formula
   license "MIT"
   head "https://github.com/danielb42/kubeswitch.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kubeswitch-1.3.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "bf9bdfdc3d842c0fca0db210be5da3508fb0a7f89141e2d529eb6d1f9d56e163"
+  end
+
   depends_on "go" => :build
 
   def install
