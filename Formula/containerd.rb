@@ -15,7 +15,7 @@ class Containerd < Formula
 
   depends_on "go" => :build
   depends_on "go-md2man" => :build
-  depends_on "libseccomp" => [:build, :recommended]
+  depends_on "libseccomp" => :build
   depends_on "pkg-config" => :build
   depends_on "nicholasdille/tap/rootlesskit"
   depends_on "nicholasdille/tap/slirp4netns"
