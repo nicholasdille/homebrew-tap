@@ -6,6 +6,7 @@ class Nerdctl < Formula
     tag:      "v0.6.0",
     revision: "3d61627985197a3c9518354e5a837998c3957176"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/AkihiroSuda/nerdctl.git"
 
   bottle do
