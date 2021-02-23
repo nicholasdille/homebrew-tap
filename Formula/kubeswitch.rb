@@ -26,6 +26,6 @@ class Kubeswitch < Formula
   end
 
   test do
-    system "type", "kubeswitch"
+    system "whereis", "kubeswitch"
   end
 end
