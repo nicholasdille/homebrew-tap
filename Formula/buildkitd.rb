@@ -6,6 +6,7 @@ class Buildkitd < Formula
     tag:      "v0.8.1",
     revision: "8142d66b5ebde79846b869fba30d9d30633e74aa"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/moby/buildkit.git"
 
   bottle do
