@@ -1,4 +1,4 @@
-class Buildkit < Formula
+class Buildkitd < Formula
   desc "Concurrent, cache-efficient, and Dockerfile-agnostic builder toolkit"
   homepage "https://github.com/moby/moby/issues/34227"
 
