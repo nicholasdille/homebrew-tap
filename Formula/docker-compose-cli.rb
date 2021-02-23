@@ -13,7 +13,36 @@ class DockerComposeCli < Formula
       system "make", "-f", "builder.Makefile", "cross"
       bin.install "bin/docker-linux-amd64" => "compose-cli"
 
-      # TODO: Docker CLI plugin wrapper
+      # TODO: ~/.docker/cli-plugins/docker-compose
+      (buildpath/"docker-compose").write <<~EOS
+        #!/usr/bin/env bash
+        # https://gist.github.com/thaJeztah/b7950186212a49e91a806689e66b317d
+        docker_cli_plugin_metadata() {
+            if [ -z "$DOCKER_COMPOSE_VERSION" ]; then
+                export DOCKER_COMPOSE_VERSION="$(docker-compose --version | cut -d " " -f 3 | cut -d "," -f 1)"
+            fi
+            local vendor="Docker"
+            local url="https://www.docker.com"
+            local description="Define and run multi-container applications"
+            cat <<-EOF
+        {"SchemaVersion":"0.1.0","Vendor":"${vendor}","Version":"${DOCKER_COMPOSE_VERSION}","ShortDescription":"${description}","URL":"${url}"}
+        EOF
+        }
+        case "$1" in
+            docker-cli-plugin-metadata)
+                docker_cli_plugin_metadata
+                ;;
+            *)
+                if [ -x "$(command -v docker-cli-compose)" ]; then
+                    exec docker-cli-compose "$@"
+                else
+                    exec "docker-$@"
+                fi
+               ;;
+        esac
+      EOS
+
+      # TODO: ln -s /usr/bin/docker ~/bin/com.docker.cli 
     end
   
     test do
