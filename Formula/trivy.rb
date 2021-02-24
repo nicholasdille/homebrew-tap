@@ -9,7 +9,6 @@ class Trivy < Formula
   head "https://github.com/aquasecurity/trivy.git"
 
   depends_on "go" => :build
-  #depends_on "git" => :build
 
   def install
     tag = Utils.safe_popen_read("git", "describe", "--tags")
