@@ -7,6 +7,11 @@ class DockerComposeCli < Formula
     revision: "4a4e6be1cbf9fa1b5a5935f0676e87a50ca66e23"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/docker-compose-cli-1.0.7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ab03f8811f113e36254d4343b833f2f5657e3cec55aea8f1eaaf4df6d1a9b17c"
+  end
+
   depends_on "go" => :build
   depends_on "docker"
 
