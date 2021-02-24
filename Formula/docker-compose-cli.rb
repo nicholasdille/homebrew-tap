@@ -53,7 +53,7 @@ class DockerComposeCli < Formula
       exec docker "$@"
     EOS
   end
-  
+
   def caveats
     <<~EOS
       You should create a symlink to enable the Docker CLI plugin:
