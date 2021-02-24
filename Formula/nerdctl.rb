@@ -3,10 +3,9 @@ class Nerdctl < Formula
   homepage "https://github.com/AkihiroSuda/nerdctl"
 
   url "https://github.com/AkihiroSuda/nerdctl.git",
-    tag:      "v0.6.0",
-    revision: "3d61627985197a3c9518354e5a837998c3957176"
+    tag:      "v0.6.1",
+    revision: "7399297823f1d5745929d1e458c9da0d49c9e079"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/AkihiroSuda/nerdctl.git"
 
   bottle do
