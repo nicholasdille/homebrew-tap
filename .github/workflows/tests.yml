@@ -58,7 +58,8 @@ jobs:
                   echo "Processing file ${FILE}"
                   FORMULA="$(basename "${FILE}" .rb)"
                   echo "Processing formula ${FORMULA}"
-                  brew install --build-bottle "${FORMULA}"
+                  brew install --only-dependencies "${FORMULA}"
+                  brew install --ignore-dependencies --build-bottle "${FORMULA}"
               fi
           done
 
