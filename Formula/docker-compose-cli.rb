@@ -8,15 +8,17 @@ class DockerComposeCli < Formula
   license "Apache-2.0"
 
   depends_on "go" => :build
+  depends_on "docker"
+
+  conflicts_with "docker-compose"
 
   def install
     system "make", "-f", "builder.Makefile", "cross"
-    bin.install "bin/docker-linux-amd64" => "compose-cli"
+    bin.install "bin/docker-linux-amd64" => "docker-compose-cli"
 
-    # TODO: ~/.docker/cli-plugins/docker-compose
-    (buildpath/"docker-compose").write <<~EOS
+    (lib/"docker/cli-plugins/docker-compose").write <<~EOS
       #!/usr/bin/env bash
-      # https://gist.github.com/thaJeztah/b7950186212a49e91a806689e66b317d
+
       docker_cli_plugin_metadata() {
           if [ -z "$DOCKER_COMPOSE_VERSION" ]; then
               export DOCKER_COMPOSE_VERSION="$(docker-compose --version | cut -d " " -f 3 | cut -d "," -f 1)"
@@ -28,24 +30,40 @@ class DockerComposeCli < Formula
       {"SchemaVersion":"0.1.0","Vendor":"${vendor}","Version":"${DOCKER_COMPOSE_VERSION}","ShortDescription":"${description}","URL":"${url}"}
       EOF
       }
+
       case "$1" in
+
           docker-cli-plugin-metadata)
               docker_cli_plugin_metadata
               ;;
+
           *)
-              if [ -x "$(command -v docker-cli-compose)" ]; then
-                  exec docker-cli-compose "$@"
+              if [ -x "$(command -v docker-compose-cli)" ]; then
+                  exec docker-compose-cli "$@"
               else
                   exec "docker-$@"
               fi
              ;;
+
       esac
     EOS
 
-    # TODO: ln -s /usr/bin/docker ~/bin/com.docker.cli
+    (bin/"com.docker.cli").write <<~EOS
+      #!/usr/bin/env bash
+      exec docker "$@"
+    EOS
+  end
+  
+  def caveats
+    <<~EOS
+      You should create a symlink to enable the Docker CLI plugin:
+
+      mkdir -p $HOME/.docker/cli-plugins
+      ln -s #{lib}/docker/cli-plugins/docker-compose $HOME/.docker/cli-plugins
+    EOS
   end
 
   test do
-    system "docker", "compose", "--version"
+    system "docker", "compose", "--help"
   end
 end
