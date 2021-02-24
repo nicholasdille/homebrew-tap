@@ -8,7 +8,7 @@ class BuildxBin < Formula
 
   bottle :unneeded
 
-  depends_on "nicholasdille/tap/docker-bin"
+  depends_on "docker"
 
   def install
     bin.install "buildx-v#{version}.linux-amd64" => "docker-buildx"
