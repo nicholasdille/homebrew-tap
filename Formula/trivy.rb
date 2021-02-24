@@ -8,7 +8,7 @@ class Trivy < Formula
   license "Apache-2.0"
   head "https://github.com/aquasecurity/trivy.git"
 
-  depends_on "go" => :build
+  depends_on "go@1.15" => :build
 
   def install
     tag = Utils.safe_popen_read("git", "describe", "--tags")
