@@ -56,9 +56,14 @@ jobs:
           for FILE in ${FILES}; do
               if test "${FILE:0:${#STARTS_WITH}}" == "${STARTS_WITH}"; then
                   echo "Processing file ${FILE}"
+
                   FORMULA="$(basename "${FILE}" .rb)"
                   echo "Processing formula ${FORMULA}"
+
+                  echo "Installing dependencies"
                   brew install --only-dependencies "${FORMULA}"
+
+                  echo "Building bottle"
                   brew install --ignore-dependencies --build-bottle "${FORMULA}"
               fi
           done
