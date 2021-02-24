@@ -49,7 +49,7 @@ jobs:
                       --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | \
                   jq --raw-output '.[].filename'
           )
-          STARTS_WITH="scripts/"
+          STARTS_WITH="Formula/"
           for FILE in ${FILES}; do
               if test "${FILE:0:${#STARTS_WITH}}" == "${STARTS_WITH}"; then
                   echo "Processing file ${FILE}"
