@@ -6,15 +6,33 @@ class Buildx < Formula
     tag:      "v0.5.1",
     revision: "11057da37336192bfc57d81e02359ba7ba848e4a"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/docker/buildx.git"
 
   depends_on "go" => :build
 
   def install
-    system "make", "binaries"
-
-    bin.install "bin/buildx" => "docker-buildx"
+    tag = Utils.safe_popen_read(
+      "git",
+      "describe",
+      "--match",
+      "v[0-9]*",
+      "--dirty='.m'",
+      "--always",
+      "--tags"
+    )
+    revision = Utils.safe_popen_read(
+      "git",
+      "rev-parse",
+      "HEAD"
+    )
+    ENV["CGO_ENABLED"] = "0"
+    system "go",
+      "build",
+      "-ldflags",
+      "-s -w -X github.com/docker/buildx/version.Version=#{tag} -X github.com/docker/buildx/version.Revision=#{revision} -X github.com/docker/buildx/version.Package=github.com/docker/buildx",
+      "-o",
+      "#{bin}/docker-buildx",
+      "./cmd/buildx"
   end
 
   def caveats
