@@ -9,8 +9,8 @@ class Buildkitd < Formula
   head "https://github.com/moby/buildkit.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildkitd-0.8.1_1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "123570753c22f40fc740c085716a8bb808a6e7cd035e515a1123c6217ea8bc6e"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildkitd-0.8.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9bdbd7e6dca16061e8f22ea4282e18042b53ca5955b2ad6ac0274efb8dd5e4d6"
   end
 
   depends_on "go" => :build
