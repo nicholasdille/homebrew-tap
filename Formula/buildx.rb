@@ -27,6 +27,6 @@ class Buildx < Formula
   end
 
   test do
-    system "#{bin}/buildx", "--version"
+    system "#{bin}/docker-buildx", "version"
   end
 end
