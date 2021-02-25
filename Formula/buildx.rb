@@ -8,6 +8,11 @@ class Buildx < Formula
   license "Apache-2.0"
   head "https://github.com/docker/buildx.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildx-0.5.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4215197b5ffb19022ff7778968d26cba7d465a83e44e849efdbf07d31e557cbb"
+  end
+
   depends_on "go" => :build
 
   def install
