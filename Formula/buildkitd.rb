@@ -3,10 +3,9 @@ class Buildkitd < Formula
   homepage "https://github.com/moby/moby/issues/34227"
 
   url "https://github.com/moby/buildkit.git",
-    tag:      "v0.8.1",
-    revision: "8142d66b5ebde79846b869fba30d9d30633e74aa"
+    tag:      "v0.8.2",
+    revision: "9065b18ba4633c75862befca8188de4338d9f94a"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/moby/buildkit.git"
 
   bottle do
