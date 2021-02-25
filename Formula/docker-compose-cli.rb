@@ -6,6 +6,8 @@ class DockerComposeCli < Formula
     tag:      "v1.0.7",
     revision: "4a4e6be1cbf9fa1b5a5935f0676e87a50ca66e23"
   license "Apache-2.0"
+  revision 1
+  head "https://github.com/docker/compose-cli.git"
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/docker-compose-cli-1.0.7"
@@ -13,13 +15,19 @@ class DockerComposeCli < Formula
   end
 
   depends_on "go" => :build
-  depends_on "docker"
 
   conflicts_with "docker-compose"
 
   def install
-    system "make", "-f", "builder.Makefile", "cross"
-    bin.install "bin/docker-linux-amd64" => "docker-compose-cli"
+    tag = Utils.safe_popen_read("git", "describe", "--tags", "--match", "v[0-9]*")
+    ENV["CGO_ENABLED"] = "0"
+    system "go",
+      "build",
+      "-trimpath",
+      "-ldflags=-s -w -X github.com/docker/compose-cli/internal.Version=#{tag}",
+      "-o",
+      "#{bin}/docker-compose-cli",
+      "./cli"
 
     (lib/"docker/cli-plugins/docker-compose").write <<~EOS
       #!/usr/bin/env bash
@@ -69,6 +77,6 @@ class DockerComposeCli < Formula
   end
 
   test do
-    system "docker", "compose", "--help"
+    system "whereis", "docker-compose-cli"
   end
 end
