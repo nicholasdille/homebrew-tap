@@ -10,8 +10,8 @@ class Kapp < Formula
   head "https://github.com/vmware-tanzu/carvel-kapp.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kapp-0.35.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b66975bf08833d9e023132728f97d0c06e2fb2174b5f7660329b96e9aab9177f"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kapp-0.35.0_1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "acb222505e599ca85a15ccacd989fa686418e2fedfc07d30cef97ecdd9f75281"
   end
 
   depends_on "go" => :build
