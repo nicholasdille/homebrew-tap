@@ -11,6 +11,7 @@ class Buildx < Formula
   depends_on "go" => :build
 
   def install
+    pkg = "github.com/docker/buildx"
     tag = Utils.safe_popen_read(
       "git",
       "describe",
@@ -18,18 +19,21 @@ class Buildx < Formula
       "v[0-9]*",
       "--dirty='.m'",
       "--always",
-      "--tags"
+      "--tags",
     )
     revision = Utils.safe_popen_read(
       "git",
       "rev-parse",
-      "HEAD"
+      "HEAD",
     )
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
       "-ldflags",
-      "-s -w -X github.com/docker/buildx/version.Version=#{tag} -X github.com/docker/buildx/version.Revision=#{revision} -X github.com/docker/buildx/version.Package=github.com/docker/buildx",
+      "-s -w "\
+      "-X #{pkg}/version.Version=#{tag}"\
+      "-X #{pkg}/version.Revision=#{revision}"\
+      "-X #{pkg}/version.Package=#{pkg}",
       "-o",
       "#{bin}/docker-buildx",
       "./cmd/buildx"
