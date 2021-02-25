@@ -8,6 +8,11 @@ class Trivy < Formula
   license "Apache-2.0"
   head "https://github.com/aquasecurity/trivy.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/trivy-0.15.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e0a245cdda316d9f000660d977133221a3a2b113604594cfc118b89043854bc5"
+  end
+
   depends_on "go" => :build
 
   def install
