@@ -1,5 +1,5 @@
 class Trivy < Formula
-  desc "Simple and Comprehensive Vulnerability Scanner for Containers, Suitable for CI"
+  desc "Simple and comprehensive vulnerability scanner for containers suitable for CI"
   homepage "https://github.com/aquasecurity/trivy"
 
   url "https://github.com/aquasecurity/trivy.git",
