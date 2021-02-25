@@ -6,6 +6,7 @@ class Trivy < Formula
     tag:      "v0.15.0",
     revision: "08ca1b00b729b2a83c0e9f2f6e8d1a9f0110c455"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/aquasecurity/trivy.git"
 
   bottle do
@@ -19,8 +20,13 @@ class Trivy < Formula
     tag = Utils.safe_popen_read("git", "describe", "--tags")
     ENV["GO111MODULE"] = "on"
     ENV["CGO_ENABLED"] = "0"
-    system "go", "build", "-ldflags", "-s -w -X=main.version=#{tag}", "./cmd/trivy"
-    bin.install "trivy"
+    system "go",
+      "build",
+      "-ldflags",
+      "-s -w -X=main.version=#{tag}",
+      "-o",
+      "#{bin}/trivy",
+      "./cmd/trivy"
   end
 
   test do
