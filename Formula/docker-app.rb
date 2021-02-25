@@ -1,0 +1,30 @@
+class DockerApp < Formula
+  desc "Make your Docker Compose applications reusable, and share them on Docker Hub"
+  homepage "https://github.com/docker/app"
+
+  url "https://github.com/docker/app.git",
+    tag:      "v0.9.1-beta3",
+    revision: "9d2c67f87b7338eb1a0fa2f18eb81af3d2aac0e1"
+  license "Apache-2.0"
+  head "https://github.com/docker/app.git"
+
+  depends_on "go" => :build
+
+  def install
+    system "make", "bin/docker-app"
+    bin.install "bin/docker-app"
+  end
+
+  def caveats
+    <<~EOS
+      You should create a symlink to enable the Docker CLI plugin:
+
+      mkdir -p $HOME/.docker/cli-plugins
+      ln -s #{lib}/docker/cli-plugins/docker-app $HOME/.docker/cli-plugins
+    EOS
+  end
+
+  test do
+    system "#{bin}/docker-app", "version"
+  end
+end
