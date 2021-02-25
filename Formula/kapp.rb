@@ -6,6 +6,8 @@ class Kapp < Formula
     tag:      "v0.35.0",
     revision: "8e8ab96d9597e160ba6f813b1d92710c2a2d0068"
   license "Apache-2.0"
+  revision 1
+  head "https://github.com/vmware-tanzu/carvel-kapp.git"
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kapp-0.35.0"
@@ -13,12 +15,11 @@ class Kapp < Formula
   end
 
   depends_on "go" => :build
-  depends_on "nicholasdille/tap/ytt" => :build
-  depends_on "zip" => :build
 
   def install
-    system "./hack/build-binaries.sh"
-    bin.install "kapp-linux-amd64" => "kapp"
+    ENV["CGO_ENABLED"] = "0"
+    system "go", "build", "-ldflags=-buildid=", "-trimpath", "-o", "kapp", "./cmd/kapp"
+    bin.install "kapp"
   end
 
   test do

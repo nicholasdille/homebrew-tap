@@ -6,6 +6,7 @@ class Ytt < Formula
     tag:      "v0.31.0",
     revision: "0b8c690e3dc3edeba1e819d13de67ec3c22aa322"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/vmware-tanzu/carvel-ytt.git"
 
   bottle do
@@ -14,11 +15,11 @@ class Ytt < Formula
   end
 
   depends_on "go" => :build
-  depends_on "zip" => :build
 
   def install
-    system "./hack/build-binaries.sh"
-    bin.install "ytt-linux-amd64" => "ytt"
+    ENV["CGO_ENABLED"] = "0"
+    system "go", "build", "-ldflags=-buildid=", "-trimpath", "-o", "ytt", "./cmd/ytt"
+    bin.install "ytt"
   end
 
   test do
