@@ -8,6 +8,11 @@ class ManifestTool < Formula
   license "Apache-2.0"
   head "https://github.com/estesp/manifest-tool.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/manifest-tool-1.0.3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "48c4a0f71ade48657c785982a4294326677cbba08035e8448b69e110ea1b6b66"
+  end
+
   depends_on "go" => :build
 
   def install
