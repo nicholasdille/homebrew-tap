@@ -36,6 +36,17 @@ class Containerd < Formula
     end
   end
 
+  def caveats
+    <<~EOS
+      TODO: brew immortal
+      TODO: nsenter -U --preserve-credentials -m -n -t $(cat /home/linuxbrew/.linuxbrew/var/run/rootlesskit/containerd/child_pid)
+      TODO: export CONTAINERD_ADDRESS=/home/linuxbrew/.linuxbrew/var/run/containerd/containerd.sock
+      TODO: export CONTAINERD_SNAPSHOTTER=native
+      TODO: ctr images pull docker.io/library/alpine:latest
+      TODO: ctr run -t --rm --fifo-dir /tmp/foo-fifo --cgroup "" docker.io/library/alpine:latest foo
+    EOS
+  end
+
   test do
     system "#{bin}/containerd", "--version"
   end
