@@ -3,10 +3,9 @@ class DockerComposeCli < Formula
   homepage "https://github.com/docker/compose-cli"
 
   url "https://github.com/docker/compose-cli.git",
-    tag:      "v1.0.7",
-    revision: "4a4e6be1cbf9fa1b5a5935f0676e87a50ca66e23"
+    tag:      "v1.0.9",
+    revision: "1118cebc025742ef6e7251bb5849fee481b64929"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/docker/compose-cli.git"
 
   bottle do
