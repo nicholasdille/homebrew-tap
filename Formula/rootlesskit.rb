@@ -6,6 +6,7 @@ class Rootlesskit < Formula
     tag:      "v0.13.2",
     revision: "4d4817795ecea8dc976670cb27c105156d5ee5c0"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/rootless-containers/rootlesskit.git"
 
   bottle do
@@ -21,6 +22,12 @@ class Rootlesskit < Formula
     bin.install "bin/rootlessctl"
     bin.install "bin/rootlesskit"
     bin.install "bin/rootlesskit-docker-proxy"
+  end
+
+  def caveats
+    <<~EOS
+      Make sure that newuidmap and newgidmap from the uidmap package are available.
+    EOS
   end
 
   test do
