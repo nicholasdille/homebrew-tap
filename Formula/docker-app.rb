@@ -32,6 +32,6 @@ class DockerApp < Formula
   end
 
   test do
-    system "#{bin}/docker-app", "app", "version"
+    system "#{bin}/docker-app", "app", "--version"
   end
 end
