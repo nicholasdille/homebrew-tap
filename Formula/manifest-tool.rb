@@ -11,14 +11,14 @@ class ManifestTool < Formula
   depends_on "go" => :build
 
   def install
-    dir = buildpath/"src/github.com/estesp/manifest-tool"
-    dir.install (buildpath/"").children
-    cd dir do
-      ENV["GOPATH"] = buildpath
-      ENV["GO111MODULE"] = "auto"
-      system "make", "static"
-      bin.install "manifest-tool"
-    end
+    ENV["GOPATH"] = buildpath
+    ENV["GO111MODULE"] = "auto"
+    
+    (buildpath/"src/github.com/estesp").mkpath
+    ln_s buildpath, buildpath/"src/github.com/estesp/manifest-tool"
+
+    system "make", "static"
+    bin.install "manifest-tool"
   end
 
   test do
