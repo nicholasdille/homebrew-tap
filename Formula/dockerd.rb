@@ -8,6 +8,11 @@ class Dockerd < Formula
   license "Apache-2.0"
   head "https://github.com/moby/moby.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/dockerd-20.10.3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2f972528e97ff7dc8fcccfe9c62f8e814dbf6f70f607196a53526ce72b133993"
+  end
+
   depends_on "go" => :build
   depends_on "pkg-config" => :build
 
