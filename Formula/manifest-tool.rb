@@ -15,6 +15,7 @@ class ManifestTool < Formula
     dir.install (buildpath/"").children
     cd dir do
       ENV["GOPATH"] = buildpath
+      ENV["GO111MODULE"] = "auto"
       system "make", "static"
       bin.install "manifest-tool"
     end
