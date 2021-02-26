@@ -13,7 +13,7 @@ class ManifestTool < Formula
   def install
     ENV["GOPATH"] = buildpath
     ENV["GO111MODULE"] = "auto"
-    
+
     (buildpath/"src/github.com/estesp").mkpath
     ln_s buildpath, buildpath/"src/github.com/estesp/manifest-tool"
 
