@@ -15,6 +15,11 @@ class Dockerd < Formula
 
   depends_on "go" => :build
   depends_on "pkg-config" => :build
+  depends_on "immortal"
+  depends_on "nicholasdille/tap/containerd"
+  depends_on "nicholasdille/tap/rootlesskit"
+  depends_on "nicholasdille/tap/runc"
+  depends_on "nicholasdille/tap/slirp4netns"
 
   def install
     ENV["AUTO_GOPATH"] = "1"
@@ -25,6 +30,35 @@ class Dockerd < Formula
     bin.install "bundles/binary-daemon/dockerd-#{version}" => "dockerd"
     bin.install "bundles/binary-daemon/docker-proxy"
     bin.install "bundles/binary-daemon/docker-init"
+    bin.install "contrib/dockerd-rootless.sh"
+
+    (buildpath/"daemon.json").write <<~EOS
+      {
+        "features": {
+          "buildkit": true
+        }
+      }
+    EOS
+    (etc/"docker").install "daemon.json"
+
+    (var/"run/dockerd").mkpath
+    (var/"log").mkpath
+    (buildpath/"dockerd.yml").write <<~EOS
+      cmd: #{HOMEBREW_PREFIX}/bin/dockerd-rootless.sh --config-file #{etc}/docker/daemon.json
+      cwd: #{etc}/docker
+      env:
+        XDG_RUNTIME_DIR: #{var}/run/dockerd
+      pid:
+        parent: #{var}/run/dockerd/parent.pid
+        child: #{var}/run/dockerd/child.pid
+      log:
+        file: #{var}/log/dockerd.log
+        age: 86400
+        num: 7
+        size: 1
+        timestamp: true
+    EOS
+    (etc/"immortal").install "dockerd.yml"
   end
 
   test do
