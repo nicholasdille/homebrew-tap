@@ -6,6 +6,7 @@ class Dockerd < Formula
     tag:      "v20.10.3",
     revision: "46229ca1d815cfd4b50eb377ac75ad8300e13a85"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/moby/moby.git"
 
   bottle do
