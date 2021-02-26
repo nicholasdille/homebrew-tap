@@ -14,9 +14,9 @@ class DockerdBin < Formula
   depends_on "nicholasdille/tap/runc"
   depends_on "nicholasdille/tap/slirp4netns"
 
-  resource "docker-rootless-extras" do
-    url "https://download.docker.com/linux/static/stable/x86_64/docker-rootless-extras-20.10.3.tgz"
-    sha256 "6a7e2fe34112dfdbec619af4ca4db877133b29f245475df099e812d0d75e8eb5"
+  resource "dockerd-rootless.sh" do
+    url "https://github.com/moby/moby/raw/v20.10.3/contrib/dockerd-rootless.sh"
+    sha256 "5dd61047cf0925fae90de142c03d85c776ff0d56ceb2e1bd4841d26c0a3bde72"
   end
 
   def install
@@ -24,8 +24,7 @@ class DockerdBin < Formula
     bin.install "docker-proxy"
     bin.install "dockerd"
 
-    resource("docker-rootless-extras").stage do
-      bin.install "dockerd-rootless-setuptool.sh"
+    resource("dockerd-rootless.sh").stage do
       bin.install "dockerd-rootless.sh"
     end
 
