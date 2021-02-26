@@ -11,8 +11,15 @@ class DockerApp < Formula
   depends_on "go" => :build
 
   def install
-    system "make", "bin/docker-app"
-    bin.install "bin/docker-app"
+    ENV["GOPATH"] = buildpath
+    ENV["GO111MODULE"] = "auto"
+
+    dir = buildpath/"src/github.com/docker/app"
+    dir.install (buildpath/"").children
+    cd dir do
+      system "make", "bin/docker-app"
+      bin.install "bin/docker-app"
+    end
   end
 
   def caveats
@@ -25,6 +32,6 @@ class DockerApp < Formula
   end
 
   test do
-    system "#{bin}/docker-app", "version"
+    system "#{bin}/docker-app", "app", "version"
   end
 end
