@@ -8,6 +8,11 @@ class DockerApp < Formula
   license "Apache-2.0"
   head "https://github.com/docker/app.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/docker-app-0.9.1-beta3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ad51dd21a84dda2710719f343dfcbe2b1a76f20684c899c5e6e38330eb06c9d3"
+  end
+
   depends_on "go" => :build
 
   def install
