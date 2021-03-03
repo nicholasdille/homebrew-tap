@@ -1,5 +1,7 @@
 class Norouter < Formula
-  desc "IP-over-Stdio. The easiest multi-host & multi-cloud networking ever. No root privilege is required"
+  desc "IP-over-Stdio."\
+  " The easiest multi-host & multi-cloud networking ever."\
+  " No root privilege is required"
   homepage "https://norouter.io/"
 
   url "https://github.com/norouter/norouter.git",
@@ -11,7 +13,6 @@ class Norouter < Formula
   depends_on "go" => :build
 
   def install
-    tag = Utils.safe_popen_read("git", "describe", "--tags")
     ENV["GO111MODULE"] = "on"
     ENV["CGO_ENABLED"] = "0"
     system "go",
