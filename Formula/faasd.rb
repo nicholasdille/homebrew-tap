@@ -12,7 +12,9 @@ class Faasd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "2c232e0dddbd016e8c43130f56c579a4879fa218c496ab9e2b376a979f3ed260"
   end
 
+  depends_on "git" => :build
   depends_on "go" => :build
+  depends_on "make" => :build
   depends_on "openssl" => :build
   depends_on "immortal"
   depends_on "nicholasdille/tap/containerd"

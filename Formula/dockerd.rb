@@ -14,7 +14,9 @@ class Dockerd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "a2befb6f7242567309945a48e1c208e1c329cb1db3edb00228e5d63c93018035"
   end
 
+  depends_on "git" => :build
   depends_on "go" => :build
+  depends_on "make" => :build
   depends_on "pkg-config" => :build
   depends_on "immortal"
   depends_on "nicholasdille/tap/containerd"

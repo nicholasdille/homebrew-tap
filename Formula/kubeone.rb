@@ -13,7 +13,9 @@ class Kubeone < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "d72c0bf0b4d552dc0f93fa17ffa7fc25cc263c01aee38ca3a80f7d7264b16c56"
   end
 
+  depends_on "git" => :build
   depends_on "go" => :build
+  depends_on "make" => :build
 
   def install
     system "make", "dist/kubeone"

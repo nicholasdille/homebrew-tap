@@ -13,6 +13,7 @@ class Task < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0252af3f09720072a65c6b23baaa379fbbccd9661b025d9824ea30a689d0ee00"
   end
 
+  depends_on "git" => :build
   depends_on "go" => :build
 
   def install

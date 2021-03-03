@@ -13,6 +13,7 @@ class Buildx < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "4215197b5ffb19022ff7778968d26cba7d465a83e44e849efdbf07d31e557cbb"
   end
 
+  depends_on "git" => :build
   depends_on "go" => :build
 
   def install

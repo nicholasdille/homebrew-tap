@@ -13,6 +13,7 @@ class DockerComposeCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0b9bb8c74764773b6606d6c3c13c16d22418d1394623bac3a9ffd3d2037a56f9"
   end
 
+  depends_on "git" => :build
   depends_on "go" => :build
 
   conflicts_with "docker-compose"

@@ -13,7 +13,9 @@ class Regclient < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "8ff71cefa23107ea8936be2a218159a26af4ac48e739e08319f750eaf5fe5eeb"
   end
 
+  depends_on "git" => :build
   depends_on "go" => :build
+  depends_on "make" => :build
 
   def install
     system "make"

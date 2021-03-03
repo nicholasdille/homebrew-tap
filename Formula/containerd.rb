@@ -18,9 +18,11 @@ class Containerd < Formula
   option "without-devmapper", "Support device mapper"
   option "without-cri", "Support CRI"
 
+  depends_on "git" => :build
   depends_on "go" => :build
   depends_on "go-md2man" => :build
   depends_on "libseccomp" => :build
+  depends_on "make" => :build
   depends_on "pkg-config" => :build
   depends_on "nicholasdille/tap/rootlesskit"
   depends_on "nicholasdille/tap/slirp4netns"

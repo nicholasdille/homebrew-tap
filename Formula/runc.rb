@@ -15,6 +15,7 @@ class Runc < Formula
   end
 
   option "with-nokmem", "Disable kernel memory accounting"
+  depends_on "git" => :build
   depends_on "go" => :build
   depends_on "go-md2man" => :build
   depends_on "libseccomp" => [:build, :recommended]

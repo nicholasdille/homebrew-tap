@@ -13,7 +13,9 @@ class Nerdctl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "60aa76b4a72e9f9391edae25adff104747d902a6e60c56a5df7db2cf385db526"
   end
 
+  depends_on "git" => :build
   depends_on "go" => :build
+  depends_on "make" => :build
   depends_on "nicholasdille/tap/containerd"
   depends_on "nicholasdille/tap/buildkitd" => :recommended
   depends_on "nicholasdille/tap/cni" => :recommended

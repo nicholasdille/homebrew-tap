@@ -14,6 +14,7 @@ class Buildkitd < Formula
   end
 
   depends_on "go" => :build
+  depends_on "make" => :build
   depends_on "immortal"
   depends_on "nicholasdille/tap/fuse-overlayfs-bin"
   depends_on "nicholasdille/tap/rootlesskit"

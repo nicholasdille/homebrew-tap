@@ -20,6 +20,7 @@ class Slirp4netns < Formula
   depends_on "libcap" => :build
   depends_on "libseccomp" => :build
   depends_on "libslirp" => :build
+  depends_on "make" => :build
   depends_on "pkg-config" => :build
 
   def install
