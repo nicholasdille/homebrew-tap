@@ -16,6 +16,7 @@ class Footloose < Formula
     system "go",
       "build",
       "-mod=vendor",
+      "-ldflags", "-X main.version=#{version}",
       "-o",
       "#{bin}/footloose",
       "."
