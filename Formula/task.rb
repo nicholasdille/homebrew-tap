@@ -8,6 +8,11 @@ class Task < Formula
   license "MIT"
   head "https://github.com/go-task/task.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/task-3.2.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0252af3f09720072a65c6b23baaa379fbbccd9661b025d9824ea30a689d0ee00"
+  end
+
   depends_on "go" => :build
 
   def install
