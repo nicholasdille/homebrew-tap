@@ -9,7 +9,7 @@ class Firecracker < Formula
   head "https://github.com/firecracker-microvm/firecracker.git"
 
   def install
-    system "tools/devtool", "build", "--release"
+    system "tools/devtool", "-y", "build", "--release"
     bin.install "build/cargo_target/x86_64-unknown-linux-musl/release/firecracker"
     bin.install "build/cargo_target/x86_64-unknown-linux-musl/release/jailer"
   end
