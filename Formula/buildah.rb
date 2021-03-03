@@ -37,6 +37,13 @@ class Buildah < Formula
       "--workdir", "/src",
       "buildah",
       "make", "static"
+
+    bin.install "bin/buildah"
+
+    bash_completion.install "contrib/completions/bash/buildah"
+
+    system "make", "-C", "docs", "GOMD2MAN=go-md2man"
+    man1.install Dir["docs/*.1"]
   end
 
   test do
