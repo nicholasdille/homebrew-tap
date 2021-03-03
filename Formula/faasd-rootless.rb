@@ -35,7 +35,7 @@ class FaasdRootless < Formula
       cmd: #{bin}/faasd provider
       cwd: #{var}/lib/faasd-provider
       env:
-        secret_mount_path: {{.SecretMountPath}}
+        secret_mount_path: #{var}/lib/faasd/secrets
         basic_auth: true
       pid:
         parent: #{var}/run/faasd-provider/parent.pid
