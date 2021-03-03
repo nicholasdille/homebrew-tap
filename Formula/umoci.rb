@@ -8,9 +8,9 @@ class Umoci < Formula
   license "Apache-2.0"
   head "https://github.com/opencontainers/umoci.git"
 
-  depends_on "make" => :build
   depends_on "go" => :build
   depends_on "go-md2man" => :build
+  depends_on "make" => :build
 
   def install
     system "make", "umoci.static"
