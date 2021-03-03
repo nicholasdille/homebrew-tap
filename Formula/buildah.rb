@@ -17,11 +17,17 @@ class Buildah < Formula
   depends_on "nicholasdille/tap/runc"
 
   def install
-    system "make", "buildah"
-    bin.install "bin/buildah"
+    dir = buildpath/"src/github.com/containers/buildah"
+    dir.install (buildpath/"").children
+    cd dir do
+      ENV["GOPATH"] = buildpath
+        
+      system "make", "buildah"
+      bin.install "bin/buildah"
 
-    system "make", "-C", "docs", "GOMD2MAN=go-md2man"
-    system "make", "-C", "docs", "install", "PREFIX=#{prefix}"
+      system "make", "-C", "docs", "GOMD2MAN=go-md2man"
+      system "make", "-C", "docs", "install", "PREFIX=#{prefix}"
+    end
   end
 
   test do
