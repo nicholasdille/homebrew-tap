@@ -21,7 +21,9 @@ class Crun < Formula
 
   def install
     system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure",
+      "--prefix=#{prefix}",
+      "--disable-systemd"
     system "make"
     system "make", "install"
   end
