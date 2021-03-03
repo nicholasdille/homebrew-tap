@@ -8,26 +8,35 @@ class Buildah < Formula
   license "Apache-2.0"
   head "https://github.com/containers/buildah.git"
 
-  depends_on "go" => :build
-  depends_on "go-md2man" => :build
-  depends_on "gpgme"
-  depends_on "libassuan"
-  depends_on "libseccomp"
-  depends_on "nicholasdille/tap/cni"
-  depends_on "nicholasdille/tap/runc"
-
   def install
-    dir = buildpath/"src/github.com/containers/buildah"
-    dir.install (buildpath/"").children
-    cd dir do
-      ENV["GOPATH"] = buildpath
-        
-      system "make", "buildah"
-      bin.install "bin/buildah"
+    # Build base from https://github.com/NixOS/docker
+    system "docker",
+      "build",
+      "--tag", "nix",
+      "github.com/NixOS/docker"
 
-      system "make", "-C", "docs", "GOMD2MAN=go-md2man"
-      system "make", "-C", "docs", "install", "PREFIX=#{prefix}"
-    end
+    # Create Dockerfile
+    (buildpath/"Dockerfile").write <<~EOS
+      FROM nix
+      RUN apk update \
+       && apk add bash make git go
+    EOS
+
+    # Build custom image
+    system "docker",
+      "build",
+      "--tag", "buildah",
+      "."
+
+    # Run build
+    system "docker",
+      "run",
+      "--interactive",
+      "--rm",
+      "--mount", "type=bind,src=#{buildpath},dst=/src",
+      "--workdir", "/src",
+      "buildah",
+      "make", "static"
   end
 
   test do
