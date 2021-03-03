@@ -8,6 +8,11 @@ class Norouter < Formula
   license "Apache-2.0"
   head "https://github.com/norouter/norouter.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/norouter-0.6.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "bf79a52b7248d3a8fb0af92b31b8180bcb014fc484c1f845e5b08909dc1f83b1"
+  end
+
   depends_on "go" => :build
 
   def install
