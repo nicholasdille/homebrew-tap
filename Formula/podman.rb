@@ -8,6 +8,11 @@ class Podman < Formula
   license "Apache-2.0"
   head "https://github.com/containers/podman.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/podman-3.0.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "508af7c0f2c351e02f264b63be714948109660d8407dac3941b338088f207392"
+  end
+
   depends_on "go" => :build
   depends_on "go-md2man" => :build
 
