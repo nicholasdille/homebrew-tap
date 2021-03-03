@@ -52,6 +52,6 @@ class ContainerdRootless < Formula
   end
 
   test do
-    system "#{bin}/containerd", "--version"
+    system "#{HOMEBREW_PREFIX}/bin", "--version"
   end
 end

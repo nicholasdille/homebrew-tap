@@ -52,6 +52,6 @@ class BuildkitdRootless < Formula
   end
 
   test do
-    system "#{bin}/buildkitd", "--version"
+    system "#{HOMEBREW_PREFIX}/bin/buildkitd", "--version"
   end
 end
