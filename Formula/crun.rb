@@ -20,9 +20,12 @@ class Crun < Formula
   depends_on "yajl" => :build
 
   def install
+    ENV["LDFLAGS"] = "-static"
     system "./autogen.sh"
     system "./configure",
       "--prefix=#{prefix}",
+      "--enable-static",
+      "--disable-dl",
       "--disable-systemd"
     system "make"
     system "make", "install"
