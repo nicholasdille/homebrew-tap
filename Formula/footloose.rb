@@ -23,6 +23,6 @@ class Footloose < Formula
   end
 
   test do
-    system "#{bin}/footloose", "--version"
+    system "#{bin}/footloose", "version"
   end
 end
