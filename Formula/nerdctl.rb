@@ -23,15 +23,33 @@ class Nerdctl < Formula
 
   def install
     system "make"
+
     bin.install "_output/nerdctl"
     bin.install "extras/rootless/containerd-rootless.sh"
+
+    (buildpath/"nerdctl-rootless").write <<~EOS
+      #!/bin/bash
+
+      export XDG_RUNTIME_DIR=#{var}/run/containerd
+      export CNI_PATH=#{prefix}/bin
+      export NETCONFPATH=#{etc}/cni/net.d
+
+      #{prefix}/bin/nerdctl "$@"
+    EOS
+    (etc/"docker").install "nerdctl-rootless"
+  end
+
+  def post_install
     (var/"lib/nerdctl").mkpath
   end
 
   def caveats
     <<~EOS
       TODO: brew immortal
-      TODO: XDG_RUNTIME_DIR=/home/linuxbrew/.linuxbrew/var/run/containerd nerdctl --cni-path /home/linuxbrew/.linuxbrew/bin/ --cni-netconfpath /home/linuxbrew/.linuxbrew/etc/cni/net.d/ run -it --rm alpine
+      TODO: XDG_RUNTIME_DIR=#{var}/run/containerd
+      TODO: CNI_PATH=#{prefix}/bin
+      TODO: NETCONFPATH=#{etc}/cni/net.d
+      TODO: nerdctl.sh
     EOS
   end
 
