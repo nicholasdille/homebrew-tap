@@ -27,6 +27,6 @@ class Oras < Formula
   end
 
   test do
-    system "#{bin}/task", "--version"
+    system "#{bin}/oras", "version"
   end
 end
