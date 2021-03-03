@@ -1,7 +1,5 @@
 class Norouter < Formula
-  desc "IP-over-Stdio."\
-  " The easiest multi-host & multi-cloud networking ever."\
-  " No root privilege is required"
+  desc "IP-over-Stdio. The easiest multi-host & multi-cloud networking ever"
   homepage "https://norouter.io/"
 
   url "https://github.com/norouter/norouter.git",
