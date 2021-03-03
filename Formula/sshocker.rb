@@ -1,5 +1,5 @@
 class Sshocker < Formula
-  desc "ssh + reverse sshfs + port forwarder, in Docker-like CLI"
+  desc "Ssh + reverse sshfs + port forwarder, in Docker-like CLI"
   homepage "https://github.com/AkihiroSuda/sshocker"
 
   url "https://github.com/AkihiroSuda/sshocker.git",
