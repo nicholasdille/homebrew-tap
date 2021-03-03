@@ -36,7 +36,6 @@ class Containerd < Formula
       buildtags << "no_devmapper" if build.without? "devmapper"
       buildtags << "no_cri"       if build.without? "cri"
 
-      system "make", "build", "BUILDTAGS=#{buildtags.join(" ")}"
       system "make", "binaries", "BUILDTAGS=#{buildtags.join(" ")}"
       system "make", "install", "DESTDIR=#{prefix}"
     end
