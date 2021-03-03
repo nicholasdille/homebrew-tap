@@ -8,6 +8,11 @@ class Oras < Formula
   license "MIT"
   head "https://github.com/deislabs/oras.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/oras-0.10.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d2dbce485aa7d01e9cb3235992c068a5d2e0316dd4f0bfc205072767b71e2a2c"
+  end
+
   depends_on "go" => :build
 
   def install
