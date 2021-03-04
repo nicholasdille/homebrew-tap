@@ -8,6 +8,11 @@ class Umoci < Formula
   license "Apache-2.0"
   head "https://github.com/opencontainers/umoci.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/umoci-0.4.6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fe05d61ba5ec50d67774af4b123621ad08d2c509548eb9f98a2b7a64ef74629a"
+  end
+
   depends_on "go" => :build
   depends_on "go-md2man" => :build
   depends_on "make" => :build
