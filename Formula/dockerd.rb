@@ -9,8 +9,8 @@ class Dockerd < Formula
   head "https://github.com/moby/moby.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/dockerd-20.10.3_1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a2befb6f7242567309945a48e1c208e1c329cb1db3edb00228e5d63c93018035"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/dockerd-20.10.5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cf180c805b1a8080c98fb592bf22f8b4240c9651ebcefa7de1a0f190151d5b7f"
   end
 
   depends_on "git" => :build
