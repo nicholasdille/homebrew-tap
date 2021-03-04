@@ -9,8 +9,8 @@ class Firecracker < Formula
   head "https://github.com/firecracker-microvm/firecracker.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/firecracker-0.23.3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3dc808351b42689c4e068383ce3999682d195d317c2f88066c4a6bbc1f02ecb3"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/firecracker-0.24.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1bb709b79d7a461eb22937e254079727cd139bb21a19f6513d40d6e04e0836da"
   end
 
   def install
