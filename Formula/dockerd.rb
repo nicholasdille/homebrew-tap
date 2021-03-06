@@ -25,7 +25,6 @@ class Dockerd < Formula
     bin.install "bundles/binary-daemon/dockerd-#{version}" => "dockerd"
     bin.install "bundles/binary-daemon/docker-proxy"
     bin.install "bundles/binary-daemon/docker-init"
-    bin.install "contrib/dockerd-rootless.sh"
 
     (buildpath/"daemon.json").write <<~EOS
       {
