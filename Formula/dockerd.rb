@@ -6,22 +6,15 @@ class Dockerd < Formula
     tag:      "v20.10.5",
     revision: "363e9a88a11be517d9e8c65c998ff56f774eb4dc"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/moby/moby.git"
-
-  bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/dockerd-20.10.5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "cf180c805b1a8080c98fb592bf22f8b4240c9651ebcefa7de1a0f190151d5b7f"
-  end
 
   depends_on "git" => :build
   depends_on "go" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
-  depends_on "immortal"
   depends_on "nicholasdille/tap/containerd"
-  depends_on "nicholasdille/tap/rootlesskit"
   depends_on "nicholasdille/tap/runc"
-  depends_on "nicholasdille/tap/slirp4netns"
 
   def install
     ENV["AUTO_GOPATH"] = "1"
@@ -42,25 +35,6 @@ class Dockerd < Formula
       }
     EOS
     (etc/"docker").install "daemon.json"
-
-    (var/"run/dockerd").mkpath
-    (var/"log").mkpath
-    (buildpath/"dockerd.yml").write <<~EOS
-      cmd: #{HOMEBREW_PREFIX}/bin/dockerd-rootless.sh --config-file #{etc}/docker/daemon.json
-      cwd: #{etc}/docker
-      env:
-        XDG_RUNTIME_DIR: #{var}/run/dockerd
-      pid:
-        parent: #{var}/run/dockerd/parent.pid
-        child: #{var}/run/dockerd/child.pid
-      log:
-        file: #{var}/log/dockerd.log
-        age: 86400
-        num: 7
-        size: 1
-        timestamp: true
-    EOS
-    (etc/"immortal").install "dockerd.yml"
   end
 
   test do
