@@ -6,8 +6,13 @@ class Containerd < Formula
     tag:      "v1.4.3",
     revision: "269548fa27e0089a8b8278fc4fc781d7f65a939b"
   license "Apache-2.0"
-  revision 4
+  revision 3
   head "https://github.com/containerd/containerd.git"
+
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containerd-1.4.3_3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ac6f0de779593b8e238eff9267e10d6e2607102df5063296a2ed1f70fc5cfd4d"
+  end
 
   option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
   option "without-devmapper", "Support device mapper"

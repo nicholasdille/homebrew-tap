@@ -6,8 +6,12 @@ class Faasd < Formula
     tag:      "0.11.1",
     revision: "6262ff2f4a05f0bc8d773e01dc81b0301c0d69d5"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/openfaas/faasd.git"
+
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/faasd-0.11.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2c232e0dddbd016e8c43130f56c579a4879fa218c496ab9e2b376a979f3ed260"
+  end
 
   depends_on "git" => :build
   depends_on "go" => :build
