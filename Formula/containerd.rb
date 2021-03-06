@@ -31,9 +31,9 @@ class Containerd < Formula
       ENV["GOPATH"] = buildpath
 
       buildtags = []
-      buildtags << "no_btrfs" if build.without? "btrfs"
+      buildtags << "no_btrfs"     if build.without? "btrfs"
       buildtags << "no_devmapper" if build.without? "devmapper"
-      buildtags << "no_cri" if build.without? "cri"
+      buildtags << "no_cri"       if build.without? "cri"
 
       system "make", "build", "BUILDTAGS=#{buildtags.join(" ")}"
       system "make", "binaries", "BUILDTAGS=#{buildtags.join(" ")}"
