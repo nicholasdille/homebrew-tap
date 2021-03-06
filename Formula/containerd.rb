@@ -28,6 +28,7 @@ class Containerd < Formula
     dir = buildpath/"src/github.com/containerd/containerd"
     dir.install (buildpath/"").children
     cd dir do
+      ENV["GO111MODULE"] = "auto"
       ENV["GOPATH"] = buildpath
 
       buildtags = []
