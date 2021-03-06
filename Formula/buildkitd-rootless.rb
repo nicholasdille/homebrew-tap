@@ -15,8 +15,15 @@ class BuildkitdRootless < Formula
   depends_on "nicholasdille/tap/slirp4netns"
 
   def install
+    (buildpath/"buildkitd-rootless.sh").write <<~EOS
+      #!/bin/bash
+
+      #{HOMEBREW_PREFIX}/bin/rootlesskit --net=slirp4netns --copy-up=/etc --disable-host-loopback #{HOMEBREW_PREFIX}/bin/buildkitd
+    EOS
+    bin.install "buildkitd-rootless.sh"
+
     (buildpath/"buildkitd.yml").write <<~EOS
-      cmd: #{HOMEBREW_PREFIX}/bin/rootlesskit --net=slirp4netns --copy-up=/etc --disable-host-loopback #{HOMEBREW_PREFIX}/bin/buildkitd
+      cmd: buildkitd-rootless.sh
       env:
         XDG_RUNTIME_DIR: #{var}/run/buildkitd
       pid:

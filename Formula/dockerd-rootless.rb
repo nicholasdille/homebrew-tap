@@ -14,6 +14,8 @@ class DockerdRootless < Formula
   depends_on "nicholasdille/tap/slirp4netns"
 
   def install
+    bin.install "contrib/dockerd-rootless.sh"
+
     (buildpath/"dockerd.yml").write <<~EOS
       cmd: #{HOMEBREW_PREFIX}/bin/dockerd-rootless.sh --config-file #{etc}/docker/daemon.json
       cwd: #{etc}/docker
