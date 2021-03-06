@@ -6,6 +6,7 @@ class Slirp4netns < Formula
     tag:      "v1.1.9",
     revision: "4e37ea557562e0d7a64dc636eff156f64927335e"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/rootless-containers/slirp4netns.git"
 
   bottle do
