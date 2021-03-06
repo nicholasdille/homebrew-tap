@@ -2,9 +2,9 @@ class DockerdRootless < Formula
   desc "Docker daemon"
   homepage "https://www.docker.com"
 
-  url "https://github.com/moby/moby.git",
-    tag:      "v20.10.5",
-    revision: "363e9a88a11be517d9e8c65c998ff56f774eb4dc"
+  url "file:///dev/null"
+  version "1.0.0"
+  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   license "Apache-2.0"
   head "https://github.com/moby/moby.git"
 

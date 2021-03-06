@@ -2,9 +2,9 @@ class BuildkitdRootless < Formula
   desc "Concurrent, cache-efficient, and Dockerfile-agnostic builder toolkit"
   homepage "https://github.com/moby/moby/issues/34227"
 
-  url "https://github.com/moby/buildkit.git",
-    tag:      "v0.8.2",
-    revision: "9065b18ba4633c75862befca8188de4338d9f94a"
+  url "file:///dev/null"
+  version "1.0.0"
+  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   license "Apache-2.0"
   head "https://github.com/moby/buildkit.git"
 
