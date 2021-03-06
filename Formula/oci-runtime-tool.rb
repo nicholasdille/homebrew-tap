@@ -8,8 +8,8 @@ class OciRuntimeTool < Formula
   license "Apache-2.0"
   head "https://github.com/opencontainers/runtime-tools.git"
 
-  depends_on "make" => :build
   depends_on "go" => :build
+  depends_on "make" => :build
 
   def install
     dir = buildpath/"src/github.com/opencontainers/runtime-tools"
