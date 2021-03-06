@@ -2,9 +2,9 @@ class FaasdRootless < Formula
   desc "Lightweight & portable faas engine"
   homepage "https://gumroad.com/l/serverless-for-everyone-else"
 
-  url "https://github.com/openfaas/faasd.git",
-    tag:      "0.11.1",
-    revision: "6262ff2f4a05f0bc8d773e01dc81b0301c0d69d5"
+  url "file:///dev/null"
+  version "1.0.0"
+  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   license "Apache-2.0"
 
   depends_on "immortal"
