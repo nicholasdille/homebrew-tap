@@ -27,13 +27,6 @@ class Buildkitd < Formula
     bin.install "bin/buildkitd"
   end
 
-  def caveats
-    <<~EOS
-      TODO: brew immortal
-      TODO: export BUILDKIT_HOST
-    EOS
-  end
-
   test do
     system "#{bin}/buildkitd", "--version"
   end
