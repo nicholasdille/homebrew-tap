@@ -19,7 +19,11 @@ class Buildah < Formula
     (buildpath/"Dockerfile").write <<~EOS
       FROM nix
       RUN apk update \
-       && apk add bash make git go
+       && apk add \
+              bash \
+              make \
+              git \
+              go
     EOS
 
     # Build custom image
