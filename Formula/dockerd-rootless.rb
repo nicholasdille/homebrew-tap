@@ -46,6 +46,6 @@ class DockerdRootless < Formula
   end
 
   test do
-    system "#{bin}/dockerd", "--version"
+    system "#{HOMEBREW_PREFIX}/bin/dockerd", "--version"
   end
 end
