@@ -42,6 +42,17 @@ class Buildah < Formula
       "buildah",
       "make", "static"
 
+    uid = Utils.safe_popen_read("id", "-u")
+    gid = Utils.safe_popen_read("id", "-u")
+    system "docker", 
+      "run",
+      "--interactive",
+      "--rm",
+      "--mount", "type=bind,src=$PWD,dst=/src",
+      "--workdir", "/src",
+      "alpine",
+      "chown", "-R", "#{uid}:#{gid}", "."
+
     bin.install "bin/buildah"
 
     bash_completion.install "contrib/completions/bash/buildah"
