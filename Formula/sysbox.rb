@@ -1,19 +1,25 @@
 class SysboxGitDownloadStrategy < GitDownloadStrategy
   def update_submodules
+    ohai "Fixing submodules in root"
     command! "sed",
       args:  ["-i", "-E", "s|git@github.com:|https://github.com/|", ".gitmodules"],
       chdir: cached_location
+    command! "sed",
+      args:  ["-i", "-E", "s|git@github.com:|https://github.com/|", ".git/config"],
+      chdir: cached_location
     command! "git",
-      args:  ["submodule", "update", "--init"],
+      args:  ["submodule", "update"],
       chdir: cached_location
 
+    ohai "Fixing submodules in sysbox-fs"
     command! "sed",
       args:  ["-i", "-E", "s|git@github.com:|https://github.com/|", "sysbox-fs/.gitmodules"],
       chdir: cached_location
     command! "git",
-      args:  ["submodule", "update", "--init"],
+      args:  ["submodule", "update"],
       chdir: cached_location/"sysbox-fs"
 
+    ohai "Fixing submodules in sysbox-libs"
     command! "sed",
       args:  ["-i", "-E", "s|git@github.com:|https://github.com/|", "sysbox-libs/.gitmodules"],
       chdir: cached_location
