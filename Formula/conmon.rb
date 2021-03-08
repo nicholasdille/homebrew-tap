@@ -9,7 +9,6 @@ class Conmon < Formula
   head "https://github.com/containers/conmon.git"
 
   depends_on "gcc" => :build
-  depends_on "git" => :build
   depends_on "glib" => :build
   depends_on "libcap" => :build
   depends_on "make" => :build
