@@ -12,6 +12,13 @@ class FaasdRootless < Formula
   depends_on "nicholasdille/tap/faasd"
 
   def install
+    (buildpath/"faasd-rootless.sh").write <<~EOS
+      #/bin/bash
+
+      echo DUMMY
+    EOS
+    bin.install "faasd-rootless.sh"
+
     (buildpath/"faasd.yml").write <<~EOS
       cmd: #{bin}/faasd up
       cwd: #{var}/lib/faasd
