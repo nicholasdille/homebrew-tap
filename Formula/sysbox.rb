@@ -30,7 +30,7 @@ class Sysbox < Formula
   url "https://github.com/nestybox/sysbox.git",
     tag:      "v0.2.1",
     revision: "2ed540ae54e4f8fd9fff8655037de5edd38a4a56",
-    :using => SysboxGitDownloadStrategy
+    using:    SysboxGitDownloadStrategy
   license "Apache-2.0"
   head "https://github.com/nestybox/sysbox.git"
 
