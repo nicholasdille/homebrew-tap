@@ -23,6 +23,6 @@ class OciImageTool < Formula
   end
 
   test do
-    system "#{bin}/oci-runtime-tool", "--version"
+    system "#{bin}/oci-image-tool", "--version"
   end
 end
