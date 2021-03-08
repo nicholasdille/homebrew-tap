@@ -20,7 +20,7 @@ class FaasdRootless < Formula
     bin.install "faasd-rootless.sh"
 
     (buildpath/"faasd.yml").write <<~EOS
-      cmd: #{bin}/faasd up
+      cmd: #{HOMEBREW_PREFIX}/bin/faasd up
       cwd: #{var}/lib/faasd
       pid:
         parent: #{var}/run/faasd/parent.pid
@@ -39,7 +39,7 @@ class FaasdRootless < Formula
     (var/"run/faasd-provider").mkpath
     (var/"log").mkpath
     (buildpath/"faasd-provider.yml").write <<~EOS
-      cmd: #{bin}/faasd provider
+      cmd: #{HOMEBREW_PREFIX}/bin/faasd provider
       cwd: #{var}/lib/faasd-provider
       env:
         secret_mount_path: #{var}/lib/faasd/secrets
@@ -71,6 +71,6 @@ class FaasdRootless < Formula
   end
 
   test do
-    system "#{bin}/faasd", "version"
+    system "#{HOMEBREW_PREFIX}/bin/faasd", "version"
   end
 end
