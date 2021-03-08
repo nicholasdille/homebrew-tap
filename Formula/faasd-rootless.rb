@@ -13,7 +13,7 @@ class FaasdRootless < Formula
 
   def install
     (buildpath/"faasd-rootless.sh").write <<~EOS
-      #/bin/bash
+      #!/bin/bash
 
       echo DUMMY
     EOS
