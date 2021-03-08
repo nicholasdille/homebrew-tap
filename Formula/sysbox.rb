@@ -44,10 +44,12 @@ class Sysbox < Formula
 
   def install
     system "make", "sysbox"
-    system "make", "install", "INSTALL_DIR=#{prefix}"
+    system "make", "install", "INSTALL_DIR=#{bin}"
   end
 
   test do
-    system "sysbox", "--version"
+    system "sysbox-runc", "--version"
+    system "sysbox-mgr", "--version"
+    system "sysbox-fs", "--version"
   end
 end
