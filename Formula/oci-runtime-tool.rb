@@ -15,9 +15,10 @@ class OciRuntimeTool < Formula
     dir = buildpath/"src/github.com/opencontainers/runtime-tools"
     dir.install (buildpath/"").children
     cd dir do
-      ENV["GO111MODULE"] = "on"
+      ENV["GO111MODULE"] = "auto"
       ENV["GOPATH"] = buildpath
       system "make", "tool"
+      bin.install "oci-runtime-tool"
     end
   end
 
