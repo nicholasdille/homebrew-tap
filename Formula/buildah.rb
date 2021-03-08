@@ -44,7 +44,7 @@ class Buildah < Formula
 
     uid = Utils.safe_popen_read("id", "-u")
     gid = Utils.safe_popen_read("id", "-u")
-    system "docker", 
+    system "docker",
       "run",
       "--interactive",
       "--rm",
