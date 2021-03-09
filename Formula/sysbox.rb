@@ -40,6 +40,11 @@ class Sysbox < Formula
   license "Apache-2.0"
   head "https://github.com/nestybox/sysbox.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/sysbox-0.2.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "bb752c6b26a2c30c7083897f4c281a3e84cf912b58dee85e6b7c0ab833af5db5"
+  end
+
   depends_on "make" => :build
 
   def install
