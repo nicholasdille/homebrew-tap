@@ -29,7 +29,7 @@ class Conmon < Formula
     # Build custom image
     system "docker",
       "build",
-      "--tag", "buildah",
+      "--tag", "conmon",
       "."
 
     # Run build
