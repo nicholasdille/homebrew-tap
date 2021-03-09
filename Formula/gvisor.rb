@@ -5,7 +5,6 @@ class Gvisor < Formula
   url "https://github.com/google/gvisor.git",
     tag:      "release-20210301.0",
     revision: "037bb2f45abada02fb50b563f3d37381f88de7f5"
-  version "20210301.0"
   license "Apache-2.0"
   head "https://github.com/google/gvisor.git"
 
