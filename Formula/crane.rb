@@ -8,6 +8,11 @@ class Crane < Formula
   license "Apache-2.0"
   head "https://github.com/google/go-containerregistry.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/crane-0.4.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1166acc99cec06a5371cf180e9dce849c8d676eed134a0da4d1dc25e1c694d39"
+  end
+
   depends_on "go" => :build
 
   def install
