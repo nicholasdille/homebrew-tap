@@ -13,6 +13,7 @@ class CriO < Formula
   depends_on "make" => :build
 
   def install
+    ENV["CGO_ENABLED"] = "0"
     system "make", "binaries"
     bin.install "bin/crio"
     bin.install "bin/crio-status"
