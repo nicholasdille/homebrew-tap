@@ -8,6 +8,11 @@ class OciImageTool < Formula
   license "Apache-2.0"
   head "https://github.com/opencontainers/image-tools.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/oci-image-tool-1.0.0-rc1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f11e0313bc925475cc6fd2f3d9857a3b60710bf1204bdfd1986bcffa4c099da6"
+  end
+
   depends_on "go" => :build
   depends_on "make" => :build
 
