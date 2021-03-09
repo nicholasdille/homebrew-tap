@@ -8,15 +8,52 @@ class Conmon < Formula
   license "Apache-2.0"
   head "https://github.com/containers/conmon.git"
 
-  depends_on "gcc" => :build
-  depends_on "glib" => :build
-  depends_on "libcap" => :build
-  depends_on "make" => :build
-  depends_on "nicholasdille/tap/runc" => :build
-  depends_on "pkg-config" => :build
-
   def install
-    system "make"
+    # Build base from https://github.com/NixOS/docker
+    system "docker",
+      "build",
+      "--tag", "nix",
+      "github.com/NixOS/docker"
+
+    # Create Dockerfile
+    (buildpath/"Dockerfile").write <<~EOS
+      FROM nix
+      RUN apk update \
+       && apk add \
+              bash \
+              make \
+              git \
+              go
+    EOS
+
+    # Build custom image
+    system "docker",
+      "build",
+      "--tag", "buildah",
+      "."
+
+    # Run build
+    system "docker",
+      "run",
+      "--interactive",
+      "--rm",
+      "--mount", "type=bind,src=#{buildpath},dst=/src",
+      "--workdir", "/src",
+      "conmon",
+      "make", "static"
+
+    # Fix permission
+    uid = Utils.safe_popen_read("id", "-u")
+    gid = Utils.safe_popen_read("id", "-u")
+    system "docker",
+      "run",
+      "--interactive",
+      "--rm",
+      "--mount", "type=bind,src=$PWD,dst=/src",
+      "--workdir", "/src",
+      "alpine",
+      "chown", "-R", "#{uid}:#{gid}", "."
+
     bin.install "bin/conmon"
   end
 
