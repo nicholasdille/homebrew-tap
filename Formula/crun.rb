@@ -10,7 +10,7 @@ class Crun < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "gcc@10" => :build
+  depends_on "gcc" => :build
   depends_on "go-md2man" => :build
   depends_on "libcap" => :build
   depends_on "libseccomp" => :build
