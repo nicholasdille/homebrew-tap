@@ -49,7 +49,7 @@ class Conmon < Formula
       "run",
       "--interactive",
       "--rm",
-      "--mount", "type=bind,src=$PWD,dst=/src",
+      "--mount", "type=bind,src=#{buildpath},dst=/src",
       "--workdir", "/src",
       "alpine",
       "chown", "-R", "#{uid}:#{gid}", "."
