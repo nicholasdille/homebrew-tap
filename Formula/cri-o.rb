@@ -49,6 +49,6 @@ class CriO < Formula
   end
 
   test do
-    system "#{bin}/conmon", "--version"
+    system "#{bin}/cri-o", "--version"
   end
 end
