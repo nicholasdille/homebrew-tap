@@ -8,6 +8,11 @@ class ContainerdRootless < Formula
   license "Apache-2.0"
   head "https://github.com/containerd/containerd.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containerd-rootless-0.6.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "15cfe4099524f6251659ca3c9cf5fea6fab97c3c12b49e58fb8f5710c5e654ae"
+  end
+
   depends_on "immortal"
   depends_on "nicholasdille/tap/containerd"
   depends_on "nicholasdille/tap/rootlesskit"
