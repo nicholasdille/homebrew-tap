@@ -8,6 +8,11 @@ class DockerdRootless < Formula
   license "Apache-2.0"
   head "https://github.com/moby/moby.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/dockerd-rootless-20.10.5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4467b92c91d34df45ebf5990f0d7ea00ac63fd7c56ea6b7696ce2f885855b715"
+  end
+
   depends_on "immortal"
   depends_on "nicholasdille/tap/dockerd"
   depends_on "nicholasdille/tap/rootlesskit"
