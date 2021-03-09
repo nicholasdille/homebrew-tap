@@ -8,6 +8,11 @@ class OciRuntimeTool < Formula
   license "Apache-2.0"
   head "https://github.com/opencontainers/runtime-tools.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/oci-runtime-tool-0.9.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "dc259be8ac071e104d1b59bd8372a8dd39442e818be505d1f0ca70c3e1e58285"
+  end
+
   depends_on "go" => :build
   depends_on "make" => :build
 
