@@ -8,6 +8,11 @@ class BuildkitdRootless < Formula
   license "Apache-2.0"
   head "https://github.com/moby/buildkit.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildkitd-rootless-1.0.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "995f153f030d4b4117cbbddc4a59898a6527eb377804c7278853f883d1f7b86d"
+  end
+
   depends_on "immortal"
   depends_on "nicholasdille/tap/buildkitd"
   depends_on "nicholasdille/tap/fuse-overlayfs-bin"
