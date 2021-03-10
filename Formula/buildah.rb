@@ -8,6 +8,11 @@ class Buildah < Formula
   license "Apache-2.0"
   head "https://github.com/containers/buildah.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildah-1.19.6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d991bf1bc5fdb978a63de532686e9274219cf14c9652ad59a48fe8e2cd2d2d6f"
+  end
+
   depends_on "go-md2man" => :build
   depends_on "make" => :build
 
