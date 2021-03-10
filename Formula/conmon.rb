@@ -43,8 +43,6 @@ class Conmon < Formula
       "make", "static"
 
     # Fix permission
-    uid = Utils.safe_popen_read("id", "-u")
-    gid = Utils.safe_popen_read("id", "-u")
     system "docker",
       "run",
       "--interactive",
@@ -52,7 +50,7 @@ class Conmon < Formula
       "--mount", "type=bind,src=#{buildpath},dst=/src",
       "--workdir", "/src",
       "alpine",
-      "chown", "-R", "#{uid}:#{gid}", "."
+      "chown", "-R", "#{Process.uid}:#{Process.gid}", "."
 
     bin.install "bin/conmon"
   end
