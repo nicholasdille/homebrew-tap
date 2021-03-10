@@ -6,6 +6,7 @@ class Kapp < Formula
     tag:      "v0.36.0",
     revision: "9019dcf7ff44c7019867c56256d986e1729c863c"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/vmware-tanzu/carvel-kapp.git"
 
   bottle do
@@ -23,6 +24,18 @@ class Kapp < Formula
       "-trimpath",
       "-o", "#{bin}/kapp",
       "./cmd/kapp"
+
+    # bash completion
+    output = Utils.safe_popen_read("#{bin}/kapp", "completion", "bash")
+    (bash_completion/"kapp").write output
+
+    # fish completion
+    output = Utils.safe_popen_read("#{bin}/kapp", "completion", "fish")
+    (fish_completion/"kapp.fish").write output
+
+    # zsh completion
+    output = Utils.safe_popen_read("#{bin}/kapp", "completion", "zsh")
+    (zsh_completion/"_kapp").write output
   end
 
   test do
