@@ -42,8 +42,6 @@ class Buildah < Formula
       "buildah",
       "make", "static"
 
-    uid = Utils.safe_popen_read("id", "-u")
-    gid = Utils.safe_popen_read("id", "-u")
     system "docker",
       "run",
       "--interactive",
@@ -51,7 +49,7 @@ class Buildah < Formula
       "--mount", "type=bind,src=#{buildpath},dst=/src",
       "--workdir", "/src",
       "alpine",
-      "chown", "-R", "#{uid}:#{gid}", "."
+      "chown", "-R", "#{Process.uid}:#{Process.gid}", "."
 
     bin.install "bin/buildah"
 
