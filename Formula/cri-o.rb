@@ -8,6 +8,11 @@ class CriO < Formula
   license "Apache-2.0"
   head "https://github.com/cri-o/cri-o.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cri-o-1.19.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1cda20c4da10d6d072e28a852e511075178003ae90b20318823fe116786d2e1e"
+  end
+
   depends_on "go" => :build
   depends_on "go-md2man" => :build
   depends_on "make" => :build
