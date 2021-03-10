@@ -8,6 +8,9 @@ class Buildah < Formula
   license "Apache-2.0"
   head "https://github.com/containers/buildah.git"
 
+  depends_on "go-md2man" => :build
+  depends_on "make" => :build
+
   def install
     # Build base from https://github.com/NixOS/docker
     system "docker",
