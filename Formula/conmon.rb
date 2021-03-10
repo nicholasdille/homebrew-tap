@@ -53,6 +53,9 @@ class Conmon < Formula
       "chown", "-R", "#{Process.uid}:#{Process.gid}", "."
 
     bin.install "bin/conmon"
+    
+    system "make", "-C", "docs", "GOMD2MAN=go-md2man"
+    man8.install Dir["docs/*.8"]
   end
 
   test do
