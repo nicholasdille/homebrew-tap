@@ -3,8 +3,8 @@ class Nerdctl < Formula
   homepage "https://github.com/AkihiroSuda/nerdctl"
 
   url "https://github.com/AkihiroSuda/nerdctl.git",
-    tag:      "v0.7.0",
-    revision: "c401dc9042b74ea16485424e92b944956f75035c"
+    tag:      "v0.7.1",
+    revision: "bfc14c75f401a5f39d50d93b0c6a461d0cc46358"
   license "Apache-2.0"
   head "https://github.com/AkihiroSuda/nerdctl.git"
 
