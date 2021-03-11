@@ -20,7 +20,7 @@ class Tl < Formula
                   " -X main.version=#{version}"\
                   " -X main.commit=#{commit}"\
                   " -X main.date=#{timestamp}",
-      "-o", bin/"tl"
+      "-o", bin/"tl",
       "."
   end
 
