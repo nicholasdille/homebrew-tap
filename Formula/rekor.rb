@@ -1,6 +1,6 @@
 class Rekor < Formula
   desc "Signature Transparency Log"
-  homepage "https://rekor.dev/"
+  homepage "https://sigstore.dev/"
 
   url "https://github.com/sigstore/rekor.git",
     tag:      "v0.1.1",
