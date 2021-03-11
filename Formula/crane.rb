@@ -15,6 +15,8 @@ class Crane < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "crane"
+
   def install
     pkg = "github.com/google/go-containerregistry"
     ENV["CGO_ENABLED"] = "0"
