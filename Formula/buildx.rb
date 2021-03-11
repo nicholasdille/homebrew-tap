@@ -6,12 +6,8 @@ class Buildx < Formula
     tag:      "v0.5.1",
     revision: "11057da37336192bfc57d81e02359ba7ba848e4a"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/docker/buildx.git"
-
-  bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildx-0.5.1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4215197b5ffb19022ff7778968d26cba7d465a83e44e849efdbf07d31e557cbb"
-  end
 
   depends_on "git" => :build
   depends_on "go" => :build
@@ -35,11 +31,10 @@ class Buildx < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
-      "-ldflags",
-      "-s -w "\
-      "-X #{pkg}/version.Version=#{tag}"\
-      "-X #{pkg}/version.Revision=#{revision}"\
-      "-X #{pkg}/version.Package=#{pkg}",
+      "-ldflags", "-s -w"\
+                  " -X #{pkg}/version.Version=#{tag}"\
+                  " -X #{pkg}/version.Revision=#{revision}"\
+                  " -X #{pkg}/version.Package=#{pkg}",
       "-o",
       "#{bin}/docker-buildx",
       "./cmd/buildx"
