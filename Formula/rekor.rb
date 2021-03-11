@@ -9,6 +9,7 @@ class Rekor < Formula
   head "https://github.com/sigstore/rekor.git"
 
   depends_on "go" => :build
+  depends_on "nicholasdille/tap/trillian"
 
   def install
     ENV["CGO_ENABLED"] = "0"
@@ -28,5 +29,6 @@ class Rekor < Formula
 
   test do
     system bin/"rekor", "--help"
+    system bin/"rekor-server", "--help"
   end
 end
