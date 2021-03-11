@@ -49,7 +49,7 @@ class Buildx < Formula
       You should create a symlink to enable the Docker CLI plugin:
 
       mkdir -p $HOME/.docker/cli-plugins
-      ln -s #{lib}/docker/cli-plugins/docker-buildx $HOME/.docker/cli-plugins
+      ln -s #{HOMEBREW_PREFIX}/bin/docker-buildx $HOME/.docker/cli-plugins
     EOS
   end
 
