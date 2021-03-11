@@ -5,7 +5,7 @@ class Cosign < Formula
   url "https://github.com/sigstore/cosign.git",
     tag:      "main",
     revision: "f74fac540531411764589d72467ad6641e402971"
-  version "main"
+  version "0.0.0"
   license "Apache-2.0"
   head "https://github.com/sigstore/cosign.git"
 
