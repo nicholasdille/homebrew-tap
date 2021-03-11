@@ -12,11 +12,18 @@ class Rekor < Formula
 
   def install
     ENV["CGO_ENABLED"] = "0"
+
     system "go",
       "build",
       "-ldflags", "-s -w",
       "-o", bin/"rekor",
       "./cmd/cli"
+
+    system "go",
+      "build",
+      "-ldflags", "-s -w",
+      "-o", bin/"rekor-server",
+      "./cmd/server"
   end
 
   test do
