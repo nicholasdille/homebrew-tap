@@ -8,6 +8,11 @@ class Rekor < Formula
   license "Apache-2.0"
   head "https://github.com/sigstore/rekor.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/rekor-0.1.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0cd3a03e4196fe5106f5ef36fe39938b4c54e8f8bc54bd72f14fa15d585125f4"
+  end
+
   depends_on "go" => :build
   depends_on "nicholasdille/tap/trillian"
 
