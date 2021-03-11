@@ -26,6 +26,6 @@ class Umoci < Formula
   end
 
   test do
-    system "#{bin}/umoci", "--version"
+    system bin/"umoci", "--version"
   end
 end

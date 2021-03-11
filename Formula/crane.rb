@@ -26,6 +26,6 @@ class Crane < Formula
   end
 
   test do
-    system "#{bin}/crane", "version"
+    system bin/"crane", "version"
   end
 end

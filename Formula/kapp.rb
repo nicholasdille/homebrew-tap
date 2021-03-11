@@ -22,23 +22,23 @@ class Kapp < Formula
       "build",
       "-ldflags=-buildid=",
       "-trimpath",
-      "-o", "#{bin}/kapp",
+      "-o", bin/"kapp",
       "./cmd/kapp"
 
     # bash completion
-    output = Utils.safe_popen_read("#{bin}/kapp", "completion", "bash")
+    output = Utils.safe_popen_read(bin/"kapp", "completion", "bash")
     (bash_completion/"kapp").write output
 
     # fish completion
-    output = Utils.safe_popen_read("#{bin}/kapp", "completion", "fish")
+    output = Utils.safe_popen_read(bin/"kapp", "completion", "fish")
     (fish_completion/"kapp.fish").write output
 
     # zsh completion
-    output = Utils.safe_popen_read("#{bin}/kapp", "completion", "zsh")
+    output = Utils.safe_popen_read(bin/"kapp", "completion", "zsh")
     (zsh_completion/"_kapp").write output
   end
 
   test do
-    system "#{bin}/kapp", "--version"
+    system bin/"kapp", "--version"
   end
 end

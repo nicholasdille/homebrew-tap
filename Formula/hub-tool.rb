@@ -13,7 +13,6 @@ class HubTool < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "78846ed6d72df6f7b973b3ccc463af476a4577d57525d298f690b2ad472f87c3"
   end
 
-  depends_on "git" => :build
   depends_on "go" => :build
 
   def install
@@ -34,14 +33,14 @@ class HubTool < Formula
     system "go",
       "build",
       "-trimpath",
-      "-ldflags",
-      "-s -w -X #{pkg}/internal.GitCommit=#{commit} -X #{pkg}/internal.Version=#{tag}",
-      "-o",
-      "#{bin}/hub-tool",
+      "-ldflags", "-s -w"\
+                  " -X #{pkg}/internal.GitCommit=#{commit}"\
+                  " -X #{pkg}/internal.Version=#{tag}",
+      "-o", bin/"hub-tool",
       "."
   end
 
   test do
-    system "#{bin}/hub-tool", "--version"
+    system bin/"hub-tool", "--version"
   end
 end

@@ -54,6 +54,6 @@ class Nerdctl < Formula
 
   test do
     ENV["XDG_RUNTIME_DIR"] = var/"lib/nerdctl"
-    system "#{bin}/nerdctl", "--version"
+    system bin/"nerdctl", "--version"
   end
 end

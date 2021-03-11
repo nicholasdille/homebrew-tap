@@ -28,6 +28,6 @@ class OciRuntimeTool < Formula
   end
 
   test do
-    system "#{bin}/oci-runtime-tool", "--version"
+    system bin/"oci-runtime-tool", "--version"
   end
 end

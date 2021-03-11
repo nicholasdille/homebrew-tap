@@ -14,7 +14,6 @@ class Buildx < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "900c685c5470a1633b706b2dc2287d9f6af077496a103b1f73eabd1994dd617e"
   end
 
-  depends_on "git" => :build
   depends_on "go" => :build
 
   def install
@@ -41,7 +40,7 @@ class Buildx < Formula
                   " -X #{pkg}/version.Revision=#{revision}"\
                   " -X #{pkg}/version.Package=#{pkg}",
       "-o",
-      "#{bin}/docker-buildx",
+      bin/"docker-buildx",
       "./cmd/buildx"
   end
 
@@ -55,6 +54,6 @@ class Buildx < Formula
   end
 
   test do
-    system "#{bin}/docker-buildx", "version"
+    system bin/"docker-buildx", "version"
   end
 end

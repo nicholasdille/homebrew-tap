@@ -28,6 +28,6 @@ class OciImageTool < Formula
   end
 
   test do
-    system "#{bin}/oci-image-tool", "--version"
+    system bin/"oci-image-tool", "--version"
   end
 end

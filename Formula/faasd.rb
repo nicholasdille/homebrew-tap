@@ -14,7 +14,6 @@ class Faasd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "1367b1673a1e43cde8ce94a7ac401ca9caa546cf3dbba008ee76377b15e014d1"
   end
 
-  depends_on "git" => :build
   depends_on "go" => :build
   depends_on "make" => :build
   depends_on "openssl" => :build
@@ -38,6 +37,6 @@ class Faasd < Formula
   end
 
   test do
-    system "#{bin}/faasd", "version"
+    system bin/"faasd", "version"
   end
 end

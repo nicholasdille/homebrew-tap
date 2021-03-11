@@ -33,6 +33,6 @@ class Buildkitd < Formula
   end
 
   test do
-    system "#{bin}/buildkitd", "--version"
+    system bin/"buildkitd", "--version"
   end
 end

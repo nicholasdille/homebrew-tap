@@ -21,6 +21,6 @@ class Cni < Formula
   end
 
   test do
-    system "#{bin}/loopback"
+    system bin/"loopback"
   end
 end

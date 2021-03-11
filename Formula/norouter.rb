@@ -20,14 +20,12 @@ class Norouter < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
-      "-ldflags",
-      "-s -w",
-      "-o",
-      "#{bin}/norouter",
+      "-ldflags", "-s -w",
+      "-o", bin/"norouter",
       "./cmd/norouter"
   end
 
   test do
-    system "#{bin}/norouter", "--version"
+    system bin/"norouter", "--version"
   end
 end

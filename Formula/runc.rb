@@ -15,7 +15,7 @@ class Runc < Formula
   end
 
   option "with-nokmem", "Disable kernel memory accounting"
-  depends_on "git" => :build
+
   depends_on "go" => :build
   depends_on "go-md2man" => :build
   depends_on "libseccomp" => [:build, :recommended]
@@ -43,9 +43,8 @@ class Runc < Formula
       "-mod=vendor",
       "-tags", "#{buildtags} netgo osusergo",
       "-ldflags", ldflags.join(" "),
-      "-o", "runc",
+      "-o", bin/"runc",
       "."
-    bin.install "runc"
 
     Pathname.glob("man/*.[1-8].md") do |md|
       section = md.to_s[/\.(\d+)\.md\Z/, 1]
@@ -57,6 +56,6 @@ class Runc < Formula
   end
 
   test do
-    system "#{bin}/runc", "--version"
+    system bin/"runc", "--version"
   end
 end

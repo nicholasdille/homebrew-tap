@@ -17,6 +17,6 @@ class StargzSnapshotterBin < Formula
   end
 
   test do
-    system "#{bin}/containerd-stargz-grpc", "--help"
+    system bin/"containerd-stargz-grpc", "--help"
   end
 end

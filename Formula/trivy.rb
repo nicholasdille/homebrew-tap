@@ -22,14 +22,12 @@ class Trivy < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
-      "-ldflags",
-      "-s -w -X=main.version=#{tag}",
-      "-o",
-      "#{bin}/trivy",
+      "-ldflags", "-s -w -X=main.version=#{tag}",
+      "-o", bin/"trivy",
       "./cmd/trivy"
   end
 
   test do
-    system "#{bin}/trivy", "--version"
+    system bin/"trivy", "--version"
   end
 end

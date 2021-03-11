@@ -30,6 +30,6 @@ class Podman < Formula
   end
 
   test do
-    system "#{bin}/podman", "--version"
+    system bin/"podman", "--version"
   end
 end

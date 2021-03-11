@@ -68,6 +68,6 @@ class Buildah < Formula
   end
 
   test do
-    system "#{bin}/buildah", "--version"
+    system bin/"buildah", "--version"
   end
 end

@@ -21,11 +21,11 @@ class Imgpkg < Formula
       "build",
       "-ldflags=-buildid=",
       "-trimpath",
-      "-o", "#{bin}/imgpkg",
+      "-o", bin/"imgpkg",
       "./cmd/imgpkg/..."
   end
 
   test do
-    system "#{bin}/imgpkg", "--version"
+    system bin/"imgpkg", "--version"
   end
 end

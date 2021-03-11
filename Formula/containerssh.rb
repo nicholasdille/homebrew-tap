@@ -38,6 +38,6 @@ class Containerssh < Formula
   end
 
   test do
-    system "#{bin}/containerssh", "--help"
+    system bin/"containerssh", "--help"
   end
 end

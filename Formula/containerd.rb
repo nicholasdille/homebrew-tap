@@ -17,7 +17,6 @@ class Containerd < Formula
   option "without-devmapper", "Support device mapper"
   option "without-cri", "Support CRI"
 
-  depends_on "git" => :build
   depends_on "go" => :build
   depends_on "go-md2man" => :build
   depends_on "libseccomp" => :build
@@ -42,6 +41,6 @@ class Containerd < Formula
   end
 
   test do
-    system "#{bin}/containerd", "--version"
+    system bin/"containerd", "--version"
   end
 end

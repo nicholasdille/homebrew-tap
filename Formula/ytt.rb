@@ -22,11 +22,11 @@ class Ytt < Formula
       "build",
       "-ldflags=-buildid=",
       "-trimpath",
-      "-o", "#{bin}/ytt",
+      "-o", bin/"ytt",
       "./cmd/ytt"
   end
 
   test do
-    system "#{bin}/ytt", "--version"
+    system bin/"ytt", "--version"
   end
 end

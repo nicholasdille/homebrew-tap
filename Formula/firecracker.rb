@@ -20,6 +20,6 @@ class Firecracker < Formula
   end
 
   test do
-    system "#{bin}/firecracker", "--version"
+    system bin/"firecracker", "--version"
   end
 end

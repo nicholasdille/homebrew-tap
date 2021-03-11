@@ -33,6 +33,6 @@ class Slirp4netns < Formula
   end
 
   test do
-    system "#{bin}/slirp4netns", "--version"
+    system bin/"slirp4netns", "--version"
   end
 end

@@ -22,17 +22,15 @@ class Oras < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
-      "-ldflags",
-      "-w"\
-      " -X #{pkg}/internal/version.BuildMetadata=#{version}"\
-      " -X #{pkg}/internal/version.GitCommit=#{commit}"\
-      " -X #{pkg}/internal/version.GitTreeState=clean",
-      "-o",
-      "#{bin}/oras",
+      "-ldflags", "-w -s"\
+                  " -X #{pkg}/internal/version.BuildMetadata=#{version}"\
+                  " -X #{pkg}/internal/version.GitCommit=#{commit}"\
+                  " -X #{pkg}/internal/version.GitTreeState=clean",
+      "-o", bin/"oras",
       "#{pkg}/cmd/oras"
   end
 
   test do
-    system "#{bin}/oras", "version"
+    system bin/"oras", "version"
   end
 end

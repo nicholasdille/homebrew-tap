@@ -25,9 +25,8 @@ class Kubeswitch < Formula
     system "go", "build",
       "-tags", "netgo osusergo",
       "-ldflags", ldflags.join(" "),
-      "-o", "kubeswitch",
+      "-o", bin/"kubeswitch",
       "./cmd/..."
-    bin.install "kubeswitch"
   end
 
   test do

@@ -23,6 +23,6 @@ class Sshocker < Formula
   end
 
   test do
-    system "#{bin}/sshocker", "--version"
+    system bin/"sshocker", "--version"
   end
 end

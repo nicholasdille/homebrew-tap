@@ -21,14 +21,12 @@ class Task < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
-      "-ldflags",
-      "-w -s -X main.version=#{tag}",
-      "-o",
-      "#{bin}/task",
+      "-ldflags", "-w -s -X main.version=#{tag}",
+      "-o", bin/"task",
       "./cmd/task"
   end
 
   test do
-    system "#{bin}/task", "--version"
+    system bin/"task", "--version"
   end
 end

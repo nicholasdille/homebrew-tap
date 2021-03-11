@@ -29,6 +29,6 @@ class ManifestTool < Formula
   end
 
   test do
-    system "#{bin}/manifest-tool", "--version"
+    system bin/"manifest-tool", "--version"
   end
 end

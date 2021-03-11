@@ -54,6 +54,6 @@ class CriO < Formula
   end
 
   test do
-    system "#{bin}/crio", "--version"
+    system bin/"crio", "--version"
   end
 end

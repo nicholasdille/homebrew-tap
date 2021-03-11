@@ -12,7 +12,6 @@ class Clusterawsadm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "aca68e8585781f17b8e10a074b991abd6818d17e2ad03c58ca10c3781b4c7d9c"
   end
 
-  depends_on "git" => :build
   depends_on "go" => :build
   depends_on "make" => :build
 
@@ -22,6 +21,6 @@ class Clusterawsadm < Formula
   end
 
   test do
-    system "#{bin}/clusterawsadm", "version"
+    system bin/"clusterawsadm", "version"
   end
 end

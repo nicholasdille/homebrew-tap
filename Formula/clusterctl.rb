@@ -13,7 +13,6 @@ class Clusterctl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "46a9ff62ce3216aeffab44270ddad7f5304c131b315665c3c92390f47ee6881b"
   end
 
-  depends_on "git" => :build
   depends_on "go" => :build
   depends_on "make" => :build
 
@@ -24,6 +23,6 @@ class Clusterctl < Formula
   end
 
   test do
-    system "#{bin}/clusterctl", "version"
+    system bin/"clusterctl", "version"
   end
 end

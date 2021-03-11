@@ -14,6 +14,6 @@ class FuseOverlayfsBin < Formula
   end
 
   test do
-    system "#{bin}/fuse-overlayfs", "--version"
+    system bin/"fuse-overlayfs", "--version"
   end
 end

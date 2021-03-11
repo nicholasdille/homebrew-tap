@@ -13,7 +13,6 @@ class DockerApp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ad51dd21a84dda2710719f343dfcbe2b1a76f20684c899c5e6e38330eb06c9d3"
   end
 
-  depends_on "git" => :build
   depends_on "go" => :build
   depends_on "make" => :build
 
@@ -39,6 +38,6 @@ class DockerApp < Formula
   end
 
   test do
-    system "#{bin}/docker-app", "app", "--version"
+    system bin/"docker-app", "app", "--version"
   end
 end

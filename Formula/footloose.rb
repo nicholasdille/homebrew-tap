@@ -21,13 +21,12 @@ class Footloose < Formula
     system "go",
       "build",
       "-mod=vendor",
-      "-ldflags", "-X main.version=#{version}",
-      "-o",
-      "#{bin}/footloose",
+      "-ldflags", "-s -w -X main.version=#{version}",
+      "-o", bin/"footloose",
       "."
   end
 
   test do
-    system "#{bin}/footloose", "version"
+    system bin/"footloose", "version"
   end
 end

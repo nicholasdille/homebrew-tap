@@ -53,8 +53,8 @@ class Sysbox < Formula
   end
 
   test do
-    system "sysbox-runc", "--version"
-    system "sysbox-mgr", "--version"
-    system "sysbox-fs", "--version"
+    system bin/"sysbox-runc", "--version"
+    system bin/"sysbox-mgr", "--version"
+    system bin/"sysbox-fs", "--version"
   end
 end

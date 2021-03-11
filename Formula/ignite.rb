@@ -28,6 +28,6 @@ class Ignite < Formula
   end
 
   test do
-    system "#{bin}/ignite", "version"
+    system bin/"ignite", "version"
   end
 end

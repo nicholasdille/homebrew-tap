@@ -32,6 +32,6 @@ class Rootlesskit < Formula
   end
 
   test do
-    system "#{bin}/rootlesskit", "--version"
+    system bin/"rootlesskit", "--version"
   end
 end

@@ -22,6 +22,6 @@ class CniIsolation < Formula
   end
 
   test do
-    system "#{bin}/isolation"
+    system bin/"isolation"
   end
 end
