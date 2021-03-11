@@ -8,6 +8,11 @@ class Trillian < Formula
   license "Apache-2.0"
   head "https://github.com/google/trillian.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/trillian-1.3.13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f7726186284966cc27582849c21f48a53db793a2f98ff2dc3d9d94e5e66510e0"
+  end
+
   depends_on "go" => :build
 
   def install
