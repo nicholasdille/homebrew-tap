@@ -9,8 +9,8 @@ class HubTool < Formula
   head "https://github.com/docker/hub-tool.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/hub-tool-0.3.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "78846ed6d72df6f7b973b3ccc463af476a4577d57525d298f690b2ad472f87c3"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/hub-tool-0.3.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7d39a2e34770f7bc21e7fa50c07d0e797128ff3569ad23835d964b19df813ca2"
   end
 
   depends_on "go" => :build
