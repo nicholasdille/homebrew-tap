@@ -9,8 +9,8 @@ class Faasd < Formula
   head "https://github.com/openfaas/faasd.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/faasd-0.11.4_1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1367b1673a1e43cde8ce94a7ac401ca9caa546cf3dbba008ee76377b15e014d1"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/faasd-0.11.4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4456c032b57daedc7212a60b46388ea192fbf842edb004aca3e83ffae7f98ffa"
   end
 
   depends_on "go" => :build
