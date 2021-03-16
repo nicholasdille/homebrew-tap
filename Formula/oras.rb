@@ -3,8 +3,8 @@ class Oras < Formula
   homepage "https://github.com/deislabs/oras"
 
   url "https://github.com/deislabs/oras.git",
-    tag:      "v0.10.0",
-    revision: "173c010570c48e4aa18ce186cae8cc812f8e8b6e"
+    tag:      "v0.11.0",
+    revision: "ec34f5103ff1c00e83acb0e0160653bda4477a69"
   license "MIT"
   head "https://github.com/deislabs/oras.git"
 
