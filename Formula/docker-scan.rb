@@ -9,8 +9,8 @@ class DockerScan < Formula
   head "https://github.com/docker/scan-cli-plugin.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/docker-scan-0.5.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "96e6ba25d6e6a7df6abdedc792fdde091f8e66a3dde5e20521f95f2279e429c4"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/docker-scan-0.6.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3d4fda6a5ce888ddd38b148c7d0e0f50c858f6c243fe7ce0f341fe9d373aa74c"
   end
 
   depends_on "go" => :build
