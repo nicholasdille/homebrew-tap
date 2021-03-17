@@ -9,8 +9,8 @@ class Oras < Formula
   head "https://github.com/deislabs/oras.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/oras-0.10.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d2dbce485aa7d01e9cb3235992c068a5d2e0316dd4f0bfc205072767b71e2a2c"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/oras-0.11.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0fd571d31650e8820974da1a7fc82567b19442136cf33c6a2a8a6d01b008a579"
   end
 
   depends_on "git" => :build
