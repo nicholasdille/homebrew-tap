@@ -8,6 +8,8 @@ class Conmon < Formula
   license "Apache-2.0"
   head "https://github.com/containers/conmon.git"
 
+  depends_on "go-md2man" => :build
+
   def install
     # Build base from https://github.com/NixOS/docker
     system "docker",
