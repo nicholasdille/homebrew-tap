@@ -8,6 +8,11 @@ class Conmon < Formula
   license "Apache-2.0"
   head "https://github.com/containers/conmon.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/conmon-2.0.27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c93f0c3bdf97ee5b1e953c986183ca4c487bf15d8d35b064e5b7ad9691002b21"
+  end
+
   depends_on "go-md2man" => :build
 
   def install
