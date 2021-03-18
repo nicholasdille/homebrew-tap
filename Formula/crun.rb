@@ -10,29 +10,29 @@ class Crun < Formula
 
   def install
     # Build base from https://github.com/NixOS/docker
+    image_name = "nix"
     system "docker",
       "build",
-      "--tag", "nix",
+      "--tag", image_name,
       "github.com/NixOS/docker"
 
-    # Build custom image
-    system "docker",
-      "build",
-      "--tag", "crun",
-      "."
-
     # Run build
+    container_name = "crun"
     system "docker",
       "run",
+      "--name", container_name,
       "--interactive",
       "--mount", "type=bind,src=#{buildpath},dst=/src",
       "--workdir", "/src",
-      "nix",
+      image_name,
       "nix", "build", "-f", "nix/"
     system "docker",
       "cp",
-      "nix:/src/result/bin/crun",
+      "#{container_name}:/src/result/bin/crun",
       "."
+    system "docker",
+      "rm",
+      container_name
 
     bin.install "crun"
   end
