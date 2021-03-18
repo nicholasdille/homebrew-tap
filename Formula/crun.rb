@@ -8,24 +8,33 @@ class Crun < Formula
   license "Apache-2.0"
   head "https://github.com/containers/crun.git"
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "gcc" => :build
-  depends_on "go-md2man" => :build
-  depends_on "libcap" => :build
-  depends_on "libseccomp" => :build
-  depends_on "libtool" => :build
-  depends_on "make" => :build
-  depends_on "pkg-config" => :build
-  depends_on "yajl" => :build
-
   def install
-    system "./autogen.sh"
-    system "./configure",
-      "--prefix=#{prefix}",
-      "--disable-systemd"
-    system "make"
-    system "make", "install"
+    # Build base from https://github.com/NixOS/docker
+    system "docker",
+      "build",
+      "--tag", "nix",
+      "github.com/NixOS/docker"
+
+    # Build custom image
+    system "docker",
+      "build",
+      "--tag", "crun",
+      "."
+
+    # Run build
+    system "docker",
+      "run",
+      "--interactive",
+      "--mount", "type=bind,src=#{buildpath},dst=/src",
+      "--workdir", "/src",
+      "nix",
+      "nix", "build", "-f", "nix/"
+    system "docker",
+      "cp",
+      "nix:/src/result/bin/crun",
+      "."
+
+    bin.install "crun"
   end
 
   test do
