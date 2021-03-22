@@ -24,8 +24,11 @@ class Nerdctl < Formula
 
   def install
     system "make"
-
     bin.install "_output/nerdctl"
+
+    # bash completion
+    output = Utils.safe_popen_read(bin/"nerdctl", "completion", "bash")
+    (bash_completion/"nerdctl").write output
 
     (buildpath/"nerdctl-rootless").write <<~EOS
       #!/bin/bash
