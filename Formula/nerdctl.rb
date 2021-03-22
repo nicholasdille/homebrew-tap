@@ -1,12 +1,13 @@
 class Nerdctl < Formula
   desc "Docker-compatible CLI for containerd"
-  homepage "https://github.com/AkihiroSuda/nerdctl"
+  homepage "https://github.com/containerd/nerdctl"
 
-  url "https://github.com/AkihiroSuda/nerdctl.git",
+  url "https://github.com/containerd/nerdctl.git",
     tag:      "v0.7.1",
     revision: "bfc14c75f401a5f39d50d93b0c6a461d0cc46358"
   license "Apache-2.0"
-  head "https://github.com/AkihiroSuda/nerdctl.git"
+  revision 1
+  head "https://github.com/containerd/nerdctl.git"
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/nerdctl-0.7.1"
