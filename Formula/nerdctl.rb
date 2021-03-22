@@ -27,6 +27,7 @@ class Nerdctl < Formula
     bin.install "_output/nerdctl"
 
     # bash completion
+    ENV["XDG_RUNTIME_DIR"] = "/tmp"
     output = Utils.safe_popen_read(bin/"nerdctl", "completion", "bash")
     (bash_completion/"nerdctl").write output
 
@@ -43,11 +44,12 @@ class Nerdctl < Formula
   end
 
   def post_install
-    (var/"lib/nerdctl").mkpath
+    (var/"run/nerdctl").mkpath
   end
 
   def caveats
     <<~EOS
+      TODO: Set XDG_RUNTIME_DIR
       TODO: brew immortal
       TODO: XDG_RUNTIME_DIR=#{var}/run/containerd
       TODO: CNI_PATH=#{prefix}/bin
