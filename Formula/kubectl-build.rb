@@ -12,7 +12,7 @@ class KubectlBuild < Formula
   depends_on "make" => :build
 
   def install
-    system "make", "build"#, "install", "INSTALL_DIR=#{bin}"
+    system "make", "build"
     bin.install "bin/linux/kubectl-buildkit"
     bin.install "bin/linux/kubectl-build"
   end
