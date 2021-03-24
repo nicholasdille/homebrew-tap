@@ -8,6 +8,11 @@ class Vendir < Formula
   license "Apache-2.0"
   head "https://github.com/vmware-tanzu/carvel-vendir.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/vendir-0.17.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "005452202004fd7bdb6a9cdde59e99149ce3793307c1b0f070edfb6c8004d582"
+  end
+
   depends_on "go" => :build
 
   def install
