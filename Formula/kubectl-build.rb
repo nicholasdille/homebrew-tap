@@ -1,0 +1,24 @@
+class KubectlBuild < Formula
+  desc "Tool for building container images with your Kubernetes cluster"
+  homepage "https://github.com/vmware-tanzu/buildkit-cli-for-kubectl"
+
+  url "https://github.com/vmware-tanzu/buildkit-cli-for-kubectl.git",
+    tag:      "v0.1.2",
+    revision: "25b70efa9a1eb0aee1923f506d074c9b62eb068f"
+  license "Apache-2.0"
+  head "https://github.com/vmware-tanzu/buildkit-cli-for-kubectl.git"
+
+  depends_on "go" => :build
+  depends_on "make" => :build
+
+  def install
+    system "make", "build"#, "install", "INSTALL_DIR=#{bin}"
+    bin.install "bin/linux/kubectl-buildkit"
+    bin.install "bin/linux/kubectl-build"
+  end
+
+  test do
+    system "whereis", "kubectl-buildkit"
+    system "whereis", "kubectl-build"
+  end
+end
