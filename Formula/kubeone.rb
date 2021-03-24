@@ -9,8 +9,8 @@ class Kubeone < Formula
   head "https://github.com/kubermatic/kubeone.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kubeone-1.2.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "48750ee6db64811d7807722a68775a824e581cbcc12a0146a2d8ab8f8d720e96"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kubeone-1.2.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "698f73241f0b162f287542af435480271e09d8dcb3660479946d937b85b66e02"
   end
 
   depends_on "go" => :build
