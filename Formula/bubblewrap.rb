@@ -8,6 +8,11 @@ class Bubblewrap < Formula
   license "LGPL-2.0-or-later"
   head "https://github.com/containers/bubblewrap.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/bubblewrap-0.4.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "63f0808f5c24be0b7beb880461c9cba763c64eff5ad1d28e90c006515f0c0ee6"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "gcc" => :build
