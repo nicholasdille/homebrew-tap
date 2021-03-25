@@ -3,8 +3,8 @@ class DockerScan < Formula
   homepage "https://github.com/docker/scan-cli-plugin"
 
   url "https://github.com/docker/scan-cli-plugin.git",
-    tag:      "v0.6.0",
-    revision: "cafb06dfc214a6e0bd31e71ea0732cf16ebaee3d"
+    tag:      "v0.7.0",
+    revision: "0b3c5646aba8e45226ddd0c4399450cf66e69fd6"
   license "Apache-2.0"
   head "https://github.com/docker/scan-cli-plugin.git"
 
