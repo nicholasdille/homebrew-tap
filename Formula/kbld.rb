@@ -8,6 +8,11 @@ class Kbld < Formula
   license "Apache-2.0"
   head "https://github.com/vmware-tanzu/carvel-kbld.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kbld-0.29.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4bee93d0c98da3a640348158fa4aec32c0911bc3a291257dedc993a633ac06e7"
+  end
+
   depends_on "go" => :build
 
   def install
