@@ -3,8 +3,8 @@ class Imgpkg < Formula
   homepage "https://carvel.dev/imgpkg"
 
   url "https://github.com/vmware-tanzu/carvel-imgpkg.git",
-    tag:      "v0.5.0",
-    revision: "75c1f5e644881a29872730e2c2851cb5a35d1cb6"
+    tag:      "v0.6.0",
+    revision: "425487b0c3e5be2770211da6ae42e7082c1a343b"
   license "Apache-2.0"
   head "https://github.com/vmware-tanzu/carvel-imgpkg.git"
 
