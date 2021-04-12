@@ -8,6 +8,11 @@ class Containerssh < Formula
   license "MIT"
   head "https://github.com/ContainerSSH/ContainerSSH.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containerssh-0.4.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1e59e6a492a6defbc54ba04693efeac677acf4d229e09cf905afc43fe4cfab19"
+  end
+
   depends_on "go" => :build
 
   def install
