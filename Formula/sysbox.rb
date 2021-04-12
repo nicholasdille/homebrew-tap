@@ -1,31 +1,25 @@
 class SysboxGitDownloadStrategy < GitDownloadStrategy
-  def update_submodules
-    ohai "Fixing submodules in root"
-    command! "sed",
-      args:  ["-i", "-E", "s|git@github.com:|https://github.com/|", ".gitmodules"],
-      chdir: cached_location
-    command! "sed",
-      args:  ["-i", "-E", "s|git@github.com:|https://github.com/|", ".git/config"],
-      chdir: cached_location
+  def update_submodules(timeout: nil)
+    ohai "Adding rewrite for SSH based URLs"
     command! "git",
-      args:  ["submodule", "update", "--init"],
-      chdir: cached_location
+      args: [
+        "config",
+        "--global",
+        "--add",
+        "url.https://github.com/nestybox/.insteadOf",
+        "git@github.com:nestybox/",
+      ]
+    
+    super
 
-    ohai "Fixing submodules in sysbox-fs"
-    command! "sed",
-      args:  ["-i", "-E", "s|git@github.com:|https://github.com/|", "sysbox-fs/.gitmodules"],
-      chdir: cached_location
+    ohai "Removing rewrite for SSH based URLs"
     command! "git",
-      args:  ["submodule", "update", "--init"],
-      chdir: cached_location/"sysbox-fs"
-
-    ohai "Fixing submodules in sysbox-libs"
-    command! "sed",
-      args:  ["-i", "-E", "s|git@github.com:|https://github.com/|", "sysbox-libs/.gitmodules"],
-      chdir: cached_location
-    command! "git",
-      args:  ["submodule", "update", "--init"],
-      chdir: cached_location/"sysbox-libs"
+    args: [
+      "config",
+      "--global",
+      "--unset-all",
+      "url.https://github.com/nestybox/.insteadOf",
+    ]
   end
 end
 
