@@ -9,7 +9,7 @@ class SysboxGitDownloadStrategy < GitDownloadStrategy
         "url.https://github.com/nestybox/.insteadOf",
         "git@github.com:nestybox/",
       ]
-    
+
     super
 
     ohai "Removing rewrite for SSH based URLs"
