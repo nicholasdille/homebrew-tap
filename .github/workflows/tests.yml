@@ -10,7 +10,7 @@ jobs:
       matrix:
         os:
         - ubuntu-latest
-        #- macOS-latest
+        - macOS-latest
     runs-on: ${{ matrix.os }}
     steps:
       - name: Set up Homebrew
