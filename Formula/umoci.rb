@@ -3,8 +3,8 @@ class Umoci < Formula
   homepage "https://umo.ci/"
 
   url "https://github.com/opencontainers/umoci.git",
-    tag:      "v0.4.6",
-    revision: "5efa06acfb3bb4e65d2711cf5255970948e047cf"
+    tag:      "v0.4.7",
+    revision: "17f38511d61846e2fb8ec01a1532f3ef5525e71d"
   license "Apache-2.0"
   head "https://github.com/opencontainers/umoci.git"
 
