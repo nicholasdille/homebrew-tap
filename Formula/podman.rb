@@ -9,8 +9,8 @@ class Podman < Formula
   head "https://github.com/containers/podman.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/podman-3.0.1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "508af7c0f2c351e02f264b63be714948109660d8407dac3941b338088f207392"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/podman-3.1.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d72fd44712fb7b9d8580db4f96ff5fd84b7ba61b3e267dd807ec3a01dab70a1a"
   end
 
   depends_on "git" => :build
