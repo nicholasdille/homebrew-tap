@@ -9,8 +9,8 @@ class Umoci < Formula
   head "https://github.com/opencontainers/umoci.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/umoci-0.4.6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fe05d61ba5ec50d67774af4b123621ad08d2c509548eb9f98a2b7a64ef74629a"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/umoci-0.4.7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d55567ad07a9450c99a33d0931eeb2a78c6aa51e4953b510b0ec4294508e4733"
   end
 
   depends_on "go" => :build
