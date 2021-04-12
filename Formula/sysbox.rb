@@ -40,6 +40,7 @@ class Sysbox < Formula
   end
 
   depends_on "make" => :build
+  depends_on :linux
 
   def install
     system "make", "sysbox"
