@@ -6,6 +6,7 @@ class Regclient < Formula
     tag:      "v0.3.0",
     revision: "5a6a1d95524b9c1c2d38a5af7ab744742f8d55e9"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/regclient/regclient.git"
 
   bottle do
@@ -25,6 +26,6 @@ class Regclient < Formula
   end
 
   test do
-    system bin/"regctl", "--help"
+    system bin/"regctl", "version"
   end
 end
