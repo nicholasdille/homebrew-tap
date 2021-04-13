@@ -8,6 +8,12 @@ class Localizer < Formula
   license "Apache-2.0"
   head "https://github.com/getoutreach/localizer.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/localizer-1.8.2"
+    sha256 cellar: :any_skip_relocation, catalina:     "137642f41417ad7851bf0d3c4f704de498865fae830d0296870b75856d50a883"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "73e56b40059a801db15704b0383acc9838c529afb2ae83907edd56c0b5589d31"
+  end
+
   option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
   option "without-devmapper", "Support device mapper"
   option "without-cri", "Support CRI"
