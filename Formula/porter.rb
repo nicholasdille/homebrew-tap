@@ -8,6 +8,12 @@ class Porter < Formula
   license "Apache-2.0"
   head "https://github.com/getporter/porter.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/porter-0.37.2"
+    sha256 cellar: :any_skip_relocation, catalina:     "7b37efc651d82a461f43fba9aa656edb434223572b0cf61af60024b021a7271f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "461ea8280fdecf98b99328d2891592f1309fcc80078aaf92c39406bba415823c"
+  end
+
   option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
   option "without-devmapper", "Support device mapper"
   option "without-cri", "Support CRI"
