@@ -9,8 +9,8 @@ class Ignite < Formula
   head "https://github.com/weaveworks/ignite.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/ignite-0.8.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "65bd47f2aeca99eabf1f1cbe0d2da4235ec8082225b49bc5abe2679ba17a45a6"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/ignite-0.9.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "88cdc3b0d52a2a6c150d360797309482791296b0ec5188cadb010ada3690ebca"
   end
 
   depends_on "go" => :build
