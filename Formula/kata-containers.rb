@@ -26,6 +26,7 @@ class KataContainers < Formula
     end
   end
 
-  # test do
-  # end
+  test do
+    system "true"
+  end
 end
