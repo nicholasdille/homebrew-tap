@@ -8,6 +8,12 @@ class Emojisum < Formula
   license "GPL-2.0-only"
   head "https://github.com/emojisum/emojisum.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/emojisum-0.0.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "2d2e8894aef1ae94ebaae69af0e175ad3085952adfbe193b460023b3483afb64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "458b33a7f8b53df0de78d977a9fd4f753580e9c30a9a762882513067a2b49f03"
+  end
+
   depends_on "go" => :build
 
   def install
