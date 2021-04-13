@@ -1,11 +1,11 @@
 class Emojisum < Formula
   desc "Emoji that checksum"
-  homepage "http://emoji.thisco.de/draft/"
+  homepage "https://github.com/emojisum/emojisum"
 
   url "https://github.com/emojisum/emojisum.git",
     revision: "cdca4cf09ee39ed6db5f0d90a2f6eddcdd9fd0c6"
   version "0.0.0"
-  license "GPL-2.0"
+  license "GPL-2.0-only"
   head "https://github.com/emojisum/emojisum.git"
 
   depends_on "go" => :build
