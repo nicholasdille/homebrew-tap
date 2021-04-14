@@ -9,8 +9,8 @@ class CriO < Formula
   head "https://github.com/cri-o/cri-o.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cri-o-1.20.2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e96a0a39830954741bb316963fefe090bab5800d7411947b4b2831c83a8db2c0"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cri-o-1.21.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "655becb62e1ed2431f8bb370ca120aa15bb1d6db2a01a1aad12df57fadcd34f4"
   end
 
   depends_on "go" => :build
