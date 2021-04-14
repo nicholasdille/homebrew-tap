@@ -22,6 +22,7 @@ class Distribution < Formula
 
       system "vndr"
       system "make", "binaries"
+      bin.install "bin/registry"
     end
   end
 
