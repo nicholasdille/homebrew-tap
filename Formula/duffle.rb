@@ -8,6 +8,12 @@ class Duffle < Formula
   license "MIT"
   head "https://github.com/cnabio/duffle.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/duffle-0.3.5-beta.1"
+    sha256 cellar: :any_skip_relocation, catalina:     "815770017010cdfce8701a2968c1a597031cfed90007abef9d0ea94358b7c9e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e8a93740e114c089ba8bad5768930d63744de9149682ea50373220694ca8bfde"
+  end
+
   depends_on "go" => :build
 
   def install
