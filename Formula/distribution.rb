@@ -12,6 +12,7 @@ class Distribution < Formula
   depends_on "make" => :build
   depends_on "nicholasdille/tap/gometalinter" => :build
   depends_on "nicholasdille/tap/vndr" => :build
+  depends_on :linux
 
   def install
     dir = buildpath/"src/github.com/docker/distribution"
