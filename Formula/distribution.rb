@@ -8,6 +8,11 @@ class Distribution < Formula
   license "Apache-2.0"
   head "https://github.com/distribution/distribution.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/distribution-2.7.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "92ca1ff2e0537841a3c884529f11debf9e9aa5e4e065aebf4444b789e28850ab"
+  end
+
   depends_on "go" => :build
   depends_on "make" => :build
   depends_on "nicholasdille/tap/gometalinter" => :build
