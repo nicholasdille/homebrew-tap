@@ -9,6 +9,8 @@ class Gometalinter < Formula
 
   bottle :unneeded
 
+  depends_on :linux
+
   def install
     bin.install "gometalinter"
     bin.install "gocyclo"
