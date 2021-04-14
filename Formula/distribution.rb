@@ -14,7 +14,7 @@ class Distribution < Formula
   depends_on "nicholasdille/tap/vndr" => :build
 
   def install
-    dir = buildpath/"src/github.com/distribution/distribution"
+    dir = buildpath/"src/github.com/docker/distribution"
     dir.install (buildpath/"").children
     cd dir do
       ENV["GO111MODULE"] = "auto"
