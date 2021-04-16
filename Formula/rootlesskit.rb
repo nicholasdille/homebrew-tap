@@ -15,6 +15,7 @@ class Rootlesskit < Formula
 
   depends_on "go" => :build
   depends_on "make" => :build
+  depends_on :linux
 
   def install
     system "make"
