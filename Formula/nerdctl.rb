@@ -16,6 +16,7 @@ class Nerdctl < Formula
   depends_on "git" => :build
   depends_on "go" => :build
   depends_on "make" => :build
+  depends_on :linux
   depends_on "nicholasdille/tap/containerd-rootless"
   depends_on "nicholasdille/tap/buildkitd-rootless" => :recommended
   depends_on "nicholasdille/tap/cni" => :recommended
