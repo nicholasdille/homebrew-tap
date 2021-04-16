@@ -10,6 +10,7 @@ class Quark < Formula
 
   depends_on "make" => :build
   depends_on "rust" => :build
+  depends_on :linux
 
   def install
     system "make", "release"
