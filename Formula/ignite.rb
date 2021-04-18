@@ -15,6 +15,7 @@ class Ignite < Formula
 
   depends_on "go" => :build
   depends_on "make" => :build
+  depends_on arch: :x86_64
   depends_on :linux
   depends_on "nicholasdille/tap/cni"
 
