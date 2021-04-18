@@ -9,6 +9,9 @@ class FuseOverlayfsBin < Formula
 
   bottle :unneeded
 
+  depends_on arch: :x86_64
+  depends_on :linux
+
   def install
     bin.install "fuse-overlayfs-x86_64" => "fuse-overlayfs"
   end

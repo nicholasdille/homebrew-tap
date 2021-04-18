@@ -9,6 +9,8 @@ class StargzSnapshotterBin < Formula
 
   bottle :unneeded
 
+  depends_on arch: :x86_64
+  depends_on :linux
   depends_on "nicholasdille/tap/containerd"
 
   def install
