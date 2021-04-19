@@ -19,6 +19,7 @@ class Bubblewrap < Formula
   depends_on "libcap" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
+  depends_on :linux
 
   def install
     system "./autogen.sh"

@@ -20,6 +20,7 @@ class Runc < Formula
   depends_on "go-md2man" => :build
   depends_on "libseccomp" => [:build, :recommended]
   depends_on "pkg-config" => :build
+  depends_on :linux
 
   def install
     commit = Utils.git_short_head

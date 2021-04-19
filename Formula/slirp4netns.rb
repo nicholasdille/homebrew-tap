@@ -23,6 +23,7 @@ class Slirp4netns < Formula
   depends_on "libslirp" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
+  depends_on :linux
 
   def install
     system "./autogen.sh"

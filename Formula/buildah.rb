@@ -15,6 +15,7 @@ class Buildah < Formula
 
   depends_on "go-md2man" => :build
   depends_on "make" => :build
+  depends_on :linux
 
   def install
     # Build base from https://github.com/NixOS/docker
