@@ -9,8 +9,8 @@ class ContainerdRootless < Formula
   head "https://github.com/containerd/containerd.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containerd-rootless-0.6.1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "15cfe4099524f6251659ca3c9cf5fea6fab97c3c12b49e58fb8f5710c5e654ae"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containerd-rootless-0.8.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4554dc2aff915423ab06e54b885d9cf0c7403227535945b43cf0cc45dc6fe382"
   end
 
   depends_on "immortal"
