@@ -4,7 +4,7 @@ class ContainerdRootless < Formula
 
   url "https://github.com/containerd/nerdctl.git",
     tag:      "v0.8.0",
-    revision: "7399297823f1d5745929d1e458c9da0d49c9e079"
+    revision: "d57846db4a90540bc41e4683cd1a9f1e9e99170a"
   license "Apache-2.0"
   head "https://github.com/containerd/containerd.git"
 
