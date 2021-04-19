@@ -2,8 +2,8 @@ class ContainerdRootless < Formula
   desc "Open and reliable container runtime"
   homepage "https://containerd.io"
 
-  url "https://github.com/AkihiroSuda/nerdctl.git",
-    tag:      "v0.6.1",
+  url "https://github.com/containerd/nerdctl.git",
+    tag:      "v0.8.0",
     revision: "7399297823f1d5745929d1e458c9da0d49c9e079"
   license "Apache-2.0"
   head "https://github.com/containerd/containerd.git"
