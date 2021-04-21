@@ -19,7 +19,7 @@ class Vcluster < Formula
     ENV["VCLUSTER_BUILD_PLATFORMS"] = os
     ENV["VCLUSTER_BUILD_ARCHS"] = arch
     name = "vcluster-#{os}-#{arch}"
-    
+
     system "bash", "./hack/build-cli.sh"
     bin.install "release/#{name}" => "vcluster"
   end
