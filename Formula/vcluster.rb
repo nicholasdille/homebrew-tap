@@ -25,6 +25,6 @@ class Vcluster < Formula
   end
 
   test do
-    system bin/"vcluster", "--version"
+    system bin/"vcluster", "--help"
   end
 end
