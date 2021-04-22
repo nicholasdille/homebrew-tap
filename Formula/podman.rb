@@ -3,8 +3,8 @@ class Podman < Formula
   homepage "https://podman.io/"
 
   url "https://github.com/containers/podman.git",
-    tag:      "v3.1.1",
-    revision: "713995bfc325250fefe2750e81d98eb1c65acaec"
+    tag:      "v3.1.2",
+    revision: "51b8ddbc22cf5b10dd76dd9243924aa66ad7db39"
   license "Apache-2.0"
   head "https://github.com/containers/podman.git"
 
