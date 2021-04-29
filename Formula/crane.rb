@@ -3,8 +3,8 @@ class Crane < Formula
   homepage "https://github.com/google/go-containerregistry/blob/main/cmd/crane/README.md"
 
   url "https://github.com/google/go-containerregistry.git",
-    tag:      "v0.4.1",
-    revision: "efb2d62d93a7705315b841d0544cb5b13565ff2a"
+    tag:      "v0.5.0",
+    revision: "a58f1d55bc799c55deb7cfaa35ef5234e9da7ff3"
   license "Apache-2.0"
   head "https://github.com/google/go-containerregistry.git"
 
