@@ -9,9 +9,9 @@ class Trivy < Formula
   head "https://github.com/aquasecurity/trivy.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/trivy-0.17.0"
-    sha256 cellar: :any_skip_relocation, catalina:     "f5831863ba0f0068250795164599d0f38885b8b6fa4bd9a4ee1f9115a2860149"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "40490e3df879e305d6a1e09ba955d1b9ba67dbedd8566aadb5da0c17ecff7379"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/trivy-0.17.2"
+    sha256 cellar: :any_skip_relocation, catalina:     "31dbae5a9cf87d4e3bf7957f15fe6049cc6cb0321a1cc4ef2e647e6830378339"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cb790dea2bfa6b351fe7d1dc5c7ef66a35b53c100efa5088e794eff48dd80381"
   end
 
   depends_on "git" => :build
