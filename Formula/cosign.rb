@@ -3,25 +3,28 @@ class Cosign < Formula
   homepage "https://sigstore.dev/"
 
   url "https://github.com/sigstore/cosign.git",
-    revision: "f74fac540531411764589d72467ad6641e402971"
-  version "0.0.0"
+    tag:      "v0.4.0",
+    revision: "2e1191e354cf905b335439916dc8116c3bc362f9"
   license "Apache-2.0"
   head "https://github.com/sigstore/cosign.git"
-
-  bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cosign-0.0.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2e70353632bdfa57c08437ab58212f7e46aa413e1172a4689cf7e212bf5bf227"
-  end
 
   depends_on "go" => :build
 
   def install
+    pkg = "github.com/sigstore/cosign/cmd/cosign/cli"
+    commit = Utils.git_short_head
+    build_date = Utils.safe_popen_read("date", "+'%Y-%m-%dT%H:%M:%SZ'")
+
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
-      "-ldflags", "-s -w",
+      "-ldflags", "-s -w"\
+                  " -X #{pkg}.gitVersion=#{version}"\
+                  " -X #{pkg}.gitCommit=#{commit}"\
+                  " -X #{pkg}.gitTreeState=clean"\
+                  " -X #{pkg}.buildDate=#{build_date}",
       "-o", bin/"cosign",
-      "./cmd"
+      "./cmd/cosign"
   end
 
   test do
