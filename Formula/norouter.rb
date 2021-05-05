@@ -9,8 +9,9 @@ class Norouter < Formula
   head "https://github.com/norouter/norouter.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/norouter-0.6.2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "bf79a52b7248d3a8fb0af92b31b8180bcb014fc484c1f845e5b08909dc1f83b1"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/norouter-0.6.3"
+    sha256 cellar: :any_skip_relocation, catalina:     "09517b82f0ac4af00e29a98dcef1dec4dd8f3726f244cabc24cf82bd134055fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "71ced95474b687cda3ce1b6cf3c93927bf5295ed0a5f16acab187c3a68228b10"
   end
 
   depends_on "go" => :build
