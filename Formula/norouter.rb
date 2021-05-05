@@ -3,8 +3,8 @@ class Norouter < Formula
   homepage "https://norouter.io/"
 
   url "https://github.com/norouter/norouter.git",
-    tag:      "v0.6.2",
-    revision: "7a98d9843bd0785a7c0920331649c5efb9002873"
+    tag:      "v0.6.3",
+    revision: "e6a1cc1e4a11d8aef8ae5184eb5960224efc1772"
   license "Apache-2.0"
   head "https://github.com/norouter/norouter.git"
 
