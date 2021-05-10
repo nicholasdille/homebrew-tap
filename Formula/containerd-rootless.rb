@@ -39,11 +39,11 @@ class ContainerdRootless < Formula
         timestamp: true
     EOS
     (etc/"immortal").install "containerd.yml"
-    
+
     (buildpath/"config.toml").write Utils.safe_popen_read(
       HOMEBREW_PREFIX/"bin/containerd",
       "config",
-      "default"
+      "default",
     )
     system "sed",
       "-i",
