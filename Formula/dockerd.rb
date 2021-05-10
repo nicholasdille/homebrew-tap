@@ -1,3 +1,18 @@
+class IptablesRequirement < Requirement
+  fatal true
+
+  satisfy(build_env: false) {
+    output = Utils.safe_popen_read("iptables", "--version")
+    output.include? "legacy"
+  }
+
+  def message
+    <<~EOS
+      Please switch to legacy iptables.
+    EOS
+  end
+end
+
 class Dockerd < Formula
   desc "Docker daemon"
   homepage "https://www.docker.com"
@@ -17,6 +32,7 @@ class Dockerd < Formula
   depends_on "make" => :build
   depends_on "pkg-config" => :build
   depends_on :linux
+  depends_on IptablesRequirement
   depends_on "nicholasdille/tap/containerd"
   depends_on "nicholasdille/tap/runc"
 
