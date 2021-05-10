@@ -6,12 +6,8 @@ class Containerd < Formula
     tag:      "v1.5.0",
     revision: "8c906ff108ac28da23f69cc7b74f8e7a470d1df0"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/containerd/containerd.git"
-
-  bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containerd-1.5.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3bf7111d2b623dcdee24ec61c582110dc5204cae83bb47997fb88c9cead5ecbc"
-  end
 
   option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
   option "without-devmapper", "Support device mapper"
@@ -22,6 +18,8 @@ class Containerd < Formula
   depends_on "libseccomp" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
+  depends_on "nicholasdille/tap/runc"
+  depends_on "nicholasdille/tap/cni" => :recommended
   depends_on :linux
 
   def install
