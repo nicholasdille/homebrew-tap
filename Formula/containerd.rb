@@ -18,9 +18,9 @@ class Containerd < Formula
   depends_on "libseccomp" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
+  depends_on :linux
   depends_on "nicholasdille/tap/runc"
   depends_on "nicholasdille/tap/cni" => :recommended
-  depends_on :linux
 
   def install
     dir = buildpath/"src/github.com/containerd/containerd"
