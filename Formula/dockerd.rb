@@ -1,10 +1,10 @@
 class IptablesRequirement < Requirement
   fatal true
 
-  satisfy(build_env: false) {
+  satisfy(build_env: false) do
     output = Utils.safe_popen_read("iptables", "--version")
     output.include? "legacy"
-  }
+  end
 
   def message
     <<~EOS
@@ -31,8 +31,8 @@ class Dockerd < Formula
   depends_on "go" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
-  depends_on :linux
   depends_on IptablesRequirement
+  depends_on :linux
   depends_on "nicholasdille/tap/containerd"
   depends_on "nicholasdille/tap/runc"
 
