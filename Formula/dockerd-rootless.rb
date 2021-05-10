@@ -37,8 +37,8 @@ class DockerdRootless < Formula
   head "https://github.com/moby/moby.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/dockerd-rootless-20.10.5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4467b92c91d34df45ebf5990f0d7ea00ac63fd7c56ea6b7696ce2f885855b715"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/dockerd-rootless-20.10.6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f4df9738b904f10b6da09b1ae1d1461f179e73f593b9275a1693e8ed33df5138"
   end
 
   depends_on "immortal"
