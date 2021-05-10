@@ -6,6 +6,7 @@ class BuildkitdRootless < Formula
   version "1.0.0"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/moby/buildkit.git"
 
   bottle do
@@ -28,7 +29,7 @@ class BuildkitdRootless < Formula
     bin.install "buildkitd-rootless.sh"
 
     (buildpath/"buildkitd.yml").write <<~EOS
-      cmd: buildkitd-rootless.sh
+      cmd: #{bin}/buildkitd-rootless.sh
       env:
         XDG_RUNTIME_DIR: #{var}/run/buildkitd
       pid:
@@ -51,8 +52,8 @@ class BuildkitdRootless < Formula
 
   def caveats
     <<~EOS
-      TODO: brew immortal
-      TODO: export BUILDKIT_HOST
+      - You can now run rootless buildkitd using immortal
+      - To access buildkitd, set BUILDKIT_HOST to unix://#{var}/run/buildkitd/buildkit/buildkitd.sock
     EOS
   end
 
