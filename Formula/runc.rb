@@ -3,10 +3,9 @@ class Runc < Formula
   homepage "https://www.opencontainers.org"
 
   url "https://github.com/opencontainers/runc.git",
-    tag:      "v1.0.0-rc93",
-    revision: "12644e614e25b05da6fd08a38ffa0cfe1903fdec"
+    tag:      "v1.0.0-rc94",
+    revision: "2c7861bc5e1b3e756392236553ec14a78a09f8bf"
   license "Apache-2.0"
-  revision 3
   head "https://github.com/opencontainers/runc.git"
 
   bottle do
