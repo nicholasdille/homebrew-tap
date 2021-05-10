@@ -6,7 +6,7 @@ class Runc < Formula
     tag:      "v1.0.0-rc93",
     revision: "12644e614e25b05da6fd08a38ffa0cfe1903fdec"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/opencontainers/runc.git"
 
   bottle do
@@ -42,7 +42,7 @@ class Runc < Formula
     system "go", "build",
       "-trimpath",
       "-mod=vendor",
-      "-tags", "#{buildtags} netgo osusergo",
+      "-tags", "#{buildtags.join(" ")} netgo osusergo",
       "-ldflags", ldflags.join(" "),
       "-o", bin/"runc",
       "."
