@@ -1,10 +1,38 @@
+class NewuidmapRequirement < Requirement
+  fatal true
+
+  satisfy(build_env: false) { which(TOOL).present? }
+
+  def message
+    <<~EOS
+      Please install the uidmap package.
+    EOS
+  end
+
+  TOOL = "newuidmap".freeze
+end
+
+class NewgidmapRequirement < Requirement
+  fatal true
+
+  satisfy(build_env: false) { which(TOOL).present? }
+
+  def message
+    <<~EOS
+      Please install the uidmap package.
+    EOS
+  end
+
+  TOOL = "newgidmap".freeze
+end
+
 class DockerdRootless < Formula
   desc "Docker daemon"
   homepage "https://www.docker.com"
 
   url "https://github.com/moby/moby.git",
-    tag:      "v20.10.5",
-    revision: "363e9a88a11be517d9e8c65c998ff56f774eb4dc"
+    tag:      "v20.10.6",
+    revision: "8728dd246c3ab53105434eef8ffe997b6fd14dc6"
   license "Apache-2.0"
   head "https://github.com/moby/moby.git"
 
@@ -14,7 +42,10 @@ class DockerdRootless < Formula
   end
 
   depends_on "immortal"
+  depends_on NewgidmapRequirement
+  depends_on NewuidmapRequirement
   depends_on "nicholasdille/tap/dockerd"
+  depends_on "nicholasdille/tap/fuse-overlayfs-bin"
   depends_on "nicholasdille/tap/rootlesskit"
   depends_on "nicholasdille/tap/slirp4netns"
 
@@ -22,7 +53,7 @@ class DockerdRootless < Formula
     bin.install "contrib/dockerd-rootless.sh"
 
     (buildpath/"dockerd.yml").write <<~EOS
-      cmd: #{HOMEBREW_PREFIX}/bin/dockerd-rootless.sh --config-file #{etc}/docker/daemon.json
+      cmd: #{HOMEBREW_PREFIX}/bin/dockerd-rootless.sh --config-file #{etc}/docker/daemon.json --iptables=false
       cwd: #{etc}/docker
       env:
         XDG_RUNTIME_DIR: #{var}/run/dockerd
@@ -46,7 +77,14 @@ class DockerdRootless < Formula
 
   def caveats
     <<~EOS
-      TODO: brew immortal
+      - You can manage rootless Docker using immortal:
+          $ brew tap nicholasdille/immortal
+          $ brew immortal --help
+      - Make rootless Docker the default:
+          $ docker context create rootless \
+              --description "Docker Rootless" \
+              --docker "host=unix://#{var}/run/dockerd/docker.sock"
+          $ docker context use rootless
     EOS
   end
 
