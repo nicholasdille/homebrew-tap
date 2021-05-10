@@ -10,8 +10,8 @@ class BuildkitdRootless < Formula
   head "https://github.com/moby/buildkit.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildkitd-rootless-1.0.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "995f153f030d4b4117cbbddc4a59898a6527eb377804c7278853f883d1f7b86d"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildkitd-rootless-1.0.0_1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6ef8b2604b1aa94e07c101345b5e2a08603d7a66ecb7bec6c80c5fb2471db0d2"
   end
 
   depends_on "immortal"
