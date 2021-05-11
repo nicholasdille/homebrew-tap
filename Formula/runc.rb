@@ -9,8 +9,8 @@ class Runc < Formula
   head "https://github.com/opencontainers/runc.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/runc-1.0.0-rc93_3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d9aab214b95871bb817afcf45e0741dcbe26d96cf92c39b4a46d203a079b400f"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/runc-1.0.0-rc94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d51680a183933f3ef6790e647e58b69fa911ac50f10b1d5feb186bed16e86704"
   end
 
   option "with-nokmem", "Disable kernel memory accounting"
