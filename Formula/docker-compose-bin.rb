@@ -15,7 +15,7 @@ class DockerComposeBin < Formula
   resource "binary" do
     on_linux do
       url "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64"
-      sha256 "46406eb5d8443cc0163a483fcff001d557532a7fad5981e268903ad40b75534c"
+      sha256 "f3f10cf3dbb8107e9ba2ea5f23c1d2159ff7321d16f0a23051d68d8e2547b323"
     end
     on_macos do
       url "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Darwin-x86_64"
