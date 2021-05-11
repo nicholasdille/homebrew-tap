@@ -3,7 +3,7 @@ class Quark < Formula
   homepage "https://github.com/QuarkContainer/Quark"
 
   url "https://github.com/QuarkContainer/Quark.git",
-    revision: "2021648c1cdf5b35a9812583cba06ada180f3032"
+    revision: "b528795f44991b71b1abc15a7389579ed5b60047"
   version "0.0.0"
   license "Apache-2.0"
   head "https://github.com/QuarkContainer/Quark.git"
