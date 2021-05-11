@@ -2,8 +2,9 @@ class FirecrackerContainerd < Formula
   desc "Enables containerd to manage containers as Firecracker microVMs"
   homepage "https://github.com/firecracker-microvm/firecracker-containerd"
 
-  url "https://github.com/firecracker-microvm/firecracker-containerd.git"
-  version "master"
+  url "https://github.com/firecracker-microvm/firecracker-containerd.git",
+    revision: "435ade47c5462cbf2e7decdbf12a9570ae5b474a"
+  version "0.0.0"
   license "Apache-2.0"
   head "https://github.com/firecracker-microvm/firecracker-containerd.git"
 
