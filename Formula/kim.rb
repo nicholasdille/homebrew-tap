@@ -9,9 +9,9 @@ class Kim < Formula
   head "https://github.com/rancher/kim.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kim-0.1.0-alpha.11"
-    sha256 cellar: :any_skip_relocation, catalina:     "6c0066672635d88617462078d031d6672afafb0811c6b373259ebf1a59f80835"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e6441bfb58f52019205b50be2b07c3630ceba259acb4ccf7f12924ed4704110b"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kim-0.1.0-alpha.12"
+    sha256 cellar: :any_skip_relocation, catalina:     "3bf67a6703f132ff1de012ab2d8d18333f3c2251a0811a4ea619f56280ef3195"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2d1aa1c19cf5771e3bfa8a03f224c99817922d48bf437a8a50b0df5feac722fb"
   end
 
   depends_on "go" => :build
