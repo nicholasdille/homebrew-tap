@@ -8,6 +8,12 @@ class Crictl < Formula
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cri-tools.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/crictl-1.21.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "cc28731829d15a1efc2f1489691625510e630be66d877705d6da5a00fb058016"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c2a6b14b9be78a0cd42b0da3f9f01cb8482dd88854289e4761e58bc825e049ee"
+  end
+
   depends_on "go" => :build
   depends_on "make" => :build
 
