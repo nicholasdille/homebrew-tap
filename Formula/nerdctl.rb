@@ -6,6 +6,7 @@ class Nerdctl < Formula
     tag:      "v0.8.1",
     revision: "e1601447477c38ceb46c9c88418af399f79b1d6a"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/containerd/nerdctl.git"
 
   bottle do
@@ -13,14 +14,9 @@ class Nerdctl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "497bb61ed73005995e9356a6cabdcc9e9a91097f494963a3e854019ac59c17c6"
   end
 
-  depends_on "git" => :build
   depends_on "go" => :build
   depends_on "make" => :build
   depends_on :linux
-  depends_on "nicholasdille/tap/containerd-rootless"
-  depends_on "nicholasdille/tap/buildkitd-rootless" => :recommended
-  depends_on "nicholasdille/tap/cni" => :recommended
-  depends_on "nicholasdille/tap/cni-isolation" => :recommended
 
   def install
     system "make"
@@ -30,36 +26,13 @@ class Nerdctl < Formula
     ENV["XDG_RUNTIME_DIR"] = "/tmp"
     output = Utils.safe_popen_read(bin/"nerdctl", "completion", "bash")
     (bash_completion/"nerdctl").write output
-
-    (buildpath/"nerdctl-rootless").write <<~EOS
-      #!/bin/bash
-
-      export XDG_RUNTIME_DIR=#{var}/run/containerd
-      export CNI_PATH=#{prefix}/bin
-      export NETCONFPATH=#{etc}/cni/net.d
-
-      #{prefix}/bin/nerdctl "$@"
-    EOS
-    (etc/"docker").install "nerdctl-rootless"
   end
 
   def post_install
     (var/"run/nerdctl").mkpath
   end
 
-  def caveats
-    <<~EOS
-      TODO: Set XDG_RUNTIME_DIR
-      TODO: brew immortal
-      TODO: XDG_RUNTIME_DIR=#{var}/run/containerd
-      TODO: CNI_PATH=#{prefix}/bin
-      TODO: NETCONFPATH=#{etc}/cni/net.d
-      TODO: nerdctl.sh
-    EOS
-  end
-
   test do
-    ENV["XDG_RUNTIME_DIR"] = var/"lib/nerdctl"
     system bin/"nerdctl", "--version"
   end
 end
