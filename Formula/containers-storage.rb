@@ -8,6 +8,12 @@ class ContainersStorage < Formula
   license "Apache-2.0"
   head "https://github.com/containers/storage.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containers-storage-1.30.2"
+    sha256 cellar: :any_skip_relocation, catalina:     "60729eff213cd660a80c350095decfe2248ca896cf562d0ed8b0471d59309e6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "dca610dcf7296d4a3f50ee2f6c949d4ad664641910477287a23d4a52c7cf5c4c"
+  end
+
   option "with-btrfs", "Add support for btrfs"
   option "with-devicemapper", "Add support for devicemapper"
   option "without-aufs", "Remove support auf aufs"
