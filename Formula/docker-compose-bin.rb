@@ -3,8 +3,8 @@ class DockerComposeBin < Formula
   homepage "https://docs.docker.com/compose/"
 
   url "https://github.com/docker/compose.git",
-    tag:      "1.28.5",
-    revision: "c4eb3a1f475ca486340d4d5314ddf47555b2b1c6"
+    tag:      "1.29.2",
+    revision: "5becea4ca9f68875334c92f191a13482bcd6e5cf"
   license "Apache-2.0"
   head "https://github.com/docker/compose.git"
 
@@ -14,11 +14,11 @@ class DockerComposeBin < Formula
 
   resource "binary" do
     on_linux do
-      url "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-Linux-x86_64"
+      url "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64"
       sha256 "46406eb5d8443cc0163a483fcff001d557532a7fad5981e268903ad40b75534c"
     end
     on_macos do
-      url "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-Darwin-x86_64"
+      url "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Darwin-x86_64"
       sha256 "ddfaf03c3aae5277cd5f611f1b33d1966157ed9d3545a98307ae78d40cbd9684"
     end
   end
