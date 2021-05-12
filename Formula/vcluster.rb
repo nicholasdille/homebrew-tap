@@ -9,9 +9,9 @@ class Vcluster < Formula
   head "https://github.com/loft-sh/vcluster.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/vcluster-0.1.0"
-    sha256 cellar: :any_skip_relocation, catalina:     "11552f5eb7ff641b41fb755673abb8a26ba68ac63d31183571eb05bb99cf4678"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "be552b82a94a216c61e21939a34f77a08d3d704b61992923be4818ea69ad9350"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/vcluster-0.2.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "0f2b40941c4f211ed16dbd98ee5184dc0dc615b4f201d562c9c0dc979a8c9613"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e0ce719b6315f2a32a4cdbaeb95678ed6512de5039f59e4073d620f03d295d6d"
   end
 
   depends_on "go" => :build
