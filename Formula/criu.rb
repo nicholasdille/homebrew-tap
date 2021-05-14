@@ -16,7 +16,8 @@ class Criu < Formula
   depends_on :linux
 
   def install
-    system "ln", "-sf", "#{HOMEBREW_PREFIX}/include/google/protobuf/descriptor.proto", "#{buildpath}/images/google/protobuf/"
+    ln_sf "#{HOMEBREW_PREFIX}/include/google/protobuf/descriptor.proto",
+          "#{buildpath}/images/google/protobuf/"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
