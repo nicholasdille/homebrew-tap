@@ -1,6 +1,6 @@
 class Criu < Formula
   desc "Checkpoint/Restore tool"
-  homepage "http://criu.org/"
+  homepage "https://criu.org/"
 
   url "https://github.com/checkpoint-restore/criu.git",
     tag:      "v3.15",
