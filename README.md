@@ -99,10 +99,34 @@ Formulae for run:
 ## Other noteworthy formulae
 
 - [Docker](https://formulae.brew.sh/formula/docker#default) (official)
-- kubectl
-- helm
 - pack
+- skopeo
+- act
+- argocd
+- cowsay
+- crane
+- drone-cli
+- earthly
+- faas-cli
+- figlet
+- flarectl
+- fleet-cli
+- flux
+- fluxctl
+- gh
+- gitlab-runner
 - glab
+- govc
+- hcloud
+- helm
+- hub
+- jfrog-cli
+- k3d
+- k3sup
+- krew
+- kubernetes-cli (kubectl)
+- kustomize
+- lab
 
 ## More about Homebrew
 
