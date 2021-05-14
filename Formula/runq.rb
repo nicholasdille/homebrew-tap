@@ -21,7 +21,16 @@ class Runq < Formula
       ENV["GO111MODULE"] = "auto"
       ENV["GOPATH"] = buildpath
 
-      system "make"
+      ENV["CGO_CFLAGS"] = Utils.safe_popen_read("pkg-config", "--cflags", "libseccomp")
+      ENV["CGO_LDFLAGS"] = Utils.safe_popen_read("pkg-config", "--libs", "libseccomp")
+
+      ENV["RUNQ_ROOT"] = "/var/lib/runq"
+      system "make", "all"
+      (libexec/"qemu").install "cmd/proxy/proxy"
+      libexec.install "cmd/runq/runq"
+      libexec.install "cmd/runq-exec/runq-exec"
+      (libexec/"qemu").install "cmd/runq-exec/mkcerts.sh"
+      (libexec/"qemu").install "initrd/initrd"
     end
   end
 
