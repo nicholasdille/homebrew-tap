@@ -8,7 +8,7 @@ I am using many tools from the container ecosystem for which no automated instal
 
 Or `brew tap nicholasdille/tap` and then `brew install <formula>`.
 
-## Formulae
+## Formulae in this tap
 
 Containers (Docker):
 
@@ -96,11 +96,9 @@ Formulae for run:
 
 - emojisum
 
-## Other noteworthy formulae
+## Noteworthy formulae
 
 - [Docker](https://formulae.brew.sh/formula/docker#default) (official)
-- pack
-- skopeo
 - act
 - argocd
 - cowsay
@@ -127,6 +125,21 @@ Formulae for run:
 - kubernetes-cli (kubectl)
 - kustomize
 - lab
+- mitmproxy
+- oras
+- pack (3rd party)
+- ponysay
+- powerline-go
+- qrencode
+- shellcheck
+- shellinabox
+- singularity
+- skopeo
+- socat
+- toast
+- toilet
+- yamllint
+- yq
 
 ## More about Homebrew
 
