@@ -6,6 +6,7 @@ class Podman < Formula
     tag:      "v3.1.2",
     revision: "51b8ddbc22cf5b10dd76dd9243924aa66ad7db39"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/containers/podman.git"
 
   bottle do
@@ -14,7 +15,6 @@ class Podman < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ce6257e3eb9422958d5fa01d8099383ca3e50f447a078a7a096bef69c4591736"
   end
 
-  depends_on "git" => :build
   depends_on "go" => :build
   depends_on "go-md2man" => :build
   depends_on "make" => :build
@@ -31,6 +31,6 @@ class Podman < Formula
   end
 
   test do
-    system bin/"podman", "--version"
+    assert_match "podman version #{version}", shell_output("#{bin}/podman -v")
   end
 end
