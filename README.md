@@ -99,47 +99,48 @@ Formulae for run:
 ## Noteworthy formulae
 
 - [Docker](https://formulae.brew.sh/formula/docker#default) (official)
-- act
-- argocd
-- cowsay
-- crane
-- drone-cli
-- earthly
-- faas-cli
-- figlet
-- flarectl
-- fleet-cli
-- flux
-- fluxctl
-- gh
-- gitlab-runner
-- glab
-- govc
-- hcloud
-- helm
-- hub
-- jfrog-cli
-- k3d
-- k3sup
-- krew
-- kubernetes-cli (kubectl)
-- kustomize
-- lab
-- mitmproxy
-- oras
-- pack (3rd party)
-- ponysay
-- powerline-go
-- qrencode
-- shellcheck
-- shellinabox
-- singularity
-- skopeo
-- socat
-- toast
-- toilet
-- yamllint
-- yq
+- [act](https://formulae.brew.sh/formula/act#default) (official)
+- [argocd](https://formulae.brew.sh/formula/argocd#default) (official)
+- [cowsay](https://formulae.brew.sh/formula/cowsay#default) (official)
+- [crane](https://formulae.brew.sh/formula/crane#default) (official)
+- [doitlive](https://formulae.brew.sh/formula/doitlive#default) (official)
+- [drone-cli](https://formulae.brew.sh/formula/drone-cli#default) (official)
+- [earthly](https://formulae.brew.sh/formula/earthly#default) (official)
+- [faas-cli](https://formulae.brew.sh/formula/faas-cli#default) (official)
+- [figlet](https://formulae.brew.sh/formula/figlet#default) (official)
+- [flarectl](https://formulae.brew.sh/formula/flarectl#default) (official)
+- [fleet-cli](https://formulae.brew.sh/formula/fleet-cli#default) (official)
+- [flux](https://formulae.brew.sh/formula/flux#default) (official)
+- [fluxctl](https://formulae.brew.sh/formula/fluxctl#default) (official)
+- [gh](https://formulae.brew.sh/formula/gh#default) (official)
+- [gitlab-runner](https://formulae.brew.sh/formula/gitlab-runner#default) (official)
+- [glab](https://formulae.brew.sh/formula/glab#default) (official)
+- [govc](https://formulae.brew.sh/formula/govc#default) (official)
+- [hcloud](https://formulae.brew.sh/hcloud/docker#default) (official)
+- [helm](https://formulae.brew.sh/formula/helm#default) (official)
+- [hub](https://formulae.brew.sh/formula/hub#default) (official)
+- [jfrog-cli](https://formulae.brew.sh/formula/jfrog-cli#default) (official)
+- [k3d](https://formulae.brew.sh/formula/k3d#default) (official)
+- [k3sup](https://formulae.brew.sh/formula/k3sup#default) (official)
+- [krew](https://formulae.brew.sh/formula/krew#default) (official)
+- [kubernetes-cli (kubectl)](https://formulae.brew.sh/formula/kubernetes-cli#default) (official)
+- [kustomize](https://formulae.brew.sh/formula/kustomize#default) (official)
+- [lab](https://formulae.brew.sh/formula/lab#default) (official)
+- [mitmproxy](https://formulae.brew.sh/formula/mitmproxy#default) (official)
+- [oras](https://formulae.brew.sh/formula/oras#default) (official)
+- [pack](https://github.com/buildpacks/homebrew-tap/blob/main/Formula/pack.rb) (3rd party)
+- [ponysay](https://formulae.brew.sh/formula/ponysay#default) (official)
+- [powerline-go](https://formulae.brew.sh/formula/powerline-go#default) (official)
+- [qrencode](https://formulae.brew.sh/formula/qrencode#default) (official)
+- [shellcheck](https://formulae.brew.sh/formula/shellcheck#default) (official)
+- [shellinabox](https://formulae.brew.sh/formula/shellinabox#default) (official)
+- [singularity](https://formulae.brew.sh/formula/singularity#default) (official)
+- [skopeo](https://formulae.brew.sh/formula/skopeo#default) (official)
+- [socat](https://formulae.brew.sh/formula/socat#default) (official)
+- [toast](https://formulae.brew.sh/formula/toast#default) (official)
+- [toilet](https://formulae.brew.sh/formula/toilet#default) (official)
+- [yamllint](https://formulae.brew.sh/formula/yamllint#default) (official)
+- [yq](https://formulae.brew.sh/formula/yq#default) (official)
 
 ## More about Homebrew
 
