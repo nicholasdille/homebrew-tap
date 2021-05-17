@@ -14,7 +14,6 @@ class Trivy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "4affdd819010cd96b384487e920b625e660a6dcc41d58ef254c2499131cfe95e"
   end
 
-  depends_on "git" => :build
   depends_on "go" => :build
 
   def install

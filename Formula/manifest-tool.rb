@@ -13,7 +13,6 @@ class ManifestTool < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "48c4a0f71ade48657c785982a4294326677cbba08035e8448b69e110ea1b6b66"
   end
 
-  depends_on "git" => :build
   depends_on "go" => :build
   depends_on "make" => :build
 
