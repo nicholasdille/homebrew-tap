@@ -7,7 +7,6 @@ class BuildkitdRootless < Formula
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   license "Apache-2.0"
   revision 1
-  head "https://github.com/moby/buildkit.git"
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildkitd-rootless-1.0.0_1"

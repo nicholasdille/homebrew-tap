@@ -8,6 +8,11 @@ class Kim < Formula
   license "Apache-2.0"
   head "https://github.com/rancher/kim.git"
 
+  livecheck do
+    url :stable
+    strategy :git
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kim-0.1.0-alpha.12"
     sha256 cellar: :any_skip_relocation, catalina:     "3bf67a6703f132ff1de012ab2d8d18333f3c2251a0811a4ea619f56280ef3195"

@@ -3,6 +3,7 @@ class Gometalinter < Formula
   homepage "https://github.com/alecthomas/gometalinter"
 
   url "https://github.com/alecthomas/gometalinter/releases/download/v3.0.0/gometalinter-3.0.0-linux-amd64.tar.gz"
+  version "3.0.0"
   sha256 "2cab9691fa1f94184ea1df2b69c00990cdf03037c104e6a9deab6815cdbe6a77"
   license "MIT"
   head "https://github.com/alecthomas/gometalinter.git"

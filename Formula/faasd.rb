@@ -8,6 +8,11 @@ class Faasd < Formula
   license "Apache-2.0"
   head "https://github.com/openfaas/faasd.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/faasd-0.11.4"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "4456c032b57daedc7212a60b46388ea192fbf842edb004aca3e83ffae7f98ffa"

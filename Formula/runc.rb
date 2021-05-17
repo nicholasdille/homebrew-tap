@@ -8,6 +8,11 @@ class Runc < Formula
   license "Apache-2.0"
   head "https://github.com/opencontainers/runc.git"
 
+  livecheck do
+    url :stable
+    strategy :git
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/runc-1.0.0-rc94"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "d51680a183933f3ef6790e647e58b69fa911ac50f10b1d5feb186bed16e86704"

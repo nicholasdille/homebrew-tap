@@ -8,6 +8,11 @@ class Buildkitd < Formula
   license "Apache-2.0"
   head "https://github.com/moby/buildkit.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildkitd-0.8.3"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "f47f1d55126577897a90dd20e367e4c320ecd7cb84d36213ba395bd886c4908a"

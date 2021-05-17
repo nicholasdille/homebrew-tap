@@ -8,6 +8,11 @@ class Duffle < Formula
   license "MIT"
   head "https://github.com/cnabio/duffle.git"
 
+  livecheck do
+    url :stable
+    strategy :git
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/duffle-0.3.5-beta.1"
     sha256 cellar: :any_skip_relocation, catalina:     "815770017010cdfce8701a2968c1a597031cfed90007abef9d0ea94358b7c9e6"
