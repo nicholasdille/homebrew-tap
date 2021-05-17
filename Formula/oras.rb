@@ -6,6 +6,7 @@ class Oras < Formula
     tag:      "v0.11.1",
     revision: "5bfe0ab04a0f6fcdc5de4294cc79fb5b2e23a9a5"
   license "MIT"
+  revision 1
   head "https://github.com/deislabs/oras.git"
 
   bottle do
@@ -13,17 +14,19 @@ class Oras < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "9e1838a33a5a8aa2a93c9d0e98c58b563a92c48c6ac317e2d6761e665438c224"
   end
 
-  depends_on "git" => :build
   depends_on "go" => :build
+
+  conflicts_with "oras"
 
   def install
     pkg = "github.com/deislabs/oras"
-    commit = Utils.safe_popen_read("git", "rev-parse", "HEAD")
+    commit = Utils.git_short_head
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
       "-ldflags", "-w -s"\
-                  " -X #{pkg}/internal/version.BuildMetadata=#{version}"\
+                  " -X #{pkg}/internal/version.Version=#{version}"\
+                  " -X #{pkg}/internal/version.BuildMetadata=Homebrew"\
                   " -X #{pkg}/internal/version.GitCommit=#{commit}"\
                   " -X #{pkg}/internal/version.GitTreeState=clean",
       "-o", bin/"oras",
@@ -31,6 +34,6 @@ class Oras < Formula
   end
 
   test do
-    system bin/"oras", "version"
+    assert_match "#{version}+Homebrew", shell_output("#{bin}/oras version")
   end
 end
