@@ -6,14 +6,8 @@ class Podman < Formula
     tag:      "v3.1.2",
     revision: "51b8ddbc22cf5b10dd76dd9243924aa66ad7db39"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/containers/podman.git"
-
-  bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/podman-3.1.2_1"
-    sha256 cellar: :any_skip_relocation, catalina:     "ffa029d462e2e5b3f45ce659d2eeab9e05c23081552fb8d16f934456a140976d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e9bf20730ebe9f67030d64cf3e12d2881758812f88420e7154eb68a4f3a29115"
-  end
 
   option "with-systemd", "Add support for systemd"
   option "with-selinux", "Add support for selinux"
@@ -27,28 +21,19 @@ class Podman < Formula
   depends_on "libseccomp" => [:build, :recommended]
   depends_on "make" => :build
   depends_on "pkg-config" => :build
+  depends_on :linux
 
   def install
-    on_linux do
-      buildtags = []
-      buildtags << "exclude_graphdriver_btrfs" if build.without? "btrfs"
-      buildtags << "exclude_graphdriver_devicemapper" if build.without? "devicemapper"
-      buildtags << "selinux" if build.with? "selinux"
-      buildtags << "apparmor" if build.with? "apparmor"
-      buildtags << "seccomp" if build.with? "libseccomp"
-      buildtags << "systemd" if build.with? "systemd"
+    buildtags = []
+    buildtags << "exclude_graphdriver_btrfs" if build.without? "btrfs"
+    buildtags << "exclude_graphdriver_devicemapper" if build.without? "devicemapper"
+    buildtags << "selinux" if build.with? "selinux"
+    buildtags << "apparmor" if build.with? "apparmor"
+    buildtags << "seccomp" if build.with? "libseccomp"
+    buildtags << "systemd" if build.with? "systemd"
 
-      system "make", "podman", "BUILDTAGS=#{buildtags.join(" ")}"
-      bin.install "bin/podman"
-    end
-
-    system "make", "podman-remote-static"
-    on_linux do
-      bin.install "bin/podman-remote-static" => "podman-remote"
-    end
-    on_macos do
-      bin.install "bin/podman-remote-static" => "podman"
-    end
+    system "make", "podman", "BUILDTAGS=#{buildtags.join(" ")}"
+    bin.install "bin/podman"
 
     system "make", "docs"
     man1.install Dir["docs/build/man/*.1"]
