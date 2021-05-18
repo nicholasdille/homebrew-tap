@@ -15,13 +15,40 @@ class Podman < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "e9bf20730ebe9f67030d64cf3e12d2881758812f88420e7154eb68a4f3a29115"
   end
 
+  option "with-systemd", "Add support for systemd"
+  option "with-selinux", "Add support for selinux"
+  option "with-apparmor", "Add support for apparmor"
+  option "with-btrfs", "Add support for btrfs"
+  option "with-devicemapper", "Add support for devicemapper"
+
   depends_on "go" => :build
   depends_on "go-md2man" => :build
+  depends_on "gpgme" => :build
+  depends_on "libseccomp" => [:build, :recommended]
   depends_on "make" => :build
+  depends_on "pkg-config" => :build
 
   def install
+    on_linux do
+      buildtags = []
+      buildtags << "exclude_graphdriver_btrfs" if build.without? "btrfs"
+      buildtags << "exclude_graphdriver_devicemapper" if build.without? "devicemapper"
+      buildtags << "selinux" if build.with? "selinux"
+      buildtags << "apparmor" if build.with? "apparmor"
+      buildtags << "seccomp" if build.with? "libseccomp"
+      buildtags << "systemd" if build.with? "systemd"
+
+      system "make", "podman", "BUILDTAGS=#{buildtags.join(" ")}"
+      bin.install "bin/podman"
+    end
+
     system "make", "podman-remote-static"
-    bin.install "bin/podman-remote-static" => "podman"
+    on_linux do
+      bin.install "bin/podman-remote-static" => "podman-remote"
+    end
+    on_macos do
+      bin.install "bin/podman-remote-static" => "podman"
+    end
 
     system "make", "docs"
     man1.install Dir["docs/build/man/*.1"]
