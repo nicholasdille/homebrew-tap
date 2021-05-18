@@ -9,8 +9,8 @@ class PodmanStatic < Formula
   revision 2
   head "https://github.com/containers/podman.git"
 
-  depends_on "make" => :build
   depends_on "go-md2man" => :build
+  depends_on "make" => :build
   depends_on :linux
 
   def install

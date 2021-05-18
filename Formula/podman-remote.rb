@@ -8,12 +8,12 @@ class PodmanRemote < Formula
   license "Apache-2.0"
   head "https://github.com/containers/podman.git"
 
-  conflicts_with "podman"
-  conflicts_with "nicholasdille/tap/podman"
-
   depends_on "go" => :build
   depends_on "go-md2man" => :build
   depends_on "make" => :build
+
+  conflicts_with "podman"
+  conflicts_with "nicholasdille/tap/podman"
 
   def install
     system "make", "podman-remote-static"
