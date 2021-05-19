@@ -24,22 +24,29 @@ class Podman < Formula
   depends_on :linux
 
   def install
-    buildtags = []
-    buildtags << "exclude_graphdriver_btrfs" if build.without? "btrfs"
-    buildtags << "exclude_graphdriver_devicemapper" if build.without? "devicemapper"
-    buildtags << "selinux" if build.with? "selinux"
-    buildtags << "apparmor" if build.with? "apparmor"
-    buildtags << "seccomp" if build.with? "libseccomp"
-    buildtags << "systemd" if build.with? "systemd"
+    dir = buildpath/"src/github.com/containers/podman"
+    dir.install (buildpath/"").children
+    cd dir do
+      ENV["GO111MODULE"] = "auto"
+      ENV["GOPATH"] = buildpath
 
-    system "make", "podman", "BUILDTAGS=#{buildtags.join(" ")}"
-    bin.install "bin/podman"
+      buildtags = []
+      buildtags << "exclude_graphdriver_btrfs" if build.without? "btrfs"
+      buildtags << "exclude_graphdriver_devicemapper" if build.without? "devicemapper"
+      buildtags << "selinux" if build.with? "selinux"
+      buildtags << "apparmor" if build.with? "apparmor"
+      buildtags << "seccomp" if build.with? "libseccomp"
+      buildtags << "systemd" if build.with? "systemd"
 
-    system "make", "docs"
-    man1.install Dir["docs/build/man/*.1"]
+      system "make", "podman", "BUILDTAGS=#{buildtags.join(" ")}"
+      bin.install "bin/podman"
 
-    bash_completion.install "completions/bash/podman"
-    zsh_completion.install "completions/zsh/_podman"
+      system "make", "docs"
+      man1.install Dir["docs/build/man/*.1"]
+
+      bash_completion.install "completions/bash/podman"
+      zsh_completion.install "completions/zsh/_podman"
+    end
   end
 
   test do
