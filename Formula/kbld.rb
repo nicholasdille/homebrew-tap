@@ -3,8 +3,8 @@ class Kbld < Formula
   homepage "https://carvel.dev/kbld"
 
   url "https://github.com/vmware-tanzu/carvel-kbld.git",
-    tag:      "v0.29.0",
-    revision: "5f051be5f7b9541a3633b03eba0c791a08c16c57"
+    tag:      "v0.30.0",
+    revision: "085f54e597e0416807080b5bcf48a1fa4d679939"
   license "Apache-2.0"
   head "https://github.com/vmware-tanzu/carvel-kbld.git"
 
