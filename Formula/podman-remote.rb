@@ -19,8 +19,8 @@ class PodmanRemote < Formula
   depends_on "make" => :build
 
   conflicts_with "podman"
-  # conflicts_with "nicholasdille/tap/podman"
   conflicts_with "nicholasdille/tap/podman-static"
+  # conflicts_with "nicholasdille/tap/podman"
 
   def install
     system "make", "podman-remote-static"

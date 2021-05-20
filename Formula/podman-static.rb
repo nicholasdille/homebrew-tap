@@ -18,6 +18,10 @@ class PodmanStatic < Formula
   depends_on "make" => :build
   depends_on :linux
 
+  conflicts_with "podman"
+  conflicts_with "nicholasdille/tap/podman-remote"
+  # conflicts_with "nicholasdille/tap/podman"
+
   def install
     # Build base from https://github.com/NixOS/docker
     system "docker",
