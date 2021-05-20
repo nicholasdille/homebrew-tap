@@ -24,7 +24,7 @@ class Localizer < Formula
   def install
     ENV["GOPROXY"] = "https://proxy.golang.org"
     ENV["GOPRIVATE"] = "github.com/getoutreach/*"
-    ENV["CGO_ENABLED] = "1"
+    ENV["CGO_ENABLED"] = "1"
 
     system "go", "build",
       "-ldflags", "-w -s"\
