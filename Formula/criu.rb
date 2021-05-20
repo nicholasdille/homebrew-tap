@@ -20,7 +20,7 @@ class Criu < Formula
   def install
     ln_sf "#{HOMEBREW_PREFIX}/include/google/protobuf/descriptor.proto",
           "#{buildpath}/images/google/protobuf/"
-    system "make", "install", "PREFIX=#{prefix}"
+    system "make", "install", "PREFIX=#{prefix}", "USE_ASCIIDOCTOR=1"
   end
 
   test do
