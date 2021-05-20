@@ -32,7 +32,7 @@ class Localizer < Formula
                   " -X github.com/getoutreach/go-outreach/v2/pkg/app.Version=#{version}",
       "-v",
       "-tags=or_dev",
-      "-o", bin/"localizer",
+      "-o", bin,
       "github.com/getoutreach/localizer/..."
   end
 
