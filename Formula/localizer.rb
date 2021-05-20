@@ -21,6 +21,7 @@ class Localizer < Formula
   depends_on "go" => :build
   depends_on "make" => :build
   depends_on "protobuf" => :build
+  depends_on "yq" => :build
 
   def install
     system "./scripts/bootstrap-lib.sh"
