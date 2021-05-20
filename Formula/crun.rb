@@ -8,6 +8,8 @@ class Crun < Formula
   license "Apache-2.0"
   head "https://github.com/containers/crun.git"
 
+  depends_on :linux
+
   def install
     # Build base from https://github.com/NixOS/docker
     image_name = "nix"
