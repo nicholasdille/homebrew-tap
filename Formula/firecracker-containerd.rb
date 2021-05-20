@@ -8,6 +8,11 @@ class FirecrackerContainerd < Formula
   license "Apache-2.0"
   head "https://github.com/firecracker-microvm/firecracker-containerd.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/firecracker-containerd-0.0.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a58131a7a9b665b099a55851a5d15631cfa58ee30bbfca557ed638bff3297d74"
+  end
+
   depends_on "go" => :build
   depends_on "make" => :build
   depends_on :linux
