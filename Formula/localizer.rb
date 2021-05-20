@@ -34,7 +34,7 @@ class Localizer < Formula
       "-tags=or_dev",
       "-o", buildpath,
       "github.com/getoutreach/localizer/..."
-      bin.install "localizer"
+    bin.install "localizer"
   end
 
   test do
