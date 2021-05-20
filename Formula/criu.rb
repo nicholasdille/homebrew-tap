@@ -9,6 +9,8 @@ class Criu < Formula
   head "https://github.com/checkpoint-restore/criu.git"
 
   depends_on "asciidoc" => :build
+  depends_on "docbook" => :build
+  depends_on "docbook-xsl" => :build
   depends_on "libnet" => :build
   depends_on "pkg-config" => :build
   depends_on "protobuf-c" => :build
