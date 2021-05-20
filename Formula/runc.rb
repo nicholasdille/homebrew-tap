@@ -3,8 +3,8 @@ class Runc < Formula
   homepage "https://www.opencontainers.org"
 
   url "https://github.com/opencontainers/runc.git",
-    tag:      "v1.0.0-rc94",
-    revision: "2c7861bc5e1b3e756392236553ec14a78a09f8bf"
+    tag:      "v1.0.0-rc95",
+    revision: "b9ee9c6314599f1b4a7f497e1f1f856fe433d3b7"
   license "Apache-2.0"
   head "https://github.com/opencontainers/runc.git"
 
