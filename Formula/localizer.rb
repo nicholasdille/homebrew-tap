@@ -19,14 +19,21 @@ class Localizer < Formula
   option "without-cri", "Support CRI"
 
   depends_on "go" => :build
-  depends_on "make" => :build
   depends_on "protobuf" => :build
-  depends_on "yq" => :build
 
   def install
-    system "./scripts/bootstrap-lib.sh"
-    system "make", "build", "LDFLAGS=-w -s -X main.Version=v#{version}"
-    bin.install "bin/localizer"
+    ENV["GOPROXY"] = "https://proxy.golang.org"
+    ENV["GOPRIVATE"] = "github.com/getoutreach/*"
+    ENV["CGO_ENABLED] = "1"
+
+    system "go", "build",
+      "-ldflags", "-w -s"\
+                  " -X github.com/getoutreach/gobox/pkg/app.Version=#{version}"\
+                  " -X github.com/getoutreach/go-outreach/v2/pkg/app.Version=#{version}",
+      "-v",
+      "-tags=or_dev",
+      "-o", bin/"localizer",
+      "github.com/getoutreach/localizer/..."
   end
 
   test do
