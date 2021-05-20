@@ -23,6 +23,7 @@ class Localizer < Formula
   depends_on "protobuf" => :build
 
   def install
+    system "./scripts/bootstrap-lib.sh"
     system "make", "build", "LDFLAGS=-w -s -X main.Version=v#{version}"
     bin.install "bin/localizer"
   end
