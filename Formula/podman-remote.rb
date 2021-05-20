@@ -8,6 +8,12 @@ class PodmanRemote < Formula
   license "Apache-2.0"
   head "https://github.com/containers/podman.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/podman-remote-3.1.2"
+    sha256 cellar: :any_skip_relocation, catalina:     "151d44c455ffb07fd8ad665ed7eada591398f6076484a2b37673f4ec5a4c313a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "27893ed064f64a92e8300a898ae2cfbc6556327d1dafab021fb7af281aeb3c34"
+  end
+
   depends_on "go" => :build
   depends_on "go-md2man" => :build
   depends_on "make" => :build
