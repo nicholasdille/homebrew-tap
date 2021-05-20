@@ -3,10 +3,9 @@ class Slirp4netns < Formula
   homepage "https://github.com/rootless-containers/slirp4netns/"
 
   url "https://github.com/rootless-containers/slirp4netns.git",
-    tag:      "v1.1.9",
-    revision: "4e37ea557562e0d7a64dc636eff156f64927335e"
+    tag:      "v1.1.10",
+    revision: "baa2bc5ff12fe6db646c1f4f3f966526c0eba5a0"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/rootless-containers/slirp4netns.git"
 
   bottle do
