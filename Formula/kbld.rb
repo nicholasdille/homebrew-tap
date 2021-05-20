@@ -9,8 +9,9 @@ class Kbld < Formula
   head "https://github.com/vmware-tanzu/carvel-kbld.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kbld-0.29.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4bee93d0c98da3a640348158fa4aec32c0911bc3a291257dedc993a633ac06e7"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kbld-0.30.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "4dd9f34c2c0f175fe5a9ca31569d33e98953c83404c45638c54f20f94dab52f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "32ba7ed0fdbd1483398f1f2a64e536ec56cde9441f153b73a2c9166a80a8b4c5"
   end
 
   depends_on "go" => :build
