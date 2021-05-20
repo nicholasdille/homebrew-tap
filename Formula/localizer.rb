@@ -32,7 +32,9 @@ class Localizer < Formula
                   " -X github.com/getoutreach/go-outreach/v2/pkg/app.Version=#{version}",
       "-v",
       "-tags=or_dev",
+      "-o", buildpath,
       "github.com/getoutreach/localizer/..."
+      bin.install "localizer"
   end
 
   test do
