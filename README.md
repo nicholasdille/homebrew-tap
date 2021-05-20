@@ -122,6 +122,7 @@ Formulae for run:
 - [jfrog-cli](https://formulae.brew.sh/formula/jfrog-cli#default) (official)
 - [k3d](https://formulae.brew.sh/formula/k3d#default) (official)
 - [k3sup](https://formulae.brew.sh/formula/k3sup#default) (official)
+- [kind](https://formulae.brew.sh/formula/kind#default) (official)
 - [krew](https://formulae.brew.sh/formula/krew#default) (official)
 - [kubernetes-cli (kubectl)](https://formulae.brew.sh/formula/kubernetes-cli#default) (official)
 - [kustomize](https://formulae.brew.sh/formula/kustomize#default) (official)
