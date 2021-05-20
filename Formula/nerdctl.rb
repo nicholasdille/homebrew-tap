@@ -9,8 +9,8 @@ class Nerdctl < Formula
   head "https://github.com/containerd/nerdctl.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/nerdctl-0.8.1_1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "254b91c84c019c59d052185f1b77e194a4ec1c0baf7060ff83e0338986ebef81"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/nerdctl-0.8.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7b214f11cfd07e77b1f3503d25140c3caee5d16cd7ee57f93affa0a740a7cd9c"
   end
 
   depends_on "go" => :build
