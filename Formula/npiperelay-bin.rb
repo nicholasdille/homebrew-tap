@@ -9,6 +9,8 @@ class NpiperelayBin < Formula
 
   bottle :unneeded
 
+  depends_on :linux
+
   def install
     bin.install "npiperelay.exe"
   end
