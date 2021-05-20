@@ -9,8 +9,8 @@ class Firecracker < Formula
   head "https://github.com/firecracker-microvm/firecracker.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/firecracker-0.24.2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1bb709b79d7a461eb22937e254079727cd139bb21a19f6513d40d6e04e0836da"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/firecracker-0.24.3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5b5a03a6be14af6bb6f79538f2e71e2e0ddfbd5ea2e2a856b370ecbac3c853f0"
   end
 
   depends_on arch: :x86_64
