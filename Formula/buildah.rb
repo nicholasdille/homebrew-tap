@@ -9,8 +9,8 @@ class Buildah < Formula
   head "https://github.com/containers/buildah.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildah-1.20.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "dd1a325a0f9974c989de2133544e7a21602aad2753a2b83e75605c06251be539"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildah-1.21.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "bc764b2598adb05cadc9da8de92da1d545f7cc8a93768be6bc1062bc71da8a1b"
   end
 
   depends_on "go-md2man" => :build
