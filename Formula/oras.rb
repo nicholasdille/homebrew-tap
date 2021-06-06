@@ -3,10 +3,9 @@ class Oras < Formula
   homepage "https://github.com/deislabs/oras"
 
   url "https://github.com/deislabs/oras.git",
-    tag:      "v0.11.1",
-    revision: "5bfe0ab04a0f6fcdc5de4294cc79fb5b2e23a9a5"
+    tag:      "v0.12.0",
+    revision: "1e6a64e1789f5145bf669b75bebfe013100f6253"
   license "MIT"
-  revision 1
   head "https://github.com/deislabs/oras.git"
 
   bottle do
