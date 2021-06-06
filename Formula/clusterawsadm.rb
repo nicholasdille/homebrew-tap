@@ -8,9 +8,9 @@ class Clusterawsadm < Formula
   head "https://github.com/kubernetes-sigs/cluster-api-provider-aws.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/clusterawsadm-0.6.5"
-    sha256 cellar: :any_skip_relocation, catalina:     "355636d79b9d892f9b262bd016852e27d363921eed61ba5eb977719676d8c48c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d1f3006fc3d48155903d9d16a6c8e91b89b7329293fcb8eecf3a0e2629ce58a8"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/clusterawsadm-0.6.6"
+    sha256 cellar: :any_skip_relocation, catalina:     "015048d98317586d9b82636bcaae429f615739dd0db6c83c3af932df26eede2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "80ae2781861f3b3a4a4c0d9b375f44fb3753f4ea11ec1b4c4aca391bf2381d7e"
   end
 
   depends_on "go" => :build
