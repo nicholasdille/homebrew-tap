@@ -31,8 +31,8 @@ class Dockerd < Formula
   depends_on "go" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
-  depends_on IptablesRequirement
   depends_on :linux
+  depends_on IptablesRequirement
   depends_on "nicholasdille/tap/containerd"
   depends_on "nicholasdille/tap/runc"
 
