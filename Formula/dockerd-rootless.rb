@@ -1,4 +1,4 @@
-class NewuidmapRequirement < Requirement
+class LinuxNewuidmapRequirement < Requirement
   fatal true
 
   satisfy(build_env: false) { which(TOOL).present? }
@@ -12,7 +12,7 @@ class NewuidmapRequirement < Requirement
   TOOL = "newuidmap".freeze
 end
 
-class NewgidmapRequirement < Requirement
+class LinuxNewgidmapRequirement < Requirement
   fatal true
 
   satisfy(build_env: false) { which(TOOL).present? }
@@ -42,8 +42,9 @@ class DockerdRootless < Formula
   end
 
   depends_on "immortal"
-  depends_on NewgidmapRequirement
-  depends_on NewuidmapRequirement
+  depends_on :linux
+  depends_on LinuxNewgidmapRequirement
+  depends_on LinuxNewuidmapRequirement
   depends_on "nicholasdille/tap/dockerd"
   depends_on "nicholasdille/tap/fuse-overlayfs-bin"
   depends_on "nicholasdille/tap/rootlesskit"
