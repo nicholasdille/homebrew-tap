@@ -3,8 +3,8 @@ class DockerComposeCli < Formula
   homepage "https://github.com/docker/compose-cli"
 
   url "https://github.com/docker/compose-cli.git",
-    tag:      "v1.0.14",
-    revision: "38b4220bdb4ff915e9a6efca81e147ec766aadc6"
+    tag:      "v1.0.17",
+    revision: "db30ef76d0db87b0787b7c83b67f3830c92da5c5"
   license "Apache-2.0"
   head "https://github.com/docker/compose-cli.git"
 
