@@ -9,9 +9,9 @@ class Regclient < Formula
   head "https://github.com/regclient/regclient.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/regclient-0.3.2"
-    sha256 cellar: :any_skip_relocation, catalina:     "ddc7341f8981072daa30937a5c89fc46d0e322cc30383712d8403ca3c3c951a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "48adba226db3c37a91bccde9aeebf6dbbe14c54617db5169bc101e2808ac36d6"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/regclient-0.3.3"
+    sha256 cellar: :any_skip_relocation, catalina:     "e46a7faa54a456114eb126eb62d812ca7160f7927767d669279d5b5172a22fe1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cd64949e6be644dfe4333a85b1834f6364d8a2d857bc3794c58fc8b4d1f5e4d2"
   end
 
   depends_on "go" => :build
