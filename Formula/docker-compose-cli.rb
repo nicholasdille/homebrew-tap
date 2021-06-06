@@ -9,9 +9,9 @@ class DockerComposeCli < Formula
   head "https://github.com/docker/compose-cli.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/docker-compose-cli-1.0.14"
-    sha256 cellar: :any_skip_relocation, catalina:     "f9e715be610542d5fc7e9b6ad5aa1397cb6bba6efefa8a5335dd2d84cb790d96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9ed7a790ee9bb7da7cdb59664f344367a26f16b97b162a35b92831c351200afc"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/docker-compose-cli-1.0.17"
+    sha256 cellar: :any_skip_relocation, catalina:     "9305eb72b0719a01584a991641a3236cba4e3021f6eadbdadcda9698d7eeabe8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0d424af8c95de8b24e3d972772c767566f6af9fa480aa7c20b8673376ab52a87"
   end
 
   depends_on "go" => :build
