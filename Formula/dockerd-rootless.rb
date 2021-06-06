@@ -38,7 +38,8 @@ class DockerdRootless < Formula
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/dockerd-rootless-20.10.6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f4df9738b904f10b6da09b1ae1d1461f179e73f593b9275a1693e8ed33df5138"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9318fce958a4f4d08572815d7c186a45b07d820cb3c34f7aef6abb0ccf5eba03"
   end
 
   depends_on "immortal"
