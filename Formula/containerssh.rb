@@ -14,8 +14,9 @@ class Containerssh < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containerssh-0.4.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1e59e6a492a6defbc54ba04693efeac677acf4d229e09cf905afc43fe4cfab19"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containerssh-0.4.1"
+    sha256 cellar: :any_skip_relocation, catalina:     "8a2aa0a50aaae969e5bed80a9d4cabc73203854c1173e34c2ed18be3ffbbb65d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "045f3aa281787fc7d33b6d04c3e7d05ad1747e996681bf000e8832efc36ff225"
   end
 
   depends_on "go" => :build
