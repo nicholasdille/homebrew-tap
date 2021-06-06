@@ -9,9 +9,9 @@ class Ytt < Formula
   head "https://github.com/vmware-tanzu/carvel-ytt.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/ytt-0.33.0"
-    sha256 cellar: :any_skip_relocation, catalina:     "422ed411d9fbd74ddec68dd789a858e81fe6b9fb1568399744337214ab573441"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6abb26bd11ec63a9c7768ab769b9aaf4b2c7e28bf97f6653eba46019204fb40d"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/ytt-0.34.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "bf1649cefb1b84c3ee89e99c358e13ca5761d8d85c3fd951d05a36d654c78190"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "395456f8ffd0a4e595828547e93b36e3cf32992f5bd5bb8e318953f779630d4f"
   end
 
   depends_on "go" => :build
