@@ -14,9 +14,9 @@ class Kim < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kim-0.1.0-alpha.12"
-    sha256 cellar: :any_skip_relocation, catalina:     "3bf67a6703f132ff1de012ab2d8d18333f3c2251a0811a4ea619f56280ef3195"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2d1aa1c19cf5771e3bfa8a03f224c99817922d48bf437a8a50b0df5feac722fb"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kim-0.1.0-beta.2"
+    sha256 cellar: :any_skip_relocation, catalina:     "679893675ae83719c77daf2d5427366d669d85942811f713511fe2a24dd48f1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "453963df4a83a6afa1246648e6e03e76b6fd08583ccf8ac382977a2f3c1ea031"
   end
 
   depends_on "go" => :build
