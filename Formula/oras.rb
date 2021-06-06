@@ -18,7 +18,7 @@ class Oras < Formula
   conflicts_with "oras"
 
   def install
-    pkg = "github.com/deislabs/oras"
+    pkg = "github.com/oras-project/oras"
     commit = Utils.git_short_head
     ENV["CGO_ENABLED"] = "0"
     system "go",
