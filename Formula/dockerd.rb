@@ -29,7 +29,7 @@ class Dockerd < Formula
   end
 
   depends_on "go" => :build
-  depends_on linux: :build
+  depends_on linux: => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
   depends_on IptablesRequirement
