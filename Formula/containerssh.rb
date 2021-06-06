@@ -3,8 +3,8 @@ class Containerssh < Formula
   homepage "https://containerssh.io/"
 
   url "https://github.com/ContainerSSH/ContainerSSH.git",
-    tag:      "v0.4.0",
-    revision: "c598ba7448f45611133882bdc4467aa104e73dd8"
+    tag:      "v0.4.1",
+    revision: "2714a9d3805691444186bfaf4e00389cadfe333d"
   license "MIT"
   head "https://github.com/ContainerSSH/ContainerSSH.git"
 
