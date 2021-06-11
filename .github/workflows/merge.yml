@@ -6,7 +6,7 @@ on:
 
 jobs:
   merge:
-    if: github.event.pull_request.merged == true
+    if: contains(github.event.pull_request.labels.*.name, 'ready-for/merge')
     runs-on: ubuntu-latest
     steps:
 
