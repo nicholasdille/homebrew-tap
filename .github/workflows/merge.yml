@@ -30,6 +30,8 @@ jobs:
           PARENT_PR_ID=$(echo "${PARENT_PR}" | cut -d'#' -f2)
 
           echo "Merging ${PARENT_PR_REPO}#${PARENT_PR_ID}"
+          echo "  Using URL ${GITHUB_API_URL}/repos/${PARENT_PR_REPO}/pulls/${PARENT_PR_ID}/merge"
+          echo "  Using data {\"merge_method\": \"rebase\", \"commit_title\": \"Automated merge after ${GITHUB_REPOSITORY}#${PR}\"}"
 
           curl "${GITHUB_API_URL}/repos/${PARENT_PR_REPO}/pulls/${PARENT_PR_ID}/merge" \
               --silent \
