@@ -3,8 +3,8 @@ class OciImageTool < Formula
   homepage "https://opencontainers.org/"
 
   url "https://github.com/opencontainers/image-tools.git",
-    tag:      "v1.0.0-rc1",
-    revision: "7f6433100c1757a65c72f374080b6899f8152075"
+    tag:      "v1.0.0-rc3",
+    revision: "25e557a203ff15022e7e01b9a498737b2d643e92"
   license "Apache-2.0"
   head "https://github.com/opencontainers/image-tools.git"
 
