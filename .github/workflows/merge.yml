@@ -33,6 +33,7 @@ jobs:
 
           curl "${GITHUB_API_URL}/repos/${PARENT_PR_REPO}/pulls/${PARENT_PR_ID}/merge" \
               --silent \
+              --verbose \
               --fail \
               --header "Accept: application/vnd.github.v3+json" \
               --header "Authorization: Bearer ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}" \
