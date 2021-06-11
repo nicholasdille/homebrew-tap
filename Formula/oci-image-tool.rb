@@ -14,8 +14,9 @@ class OciImageTool < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/oci-image-tool-1.0.0-rc1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f11e0313bc925475cc6fd2f3d9857a3b60710bf1204bdfd1986bcffa4c099da6"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/oci-image-tool-1.0.0-rc3"
+    sha256 cellar: :any_skip_relocation, catalina:     "ef037d05de434f8c71f605926c7e39ba45cb5f11d937f32194bbddfcaa3da892"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2786659fab798448a0a4dfe3d2b890dae925a359e1e3c19203e48bcde9d96d85"
   end
 
   depends_on "go" => :build
