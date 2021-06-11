@@ -22,7 +22,7 @@ jobs:
                       --silent \
                       --fail \
                       --header "Accept: application/vnd.github.v3+json" \
-                      --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+                      --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" | \
                   jq --raw-output '.body'
           )
           PARENT_PR=$(echo "${PR_BODY}" | head -n 1 | cut -d' ' -f3)
