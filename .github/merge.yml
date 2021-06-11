@@ -1,0 +1,35 @@
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  merge:
+    if: github.event.pull_request.merged == true
+    steps:
+
+      - name: Test
+        env:
+          PR: ${{ github.event.pull_request.number }}
+          #HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+        run: |
+          echo "Running for PR #${PR}"
+
+          PR_BODY=$(
+              curl "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/pulls/${PR}" \
+                      --silent \
+                      --fail \
+                      --header "Accept: application/vnd.github.v3+json" | \
+                  jq --raw-output '.body'
+          )
+          PARENT_PR=$(echo "${PR_BODY}" | head -n 1 | cut -d' ' -f3)
+          PARENT_PR_REPO=$(echo "${PARENT_PR}" | cut -d'#' -f1)
+          PARENT_PR_ID=$(echo "${PARENT_PR}" | cut -d'#' -f2)
+
+          echo "Merging ${PARENT_PR_REPO}#${PARENT_PR_ID}"
+
+          curl "${GITHUB_API_URL}/repos/${PARENT_PR_REPO}/pulls/${PARENT_PR_ID}/merge" \
+              --silent \
+              --fail \
+              --header "Accept: application/vnd.github.v3+json" \
+              --data "{\"merge_method\": \"rebase\", \"commit_title\": \"Automated merge after ${GITHUB_REPOSITORY}#${PR}\"}"
