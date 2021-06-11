@@ -8,7 +8,7 @@ jobs:
   test-bot:
     strategy:
       matrix:
-        os: 
+        os:
         - ubuntu-latest
         - macos-latest
     runs-on: ${{ matrix.os }}
@@ -37,3 +37,8 @@ jobs:
         with:
           name: bottles
           path: '*.bottle.*'
+      - name: Trigger merge
+        if: github.event_name == 'pull_request'
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: ready-for/merge
