@@ -9,9 +9,9 @@ class Clusterctl < Formula
   head "https://github.com/kubernetes-sigs/cluster-api.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/clusterctl-0.3.17"
-    sha256 cellar: :any_skip_relocation, catalina:     "836f00dc315db7e8a7f06c190a87e9625f289481d053913315c93049bf6dbaf4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "de7f21827ff77549cf1e9350e2d53ecb218f7f77143da4dfa42ab496c3fc25e9"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/clusterctl-0.3.19"
+    sha256 cellar: :any_skip_relocation, catalina:     "bbf0e262fa72172a283683e9909448a12f10b9fdca750df711484f418ba71dcb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f397ab18b689bf1599dfa38adcd34517d8dbdc158aa9071ad67848b017ae3801"
   end
 
   depends_on "go" => :build
