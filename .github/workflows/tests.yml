@@ -47,5 +47,5 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: actions-ecosystem/action-add-labels@v1
         with:
-          github_token: "${{ secrets.GITHUB_TOKEN }}"
+          github_token: "${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}"
           labels: ready-for/merge
