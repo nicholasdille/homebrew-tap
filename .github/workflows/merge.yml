@@ -25,7 +25,7 @@ jobs:
                       --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" | \
                   jq --raw-output '.body'
           )
-          PARENT_PR=$(echo "${PR_BODY}" | head -n 1 | cut -d' ' -f3)
+          PARENT_PR=$(echo "${PR_BODY}" | head -n 1 | cut -d' ' -f3 | tr -d '\r')
           PARENT_PR_REPO=$(echo "${PARENT_PR}" | cut -d'#' -f1)
           PARENT_PR_ID=$(echo "${PARENT_PR}" | cut -d'#' -f2)
 
