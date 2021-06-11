@@ -37,6 +37,7 @@ jobs:
               --silent \
               --verbose \
               --fail \
+              --request PUT \
               --header "Accept: application/vnd.github.v3+json" \
               --header "Authorization: Bearer ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}" \
               --data "{\"merge_method\": \"rebase\", \"commit_title\": \"Automated merge after ${GITHUB_REPOSITORY}#${PR}\"}"
