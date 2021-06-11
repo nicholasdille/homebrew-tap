@@ -21,8 +21,8 @@ jobs:
               curl "${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/pulls/${PR}" \
                       --silent \
                       --fail \
-                      --header "Accept: application/vnd.github.v3+json" | \
-                      --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+                      --header "Accept: application/vnd.github.v3+json" \
+                      --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
                   jq --raw-output '.body'
           )
           PARENT_PR=$(echo "${PR_BODY}" | head -n 1 | cut -d' ' -f3)
@@ -33,8 +33,7 @@ jobs:
 
           curl "${GITHUB_API_URL}/repos/${PARENT_PR_REPO}/pulls/${PARENT_PR_ID}/merge" \
               --silent \
-              --verbose \
               --fail \
               --header "Accept: application/vnd.github.v3+json" \
-              --header 'Authorization: Bearer ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}' \
+              --header "Authorization: Bearer ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}" \
               --data "{\"merge_method\": \"rebase\", \"commit_title\": \"Automated merge after ${GITHUB_REPOSITORY}#${PR}\"}"
