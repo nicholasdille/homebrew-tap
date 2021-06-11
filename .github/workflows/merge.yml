@@ -35,7 +35,6 @@ jobs:
 
           curl "${GITHUB_API_URL}/repos/${PARENT_PR_REPO}/pulls/${PARENT_PR_ID}/merge" \
               --silent \
-              --verbose \
               --fail \
               --request PUT \
               --header "Accept: application/vnd.github.v3+json" \
