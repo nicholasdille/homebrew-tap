@@ -37,8 +37,15 @@ jobs:
         with:
           name: bottles
           path: '*.bottle.*'
+
+  trigger-merge:
+    needs:
+    - test-bot
+    runs-on: ubuntu-latest
+    steps:
       - name: Trigger merge
         if: github.event_name == 'pull_request'
         uses: actions-ecosystem/action-add-labels@v1
         with:
+          github_token: "${{ secrets.GITHUB_TOKEN }}"
           labels: ready-for/merge
