@@ -1,9 +1,11 @@
 # Created by https://github.com/Homebrew/brew/blob/master/Library/Homebrew/dev-cmd/tap-new.rb
 name: brew pr-pull
+
 on:
   pull_request_target:
     types:
       - labeled
+
 jobs:
   pr-pull:
     if: contains(github.event.pull_request.labels.*.name, 'ready-for/merge')
@@ -27,12 +29,20 @@ jobs:
           token: ${{ github.token }}
           branch: main
 
-      - uses: fusion-engineering/setup-git-credentials@v2
-        with:
-          credentials: "https://${{ secrets.HOMEBREW_GITHUB_API_USERNAME }}:${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}@github.com"
-
       - name: Delete branch
         if: github.event.pull_request.head.repo.fork == false
         env:
           BRANCH: ${{ github.event.pull_request.head.ref }}
         run: git push --delete origin $BRANCH
+
+  trigger-merge-parent:
+    needs:
+      - test-bot
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger merge parent PR
+        if: github.event_name == 'pull_request'
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          github_token: "${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}"
+          labels: ready-for/merge-parent

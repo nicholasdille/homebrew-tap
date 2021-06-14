@@ -1,10 +1,12 @@
 # Created by https://github.com/Homebrew/brew/blob/master/Library/Homebrew/dev-cmd/tap-new.rb
 name: brew test-bot
+
 on:
   push:
     branches:
       - main
   pull_request:
+
 jobs:
   test-bot:
     strategy:

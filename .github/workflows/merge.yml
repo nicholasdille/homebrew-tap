@@ -1,12 +1,13 @@
 name: merge parent
+
 on:
-  pull_request:
+  pull_request_target:
     types:
-      - closed
+      - labeled
 
 jobs:
   merge:
-    if: contains(github.event.pull_request.labels.*.name, 'ready-for/merge')
+    if: contains(github.event.pull_request.labels.*.name, 'ready-for/merge-parent')
     runs-on: ubuntu-latest
     steps:
 
