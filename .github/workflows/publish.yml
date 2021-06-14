@@ -37,7 +37,7 @@ jobs:
 
   trigger-merge-parent:
     needs:
-      - test-bot
+      - pr-pull
     runs-on: ubuntu-latest
     steps:
       - name: Trigger merge parent PR
