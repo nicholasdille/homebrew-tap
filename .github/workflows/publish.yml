@@ -41,7 +41,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger merge parent PR
-        if: github.event_name == 'pull_request'
         uses: actions-ecosystem/action-add-labels@v1
         with:
           github_token: "${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}"
