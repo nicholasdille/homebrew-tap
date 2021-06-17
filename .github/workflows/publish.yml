@@ -35,13 +35,13 @@ jobs:
           BRANCH: ${{ github.event.pull_request.head.ref }}
         run: git push --delete origin $BRANCH
 
-  trigger-merge-parent:
-    needs:
-      - pr-pull
-    runs-on: ubuntu-latest
-    steps:
-      - name: Trigger merge parent PR
-        uses: actions-ecosystem/action-add-labels@v1
-        with:
-          github_token: "${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}"
-          labels: ready-for/merge-parent
+  #trigger-merge-parent:
+  #  needs:
+  #    - pr-pull
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #    - name: Trigger merge parent PR
+  #      uses: actions-ecosystem/action-add-labels@v1
+  #      with:
+  #        github_token: "${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}"
+  #        labels: ready-for/merge-parent
