@@ -10,8 +10,9 @@ class Trillian < Formula
   head "https://github.com/google/trillian.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/trillian-1.3.13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f7726186284966cc27582849c21f48a53db793a2f98ff2dc3d9d94e5e66510e0"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/trillian-1.3.13_1"
+    sha256 cellar: :any_skip_relocation, catalina:     "085fc370412a18275d5546b38fcb26ff7b369a15210f61ae9f2be840e1fe2016"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0e5cec5036fb1c45c6d6411a356991e30f3f4ff9d6bd9ce747384386854d825b"
   end
 
   depends_on "go" => :build
