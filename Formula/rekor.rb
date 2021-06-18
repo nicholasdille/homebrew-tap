@@ -9,8 +9,9 @@ class Rekor < Formula
   head "https://github.com/sigstore/rekor.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/rekor-0.1.1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0cd3a03e4196fe5106f5ef36fe39938b4c54e8f8bc54bd72f14fa15d585125f4"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/rekor-0.2.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "5fc7296c53fa2d9d65814ff0080e4baa2095ea9b8bbcaff4d7a0b96165d77590"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "52e42fd403b4246c847154981c3bccc209340828e038a6ebc15abba11210cfdc"
   end
 
   depends_on "go" => :build
