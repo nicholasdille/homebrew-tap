@@ -30,20 +30,20 @@ class Rekor < Formula
     system "go",
       "build",
       "-ldflags", "-s -w"\
-                  " -X $(CLI_PKG).gitVersion=#{version}"\
-                  " -X $(CLI_PKG).gitCommit=#{commit}"\
-                  " -X $(CLI_PKG).gitTreeState=clean"\
-                  " -X $(CLI_PKG).buildDate=#{timestamp}",
+                  " -X #{cli_pkg}.gitVersion=#{version}"\
+                  " -X #{cli_pkg}.gitCommit=#{commit}"\
+                  " -X #{cli_pkg}.gitTreeState=clean"\
+                  " -X #{cli_pkg}.buildDate=#{timestamp}",
       "-o", bin/"rekor",
       "./cmd/rekor-cli"
 
     system "go",
       "build",
       "-ldflags", "-s -w"\
-                  " -X $(SERVER_PKG).gitVersion=#{version}"\
-                  " -X $(SERVER_PKG).gitCommit=#{commit}"\
-                  " -X $(SERVER_PKG).gitTreeState=clean"\
-                  " -X $(SERVER_PKG).buildDate=#{timestamp}",
+                  " -X #{srv_pkg}.gitVersion=#{version}"\
+                  " -X #{srv_pkg}.gitCommit=#{commit}"\
+                  " -X #{srv_pkg}.gitTreeState=clean"\
+                  " -X #{srv_pkg}.buildDate=#{timestamp}",
       "-o", bin/"rekor-server",
       "./cmd/rekor-server"
   end
