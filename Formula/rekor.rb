@@ -21,11 +21,8 @@ class Rekor < Formula
 
     cli_pkg = "github.com/sigstore/rekor/cmd/rekor-cli/app"
     srv_pkg = "github.com/sigstore/rekor/cmd/rekor-server/app"
-    commit = Utils.safe_popen_read(
-      "git",
-      "rev-parse",
-      "HEAD",
-    )
+    commit = Utils.git_short_head
+    timestamp = Time.now.utc.iso8601
 
     system "go",
       "build",
