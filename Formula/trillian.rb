@@ -6,6 +6,7 @@ class Trillian < Formula
     tag:      "v1.3.13",
     revision: "ec49beeb964961d6f88d09ff08c91726ba1df234"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/google/trillian.git"
 
   bottle do
