@@ -19,17 +19,33 @@ class Rekor < Formula
   def install
     ENV["CGO_ENABLED"] = "0"
 
-    system "go",
-      "build",
-      "-ldflags", "-s -w",
-      "-o", bin/"rekor",
-      "./cmd/cli"
+    cli_pkg = "github.com/sigstore/rekor/cmd/rekor-cli/app"
+    srv_pkg = "github.com/sigstore/rekor/cmd/rekor-server/app"
+    commit = Utils.safe_popen_read(
+      "git",
+      "rev-parse",
+      "HEAD",
+    )
 
     system "go",
       "build",
-      "-ldflags", "-s -w",
+      "-ldflags", "-s -w"\
+                  " -X $(CLI_PKG).gitVersion=#{version}"\
+                  " -X $(CLI_PKG).gitCommit=#{commit}"\
+                  " -X $(CLI_PKG).gitTreeState=clean"\
+                  " -X $(CLI_PKG).buildDate=#{timestamp}",
+      "-o", bin/"rekor",
+      "./cmd/rekor-cli"
+
+    system "go",
+      "build",
+      "-ldflags", "-s -w"\
+                  " -X $(SERVER_PKG).gitVersion=#{version}"\
+                  " -X $(SERVER_PKG).gitCommit=#{commit}"\
+                  " -X $(SERVER_PKG).gitTreeState=clean"\
+                  " -X $(SERVER_PKG).buildDate=#{timestamp}",
       "-o", bin/"rekor-server",
-      "./cmd/server"
+      "./cmd/rekor-server"
   end
 
   test do
