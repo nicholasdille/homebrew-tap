@@ -9,7 +9,7 @@ on:
 
 jobs:
   test-bot:
-    if: github.event.pull_request.state == 'open'
+    if: ${{ github.event_name == 'push' || github.event.pull_request.state == 'open' }}
     strategy:
       matrix:
         os:
