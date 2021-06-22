@@ -3,8 +3,8 @@ class ContainersStorage < Formula
   homepage "https://github.com/containers/storage"
 
   url "https://github.com/containers/storage.git",
-    tag:      "v1.32.3",
-    revision: "0ce1fe571512f597b46621d1f792efbd4ed20c58"
+    tag:      "v1.32.4",
+    revision: "feb65b416570d23d8712c43009598fe70061ebdd"
   license "Apache-2.0"
   head "https://github.com/containers/storage.git"
 
