@@ -1,0 +1,17 @@
+name: debug
+
+on:
+  pull_request:
+  pull_request_target:
+    types:
+      - labeled
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Debug
+        env:
+          GITHUB_JSON: ${{ toJSON(github) }}
+        run: |
+          echo "${GITHUB_JSON}"
