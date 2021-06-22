@@ -9,9 +9,9 @@ class ContainersStorage < Formula
   head "https://github.com/containers/storage.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containers-storage-1.32.3"
-    sha256 cellar: :any_skip_relocation, catalina:     "556a13a5dcaab379e0c25b8d4f979e760112f78e9786dce19a4761bb0ed5948e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "21659d88e53277d2e4c62deae679f5044b2e42d1d0e8a78bb24d85a5ab58b684"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containers-storage-1.32.4"
+    sha256 cellar: :any_skip_relocation, catalina:     "3b0690a63446b07bc3158b8f93bfcef35c71042b20bf8c7844711c56993642d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "166d511b1a69ab92b49c7f28850f7f33bc6ba759ce59c141264591fe873d78a0"
   end
 
   option "with-btrfs", "Add support for btrfs"
