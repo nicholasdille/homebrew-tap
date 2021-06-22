@@ -8,7 +8,7 @@ on:
 
 jobs:
   pr-pull:
-    if: ${{ github.event.pull_request.status == "open" && contains(github.event.pull_request.labels.*.name, 'ready-for/merge') }}
+    if: ${{ github.event.pull_request.state == 'open' && contains(github.event.pull_request.labels.*.name, 'ready-for/merge') }}
     runs-on: ubuntu-latest
     steps:
       - name: Set up Homebrew
