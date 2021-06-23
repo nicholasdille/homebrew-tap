@@ -6,6 +6,7 @@ class DockerComposeCli < Formula
     tag:      "v2.0.0-beta.4",
     revision: "6bfdfa8947310deee203ccb6688267a3cbdab056"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/docker/compose-cli.git"
 
   bottle do
@@ -15,55 +16,34 @@ class DockerComposeCli < Formula
   end
 
   depends_on "go" => :build
+  depends_on "docker"
 
   conflicts_with "docker-compose"
 
   def install
+    pkg = "github.com/docker/compose-cli"
     tag = Utils.safe_popen_read("git", "describe", "--tags", "--match", "v[0-9]*")
     ENV["CGO_ENABLED"] = "0"
+    
     system "go",
       "build",
       "-trimpath",
       "-ldflags", "-s -w"\
-                  " -X github.com/docker/compose-cli/internal.Version=#{tag}",
-      "-o", bin/"docker-compose-cli",
+                  " -X #{pkg}/internal.Version=#{tag}",
+      "-o", lib/"docker/cli-plugins/docker-compose-cli",
       "./cli"
-
-    (lib/"docker/cli-plugins/docker-compose").write <<~EOS
-      #!/usr/bin/env bash
-
-      docker_cli_plugin_metadata() {
-          if [ -z "$DOCKER_COMPOSE_VERSION" ]; then
-              export DOCKER_COMPOSE_VERSION="$(docker-compose --version | cut -d " " -f 3 | cut -d "," -f 1)"
-          fi
-          local vendor="Docker"
-          local url="https://www.docker.com"
-          local description="Define and run multi-container applications"
-          cat <<-EOF
-      {"SchemaVersion":"0.1.0","Vendor":"${vendor}","Version":"${DOCKER_COMPOSE_VERSION}","ShortDescription":"${description}","URL":"${url}"}
-      EOF
-      }
-
-      case "$1" in
-
-          docker-cli-plugin-metadata)
-              docker_cli_plugin_metadata
-              ;;
-
-          *)
-              if [ -x "$(command -v docker-compose-cli)" ]; then
-                  exec docker-compose-cli "$@"
-              else
-                  exec "docker-$@"
-              fi
-             ;;
-
-      esac
-    EOS
+    
+      system "go",
+        "build",
+        "-trimpath",
+        "-ldflags", "-s -w"\
+                    " -X #{pkg}/internal.Version=#{tag}",
+        "-o", lib/"docker/cli-plugins/docker-compose",
+        "./cmd"
 
     (bin/"com.docker.cli").write <<~EOS
       #!/usr/bin/env bash
-      exec docker "$@"
+      exec #{HOMEBREW_PREFIX}/bin/docker "$@"
     EOS
   end
 
@@ -77,6 +57,6 @@ class DockerComposeCli < Formula
   end
 
   test do
-    system "whereis", "docker-compose-cli"
+    system lib/"docker/cli-plugins/docker-compose", "compose", "version"
   end
 end
