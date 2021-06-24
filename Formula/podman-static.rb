@@ -10,8 +10,9 @@ class PodmanStatic < Formula
   head "https://github.com/containers/podman.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/podman-static-3.2.1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4794ee46d58702ef7efff0d854a742bd61f8c1cec37542c453f3456a5fe150b0"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/podman-static-3.2.1_1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "209333fae5b1d1fbecc31d75055a2d9b1351894c68f8a2cc648e0dbc5dfc189f"
   end
 
   depends_on "go-md2man" => :build
