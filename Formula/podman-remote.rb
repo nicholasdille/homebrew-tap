@@ -24,7 +24,12 @@ class PodmanRemote < Formula
 
   def install
     system "make", "podman-remote-static"
-    bin.install "bin/podman-remote-static" => "podman"
+    on_linux do
+      bin.install "bin/podman-remote-static" => "podman"
+    end
+    on_macos do
+      bin.install "bin/darwin/podman-remote-static" => "podman"
+    end
 
     system "make", "docs"
     man1.install Dir["docs/build/man/*.1"]
