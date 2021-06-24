@@ -21,6 +21,7 @@ class ContainersStorage < Formula
   option "without-vfs", "Remove support for vfs"
 
   depends_on "go" => :build
+  depends_on "go-md2man" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
 
