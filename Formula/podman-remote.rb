@@ -6,6 +6,7 @@ class PodmanRemote < Formula
     tag:      "v3.2.1",
     revision: "152952fe6b18581615c3efd1fafef2d8142738e8"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/containers/podman.git"
 
   bottle do
@@ -28,8 +29,9 @@ class PodmanRemote < Formula
     system "make", "docs"
     man1.install Dir["docs/build/man/*.1"]
 
-    bash_completion.install "completions/bash/podman"
-    zsh_completion.install "completions/zsh/_podman"
+    bash_completion.install "completions/bash/podman-remote"
+    zsh_completion.install "completions/zsh/_podman-remote"
+    fish_completion.install "completions/fish/podman-remote.fish"
   end
 
   test do
