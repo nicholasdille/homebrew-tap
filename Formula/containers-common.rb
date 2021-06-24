@@ -8,6 +8,12 @@ class ContainersCommon < Formula
   license "Apache-2.0"
   head "https://github.com/containers/common.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containers-common-0.38.10"
+    sha256 cellar: :any_skip_relocation, catalina:     "e8ddd4294b6a3b1b6c26adfe58ef6060286e423a946c134e5626c279438bb6f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c19ea65bfee5a2235cbf8e4dca90cb09d358c8d45422c74a48193124d9326342"
+  end
+
   depends_on "go-md2man" => :build
   depends_on "make" => :build
 
