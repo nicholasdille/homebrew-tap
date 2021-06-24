@@ -71,7 +71,7 @@ class PodmanStatic < Formula
 
     bin.install "bin/podman"
 
-    system "make", "docs"
+    system "make", "docs", "GOMD2MAN=go-md2man"
     man1.install Dir["docs/build/man/*.1"]
 
     bash_completion.install "completions/bash/podman"

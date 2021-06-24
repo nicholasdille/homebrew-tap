@@ -6,7 +6,7 @@ class PodmanRemote < Formula
     tag:      "v3.2.1",
     revision: "152952fe6b18581615c3efd1fafef2d8142738e8"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/containers/podman.git"
 
   bottle do
@@ -33,7 +33,7 @@ class PodmanRemote < Formula
       bin.install "bin/darwin/podman-remote-static" => "podman"
     end
 
-    system "make", "docs"
+    system "make", "docs", "GOMD2MAN=go-md2man"
     man1.install Dir["docs/build/man/*.1"]
 
     bash_completion.install "completions/bash/podman-remote"

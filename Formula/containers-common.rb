@@ -12,7 +12,7 @@ class ContainersCommon < Formula
   depends_on "make" => :build
 
   def install
-    system "make", "-C", "docs"
+    system "make", "-C", "docs", "GOMD2MAN=go-md2man"
     man5.install Dir["docs/*.5"]
 
     (etc/"containers/policy.json").write <<~EOS
@@ -85,5 +85,9 @@ class ContainersCommon < Formula
       sudo mkdir /etc/containers
       sudo ln -s #{etc}/containers /etc
     EOS
+  end
+
+  test do
+    system "bash", "-c", "test -f #{etc}/containers/registries.conf.d/shortnames.conf"
   end
 end

@@ -40,7 +40,7 @@ class ContainersStorage < Formula
       system "make", "binary", "AUTOTAGS=#{autotags.join(" ")}"
       bin.install "containers-storage"
 
-      system "make", "-C", "docs"
+      system "make", "-C", "docs", "GOMD2MAN=go-md2man"
       man5.install Dir["docs/*.5"]
     end
   end
