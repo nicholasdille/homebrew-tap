@@ -6,6 +6,7 @@ class ContainersStorage < Formula
     tag:      "v1.32.4",
     revision: "feb65b416570d23d8712c43009598fe70061ebdd"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/containers/storage.git"
 
   bottle do
@@ -38,6 +39,9 @@ class ContainersStorage < Formula
 
       system "make", "binary", "AUTOTAGS=#{autotags.join(" ")}"
       bin.install "containers-storage"
+
+      system "make", "-C", "docs"
+      man5.install Dir["docs/*.5"]
     end
   end
 

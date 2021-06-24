@@ -17,6 +17,9 @@ class PodmanStatic < Formula
   depends_on "go-md2man" => :build
   depends_on "make" => :build
   depends_on :linux
+  depends_on "nicholasdille/tap/cni"
+  depends_on "nicholasdille/tap/conmon"
+  depends_on "nicholasdille/tap/containers-common"
 
   conflicts_with "podman"
   conflicts_with "nicholasdille/tap/podman-remote"
