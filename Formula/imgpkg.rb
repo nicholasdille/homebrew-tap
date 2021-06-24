@@ -9,9 +9,9 @@ class Imgpkg < Formula
   head "https://github.com/vmware-tanzu/carvel-imgpkg.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/imgpkg-0.11.0"
-    sha256 cellar: :any_skip_relocation, catalina:     "cb77e8bc9d52b1b4d7e435b9ca65803206c77e921ce1909aab10a988f30b3562"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8c5102759a6c0ea91795206b4652eb480bcb3cce3c394577f7f0a44d58bc3482"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/imgpkg-0.12.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "d125ffe9b81461023c16b4285d6ce313e2670e5afe8e7d2668da2a5cb50de56b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "afe67ffd34484e40b3ecb2d1b874de64e0fda12b0da9618130481e556186e53d"
   end
 
   depends_on "go" => :build
