@@ -24,7 +24,7 @@ class DockerComposeCli < Formula
     pkg = "github.com/docker/compose-cli"
     tag = Utils.safe_popen_read("git", "describe", "--tags", "--match", "v[0-9]*")
     ENV["CGO_ENABLED"] = "0"
-    
+
     system "go",
       "build",
       "-trimpath",
@@ -32,14 +32,14 @@ class DockerComposeCli < Formula
                   " -X #{pkg}/internal.Version=#{tag}",
       "-o", lib/"docker/cli-plugins/docker-compose-cli",
       "./cli"
-    
-      system "go",
-        "build",
-        "-trimpath",
-        "-ldflags", "-s -w"\
-                    " -X #{pkg}/internal.Version=#{tag}",
-        "-o", lib/"docker/cli-plugins/docker-compose",
-        "./cmd"
+
+    system "go",
+      "build",
+      "-trimpath",
+      "-ldflags", "-s -w"\
+                  " -X #{pkg}/internal.Version=#{tag}",
+      "-o", lib/"docker/cli-plugins/docker-compose",
+      "./cmd"
 
     (bin/"com.docker.cli").write <<~EOS
       #!/usr/bin/env bash
