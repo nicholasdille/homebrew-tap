@@ -18,6 +18,6 @@ class FuseOverlayfsSnapshotterBin < Formula
   end
 
   test do
-    system bin/"containerd-fuse-overlayfs-grpc", "--version"
+    system "whereis", "containerd-fuse-overlayfs-grpc"
   end
 end
