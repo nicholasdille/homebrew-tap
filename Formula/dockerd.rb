@@ -38,6 +38,25 @@ class Dockerd < Formula
       }
     EOS
     (etc/"docker").install "daemon.json"
+
+    (buildpath/"dockerd.yml").write <<~EOS
+      cmd: #{bin}/dockerd --config-file #{etc}/docker/daemon.json
+      cwd: #{etc}/docker
+      env:
+        XDG_RUNTIME_DIR: #{var}/run/dockerd
+      pid:
+        parent: #{var}/run/dockerd/parent.pid
+        child: #{var}/run/dockerd/child.pid
+      log:
+        file: #{var}/log/dockerd.log
+        age: 86400
+        num: 7
+        size: 1
+        timestamp: true
+      require:
+      - containerd
+    EOS
+    (etc/"immortal").install "dockerd.yml"
   end
 
   def caveats
