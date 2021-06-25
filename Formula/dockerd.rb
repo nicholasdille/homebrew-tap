@@ -23,6 +23,8 @@ class Dockerd < Formula
   depends_on "nicholasdille/tap/runc"
   depends_on "nicholasdille/tap/tini"
 
+  conflicts_with "nicholasdille/tap/docker-proxy"
+
   def install
     ENV["AUTO_GOPATH"] = "1"
     ENV["GO111MODULE"] = "auto"
