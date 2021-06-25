@@ -23,7 +23,7 @@ class ContainerdAT14 < Formula
   depends_on "make" => :build
   depends_on "pkg-config" => :build
   depends_on :linux
-  depends_on "nicholasdille/tap/runc@100rc"
+  depends_on "nicholasdille/tap/runc@1.0.0-rc"
   depends_on "nicholasdille/tap/cni" => :recommended
 
   def install
