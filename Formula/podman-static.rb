@@ -26,11 +26,9 @@ class PodmanStatic < Formula
   conflicts_with "nicholasdille/tap/podman-remote"
   # conflicts_with "nicholasdille/tap/podman"
 
-  stable do
-    patch :DATA
-  end
-
   def install
+    patch :DATA
+
     # Build base from https://github.com/NixOS/docker
     system "docker",
       "build",
