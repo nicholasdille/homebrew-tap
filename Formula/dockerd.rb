@@ -33,7 +33,7 @@ class Dockerd < Formula
 
     bin.install "bundles/binary-daemon/dockerd-#{version}" => "dockerd"
     bin.install "bundles/binary-daemon/docker-proxy"
-    ln_s HOMEBREW_PREFIX/bin/tini, bin/"docker-init"
+    ln_s HOMEBREW_PREFIX/"bin/tini", bin/"docker-init"
 
     (buildpath/"daemon.json").write <<~EOS
       {
