@@ -10,7 +10,8 @@ class BuildkitdRootless < Formula
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildkitd-rootless-1.0.0_1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "6ef8b2604b1aa94e07c101345b5e2a08603d7a66ecb7bec6c80c5fb2471db0d2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f9aa5a1289ca114f078b032fcde1518685e5819a3479ca1a345b68af5e9ecf51"
   end
 
   depends_on "immortal"
