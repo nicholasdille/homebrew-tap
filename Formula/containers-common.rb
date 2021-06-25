@@ -9,9 +9,9 @@ class ContainersCommon < Formula
   head "https://github.com/containers/common.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containers-common-0.38.10"
-    sha256 cellar: :any_skip_relocation, catalina:     "e8ddd4294b6a3b1b6c26adfe58ef6060286e423a946c134e5626c279438bb6f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c19ea65bfee5a2235cbf8e4dca90cb09d358c8d45422c74a48193124d9326342"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containers-common-0.40.1"
+    sha256 cellar: :any_skip_relocation, catalina:     "c188a090e72a91aad5b7b6b60e220d5ee42c31093d5278bc2b7eb9ce7cd4d553"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "86b0becd95c0b80f76bc012b117e617625f85699e8af33a3937e81065ecbe9eb"
   end
 
   depends_on "go-md2man" => :build
