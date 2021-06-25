@@ -26,6 +26,10 @@ class PodmanStatic < Formula
   conflicts_with "nicholasdille/tap/podman-remote"
   # conflicts_with "nicholasdille/tap/podman"
 
+  stable do
+    patch :DATA
+  end
+
   def install
     # Build base from https://github.com/NixOS/docker
     system "docker",
@@ -84,3 +88,18 @@ class PodmanStatic < Formula
     assert_match "podman version #{version}", shell_output("#{bin}/podman -v")
   end
 end
+
+__END__
+diff --git a/libpod/network/config.go b/libpod/network/config.go
+index 9a3bc4763..b4b94539e 100644
+--- a/libpod/network/config.go
++++ b/libpod/network/config.go
+@@ -12,7 +12,7 @@ import (
+ 
+ const (
+ 	// CNIConfigDir is the path where CNI config files exist
+-	CNIConfigDir = "/etc/cni/net.d"
++	CNIConfigDir = "/home/linuxbrew/.linuxbrew/etc/cni/net.d"
+ 	// CNIDeviceName is the default network device name and in
+ 	// reality should have an int appended to it (cni-podman4)
+ 	CNIDeviceName = "cni-podman"
