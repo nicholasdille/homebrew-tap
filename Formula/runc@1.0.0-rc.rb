@@ -13,6 +13,11 @@ class RuncAT100Rc < Formula
     regex(/^v1.0.0-rc\d+/i)
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/runc@1.0.0-rc-1.0.0-rc95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "800aabf2c50ac42953fae0395379f8f29a05102fea6fc6b992c94cb9bf9ee7cc"
+  end
+
   option "with-nokmem", "Disable kernel memory accounting"
 
   depends_on "go" => :build
