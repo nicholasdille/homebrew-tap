@@ -35,6 +35,22 @@ class Buildkitd < Formula
     bin.install "bin/buildkit-qemu-s390x"
     bin.install "bin/buildkit-runc"
     bin.install "bin/buildkitd"
+
+    (buildpath/"buildkitd.yml").write <<~EOS
+      cmd: #{HOMEBREW_PREFIX}/bin/buildkitd
+      env:
+        XDG_RUNTIME_DIR: #{var}/run/buildkitd
+      pid:
+        parent: #{var}/run/buildkitd/parent.pid
+        child: #{var}/run/buildkitd/child.pid
+      log:
+        file: #{var}/log/buildkitd.log
+        age: 86400
+        num: 7
+        size: 1
+        timestamp: true
+    EOS
+    (etc/"immortal").install "buildkitd.yml"
   end
 
   test do

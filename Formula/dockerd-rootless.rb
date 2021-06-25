@@ -53,22 +53,22 @@ class DockerdRootless < Formula
   def install
     bin.install "contrib/dockerd-rootless.sh"
 
-    (buildpath/"dockerd.yml").write <<~EOS
-      cmd: #{HOMEBREW_PREFIX}/bin/dockerd-rootless.sh --config-file #{etc}/docker/daemon.json --iptables=false
+    (buildpath/"dockerd-rootless.yml").write <<~EOS
+      cmd: #{HOMEBREW_PREFIX}/bin/dockerd-rootless.sh --config-file #{etc}/docker/daemon.json
       cwd: #{etc}/docker
       env:
-        XDG_RUNTIME_DIR: #{var}/run/dockerd
+        XDG_RUNTIME_DIR: #{var}/run/dockerd-rootless
       pid:
-        parent: #{var}/run/dockerd/parent.pid
-        child: #{var}/run/dockerd/child.pid
+        parent: #{var}/run/dockerd-rootless/parent.pid
+        child: #{var}/run/dockerd-rootless/child.pid
       log:
-        file: #{var}/log/dockerd.log
+        file: #{var}/log/dockerd-rootless.log
         age: 86400
         num: 7
         size: 1
         timestamp: true
     EOS
-    (etc/"immortal").install "dockerd.yml"
+    (etc/"immortal").install "dockerd-rootless.yml"
   end
 
   def post_install

@@ -27,21 +27,21 @@ class BuildkitdRootless < Formula
     EOS
     bin.install "buildkitd-rootless.sh"
 
-    (buildpath/"buildkitd.yml").write <<~EOS
+    (buildpath/"buildkitd-rootless.yml").write <<~EOS
       cmd: #{bin}/buildkitd-rootless.sh
       env:
-        XDG_RUNTIME_DIR: #{var}/run/buildkitd
+        XDG_RUNTIME_DIR: #{var}/run/buildkitd-rootless
       pid:
-        parent: #{var}/run/buildkitd/parent.pid
-        child: #{var}/run/buildkitd/child.pid
+        parent: #{var}/run/buildkitd-rootless/parent.pid
+        child: #{var}/run/buildkitd-rootless/child.pid
       log:
-        file: #{var}/log/buildkitd.log
+        file: #{var}/log/buildkitd-rootless.log
         age: 86400
         num: 7
         size: 1
         timestamp: true
     EOS
-    (etc/"immortal").install "buildkitd.yml"
+    (etc/"immortal").install "buildkitd-rootless.yml"
   end
 
   def post_install

@@ -41,6 +41,24 @@ class Containerd < Formula
       system "make", "binaries", "BUILDTAGS=#{buildtags.join(" ")}"
       system "make", "install", "DESTDIR=#{prefix}"
     end
+
+    (buildpath/"containerd.yml").write <<~EOS
+      cmd: #{bin}/containerd --config #{etc}/containerd/config.toml
+      env:
+        XDG_RUNTIME_DIR: #{var}/run/containerd
+        XDG_DATA_HOME: #{var}/lib/containerd
+        XDG_CONFIG_HOME: #{etc}/containerd
+      pid:
+        parent: #{var}/run/containerd/parent.pid
+        child: #{var}/run/containerd/child.pid
+      log:
+        file: #{var}/log/containerd.log
+        age: 86400
+        num: 7
+        size: 1
+        timestamp: true
+    EOS
+    (etc/"immortal").install "containerd.yml"
   end
 
   test do
