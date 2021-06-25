@@ -13,7 +13,7 @@ class DockerProxy < Formula
   depends_on "pkg-config" => :build
   depends_on :linux
 
-  conflicts_with "nicholasdille/dockerd"
+  conflicts_with "nicholasdille/tap/dockerd"
 
   def install
     dir = buildpath/"src/github.com/docker/libnetwork"
