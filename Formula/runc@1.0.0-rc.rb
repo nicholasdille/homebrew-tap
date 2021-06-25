@@ -1,4 +1,4 @@
-class RuncAT100rc < Formula
+class RuncAT100Rc < Formula
   desc "CLI tool for spawning and running containers according to the OCI specification"
   homepage "https://www.opencontainers.org"
 
