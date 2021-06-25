@@ -19,7 +19,7 @@ class Dockerd < Formula
   depends_on "make" => :build
   depends_on "pkg-config" => :build
   depends_on :linux
-  depends_on "nicholasdille/tap/containerd"
+  depends_on "nicholasdille/tap/containerd@1.4"
   depends_on "nicholasdille/tap/runc"
   depends_on "nicholasdille/tap/tini"
 
