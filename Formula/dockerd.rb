@@ -6,6 +6,7 @@ class Dockerd < Formula
     tag:      "v20.10.7",
     revision: "b0f5bc36fea9dfb9672e1e9b1278ebab797b9ee0"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/moby/moby.git"
 
   bottle do
@@ -20,6 +21,7 @@ class Dockerd < Formula
   depends_on :linux
   depends_on "nicholasdille/tap/containerd"
   depends_on "nicholasdille/tap/runc"
+  depends_on "nicholasdille/tap/tini"
 
   def install
     ENV["AUTO_GOPATH"] = "1"
@@ -29,7 +31,7 @@ class Dockerd < Formula
 
     bin.install "bundles/binary-daemon/dockerd-#{version}" => "dockerd"
     bin.install "bundles/binary-daemon/docker-proxy"
-    bin.install "bundles/binary-daemon/docker-init"
+    ln_s HOMEBREW_PREFIX/bin/tini, bin/"docker-init"
 
     (buildpath/"daemon.json").write <<~EOS
       {
