@@ -10,6 +10,7 @@ class LoftBin < Formula
 
   bottle :unneeded
 
+  depends_on "git-lfs" => :build
   depends_on arch: :x86_64
 
   resource "binary" do
