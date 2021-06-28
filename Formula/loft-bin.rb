@@ -19,7 +19,7 @@ class LoftBin < Formula
     end
     on_macos do
       url "https://github.com/loft-sh/loft/releases/download/v1.12.2/loft-darwin-amd64"
-      sha256 "2ef145268c8e38b801fb1b8cc0f52b2eb246225c03e64d670607e7b5c439fda6"
+      sha256 "e6814dba937d22c2df8c509e85f769233de6ae4011fe7ed6494de9a7fbe424e2"
     end
   end
 
