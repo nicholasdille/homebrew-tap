@@ -10,7 +10,6 @@ class DockerComposeBin < Formula
 
   bottle :unneeded
 
-  depends_on "libz"
   conflicts_with "docker-compose"
 
   resource "binary" do
