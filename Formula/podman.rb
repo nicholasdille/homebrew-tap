@@ -9,6 +9,11 @@ class Podman < Formula
   revision 2
   head "https://github.com/containers/podman.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/podman-3.1.2_2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3b5ad3b6e9700dd0333ffa934829cc07b1c0c8d15c6e72546df450b1406bbe28"
+  end
+
   option "with-systemd", "Add support for systemd"
   option "with-selinux", "Add support for selinux"
   option "with-apparmor", "Add support for apparmor"
