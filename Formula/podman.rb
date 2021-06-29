@@ -27,6 +27,7 @@ class Podman < Formula
     dir = buildpath/"src/github.com/containers/podman"
     dir.install (buildpath/"").children
     cd dir do
+      ENV.O0
       ENV["GO111MODULE"] = "auto"
       ENV["GOPATH"] = buildpath
 
