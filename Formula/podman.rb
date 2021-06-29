@@ -17,11 +17,13 @@ class Podman < Formula
 
   depends_on "go" => :build
   depends_on "go-md2man" => :build
-  depends_on "gpgme" => :build
-  depends_on "libseccomp" => [:build, :recommended]
   depends_on "make" => :build
   depends_on "pkg-config" => :build
+  depends_on "gpgme"
+  depends_on "libassuan"
+  depends_on "libgpg-error"
   depends_on :linux
+  depends_on "libseccomp" => :recommended
 
   def install
     dir = buildpath/"src/github.com/containers/podman"
