@@ -2,23 +2,18 @@ class Oras < Formula
   desc "OCI Registry As Storage"
   homepage "https://oras.land/"
 
-  url "https://github.com/deislabs/oras.git",
+  url "https://github.com/oras-project/oras.git",
     tag:      "v0.12.0",
     revision: "1e6a64e1789f5145bf669b75bebfe013100f6253"
   license "MIT"
   head "https://github.com/oras-project/oras.git"
-
-  bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/oras-0.12.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "962cabcd2bb0da09264c984b67487b807baa6b227395c89469f22b8549584ce6"
-  end
 
   depends_on "go" => :build
 
   conflicts_with "oras"
 
   def install
-    pkg = "github.com/oras-project/oras"
+    pkg = "oras.land/oras"
     commit = Utils.git_short_head
     ENV["CGO_ENABLED"] = "0"
     system "go",
