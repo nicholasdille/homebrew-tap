@@ -12,13 +12,7 @@ class NpiperelayBin < Formula
   depends_on :linux
 
   def install
-    lib.install "npiperelay.exe"
-
-    (bin/"npiperelay.exe").write <<~EOS
-      #!/bin/bash
-
-      #{lib}/npiperelay.exe
-    EOS
+    bin.install "npiperelay.exe"
   end
 
   test do
