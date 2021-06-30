@@ -1,12 +1,12 @@
 class Oras < Formula
   desc "OCI Registry As Storage"
-  homepage "https://github.com/deislabs/oras"
+  homepage "https://oras.land/"
 
   url "https://github.com/deislabs/oras.git",
     tag:      "v0.12.0",
     revision: "1e6a64e1789f5145bf669b75bebfe013100f6253"
   license "MIT"
-  head "https://github.com/deislabs/oras.git"
+  head "https://github.com/oras-project/oras.git"
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/oras-0.12.0"
