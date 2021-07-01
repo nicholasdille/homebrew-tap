@@ -13,7 +13,7 @@ class Oras < Formula
   conflicts_with "oras"
 
   def install
-    pkg = "oras.land/oras"
+    pkg = "github.com/oras-project/oras"
     commit = Utils.git_short_head
     ENV["CGO_ENABLED"] = "0"
     system "go",
@@ -24,7 +24,7 @@ class Oras < Formula
                   " -X #{pkg}/internal/version.GitCommit=#{commit}"\
                   " -X #{pkg}/internal/version.GitTreeState=clean",
       "-o", bin/"oras",
-      "#{pkg}/cmd/oras"
+      "./cmd/oras"
   end
 
   test do
