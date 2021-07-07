@@ -9,8 +9,8 @@ class NerdctlImmortal < Formula
   head "https://github.com/containerd/nerdctl.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/nerdctl-immortal-0.9.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "335c3f5d90b419bc1532fd55298d416903f9580cb3cf76f35e39f56e905176b3"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/nerdctl-immortal-0.10.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3b2eb3cc706d6afd59d3600cc0a9cdbdc01547c102935bb578c8a95e731b3e3b"
   end
 
   depends_on "immortal"
