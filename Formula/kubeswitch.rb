@@ -9,8 +9,9 @@ class Kubeswitch < Formula
   head "https://github.com/danielb42/kubeswitch.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kubeswitch-1.3.2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "bf9bdfdc3d842c0fca0db210be5da3508fb0a7f89141e2d529eb6d1f9d56e163"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kubeswitch-1.4.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "117c79a5a95b35d6714eaff125d4d2bd3e01c5e6d9279b61257e016ee92fe452"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0a0cc3791fc857c3a5c44881235193425694a34a037f816445b5a575e6b63c9a"
   end
 
   depends_on "go" => :build
