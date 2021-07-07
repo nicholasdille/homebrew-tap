@@ -35,6 +35,15 @@ class DockerComposeBin < Formula
     zsh_completion.install "contrib/completion/zsh/_docker-compose"
   end
 
+  def caveats
+    <<~EOS
+      You are installing the Python-based docker-compose.
+      Please consider using the new Go-based CLI-integrated compose-cli:
+
+        brew install nicholasdille/tap/docker-compose-cli
+    EOS
+  end
+
   test do
     system bin/"docker-compose", "version"
   end
