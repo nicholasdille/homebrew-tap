@@ -9,9 +9,9 @@ class Diun < Formula
   head "https://github.com/crazy-max/diun.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/diun-4.18.0"
-    sha256 cellar: :any_skip_relocation, catalina:     "2dc13bfb143f114e73ed64fbb8092afb129c51c91c37f2d593955e1ca9342425"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4df328a25c486aec21aac62f20df1d8dbf093c7cf5866305285e6fe0d690581f"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/diun-4.19.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "3366fd4e5151310ac10b2dff898957eeede92ccb649393d16578c2d262c2e248"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "909df43881585a767af396278493da5d8353aaf43cf1fc591572681d5c0c1be4"
   end
 
   depends_on "go" => :build
