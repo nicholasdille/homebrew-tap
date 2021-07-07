@@ -3,10 +3,9 @@ class PodmanStatic < Formula
   homepage "https://podman.io/"
 
   url "https://github.com/containers/podman.git",
-    tag:      "v3.2.1",
-    revision: "152952fe6b18581615c3efd1fafef2d8142738e8"
+    tag:      "v3.2.2",
+    revision: "d577c44e359f9f8284b38cf984f939b3020badc3"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/containers/podman.git"
 
   bottle do
