@@ -9,9 +9,9 @@ class CniDnsname < Formula
   head "https://github.com/containers/dnsname.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cni-dnsname-1.1.1"
-    sha256 cellar: :any_skip_relocation, catalina:     "1ea5d2f41b1954b7440554bd9bd9c9a1f66afb95f84c4e2d5d473f17cfc0db41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5a72bd07d4b7e5df8f3a5901b7686fe24a865c5bb6bbb09a701ded9806199e2c"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cni-dnsname-1.2.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "e765d983ab4514710d142698b9946a1d28c728e5d6d96f74dc9e4fb09924ed6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ecfdc14da95cf65023948ce4bf5b21aa6832e2a28106aa468befb50ae5c19628"
   end
 
   depends_on "go" => :build
