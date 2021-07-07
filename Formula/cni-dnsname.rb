@@ -3,8 +3,8 @@ class CniDnsname < Formula
   homepage "https://github.com/containers/dnsname"
 
   url "https://github.com/containers/dnsname.git",
-    tag:      "v1.1.1",
-    revision: "c654c95366ac5f309ca3e5727c9b858864247328"
+    tag:      "v1.2.0",
+    revision: "3b29247c46d2811610ad57dd9fdae61157532a5b"
   license "Apache-2.0"
   head "https://github.com/containers/dnsname.git"
 
