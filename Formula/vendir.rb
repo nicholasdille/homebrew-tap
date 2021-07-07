@@ -9,9 +9,9 @@ class Vendir < Formula
   head "https://github.com/vmware-tanzu/carvel-vendir.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/vendir-0.20.0"
-    sha256 cellar: :any_skip_relocation, catalina:     "bd811f19b7617f0715adf17bacec098f11b0849d71e5b4ed7320a59888f45ba0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "961577111913a3164a4937693e4d46105e306f4132f790aa1e27f27ca28a884f"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/vendir-0.21.1"
+    sha256 cellar: :any_skip_relocation, catalina:     "3c9996f0f12fd35a8c2e5d0a5a0a8c2468cb33833f2d41d3bbe6170601191c73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a2d5b16d0bc5f4de8b2f06857fd8d0d0bd3a48fbb3a80dbeaae68dddcbcf8594"
   end
 
   depends_on "go" => :build
