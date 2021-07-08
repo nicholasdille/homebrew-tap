@@ -8,6 +8,12 @@ class Bin < Formula
   license "MIT"
   head "https://github.com/marcosnils/bin.git"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/bin-0.8.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "676c97ae54978522f2aa9b8b33e0aa7da540ca958b2d3b1a70aab424e98463c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0c570d422801ac21de76f5974db8a8c0694aae542cf5d75c61f8ea2e1894ecaf"
+  end
+
   depends_on "go" => :build
 
   def install
