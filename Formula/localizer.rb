@@ -9,9 +9,9 @@ class Localizer < Formula
   head "https://github.com/getoutreach/localizer.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/localizer-1.9.0"
-    sha256 cellar: :any_skip_relocation, catalina:     "54ba0e2adb3117097d474c0ea803553041610d611ff59b822a3d36d75bb7cd56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e8997422530c6e345c2d273bbaf99708277086d3c2e4ad40d6f356fe5c222287"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/localizer-1.10.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "63838c7ed14b3d2b772fefb11a60f1dfc2f4b05a1643df0e46a1077242c4a290"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "23ce1ba9711831c2153feecc57a5d3aea168f2a7ee724cf03f5b95ebff7566fc"
   end
 
   option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
