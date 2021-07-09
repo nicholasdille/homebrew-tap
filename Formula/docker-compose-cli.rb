@@ -27,6 +27,7 @@ class DockerComposeCli < Formula
     system "go",
       "build",
       "-trimpath",
+      "-tags", "e2e,kube",
       "-ldflags", "-s -w"\
                   " -X #{pkg}/internal.Version=#{tag}",
       "-o", lib/"docker/cli-plugins/docker-compose-cli",
@@ -35,6 +36,7 @@ class DockerComposeCli < Formula
     system "go",
       "build",
       "-trimpath",
+      "-tags", "e2e,kube",
       "-ldflags", "-s -w"\
                   " -X #{pkg}/internal.Version=#{tag}",
       "-o", lib/"docker/cli-plugins/docker-compose",
