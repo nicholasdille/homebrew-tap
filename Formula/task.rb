@@ -9,9 +9,9 @@ class Task < Formula
   head "https://github.com/go-task/task.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/task-3.5.0"
-    sha256 cellar: :any_skip_relocation, catalina:     "86fb74ee971d6f36c56fc04eab76c3ad4c43a1f0bc39629cc25c0058094e7286"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a61a8b9f15884a5bc459bce79b90a558f34366d6eae363ac8216040397bb22ed"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/task-3.6.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "ef5803d58751bfe19e1a251b627fde32629f72b8c12f4f3c493adfdec9c74597"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1a50cea42181ac5a9bc85ff45ecb4d9aaedf44e50141d644c5dedf2bd1669557"
   end
 
   depends_on "go" => :build
