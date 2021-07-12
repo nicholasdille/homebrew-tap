@@ -3,8 +3,8 @@ class Porter < Formula
   homepage "https://porter.sh/"
 
   url "https://github.com/getporter/porter.git",
-    tag:      "v0.38.3",
-    revision: "5cc5e265bd0f0481554332f068ba9e0da299634c"
+    tag:      "v0.38.4",
+    revision: "3d6d0f779abb3f9f8da4ff9fe813f648bb627865"
   license "Apache-2.0"
   head "https://github.com/getporter/porter.git"
 
