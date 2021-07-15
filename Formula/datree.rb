@@ -12,7 +12,7 @@ class Datree < Formula
 
   def install
     pkg = "github.com/datreeio/datree"
-    ENV['CGO_ENABLED'] = "0"
+    ENV["CGO_ENABLED"] = "0"
 
     system "go", "build",
       "-tags", "main",
