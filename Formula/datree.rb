@@ -9,24 +9,16 @@ class Datree < Formula
   head "https://github.com/datreeio/datree.git"
 
   depends_on "go" => :build
-  depends_on "goreleaser" => :build
 
   def install
-    ENV["DATREE_BUILD_VERSION"] = version
-    ENV["DATREE_DEPLOYMENT"] = ""
+    pkg = "github.com/datreeio/datree"
+    ENV['CGO_ENABLED'] = "0"
 
-    goos = "linux"
-    id = "datree"
-    on_macos do
-      id = "datree-macos"
-      goos = "darwin"
-
-      puts "path=#{ENV["PATH"]}"
-    end
-
-    rm_rf ".brew_home"
-    system "goreleaser", "build", "--id", id, "--single-target"
-    bin.install "dist/datree_#{goos}_amd64/datree"
+    system "go", "build",
+      "-tags", "main",
+      "-ldflags", "-X #{pkg}/cmd.CliVersion=#{version}",
+      "-o", bin/"datree",
+      "./main.go"
   end
 
   test do
