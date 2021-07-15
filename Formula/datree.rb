@@ -21,7 +21,7 @@ class Datree < Formula
       id = "datree-macos"
       goos = "darwin"
 
-      puts "path=#{ENV['PATH']}"
+      puts "path=#{ENV["PATH"]}"
     end
 
     rm_rf ".brew_home"
