@@ -28,8 +28,8 @@ class Sysbox < Formula
   homepage "https://www.nestybox.com/"
 
   url "https://github.com/nestybox/sysbox.git",
-    tag:      "v0.3.0",
-    revision: "176306bd9c8fb4c9bc6857a3e58af1c127ac76f3",
+    tag:      "v0.4.0",
+    revision: "63d8ee2f7acdb17d11921fa193dccb5b7b4207f8",
     using:    SysboxGitDownloadStrategy
   license "Apache-2.0"
   head "https://github.com/nestybox/sysbox.git"
