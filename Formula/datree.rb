@@ -28,6 +28,6 @@ class Datree < Formula
   end
 
   test do
-    system bin/"datree", "--version"
+    system bin/"datree", "version"
   end
 end
