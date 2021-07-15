@@ -35,8 +35,8 @@ class Sysbox < Formula
   head "https://github.com/nestybox/sysbox.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/sysbox-0.3.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a4979155eb986545e4639659498d5603631ef1e3e114cc18738a078fbb9eba16"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/sysbox-0.4.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "bf265c44545740979e9b62422cf2312f8f0c65bed9cd0c8c066f92461c5d88fd"
   end
 
   depends_on "make" => :build
