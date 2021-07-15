@@ -15,14 +15,16 @@ class Datree < Formula
     ENV["DATREE_BUILD_VERSION"] = version
     ENV["DATREE_DEPLOYMENT"] = ""
 
-    id = "linux"
+    goos = "linux"
+    id = "datree"
     on_macos do
       id = "datree-macos"
+      goos = "darwin"
     end
 
     rm_rf ".brew_home"
     system "goreleaser", "build", "--id", id, "--single-target"
-    bin.install "dist/datree_#{id}_amd64/datree"
+    bin.install "dist/datree_#{goos}_amd64/datree"
   end
 
   test do
