@@ -9,9 +9,9 @@ class PodmanRemote < Formula
   head "https://github.com/containers/podman.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/podman-remote-3.2.2"
-    sha256 cellar: :any_skip_relocation, catalina:     "f3aeabe18f6780c5d3f2561e9f314acf96f8f90d96b7ed53009ed44eeaa5e6db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8a8f71bb5c7bb9d6792f0d17c215a772179c3b65f366f30017509aaa583bbedb"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/podman-remote-3.2.3"
+    sha256 cellar: :any_skip_relocation, catalina:     "f2897280f6eb3cbf14640d18bdbb97ec767cd8f074e48cae111a01a6de667635"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9d8d2a4357a8f4c0261d247af42a1ddc7bbd8d12225639ea262609d97ac18ac5"
   end
 
   depends_on "go" => :build
