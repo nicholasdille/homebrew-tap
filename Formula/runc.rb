@@ -14,8 +14,8 @@ class Runc < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/runc-1.0.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8374d82f165bad712816a9b182ca970d540662e250418232f9e88654278d13b0"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/runc-1.0.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d329655b9e4bdea7d45a32e8c5913d3a3891780617ea38e3822b2d3c430df8ba"
   end
 
   option "with-nokmem", "Disable kernel memory accounting"
