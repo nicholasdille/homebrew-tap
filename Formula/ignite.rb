@@ -3,8 +3,8 @@ class Ignite < Formula
   homepage "https://ignite.readthedocs.io/"
 
   url "https://github.com/weaveworks/ignite.git",
-    tag:      "v0.9.0",
-    revision: "e560f6242254868dfd92b7954866ba6f0f5779fc"
+    tag:      "v0.10.0",
+    revision: "4540abeb9ba6daba32a72ef2b799095c71ebacb0"
   license "Apache-2.0"
   head "https://github.com/weaveworks/ignite.git"
 
