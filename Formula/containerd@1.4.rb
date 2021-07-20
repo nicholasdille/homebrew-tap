@@ -13,6 +13,11 @@ class ContainerdAT14 < Formula
     regex(/^v(1.4.\d+)/i)
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containerd@1.4-1.4.8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "067ed28fb7bff814b40712b6c6a2806c690888f515a52ba55f950578ac98e6f8"
+  end
+
   option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
   option "without-devmapper", "Support device mapper"
   option "without-cri", "Support CRI"
