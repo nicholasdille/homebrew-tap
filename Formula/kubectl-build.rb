@@ -23,8 +23,14 @@ class KubectlBuild < Formula
 
   def install
     system "make", "build"
-    bin.install "bin/linux/kubectl-buildkit"
-    bin.install "bin/linux/kubectl-build"
+
+    goos = "linux"
+    on_macos do
+      goos = "darwin"
+    end
+
+    bin.install "bin/#{goos}/kubectl-buildkit"
+    bin.install "bin/#{goos}/kubectl-build"
   end
 
   test do
