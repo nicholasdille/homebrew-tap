@@ -8,6 +8,11 @@ class Porter < Formula
   license "Apache-2.0"
   head "https://github.com/getporter/porter.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/porter-0.38.4"
     sha256 cellar: :any_skip_relocation, catalina:     "95c1b4721fdcd013481730c792bbea522be2cac023ca464db0c435577f9dae20"

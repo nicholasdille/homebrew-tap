@@ -8,6 +8,11 @@ class Task < Formula
   license "MIT"
   head "https://github.com/go-task/task.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/task-3.6.0"
     sha256 cellar: :any_skip_relocation, catalina:     "ef5803d58751bfe19e1a251b627fde32629f72b8c12f4f3c493adfdec9c74597"

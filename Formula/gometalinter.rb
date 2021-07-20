@@ -8,6 +8,11 @@ class Gometalinter < Formula
   license "MIT"
   head "https://github.com/alecthomas/gometalinter.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle :unneeded
 
   depends_on :linux

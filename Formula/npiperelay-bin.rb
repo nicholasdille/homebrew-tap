@@ -7,6 +7,11 @@ class NpiperelayBin < Formula
   license "MIT"
   head "https://github.com/jstarks/npiperelay.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle :unneeded
 
   depends_on :linux

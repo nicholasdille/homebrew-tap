@@ -7,6 +7,11 @@ class FuseOverlayfsBin < Formula
   sha256 "53e54b2febf39ba6e67018294a7162bd6b4d18cb544ed7aff54c29ffb2791606"
   license "GPL-3.0-only"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle :unneeded
 
   depends_on arch: :x86_64

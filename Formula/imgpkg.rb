@@ -8,6 +8,11 @@ class Imgpkg < Formula
   license "Apache-2.0"
   head "https://github.com/vmware-tanzu/carvel-imgpkg.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/imgpkg-0.14.0"
     sha256 cellar: :any_skip_relocation, catalina:     "e8ea21a56b72335a30eac7a92b04c1deaca5b28cb74ae37294a7f99ce04a8d00"

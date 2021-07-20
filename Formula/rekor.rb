@@ -8,6 +8,11 @@ class Rekor < Formula
   license "Apache-2.0"
   head "https://github.com/sigstore/rekor.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/rekor-0.2.0"
     sha256 cellar: :any_skip_relocation, catalina:     "5fc7296c53fa2d9d65814ff0080e4baa2095ea9b8bbcaff4d7a0b96165d77590"

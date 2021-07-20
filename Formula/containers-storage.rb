@@ -8,6 +8,11 @@ class ContainersStorage < Formula
   license "Apache-2.0"
   head "https://github.com/containers/storage.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containers-storage-1.32.6"
     sha256 cellar: :any_skip_relocation, catalina:     "4b47ec80976e153b22337634bec4de9f09f5687a0147c572286fffd6ff755b41"

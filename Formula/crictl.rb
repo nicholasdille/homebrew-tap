@@ -8,6 +8,11 @@ class Crictl < Formula
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cri-tools.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/crictl-1.21.0"
     sha256 cellar: :any_skip_relocation, catalina:     "cc28731829d15a1efc2f1489691625510e630be66d877705d6da5a00fb058016"

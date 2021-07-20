@@ -9,6 +9,11 @@ class Trillian < Formula
   revision 1
   head "https://github.com/google/trillian.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/trillian-1.3.13_1"
     sha256 cellar: :any_skip_relocation, catalina:     "085fc370412a18275d5546b38fcb26ff7b369a15210f61ae9f2be840e1fe2016"

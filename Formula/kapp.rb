@@ -8,6 +8,11 @@ class Kapp < Formula
   license "Apache-2.0"
   head "https://github.com/vmware-tanzu/carvel-kapp.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kapp-0.37.0"
     sha256 cellar: :any_skip_relocation, catalina:     "5a93ae8945cc51efc98b72f82c7f89c37e19bd9a26c11a7014530ae9afdfc5f6"

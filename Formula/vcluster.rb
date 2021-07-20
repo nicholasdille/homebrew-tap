@@ -8,6 +8,11 @@ class Vcluster < Formula
   license "Apache-2.0"
   head "https://github.com/loft-sh/vcluster.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/vcluster-0.3.1"
     sha256 cellar: :any_skip_relocation, catalina:     "f17c502c9de021c77b0584cffa25183a0bb1e04cae642d73f3ed31d6bd4f9fdf"

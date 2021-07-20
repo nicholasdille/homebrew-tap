@@ -7,6 +7,11 @@ class Clusterawsadm < Formula
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cluster-api-provider-aws.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/clusterawsadm-0.6.7"
     sha256 cellar: :any_skip_relocation, catalina:     "1e8b5ce7235c751607bf6668d95d12791a2fcd992715c1973d36e35866aec4d1"

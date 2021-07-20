@@ -8,6 +8,11 @@ class Conmon < Formula
   license "Apache-2.0"
   head "https://github.com/containers/conmon.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/conmon-2.0.29"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "6e4907389b50abcade62fab262ba8b2a556ada32649569e943134f0020888c04"

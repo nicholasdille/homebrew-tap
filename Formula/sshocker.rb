@@ -8,6 +8,11 @@ class Sshocker < Formula
   license "Apache-2.0"
   head "https://github.com/AkihiroSuda/sshocker.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/sshocker-0.1.0"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "d410165c0243fd27bc28c05496c2d34626a7912f7b60db55fb80994153af7cf9"

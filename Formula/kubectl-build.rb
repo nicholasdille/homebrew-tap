@@ -8,6 +8,11 @@ class KubectlBuild < Formula
   license "Apache-2.0"
   head "https://github.com/vmware-tanzu/buildkit-cli-for-kubectl.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kubectl-build-0.1.2"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "a8476347d0e119a59decb90d04178f2eac0828e9715615d2cc60b251d302e327"

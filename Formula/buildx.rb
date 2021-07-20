@@ -8,6 +8,11 @@ class Buildx < Formula
   license "Apache-2.0"
   head "https://github.com/docker/buildx.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildx-0.6.0"
     sha256 cellar: :any_skip_relocation, catalina:     "c43fcf7d7ce3506de2a665fce0a95977164475b8f6c067991bee1e6f1ce464d0"

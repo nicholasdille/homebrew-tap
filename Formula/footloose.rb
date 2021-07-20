@@ -8,6 +8,11 @@ class Footloose < Formula
   license "Apache-2.0"
   head "https://github.com/weaveworks/footloose.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/footloose-0.6.3"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "17992767273a40197a02dcce5d75bc47fadccbe0b0a772d3ba1781843ca3253d"

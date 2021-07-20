@@ -8,6 +8,11 @@ class Kubeone < Formula
   license "Apache-2.0"
   head "https://github.com/kubermatic/kubeone.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kubeone-1.2.3"
     sha256 cellar: :any_skip_relocation, catalina:     "11022bfdd7b8016507b3ffd1e62742a69d99353bb2a6072dbcc9ba3d9c421e35"

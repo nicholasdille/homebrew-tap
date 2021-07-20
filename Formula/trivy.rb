@@ -8,6 +8,11 @@ class Trivy < Formula
   license "Apache-2.0"
   head "https://github.com/aquasecurity/trivy.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/trivy-0.19.2"
     sha256 cellar: :any_skip_relocation, catalina:     "f06341e57026b8938cff442171899130137a5ffa4f27d901e1b23be29ed6c983"

@@ -8,6 +8,11 @@ class Crun < Formula
   license "Apache-2.0"
   head "https://github.com/containers/crun.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/crun-0.18"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ee564e6d307daa1a56d4e626f5fdc51b1ebb34e81400830301d38a25638492ee"

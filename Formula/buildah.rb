@@ -8,6 +8,11 @@ class Buildah < Formula
   license "Apache-2.0"
   head "https://github.com/containers/buildah.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildah-1.21.3"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "c9e2f7f46ea11a4fca3a38cfd44f4953e0b13c3c426b724b519d2fa252df5dd7"

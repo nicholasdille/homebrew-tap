@@ -8,6 +8,11 @@ class ContainersCommon < Formula
   license "Apache-2.0"
   head "https://github.com/containers/common.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containers-common-0.41.0"
     sha256 cellar: :any_skip_relocation, catalina:     "2274ea8173642fcb4f5d252fb1cc594a16dce40be72c04192a7785280cc69581"

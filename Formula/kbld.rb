@@ -8,6 +8,11 @@ class Kbld < Formula
   license "Apache-2.0"
   head "https://github.com/vmware-tanzu/carvel-kbld.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kbld-0.30.0"
     sha256 cellar: :any_skip_relocation, catalina:     "4dd9f34c2c0f175fe5a9ca31569d33e98953c83404c45638c54f20f94dab52f4"

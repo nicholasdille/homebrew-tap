@@ -8,6 +8,11 @@ class DockerComposeCli < Formula
   license "Apache-2.0"
   head "https://github.com/docker/compose-cli.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/docker-compose-cli-2.0.0-beta.6"
     sha256 cellar: :any_skip_relocation, catalina:     "7341783748cdc815e033c1c6557664cd0e862febbe90e2bff8cd2d461d3adcb6"

@@ -8,6 +8,11 @@ class Tl < Formula
   license "Apache-2.0"
   head "https://github.com/transparencylog/tl.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/tl-0.2.12"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "441fbad8f1280ca700a13766bae9183c98e124c7fc513058c087b273d720b5cf"

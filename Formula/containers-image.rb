@@ -8,6 +8,11 @@ class ContainersImage < Formula
   license "Apache-2.0"
   head "https://github.com/containers/image.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containers-image-5.13.2"
     sha256 cellar: :any_skip_relocation, catalina:     "d559afc83be1197603abd9b727bb49b9c934a229767472cb2e6fd98548df73af"

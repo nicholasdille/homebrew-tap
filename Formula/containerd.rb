@@ -8,6 +8,11 @@ class Containerd < Formula
   license "Apache-2.0"
   head "https://github.com/containerd/containerd.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containerd-1.5.4"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "7bf9e0bd3e1e5889be274571e44216fcbb2c9a8870a31c59d8c5346b457d0ea9"

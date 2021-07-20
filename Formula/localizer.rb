@@ -8,6 +8,11 @@ class Localizer < Formula
   license "Apache-2.0"
   head "https://github.com/getoutreach/localizer.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/localizer-1.10.0"
     sha256 cellar: :any_skip_relocation, catalina:     "63838c7ed14b3d2b772fefb11a60f1dfc2f4b05a1643df0e46a1077242c4a290"

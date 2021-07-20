@@ -8,6 +8,11 @@ class Regclient < Formula
   license "Apache-2.0"
   head "https://github.com/regclient/regclient.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/regclient-0.3.5"
     sha256 cellar: :any_skip_relocation, catalina:     "a85c32602fcaf9ef2fba2c70d2597ff02ebc3934c2a769d09e1c46a0e35e181f"

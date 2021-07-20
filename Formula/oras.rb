@@ -8,6 +8,11 @@ class Oras < Formula
   license "MIT"
   head "https://github.com/oras-project/oras.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/oras-0.12.0"
     rebuild 1

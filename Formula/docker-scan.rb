@@ -8,6 +8,11 @@ class DockerScan < Formula
   license "Apache-2.0"
   head "https://github.com/docker/scan-cli-plugin.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/docker-scan-0.8.0"
     sha256 cellar: :any_skip_relocation, catalina:     "2aae10971a86ebdd3698234185951eb464787e47888c219fd3cf7128988b6871"

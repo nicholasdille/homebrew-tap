@@ -8,6 +8,11 @@ class Vendir < Formula
   license "Apache-2.0"
   head "https://github.com/vmware-tanzu/carvel-vendir.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/vendir-0.21.1"
     sha256 cellar: :any_skip_relocation, catalina:     "3c9996f0f12fd35a8c2e5d0a5a0a8c2468cb33833f2d41d3bbe6170601191c73"

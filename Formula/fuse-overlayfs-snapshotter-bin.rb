@@ -7,6 +7,11 @@ class FuseOverlayfsSnapshotterBin < Formula
   sha256 "26c7af08d292f21e7067c0424479945bb9ff6315b49851511b2917179c5ae59a"
   license "GPL-3.0-only"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle :unneeded
 
   depends_on arch: :x86_64

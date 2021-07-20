@@ -8,6 +8,11 @@ class Datree < Formula
   license "Apache-2.0"
   head "https://github.com/datreeio/datree.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/datree-0.1.763"
     sha256 cellar: :any_skip_relocation, catalina:     "05c7b3600d860c13d0e8713ff0fcb937bf4bb83c1a4ca21c092475629143bd8c"

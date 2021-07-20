@@ -8,6 +8,11 @@ class LoftBin < Formula
   license "Apache-2.0"
   head "https://github.com/loft-sh/loft.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle :unneeded
 
   depends_on arch: :x86_64

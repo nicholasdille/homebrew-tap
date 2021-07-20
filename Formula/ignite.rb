@@ -8,6 +8,11 @@ class Ignite < Formula
   license "Apache-2.0"
   head "https://github.com/weaveworks/ignite.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/ignite-0.10.0"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "6402ae21aee932aa7ef40b59b9f0aa88e03af50377e06ec1d44bb3816ad0b446"

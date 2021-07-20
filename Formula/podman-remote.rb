@@ -8,6 +8,11 @@ class PodmanRemote < Formula
   license "Apache-2.0"
   head "https://github.com/containers/podman.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/podman-remote-3.2.3"
     sha256 cellar: :any_skip_relocation, catalina:     "f2897280f6eb3cbf14640d18bdbb97ec767cd8f074e48cae111a01a6de667635"

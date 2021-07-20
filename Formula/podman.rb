@@ -8,6 +8,11 @@ class Podman < Formula
   license "Apache-2.0"
   head "https://github.com/containers/podman.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/podman-3.2.3"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "4f39ec7a97840d44fd8dadd94e4f21453c0a0e514b0d22862b4a38961ee12ee2"

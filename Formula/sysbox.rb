@@ -34,6 +34,11 @@ class Sysbox < Formula
   license "Apache-2.0"
   head "https://github.com/nestybox/sysbox.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/sysbox-0.4.0"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "bf265c44545740979e9b62422cf2312f8f0c65bed9cd0c8c066f92461c5d88fd"

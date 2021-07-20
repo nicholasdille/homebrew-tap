@@ -7,6 +7,11 @@ class StargzSnapshotterBin < Formula
   sha256 "188daaba9bfc5c1aeca6b8a4159b73839c241a75247e6cc5d56e604c3f27df38"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle :unneeded
 
   depends_on arch: :x86_64

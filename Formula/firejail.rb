@@ -8,6 +8,11 @@ class Firejail < Formula
   license "LGPL-2.0-only"
   head "https://github.com/netblue30/firejail.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle :unneeded
 
   depends_on "gcc" => :build

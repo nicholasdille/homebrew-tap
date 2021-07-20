@@ -8,6 +8,11 @@ class NerdctlImmortal < Formula
   license "Apache-2.0"
   head "https://github.com/containerd/nerdctl.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/nerdctl-immortal-0.11.0"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "dddb29c0aa0671a4024b240af3747742f0de90d07c50abcf064bad2c3c76211b"

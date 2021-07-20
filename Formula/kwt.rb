@@ -8,6 +8,11 @@ class Kwt < Formula
   license "Apache-2.0"
   head "https://github.com/vmware-tanzu/carvel-kwt.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kwt-0.0.6"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "e3498c11cee3551778877ec80cd75536d447623abd842b8054f664c136cb16e3"

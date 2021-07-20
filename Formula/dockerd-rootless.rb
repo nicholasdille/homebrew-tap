@@ -36,6 +36,11 @@ class DockerdRootless < Formula
   license "Apache-2.0"
   head "https://github.com/moby/moby.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/dockerd-rootless-20.10.7"
     rebuild 1

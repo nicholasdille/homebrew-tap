@@ -8,6 +8,11 @@ class Kubeswitch < Formula
   license "MIT"
   head "https://github.com/danielb42/kubeswitch.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kubeswitch-1.4.0"
     sha256 cellar: :any_skip_relocation, catalina:     "117c79a5a95b35d6714eaff125d4d2bd3e01c5e6d9279b61257e016ee92fe452"
