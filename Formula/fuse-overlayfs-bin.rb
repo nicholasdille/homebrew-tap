@@ -2,9 +2,9 @@ class FuseOverlayfsBin < Formula
   desc "Simple deployment tool focused on the concept of Kubernetes application"
   homepage "https://github.com/containers/fuse-overlayfs"
 
-  url "https://github.com/containers/fuse-overlayfs/releases/download/v1.5.0/fuse-overlayfs-x86_64"
-  version "1.5.0"
-  sha256 "53e54b2febf39ba6e67018294a7162bd6b4d18cb544ed7aff54c29ffb2791606"
+  url "https://github.com/containers/fuse-overlayfs/releases/download/v1.6/fuse-overlayfs-x86_64"
+  version "1.6"
+  sha256 "ab9760bee3fcc383f21d560b1b90430e118ab8b615a40c9938f88485eb4f8d04"
   license "GPL-3.0-only"
 
   livecheck do
