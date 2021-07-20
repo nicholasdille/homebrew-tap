@@ -9,8 +9,9 @@ class Buildx < Formula
   head "https://github.com/docker/buildx.git"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildx-0.5.1_1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "900c685c5470a1633b706b2dc2287d9f6af077496a103b1f73eabd1994dd617e"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildx-0.6.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "c43fcf7d7ce3506de2a665fce0a95977164475b8f6c067991bee1e6f1ce464d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0441e5d712b29e9bac32e975f1f83bd3bb36266f5f65ae40907e31084b451c3a"
   end
 
   depends_on "go" => :build
