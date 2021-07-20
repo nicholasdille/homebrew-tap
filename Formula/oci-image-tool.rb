@@ -9,7 +9,7 @@ class OciImageTool < Formula
   head "https://github.com/opencontainers/image-tools.git"
 
   livecheck do
-    url "https://github.com/opencontainers/image-tools"
+    url :stable
     strategy :git
   end
 
