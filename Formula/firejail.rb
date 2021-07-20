@@ -18,6 +18,7 @@ class Firejail < Formula
   depends_on "gcc" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
+  depends_on :linux
 
   def install
     system "./configure", "--prefix=#{prefix}"
