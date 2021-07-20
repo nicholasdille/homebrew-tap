@@ -10,7 +10,7 @@ class Buildkitd < Formula
 
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(/^v(.+)$/i)
   end
 
   bottle do
