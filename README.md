@@ -92,7 +92,7 @@ Formulae related to containers:
 - tl
 - vendir
 
-Formulae for run:
+Formulae for fun:
 
 - emojisum
 
