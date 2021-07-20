@@ -3,19 +3,14 @@ class ContainerdAT14 < Formula
   homepage "https://containerd.io"
 
   url "https://github.com/containerd/containerd.git",
-    tag:      "v1.4.6",
-    revision: "d71fcd7d8303cbf684402823e425e9dd2e99285d"
+    tag:      "v1.4.8",
+    revision: "https://github.com/containerd/containerd/commit/7eba5930496d9bbe375fdf71603e610ad737d2b2"
   license "Apache-2.0"
   head "https://github.com/containerd/containerd.git"
 
   livecheck do
     url :stable
     regex(/^v(1.4.\d+)/i)
-  end
-
-  bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containerd@1.4-1.4.6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "62a28ab8b9cb98244a0fc75a5e1ccf74e354db7914b9c9ac4735e3a0bb974a2f"
   end
 
   option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
