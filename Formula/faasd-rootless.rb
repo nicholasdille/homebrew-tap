@@ -7,6 +7,10 @@ class FaasdRootless < Formula
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   license "Apache-2.0"
 
+  livecheck do
+    skip "Manual version"
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/faasd-rootless-1.0.0"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "599b322b3e634f8c23c39f96937dc9ced80f9b9b3bdf814f2ec417a83eb85b05"

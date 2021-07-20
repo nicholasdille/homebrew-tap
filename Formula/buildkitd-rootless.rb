@@ -8,6 +8,10 @@ class BuildkitdRootless < Formula
   license "Apache-2.0"
   revision 1
 
+  livecheck do
+    skip "Manual version"
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildkitd-rootless-1.0.0_1"
     rebuild 1
