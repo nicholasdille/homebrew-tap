@@ -8,6 +8,13 @@ class Cosign < Formula
   license "Apache-2.0"
   head "https://github.com/sigstore/cosign.git"
 
+  livecheck do
+    url :stable
+    strategy :git do |tags|
+      tags.map { |tag| tag[/^v(\d+\.\d+\.\d+)$/i, 1] }.compact
+    end
+  end
+
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cosign-0.5.0"
     sha256 cellar: :any_skip_relocation, catalina:     "920e0ddd60494b1cff736395cb2b7e3f8695bb73aa68ce79b64198198a6a44d3"
