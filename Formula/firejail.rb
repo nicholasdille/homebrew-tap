@@ -3,8 +3,8 @@ class Firejail < Formula
   homepage "https://firejail.wordpress.com/"
 
   url "https://github.com/netblue30/firejail.git",
-    tag:      "0.9.64.4",
-    revision: "b818fc40cef9865b3202b7de227348dd26acf9fd"
+    tag:      "0.9.66",
+    revision: "a67bb37b0ddac080008cd5cf494aaaf8531f45c0"
   license "LGPL-2.0-only"
   head "https://github.com/netblue30/firejail.git"
 
