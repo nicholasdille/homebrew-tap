@@ -15,7 +15,9 @@ class KubectlBuild < Formula
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kubectl-build-0.1.2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a8476347d0e119a59decb90d04178f2eac0828e9715615d2cc60b251d302e327"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, catalina:     "e4308a8999d25e035f677637909e20bd1796c001dfc64a50f3775165fd910ae8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4d9f45b1add36e3235a7901ec7b29ce031cbe8984fa154a9931faca1f995c453"
   end
 
   depends_on "go" => :build
