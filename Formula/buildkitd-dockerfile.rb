@@ -13,6 +13,11 @@ class BuildkitdDockerfile < Formula
     regex(%r{^dockerfile/(\d+\.\d+\.\d+)$}i)
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildkitd-dockerfile-1.3.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "85eea86d14ae13d8324cfa1fc4fccbdb43cfbc2ac58144ee66ffbfdeae341d46"
+  end
+
   depends_on "go" => :build
   depends_on :linux
   depends_on "nicholasdille/tap/buildkitd"
