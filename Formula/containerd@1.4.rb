@@ -4,7 +4,7 @@ class ContainerdAT14 < Formula
 
   url "https://github.com/containerd/containerd.git",
     tag:      "v1.4.8",
-    revision: "https://github.com/containerd/containerd/commit/7eba5930496d9bbe375fdf71603e610ad737d2b2"
+    revision: "7eba5930496d9bbe375fdf71603e610ad737d2b2"
   license "Apache-2.0"
   head "https://github.com/containerd/containerd.git"
 
