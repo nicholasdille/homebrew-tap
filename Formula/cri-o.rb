@@ -14,8 +14,8 @@ class CriO < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cri-o-1.21.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "655becb62e1ed2431f8bb370ca120aa15bb1d6db2a01a1aad12df57fadcd34f4"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cri-o-1.21.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7537ace7c45159e24299f93d1e93c8e660fc3d76cef118e1b9151dbc38c1b5db"
   end
 
   depends_on "go" => :build
