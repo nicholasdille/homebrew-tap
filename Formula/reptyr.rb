@@ -15,8 +15,8 @@ class Reptyr < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/reptyr-0.8.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f4da9a96d37dc5a45f15289c744897f4e6475794e87c2bed40527e4a0c314cc6"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/reptyr-0.8.0_1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d7aa2516a3a7a745918a69450273397b34992070aa271e61411b05f7922aadbf"
   end
 
   depends_on "gcc" => :build
