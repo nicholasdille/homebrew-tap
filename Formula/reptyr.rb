@@ -6,6 +6,7 @@ class Reptyr < Formula
     tag:      "reptyr-0.8.0",
     revision: "d21a9b19df0fdccabd4c308839caf2d1cc66351d"
   license "MIT"
+  revision 1
   head "https://github.com/nelhage/reptyr.git"
 
   livecheck do
@@ -26,6 +27,9 @@ class Reptyr < Formula
     ENV["LDFLAGS"] = "-static"
     system "make", "reptyr"
     bin.install "reptyr"
+
+    man1.install "reptyr.1"
+    bash_completion.install "reptyr.bash" => "reptyr"
   end
 
   test do
