@@ -3,8 +3,8 @@ class Faasd < Formula
   homepage "https://gumroad.com/l/serverless-for-everyone-else"
 
   url "https://github.com/openfaas/faasd.git",
-    tag:      "0.12.5",
-    revision: "5e29516f86b0674a34848e74edc06da177dfbd14"
+    tag:      "0.13.0",
+    revision: "12ada59bf1289ea1543a56d7f711194251fb8a95"
   license "Apache-2.0"
   head "https://github.com/openfaas/faasd.git"
 
@@ -14,7 +14,7 @@ class Faasd < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/faasd-0.12.5"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/faasd-0.13.0"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0a5bccb353c0a9741c37930cee4d40ed7751fb3be9d7cb2d1580bc4c26933245"
   end
 
