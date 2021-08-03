@@ -3,8 +3,8 @@ class Rootlesskit < Formula
   homepage "https://github.com/rootless-containers/rootlesskit"
 
   url "https://github.com/rootless-containers/rootlesskit.git",
-    tag:      "v0.14.2",
-    revision: "4cd567642273d369adaadcbadca00880552c1778"
+    tag:      "v0.14.3",
+    revision: "a53df42ffb59c7fe1d29f81bf8cc456a6bc30983"
   license "Apache-2.0"
   head "https://github.com/rootless-containers/rootlesskit.git"
 
