@@ -14,9 +14,9 @@ class Localizer < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/localizer-1.10.0"
-    sha256 cellar: :any_skip_relocation, catalina:     "63838c7ed14b3d2b772fefb11a60f1dfc2f4b05a1643df0e46a1077242c4a290"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "23ce1ba9711831c2153feecc57a5d3aea168f2a7ee724cf03f5b95ebff7566fc"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/localizer-1.11.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "2bc94ed71f0f88d96697ed8dfd24c44719de279cb84eae94181229c31feed02b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "498c0bd0fc694931ff995d90d29f6186c12a4e90739e086e839421f5e7756ce0"
   end
 
   option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
