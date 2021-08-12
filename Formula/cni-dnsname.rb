@@ -14,9 +14,9 @@ class CniDnsname < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cni-dnsname-1.2.0"
-    sha256 cellar: :any_skip_relocation, catalina:     "e765d983ab4514710d142698b9946a1d28c728e5d6d96f74dc9e4fb09924ed6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ecfdc14da95cf65023948ce4bf5b21aa6832e2a28106aa468befb50ae5c19628"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cni-dnsname-1.3.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "21986a1f8ff1bc9528f613f73783a8ea4c1cd5b4d59657a5436be8ca1c0fbd3f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "169840a5806c48a85fb780eb07a0d0b9367b4c08aa1dd9042244aa34f161064c"
   end
 
   depends_on "go" => :build
