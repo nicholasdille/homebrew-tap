@@ -3,8 +3,8 @@ class Clusterctl < Formula
   homepage "https://cluster-api.sigs.k8s.io/"
 
   url "https://github.com/kubernetes-sigs/cluster-api.git",
-    tag:      "v0.4.0",
-    revision: "7f879be68d15737e335b6cb39d380d1d163e06e6"
+    tag:      "v0.4.1",
+    revision: "f6fd5ed7dc0fa75788f76f17c64ae82976fcc70b"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cluster-api.git"
 
