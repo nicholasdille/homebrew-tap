@@ -14,9 +14,9 @@ class Regclient < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/regclient-0.3.5"
-    sha256 cellar: :any_skip_relocation, catalina:     "a85c32602fcaf9ef2fba2c70d2597ff02ebc3934c2a769d09e1c46a0e35e181f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "74ed7d2ddef002e554eb30cce21e5eebaa3b55fcb3d25983aebe6d2edcb156a7"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/regclient-0.3.6"
+    sha256 cellar: :any_skip_relocation, catalina:     "297a90f49e3d0a6067e036569913c9af66f70c9533b8b0b37f9abcc723c56790"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cbfb947dbefa6d506f54212ef5cabec5e2ee17bbbae5a0e1113b483e60533f85"
   end
 
   depends_on "go" => :build
