@@ -14,8 +14,8 @@ class Podman < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/podman-3.2.3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4f39ec7a97840d44fd8dadd94e4f21453c0a0e514b0d22862b4a38961ee12ee2"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/podman-3.3.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "096a866e628c00a9d36663021cd979e89dfa29a28e4f0ee47aa92a729e7b6900"
   end
 
   option "with-systemd", "Add support for systemd"
