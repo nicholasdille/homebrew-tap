@@ -3,8 +3,8 @@ class Bubblewrap < Formula
   homepage "https://github.com/containers/bubblewrap/"
 
   url "https://github.com/containers/bubblewrap.git",
-    tag:      "v0.4.1",
-    revision: "5feb64dc60c936a7f9e424df9478aae9b88ee48a"
+    tag:      "v0.5.0",
+    revision: "b84704bb64eac3011f84346c79651c7c1234712c"
   license "LGPL-2.0-or-later"
   head "https://github.com/containers/bubblewrap.git"
 
