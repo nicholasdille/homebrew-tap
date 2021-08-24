@@ -14,9 +14,9 @@ class Clusterctl < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/clusterctl-0.4.1"
-    sha256 cellar: :any_skip_relocation, catalina:     "7ba8214a6d69216a3f65ab3440b1a66a6ce6299c2ededb24dd4c9044b3f32baf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1203ec434572fce5aaa1edf54cd66a1b82c4d85ad0760f152d0d5ceffeefd7db"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/clusterctl-0.4.2"
+    sha256 cellar: :any_skip_relocation, catalina:     "784aaf0b34621b941383cc3db24511b9a80fdbb232efc8e191c8800a34d30707"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "df682c7ec0b114678487c8fcd739b3ba515ccf1ddb2b2030e95bba56d3e6f2f5"
   end
 
   depends_on "go" => :build
