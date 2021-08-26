@@ -14,9 +14,9 @@ class Vcluster < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/vcluster-0.3.3"
-    sha256 cellar: :any_skip_relocation, catalina:     "35a22f842cbc001eaa0f6f20322165edccfd94161c833d274c891c2f3013ed41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7a70e41c45099f2c6824ccf339bd7e91ef58c2f6bbd4dbe18aeaf34561be5bdb"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/vcluster-0.4.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "07b8c14cba9966b7ab6323edb7f9062921b93c7ed5e7df29a767e8a51a937f66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d341a7c831741f2aaf1bf678096bc274e8afe4716ee151bcc71c5563515eb3d6"
   end
 
   depends_on "go" => :build
