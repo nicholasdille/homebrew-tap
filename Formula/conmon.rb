@@ -6,6 +6,7 @@ class Conmon < Formula
     tag:      "v2.0.29",
     revision: "7e6de6678f6ed8a18661e1d5721b81ccee293b9b"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/containers/conmon.git"
 
   livecheck do
@@ -23,9 +24,10 @@ class Conmon < Formula
 
   def install
     # Build base from https://github.com/NixOS/docker
+    image_name = "nix"
     system "docker",
       "build",
-      "--tag", "nix",
+      "--tag", image_name,
       "github.com/NixOS/docker"
 
     # Create Dockerfile
@@ -42,7 +44,7 @@ class Conmon < Formula
     # Build custom image
     system "docker",
       "build",
-      "--tag", "conmon",
+      "--tag", "#{image_name}-build",
       "."
 
     # Run build
@@ -52,7 +54,7 @@ class Conmon < Formula
       "--rm",
       "--mount", "type=bind,src=#{buildpath},dst=/src",
       "--workdir", "/src",
-      "conmon",
+      "#{image_name}-build",
       "make", "static"
 
     # Fix permission

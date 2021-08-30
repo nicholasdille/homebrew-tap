@@ -6,6 +6,7 @@ class PodmanStatic < Formula
     tag:      "v3.3.0",
     revision: "98f252a3a1a8f1ee00f9f96c6ba00500954b5093"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/containers/podman.git"
 
   livecheck do
@@ -52,7 +53,7 @@ class PodmanStatic < Formula
     # Build custom image
     system "docker",
       "build",
-      "--tag", "podman",
+      "--tag", "nix-build",
       "."
 
     # Run build
@@ -62,7 +63,7 @@ class PodmanStatic < Formula
       "--rm",
       "--mount", "type=bind,src=#{buildpath},dst=/src",
       "--workdir", "/src",
-      "podman",
+      "nix-build",
       "make", "static"
 
     # Fix permission

@@ -6,6 +6,7 @@ class Buildah < Formula
     tag:      "v1.22.3",
     revision: "852ca9ff7fff7a95789b706972b968ec9c5cff34"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/containers/buildah.git"
 
   livecheck do
@@ -24,9 +25,10 @@ class Buildah < Formula
 
   def install
     # Build base from https://github.com/NixOS/docker
+    image_name = "nix"
     system "docker",
       "build",
-      "--tag", "nix",
+      "--tag", image_name,
       "github.com/NixOS/docker"
 
     # Create Dockerfile
@@ -43,7 +45,7 @@ class Buildah < Formula
     # Build custom image
     system "docker",
       "build",
-      "--tag", "buildah",
+      "--tag", "#{image_name}-build",
       "."
 
     # Run build
@@ -53,7 +55,7 @@ class Buildah < Formula
       "--rm",
       "--mount", "type=bind,src=#{buildpath},dst=/src",
       "--workdir", "/src",
-      "buildah",
+      "#{image_name}-build",
       "make", "static"
 
     system "docker",

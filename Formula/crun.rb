@@ -6,6 +6,7 @@ class Crun < Formula
     tag:      "0.20.1",
     revision: "38271d1c8d9641a2cdc70acfa3dcb6996d124b3d"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/containers/crun.git"
 
   livecheck do
@@ -32,19 +33,21 @@ class Crun < Formula
     container_name = "crun"
     system "docker",
       "run",
-      "--name", container_name,
       "--interactive",
+      "--rm",
       "--mount", "type=bind,src=#{buildpath},dst=/src",
       "--workdir", "/src",
       image_name,
       "nix", "build", "-f", "nix/"
+    # Move result
     system "docker",
-      "cp",
-      "#{container_name}:/src/result/bin/crun",
-      "."
-    system "docker",
-      "rm",
-      container_name
+      "run",
+      "--interactive",
+      "--rm",
+      "--mount", "type=bind,src=#{buildpath},dst=/src",
+      "--workdir", "/src",
+      "alpine",
+      "cp", "-r", "result/bin", "."
 
     bin.install "crun"
   end
