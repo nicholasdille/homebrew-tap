@@ -62,6 +62,7 @@ class CriO < Formula
       "--workdir", "/src",
       "alpine",
       "chown", "-R", "#{Process.uid}:#{Process.gid}", "."
+    puts Utils.safe_popen_read("find", "#{buildpath}", "-type", "d")
     # Move result
     system "docker",
       "run",
