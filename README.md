@@ -12,30 +12,30 @@ Or `brew tap nicholasdille/tap` and then `brew install <formula>`.
 
 Containers (Docker):
 
-- dockerd
-- containerd
-- runc
 - buildkitd
-- nerdctl
-- docker-compose-cli
 - buildkitd-dockerfile
 - buildx
 - cni
 - cni-isolation
+- containerd
 - distribution
+- dockerd
 - docker-app
 - docker-compose (binary formula)
+- docker-compose-cli
 - docker-proxy
 - docker-scan
 - fuse-overlay (binary formula)
 - fuse-overlay-snapshotter (binary formula)
 - hub-tool
 - manifest-tool
+- nerdctl
 - oci-image-tool
 - oci-runtime-tool
 - oras
 - regclient
 - rootlesskit
+- runc
 - slirp4netns
 - stargz-snapshotter (binary formula)
 - stargzify
@@ -58,9 +58,9 @@ Containers (RedHat)
 
 Rootless containers
 
-- dockerd-rootless
-- containerd-rootless
 - buildkitd-rootless
+- containerd-rootless
+- dockerd-rootless
 - nerdctl-immortal
 
 Kubernetes:
