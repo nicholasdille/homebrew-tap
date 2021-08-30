@@ -18,15 +18,17 @@ Containers (Docker):
 - buildkitd
 - nerdctl
 - docker-compose-cli
+- buildkitd-dockerfile
 - buildx
 - cni
 - cni-isolation
 - distribution
 - docker-app
 - docker-compose (binary formula)
+- docker-proxy
 - docker-scan
 - fuse-overlay (binary formula)
-- fuse-overlay-snapshotter
+- fuse-overlay-snapshotter (binary formula)
 - hub-tool
 - manifest-tool
 - oci-image-tool
@@ -43,9 +45,15 @@ Containers (RedHat)
 
 - bubblewrap
 - buildah
+- cni-dnsname
 - conmon
+- containers-common
+- containers-image
 - containers-storage
+- crun
 - podman
+- podman-remote
+- podman-static
 - umoci
 
 Rootless containers
@@ -61,35 +69,59 @@ Kubernetes:
 - clusterawsadm
 - cri-o
 - crictl
+- datree
 - imgpkg
 - kapp
 - kbld
 - kubectl-build
 - kubeone
+- kubescape
 - kubeswitch
 - kwt
 - localizer
+- loft (binary formula)
 - vcluster
 - ytt
 
 Formulae related to containers:
 
+- bst (pull request)
 - containerssh
 - cosign
+- diun
 - duffle
 - faasd
 - faasd-rootless
 - firecracker
+- firecracker-containerd
+- firejail
 - footloose
+- gvisor (pull request)
 - ignite
+- kata-containers (pull request)
 - kim
 - norouter
+- nydus (pull request)
 - porter
+- quark (pull request)
 - rekor
+- runq
 - sshocker
+- stacker (pull request)
 - sysbox
+- tini
+- youki (pull request)
+- zot
+
+Formulae for useful tools:
+
+- bin
+- criu
+- npiperelay (binary formula)
+- reptyr
 - task
 - tl
+- trillian
 - vendir
 
 Formulae for fun:
