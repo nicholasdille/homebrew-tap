@@ -6,7 +6,8 @@ class Kubescape < Formula
     tag:      "v1.0.52-beta",
     revision: "798994850dd67f959cfd7b922f32d7d5dc6fbc48"
   license "Apache-2.0"
-  head "https://github.com/armosec/kubescape.git"
+  head "https://github.com/armosec/kubescape.git",
+    branch: "master"
 
   livecheck do
     url :stable
