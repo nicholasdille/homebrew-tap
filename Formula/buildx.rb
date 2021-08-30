@@ -14,9 +14,9 @@ class Buildx < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildx-0.6.2"
-    sha256 cellar: :any_skip_relocation, catalina:     "a816d74968c5c95ff9903b260c20439bdbc15b8ff9c5f2128e073d9b1a476abc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "64cc2f6cc10018a99122722b7d467de1b748d4d539566e8d00af2da58db00dea"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildx-0.6.3"
+    sha256 cellar: :any_skip_relocation, catalina:     "479644bf59dafe3371402c60f0f503a2af9065b90c5c87b421353967329fcc48"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a52a2aec97248c869b8b56d2d77ed34217fdf3e1a9f52e7695c16f2c150d3717"
   end
 
   depends_on "go" => :build
