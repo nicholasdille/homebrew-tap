@@ -18,17 +18,61 @@ class CriO < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "7537ace7c45159e24299f93d1e93c8e660fc3d76cef118e1b9151dbc38c1b5db"
   end
 
-  depends_on "go" => :build
   depends_on "go-md2man" => :build
   depends_on "make" => :build
   depends_on :linux
 
   def install
-    ENV["CGO_ENABLED"] = "0"
-    system "make", "binaries"
-    bin.install "bin/crio"
-    bin.install "bin/crio-status"
-    bin.install "bin/pinns"
+    # Build base from https://github.com/NixOS/docker
+    image_name = "nix"
+    system "docker",
+      "build",
+      "--tag", image_name,
+      "github.com/NixOS/docker"
+
+    # Create Dockerfile
+    (buildpath/"Dockerfile").write <<~EOS
+      FROM #{image_name}
+      RUN apk update \
+       && apk add \
+              bash
+    EOS
+
+    # Build custom image
+    system "docker",
+      "build",
+      "--tag", "#{image_name}-build",
+      "."
+
+    # Run build
+    system "docker",
+      "run",
+      "--interactive",
+      "--rm",
+      "--mount", "type=bind,src=#{buildpath},dst=/src",
+      "--workdir", "/src",
+      "#{image_name}-build",
+      "nix", "build", "-f", "nix"
+    # Fix permission
+    system "docker",
+      "run",
+      "--interactive",
+      "--rm",
+      "--mount", "type=bind,src=#{buildpath},dst=/src",
+      "--workdir", "/src",
+      "alpine",
+      "chown", "-R", "#{Process.uid}:#{Process.gid}", "."
+    # Move result
+    system "docker",
+      "run",
+      "--interactive",
+      "--rm",
+      "--mount", "type=bind,src=#{buildpath},dst=/src",
+      "--workdir", "/src",
+      "alpine",
+      "cp", "-r", "result/bin", "."
+
+    system "make", "install.bin-nobuild", "BINDIR=#{bin}"
 
     system "make", "docs"
     man5.install Dir["docs/*.5"]
@@ -57,6 +101,10 @@ class CriO < Formula
     # zsh completion
     output = Utils.safe_popen_read("#{bin}/crio-status", "complete", "zsh")
     (zsh_completion/"_crio-status").write output
+
+    # configuration
+    output = Utils.safe_popen_read("#{bin}/crio", "--config-dir=", "--config=", "config")
+    (etc/"crio.conf").write output
   end
 
   test do
