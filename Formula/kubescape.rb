@@ -20,8 +20,10 @@ class Kubescape < Formula
       "mod",
       "tidy"
 
+    ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
+      "-ldflags", "-s -w",
       "-o",
       bin/"kubescape",
       "."
