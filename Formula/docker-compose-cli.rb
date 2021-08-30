@@ -20,7 +20,7 @@ class DockerComposeCli < Formula
   end
 
   depends_on "go" => :build
-  depends_on "docker"
+  depends_on "docker" => :optional
 
   conflicts_with "docker-compose"
 
