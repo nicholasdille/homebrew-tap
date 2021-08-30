@@ -70,7 +70,7 @@ class CriO < Formula
       "--mount", "type=bind,src=#{buildpath},dst=/src",
       "--workdir", "/src",
       "alpine",
-      "cp", "-r", "result/bin", "."
+      "cp", "result/bin", "."
 
     system "make", "install.bin-nobuild", "BINDIR=#{bin}"
 
