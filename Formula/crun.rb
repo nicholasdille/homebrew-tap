@@ -30,7 +30,6 @@ class Crun < Formula
       "github.com/NixOS/docker"
 
     # Run build
-    container_name = "crun"
     system "docker",
       "run",
       "--interactive",
