@@ -19,6 +19,7 @@ class Cni < Formula
   end
 
   depends_on "go" => :build
+  depends_on :linux
 
   def install
     system "./build_linux.sh"
