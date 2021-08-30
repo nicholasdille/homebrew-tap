@@ -38,17 +38,8 @@ class Crun < Formula
       "--workdir", "/src",
       image_name,
       "nix", "build", "-f", "nix/"
-    # Move result
-    system "docker",
-      "run",
-      "--interactive",
-      "--rm",
-      "--mount", "type=bind,src=#{buildpath},dst=/src",
-      "--workdir", "/src",
-      "alpine",
-      "cp", "-r", "result/bin", "."
 
-    bin.install "crun"
+    bin.install "result/bin/crun"
   end
 
   test do
