@@ -10,7 +10,7 @@ class Kubescape < Formula
 
   livecheck do
     url :stable
-    strategy :github_latest
+    strategy :git
   end
 
   depends_on "go" => :build
