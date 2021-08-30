@@ -6,7 +6,8 @@ class Zot < Formula
     tag:      "v1.2.8",
     revision: "c6670b13295ffe69bcab59c655d5b02e2c13b9ab"
   license "Apache-2.0"
-  head "https://github.com/anuvu/zot.git"
+  head "https://github.com/anuvu/zot.git",
+    branch: "master"
 
   livecheck do
     url :stable
