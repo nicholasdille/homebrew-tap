@@ -14,6 +14,12 @@ class Zot < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/zot-1.2.8"
+    sha256 cellar: :any_skip_relocation, catalina:     "afb934529431da5d45e64c7343ac0600211dce92db4ff4e70357ba2d7f7bda7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ff1ff4f180907a8e83b2cf842a074d68a44e538fd5266f3e2fd47956800c92d8"
+  end
+
   depends_on "go" => :build
 
   def install
