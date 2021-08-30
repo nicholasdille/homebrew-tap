@@ -63,18 +63,10 @@ class CriO < Formula
       "--workdir", "/src",
       "alpine",
       "chown", "-R", "#{Process.uid}:#{Process.gid}", "."
-    puts Utils.safe_popen_read("find", buildpath, "-type", "d")
-    # Move result
-    system "docker",
-      "run",
-      "--interactive",
-      "--rm",
-      "--mount", "type=bind,src=#{buildpath},dst=/src",
-      "--workdir", "/src",
-      "alpine",
-      "cp", "result/bin", "."
 
-    system "make", "install.bin-nobuild", "BINDIR=#{bin}"
+    bin.install "result/bin/crio"
+    bin.install "result/bin/crio-status"
+    bin.install "result/bin/pinns"
 
     system "make", "docs"
     man5.install Dir["docs/*.5"]
