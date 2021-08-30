@@ -6,7 +6,8 @@ class CriO < Formula
     tag:      "v1.22.0",
     revision: "6becad23eadd7dfdd25fd8df386bf3b706cf7758"
   license "Apache-2.0"
-  head "https://github.com/cri-o/cri-o.git"
+  head "https://github.com/cri-o/cri-o.git",
+    branch: "master"
 
   livecheck do
     url :stable
