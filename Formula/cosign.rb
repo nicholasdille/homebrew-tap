@@ -41,6 +41,6 @@ class Cosign < Formula
   end
 
   test do
-    system bin/"cosign", "--help"
+    system bin/"cosign", "version"
   end
 end
