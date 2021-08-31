@@ -3,8 +3,8 @@ class Kubescape < Formula
   homepage "https://github.com/armosec/kubescape"
 
   url "https://github.com/armosec/kubescape.git",
-    tag:      "v1.0.57",
-    revision: "8a00a5c54b644546571b4614b8bb43d29bb289bb"
+    tag:      "v1.0.58",
+    revision: "571a15bee8de5a75beaee1aad091fcde2d7c25ca"
   license "Apache-2.0"
   head "https://github.com/armosec/kubescape.git",
     branch: "master"
