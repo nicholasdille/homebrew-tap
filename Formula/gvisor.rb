@@ -15,7 +15,7 @@ class Gvisor < Formula
   depends_on "nicholasdille/tap/cni"
 
   def install
-    system "make", "runsc", "OPTIONS=--verbose_failures"
+    system "make", "runsc"
 
     bin.install "bazel-out/k8-opt-ST-4c64f0b3d5c7/bin/runsc/runsc_/runsc"
   end
