@@ -34,7 +34,7 @@ jobs:
               echo "Warning: Unable to extract repository of parent PR. Assuming no parent PR exists."
               exit 0
           fi
-          if test -z "${PARENT_PR_ID}"; then
+          if test -z "${PARENT_PR_ID}" || test "${PARENT_PR_ID}" == "null"; then
               echo "Warning: Unable to extract ID of parent PR. Assuming no parent PR exists."
               exit 0
           fi
