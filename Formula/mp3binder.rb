@@ -24,12 +24,11 @@ class Mp3binder < Formula
       "cmd/build/build.go", "-p"
 
     on_linux do
-      os = "linux"
+      bin.install "dist/release/linux/mp3binder"
     end
     on_macos do
-      os = "darwin"
+      bin.install "dist/release/darwin/mp3binder"
     end
-    bin.install "dist/release/#{os}/mp3binder"
   end
 
   test do
