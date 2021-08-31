@@ -14,8 +14,8 @@ class Rootlesskit < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/rootlesskit-0.14.3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "23674661831a396e64460175926bccc2b2af2424eada5358343b8e27e6987122"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/rootlesskit-0.14.5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c98da0b219bd5cfd506972acca87413e5b0cd16bdc73db5f6e313c0f39b50783"
   end
 
   depends_on "go" => :build
