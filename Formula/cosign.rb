@@ -1,6 +1,6 @@
 class Cosign < Formula
   desc "Container Signing"
-  homepage "https://sigstore.dev/"
+  homepage "https://github.com/sigstore/cosign"
 
   url "https://github.com/sigstore/cosign.git",
     tag:      "v1.1.0",
