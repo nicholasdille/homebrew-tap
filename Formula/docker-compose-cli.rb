@@ -6,7 +6,8 @@ class DockerComposeCli < Formula
     tag:      "v2.0.0-rc.2",
     revision: "3f50c5eff8951c05b640126234a79cc5f3a5b235"
   license "Apache-2.0"
-  head "https://github.com/docker/compose-cli.git"
+  head "https://github.com/docker/compose-cli.git",
+    branch: "main"
 
   livecheck do
     url :stable

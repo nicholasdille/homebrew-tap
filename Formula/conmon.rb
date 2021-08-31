@@ -6,7 +6,8 @@ class Conmon < Formula
     tag:      "v2.0.29",
     revision: "7e6de6678f6ed8a18661e1d5721b81ccee293b9b"
   license "Apache-2.0"
-  head "https://github.com/containers/conmon.git"
+  head "https://github.com/containers/conmon.git",
+    branch: "main"
 
   livecheck do
     url :stable

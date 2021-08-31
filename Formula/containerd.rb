@@ -6,7 +6,8 @@ class Containerd < Formula
     tag:      "v1.5.5",
     revision: "72cec4be58a9eb6b2910f5d10f1c01ca47d231c0"
   license "Apache-2.0"
-  head "https://github.com/containerd/containerd.git"
+  head "https://github.com/containerd/containerd.git",
+    branch: "main"
 
   livecheck do
     url :stable

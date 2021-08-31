@@ -7,7 +7,8 @@ class Kubeone < Formula
     revision: "7e290081fe4bfe38f93ecf6d8fa68e53be469711"
   license "Apache-2.0"
   revision 1
-  head "https://github.com/kubermatic/kubeone.git"
+  head "https://github.com/kubermatic/kubeone.git",
+    branch: "master"
 
   livecheck do
     url :stable

@@ -7,7 +7,8 @@ class Trillian < Formula
     revision: "ec49beeb964961d6f88d09ff08c91726ba1df234"
   license "Apache-2.0"
   revision 1
-  head "https://github.com/google/trillian.git"
+  head "https://github.com/google/trillian.git",
+    branch: "master"
 
   livecheck do
     url :stable

@@ -6,7 +6,8 @@ class Containerssh < Formula
     tag:      "v0.4.1",
     revision: "2714a9d3805691444186bfaf4e00389cadfe333d"
   license "MIT"
-  head "https://github.com/ContainerSSH/ContainerSSH.git"
+  head "https://github.com/ContainerSSH/ContainerSSH.git",
+    branch: "main"
 
   livecheck do
     url :stable

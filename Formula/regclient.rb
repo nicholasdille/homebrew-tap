@@ -6,7 +6,8 @@ class Regclient < Formula
     tag:      "v0.3.7",
     revision: "9fa89f91fc311ba87e5f962ddc3192c4b57d3518"
   license "Apache-2.0"
-  head "https://github.com/regclient/regclient.git"
+  head "https://github.com/regclient/regclient.git",
+    branch: "main"
 
   livecheck do
     url :stable

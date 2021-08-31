@@ -6,7 +6,8 @@ class PodmanStatic < Formula
     tag:      "v3.3.1",
     revision: "4c5283fabff2de5145838f1847a5a7b2b1fbc0a5"
   license "Apache-2.0"
-  head "https://github.com/containers/podman.git"
+  head "https://github.com/containers/podman.git",
+    branch: "main"
 
   livecheck do
     url :stable
@@ -96,7 +97,7 @@ index 9a3bc4763..b4b94539e 100644
 --- a/libpod/network/config.go
 +++ b/libpod/network/config.go
 @@ -12,7 +12,7 @@ import (
- 
+
  const (
  	// CNIConfigDir is the path where CNI config files exist
 -	CNIConfigDir = "/etc/cni/net.d"

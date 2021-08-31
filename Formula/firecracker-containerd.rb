@@ -6,7 +6,8 @@ class FirecrackerContainerd < Formula
     revision: "435ade47c5462cbf2e7decdbf12a9570ae5b474a"
   version "0.0.0"
   license "Apache-2.0"
-  head "https://github.com/firecracker-microvm/firecracker-containerd.git"
+  head "https://github.com/firecracker-microvm/firecracker-containerd.git",
+    branch: "main"
 
   livecheck do
     skip "No tags or releases"

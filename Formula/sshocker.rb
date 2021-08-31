@@ -6,7 +6,8 @@ class Sshocker < Formula
     tag:      "v0.2.0",
     revision: "15054fbfd23d8a20d5ade832c86de67faada0281"
   license "Apache-2.0"
-  head "https://github.com/AkihiroSuda/sshocker.git"
+  head "https://github.com/AkihiroSuda/sshocker.git",
+    branch: "master"
 
   livecheck do
     url :stable

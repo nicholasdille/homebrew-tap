@@ -6,7 +6,8 @@ class Runc < Formula
     tag:      "v1.0.2",
     revision: "52b36a2dd837e8462de8e01458bf02cf9eea47dd"
   license "Apache-2.0"
-  head "https://github.com/opencontainers/runc.git"
+  head "https://github.com/opencontainers/runc.git",
+    branch: "master"
 
   livecheck do
     url :stable

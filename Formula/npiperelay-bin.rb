@@ -6,7 +6,6 @@ class NpiperelayBin < Formula
   version "0.1.0"
   sha256 "6b9ef61ffd17c03507a9a3d54d815dceb3dae669ac67fc3bf4225d1e764ce5f6"
   license "MIT"
-  head "https://github.com/jstarks/npiperelay.git"
 
   livecheck do
     url :stable

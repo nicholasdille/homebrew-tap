@@ -6,7 +6,8 @@ class Kubeswitch < Formula
     tag:      "v1.4.0",
     revision: "5b63579c97c9f7cec9529ba66fcfd5c7754f2890"
   license "MIT"
-  head "https://github.com/danielb42/kubeswitch.git"
+  head "https://github.com/danielb42/kubeswitch.git",
+    branch: "master"
 
   livecheck do
     url :stable

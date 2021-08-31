@@ -6,7 +6,6 @@ class DockerComposeBin < Formula
     tag:      "1.29.2",
     revision: "5becea4ca9f68875334c92f191a13482bcd6e5cf"
   license "Apache-2.0"
-  head "https://github.com/docker/compose.git"
 
   livecheck do
     url :stable

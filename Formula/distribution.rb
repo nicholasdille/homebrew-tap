@@ -6,7 +6,8 @@ class Distribution < Formula
     tag:      "v2.7.1",
     revision: "2461543d988979529609e8cb6fca9ca190dc48da"
   license "Apache-2.0"
-  head "https://github.com/distribution/distribution.git"
+  head "https://github.com/distribution/distribution.git",
+    branch: "main"
 
   livecheck do
     url :stable

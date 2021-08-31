@@ -6,7 +6,8 @@ class Kapp < Formula
     tag:      "v0.39.0",
     revision: "bd100197acaccb12dcdfd8a9a27452d2fd6a3abd"
   license "Apache-2.0"
-  head "https://github.com/vmware-tanzu/carvel-kapp.git"
+  head "https://github.com/vmware-tanzu/carvel-kapp.git",
+    branch: "develop"
 
   livecheck do
     url :stable

@@ -6,7 +6,8 @@ class Cni < Formula
     tag:      "v1.0.0",
     revision: "8632ace977f4126c8ded601975f564571c66b922"
   license "Apache-2.0"
-  head "https://github.com/containernetworking/plugins.git"
+  head "https://github.com/containernetworking/plugins.git",
+    branch: "master"
 
   livecheck do
     url :stable

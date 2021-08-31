@@ -6,7 +6,8 @@ class OciImageTool < Formula
     tag:      "v1.0.0-rc3",
     revision: "25e557a203ff15022e7e01b9a498737b2d643e92"
   license "Apache-2.0"
-  head "https://github.com/opencontainers/image-tools.git"
+  head "https://github.com/opencontainers/image-tools.git",
+    branch: "master"
 
   livecheck do
     url :stable

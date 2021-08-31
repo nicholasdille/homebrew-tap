@@ -6,7 +6,8 @@ class Buildah < Formula
     tag:      "v1.22.3",
     revision: "852ca9ff7fff7a95789b706972b968ec9c5cff34"
   license "Apache-2.0"
-  head "https://github.com/containers/buildah.git"
+  head "https://github.com/containers/buildah.git",
+    branch: "main"
 
   livecheck do
     url :stable

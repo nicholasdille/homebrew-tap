@@ -6,7 +6,8 @@ class Kwt < Formula
     tag:      "v0.0.6",
     revision: "1f643fef4764445297e74e233df7562d13b5ac71"
   license "Apache-2.0"
-  head "https://github.com/vmware-tanzu/carvel-kwt.git"
+  head "https://github.com/vmware-tanzu/carvel-kwt.git",
+    branch: "develop"
 
   livecheck do
     url :stable

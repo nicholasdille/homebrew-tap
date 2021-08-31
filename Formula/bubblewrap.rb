@@ -6,7 +6,8 @@ class Bubblewrap < Formula
     tag:      "v0.5.0",
     revision: "b84704bb64eac3011f84346c79651c7c1234712c"
   license "LGPL-2.0-or-later"
-  head "https://github.com/containers/bubblewrap.git"
+  head "https://github.com/containers/bubblewrap.git",
+  branch: "master"
 
   livecheck do
     url :stable

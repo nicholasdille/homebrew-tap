@@ -6,7 +6,8 @@ class DockerScan < Formula
     tag:      "v0.8.0",
     revision: "35651caa2c1a689bab3cf1706d46dc2265f7f1ea"
   license "Apache-2.0"
-  head "https://github.com/docker/scan-cli-plugin.git"
+  head "https://github.com/docker/scan-cli-plugin.git",
+    branch: "main"
 
   livecheck do
     url :stable

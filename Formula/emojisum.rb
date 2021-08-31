@@ -6,7 +6,8 @@ class Emojisum < Formula
     revision: "cdca4cf09ee39ed6db5f0d90a2f6eddcdd9fd0c6"
   version "0.0.0"
   license "GPL-2.0-only"
-  head "https://github.com/emojisum/emojisum.git"
+  head "https://github.com/emojisum/emojisum.git",
+    branch: "master"
 
   livecheck do
     skip "No tags or releases"

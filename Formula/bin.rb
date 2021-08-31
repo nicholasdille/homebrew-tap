@@ -6,7 +6,8 @@ class Bin < Formula
     tag:      "v0.8.0",
     revision: "a638c4aae4dca8eb6a339bfd40af4f8dca7b5231"
   license "MIT"
-  head "https://github.com/marcosnils/bin.git"
+  head "https://github.com/marcosnils/bin.git",
+    branch: "master"
 
   livecheck do
     url :stable

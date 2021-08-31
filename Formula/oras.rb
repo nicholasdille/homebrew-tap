@@ -6,7 +6,8 @@ class Oras < Formula
     tag:      "v0.12.0",
     revision: "1e6a64e1789f5145bf669b75bebfe013100f6253"
   license "MIT"
-  head "https://github.com/oras-project/oras.git"
+  head "https://github.com/oras-project/oras.git",
+    branch: "main"
 
   livecheck do
     url :stable

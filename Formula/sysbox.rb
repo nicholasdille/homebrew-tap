@@ -32,7 +32,8 @@ class Sysbox < Formula
     revision: "63d8ee2f7acdb17d11921fa193dccb5b7b4207f8",
     using:    SysboxGitDownloadStrategy
   license "Apache-2.0"
-  head "https://github.com/nestybox/sysbox.git"
+  head "https://github.com/nestybox/sysbox.git",
+    branch: "master"
 
   livecheck do
     url :stable

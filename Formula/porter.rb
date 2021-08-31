@@ -6,7 +6,8 @@ class Porter < Formula
     tag:      "v0.38.5",
     revision: "a4694cd7347785676642f6eb5804ea9a830c3e9a"
   license "Apache-2.0"
-  head "https://github.com/getporter/porter.git"
+  head "https://github.com/getporter/porter.git",
+    branch: "main"
 
   livecheck do
     url :stable

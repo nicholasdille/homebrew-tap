@@ -6,7 +6,8 @@ class Imgpkg < Formula
     tag:      "v0.17.0",
     revision: "7d2fd285eaa493c5460b5739104e6876fcc04217"
   license "Apache-2.0"
-  head "https://github.com/vmware-tanzu/carvel-imgpkg.git"
+  head "https://github.com/vmware-tanzu/carvel-imgpkg.git",
+    branch: "develop"
 
   livecheck do
     url :stable

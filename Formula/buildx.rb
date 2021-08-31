@@ -6,7 +6,8 @@ class Buildx < Formula
     tag:      "v0.6.3",
     revision: "266c0eac611d64fcc0c72d80206aa364e826758d"
   license "Apache-2.0"
-  head "https://github.com/docker/buildx.git"
+  head "https://github.com/docker/buildx.git",
+    branch: "master"
 
   livecheck do
     url :stable

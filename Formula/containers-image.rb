@@ -6,7 +6,8 @@ class ContainersImage < Formula
     tag:      "v5.16.0",
     revision: "3ed4f40160d306006741bac0005985d6b1f88c60"
   license "Apache-2.0"
-  head "https://github.com/containers/image.git"
+  head "https://github.com/containers/image.git",
+    branch: "main"
 
   livecheck do
     url :stable

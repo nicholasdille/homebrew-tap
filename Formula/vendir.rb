@@ -6,7 +6,8 @@ class Vendir < Formula
     tag:      "v0.22.0",
     revision: "502a9268ea2af7a84ea739fcdad8fe1364e2c453"
   license "Apache-2.0"
-  head "https://github.com/vmware-tanzu/carvel-vendir.git"
+  head "https://github.com/vmware-tanzu/carvel-vendir.git",
+    branch: "develop"
 
   livecheck do
     url :stable

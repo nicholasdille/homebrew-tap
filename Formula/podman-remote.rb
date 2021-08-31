@@ -6,7 +6,8 @@ class PodmanRemote < Formula
     tag:      "v3.3.1",
     revision: "4c5283fabff2de5145838f1847a5a7b2b1fbc0a5"
   license "Apache-2.0"
-  head "https://github.com/containers/podman.git"
+  head "https://github.com/containers/podman.git",
+    branch: "main"
 
   livecheck do
     url :stable

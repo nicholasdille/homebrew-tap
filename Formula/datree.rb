@@ -6,7 +6,8 @@ class Datree < Formula
     tag:      "0.9.0",
     revision: "b80c73bb365e960897bd4451056fa855587af062"
   license "Apache-2.0"
-  head "https://github.com/datreeio/datree.git"
+  head "https://github.com/datreeio/datree.git",
+    branch: "staging"
 
   livecheck do
     url :stable

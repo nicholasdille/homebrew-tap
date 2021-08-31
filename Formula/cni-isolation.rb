@@ -6,7 +6,8 @@ class CniIsolation < Formula
     tag:      "v0.0.3",
     revision: "30b5a600a99fa573414f7658f501736a8e2542bd"
   license "Apache-2.0"
-  head "https://github.com/AkihiroSuda/cni-isolation.git"
+  head "https://github.com/AkihiroSuda/cni-isolation.git",
+    branch: "master"
 
   livecheck do
     url :stable

@@ -6,7 +6,8 @@ class Tini < Formula
     tag:      "v0.19.0",
     revision: "de40ad007797e0dcd8b7126f27bb87401d224240"
   license "MIT"
-  head "https://github.com/krallin/tini.git"
+  head "https://github.com/krallin/tini.git",
+    branch: "master"
 
   livecheck do
     url :stable

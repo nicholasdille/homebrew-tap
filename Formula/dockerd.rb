@@ -6,7 +6,8 @@ class Dockerd < Formula
     tag:      "v20.10.8",
     revision: "75249d88bc107a122b503f6a50e89c994331867c"
   license "Apache-2.0"
-  head "https://github.com/moby/moby.git"
+  head "https://github.com/moby/moby.git",
+    branch: "master"
 
   livecheck do
     url :stable

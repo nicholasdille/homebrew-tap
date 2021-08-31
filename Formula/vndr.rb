@@ -6,7 +6,8 @@ class Vndr < Formula
     tag:      "v0.1.2",
     revision: "f12b881cb8f081a5058408a58f429b9014833fc6"
   license "Apache-2.0"
-  head "https://github.com/LK4D4/vndr.git"
+  head "https://github.com/LK4D4/vndr.git",
+    branch: "master"
 
   livecheck do
     url :stable

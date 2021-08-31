@@ -6,7 +6,8 @@ class Vcluster < Formula
     tag:      "v0.4.0",
     revision: "aecd7e0b4de6c747fc7bcaab2699f5088e5b09db"
   license "Apache-2.0"
-  head "https://github.com/loft-sh/vcluster.git"
+  head "https://github.com/loft-sh/vcluster.git",
+    branch: "main"
 
   livecheck do
     url :stable

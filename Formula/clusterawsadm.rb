@@ -5,7 +5,8 @@ class Clusterawsadm < Formula
     tag:      "v0.7.0",
     revision: "aa68f949dc496116155c73fd61ea5760f493f6cb"
   license "Apache-2.0"
-  head "https://github.com/kubernetes-sigs/cluster-api-provider-aws.git"
+  head "https://github.com/kubernetes-sigs/cluster-api-provider-aws.git",
+    branch: "main"
 
   livecheck do
     url :stable

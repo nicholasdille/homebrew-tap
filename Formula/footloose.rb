@@ -6,7 +6,8 @@ class Footloose < Formula
     tag:      "0.6.3",
     revision: "352435f62e04975f1aff08cfdc91241eaa163f36"
   license "Apache-2.0"
-  head "https://github.com/weaveworks/footloose.git"
+  head "https://github.com/weaveworks/footloose.git",
+    branch: "master"
 
   livecheck do
     url :stable

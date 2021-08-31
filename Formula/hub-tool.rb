@@ -6,7 +6,8 @@ class HubTool < Formula
     tag:      "v0.4.1",
     revision: "505194662f8bb7e5b3cd500e3f98961097c4c3d7"
   license "Apache-2.0"
-  head "https://github.com/docker/hub-tool.git"
+  head "https://github.com/docker/hub-tool.git",
+    branch: "main"
 
   livecheck do
     url :stable

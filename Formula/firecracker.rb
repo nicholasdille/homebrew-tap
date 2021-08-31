@@ -6,7 +6,8 @@ class Firecracker < Formula
     tag:      "v0.25.0",
     revision: "f824c2f42638da9ccad259eb8c6a7021e2a304a0"
   license "Apache-2.0"
-  head "https://github.com/firecracker-microvm/firecracker.git"
+  head "https://github.com/firecracker-microvm/firecracker.git",
+    branch: "main"
 
   livecheck do
     url :stable

@@ -6,7 +6,8 @@ class CniDnsname < Formula
     tag:      "v1.3.1",
     revision: "18822f9a4fb35d1349eb256f4cd2bfd372474d84"
   license "Apache-2.0"
-  head "https://github.com/containers/dnsname.git"
+  head "https://github.com/containers/dnsname.git",
+    branch: "main"
 
   livecheck do
     url :stable

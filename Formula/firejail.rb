@@ -6,7 +6,8 @@ class Firejail < Formula
     tag:      "0.9.66",
     revision: "a67bb37b0ddac080008cd5cf494aaaf8531f45c0"
   license "LGPL-2.0-only"
-  head "https://github.com/netblue30/firejail.git"
+  head "https://github.com/netblue30/firejail.git",
+    branch: "master"
 
   livecheck do
     url :stable

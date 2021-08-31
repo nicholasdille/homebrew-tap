@@ -6,7 +6,8 @@ class Diun < Formula
     tag:      "v4.19.0",
     revision: "28d15947bf65a94f7cc921c03cbf23df67bbce44"
   license "MIT"
-  head "https://github.com/crazy-max/diun.git"
+  head "https://github.com/crazy-max/diun.git",
+    branch: "master"
 
   livecheck do
     url :stable

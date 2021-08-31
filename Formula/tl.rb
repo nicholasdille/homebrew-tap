@@ -6,7 +6,8 @@ class Tl < Formula
     tag:      "v0.2.12",
     revision: "4c2dc0ed57ea7629988b81cb6165fe179751c56b"
   license "Apache-2.0"
-  head "https://github.com/transparencylog/tl.git"
+  head "https://github.com/transparencylog/tl.git",
+    branch: "main"
 
   livecheck do
     url :stable

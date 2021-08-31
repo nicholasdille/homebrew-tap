@@ -6,7 +6,8 @@ class ContainersStorage < Formula
     tag:      "v1.35.0",
     revision: "baee5051afae938b64aa9135e40dbdb844402c2e"
   license "Apache-2.0"
-  head "https://github.com/containers/storage.git"
+  head "https://github.com/containers/storage.git",
+    branch: "main"
 
   livecheck do
     url :stable

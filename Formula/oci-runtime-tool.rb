@@ -6,7 +6,8 @@ class OciRuntimeTool < Formula
     tag:      "v0.9.0",
     revision: "ee63cfa6f66491e78f8e63c37806d7a905eb836e"
   license "Apache-2.0"
-  head "https://github.com/opencontainers/runtime-tools.git"
+  head "https://github.com/opencontainers/runtime-tools.git",
+    branch: "master"
 
   livecheck do
     url :stable

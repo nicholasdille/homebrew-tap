@@ -6,7 +6,8 @@ class Ytt < Formula
     tag:      "v0.36.0",
     revision: "ecab3989ffcd7733152047bf8b4c5f237803a56f"
   license "Apache-2.0"
-  head "https://github.com/vmware-tanzu/carvel-ytt.git"
+  head "https://github.com/vmware-tanzu/carvel-ytt.git",
+    branch: "develop"
 
   livecheck do
     url :stable

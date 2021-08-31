@@ -6,7 +6,8 @@ class DockerProxy < Formula
     revision: "fa125a3512ee0f6187721c88582bf8c4378bd4d7"
   version "20.10.7"
   license "Apache-2.0"
-  head "https://github.com/moby/libnetwork.git"
+  head "https://github.com/moby/libnetwork.git",
+    branch: "master"
 
   livecheck do
     skip "Manual version"

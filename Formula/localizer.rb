@@ -6,7 +6,8 @@ class Localizer < Formula
     tag:      "v1.12.0",
     revision: "0f96ab9d05da7a50e228a4f26e7d5631628e454b"
   license "Apache-2.0"
-  head "https://github.com/getoutreach/localizer.git"
+  head "https://github.com/getoutreach/localizer.git",
+    branch: "main"
 
   livecheck do
     url :stable

@@ -6,7 +6,8 @@ class Crun < Formula
     tag:      "1.0",
     revision: "139dc6971e2f1d931af520188763e984d6cdfbf8"
   license "Apache-2.0"
-  head "https://github.com/containers/crun.git"
+  head "https://github.com/containers/crun.git",
+    branch: "main"
 
   livecheck do
     url :stable

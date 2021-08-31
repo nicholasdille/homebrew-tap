@@ -6,7 +6,8 @@ class Cosign < Formula
     tag:      "v1.1.0",
     revision: "67934a685ddc83aa7b0b8a55c911e299117afac5"
   license "Apache-2.0"
-  head "https://github.com/sigstore/cosign.git"
+  head "https://github.com/sigstore/cosign.git",
+    branch: "main"
 
   livecheck do
     url :stable

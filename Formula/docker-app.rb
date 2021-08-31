@@ -6,7 +6,8 @@ class DockerApp < Formula
     tag:      "v0.9.1-beta3",
     revision: "9d2c67f87b7338eb1a0fa2f18eb81af3d2aac0e1"
   license "Apache-2.0"
-  head "https://github.com/docker/app.git"
+  head "https://github.com/docker/app.git",
+    branch: "master"
 
   livecheck do
     url :stable

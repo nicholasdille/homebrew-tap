@@ -6,7 +6,8 @@ class ContainersCommon < Formula
     tag:      "v0.43.2",
     revision: "694f75bb23907bb20623e2c18815f1fbfb5e34e0"
   license "Apache-2.0"
-  head "https://github.com/containers/common.git"
+  head "https://github.com/containers/common.git",
+    branch: "main"
 
   livecheck do
     url :stable

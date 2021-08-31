@@ -7,7 +7,8 @@ class Reptyr < Formula
     revision: "d21a9b19df0fdccabd4c308839caf2d1cc66351d"
   license "MIT"
   revision 1
-  head "https://github.com/nelhage/reptyr.git"
+  head "https://github.com/nelhage/reptyr.git",
+    branch: "master"
 
   livecheck do
     url :stable

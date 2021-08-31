@@ -6,7 +6,8 @@ class Faasd < Formula
     tag:      "0.13.0",
     revision: "12ada59bf1289ea1543a56d7f711194251fb8a95"
   license "Apache-2.0"
-  head "https://github.com/openfaas/faasd.git"
+  head "https://github.com/openfaas/faasd.git",
+    branch: "master"
 
   livecheck do
     url :stable

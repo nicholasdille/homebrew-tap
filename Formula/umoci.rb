@@ -6,7 +6,8 @@ class Umoci < Formula
     tag:      "v0.4.7",
     revision: "17f38511d61846e2fb8ec01a1532f3ef5525e71d"
   license "Apache-2.0"
-  head "https://github.com/opencontainers/umoci.git"
+  head "https://github.com/opencontainers/umoci.git",
+    branch: "master"
 
   livecheck do
     url :stable

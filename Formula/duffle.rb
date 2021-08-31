@@ -6,7 +6,8 @@ class Duffle < Formula
     tag:      "0.3.5-beta.1",
     revision: "c364840933b1886eddc01462090ea0494fc6bcfb"
   license "MIT"
-  head "https://github.com/cnabio/duffle.git"
+  head "https://github.com/cnabio/duffle.git",
+    branch: "main"
 
   livecheck do
     url :stable

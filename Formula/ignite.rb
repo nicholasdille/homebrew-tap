@@ -6,7 +6,8 @@ class Ignite < Formula
     tag:      "v0.10.0",
     revision: "4540abeb9ba6daba32a72ef2b799095c71ebacb0"
   license "Apache-2.0"
-  head "https://github.com/weaveworks/ignite.git"
+  head "https://github.com/weaveworks/ignite.git",
+    branch: "main"
 
   livecheck do
     url :stable

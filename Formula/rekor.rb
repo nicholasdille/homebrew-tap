@@ -1,12 +1,13 @@
 class Rekor < Formula
   desc "Signature Transparency Log"
-  homepage "https://sigstore.dev/"
+  homepage "https://github.com/sigstore/rekor"
 
   url "https://github.com/sigstore/rekor.git",
     tag:      "v0.3.0",
     revision: "e4303a87b92081e162e080ff69f36830c1035c09"
   license "Apache-2.0"
-  head "https://github.com/sigstore/rekor.git"
+  head "https://github.com/sigstore/rekor.git",
+    branch: "main"
 
   livecheck do
     url :stable

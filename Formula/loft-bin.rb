@@ -6,7 +6,6 @@ class LoftBin < Formula
     tag:      "v1.14.0",
     revision: "ca170bed6cafe191390ab7d2442ebae81a135803"
   license "Apache-2.0"
-  head "https://github.com/loft-sh/loft.git"
 
   livecheck do
     url :stable

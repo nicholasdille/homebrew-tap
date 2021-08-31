@@ -6,7 +6,8 @@ class Kbld < Formula
     tag:      "v0.30.0",
     revision: "085f54e597e0416807080b5bcf48a1fa4d679939"
   license "Apache-2.0"
-  head "https://github.com/vmware-tanzu/carvel-kbld.git"
+  head "https://github.com/vmware-tanzu/carvel-kbld.git",
+    branch: "develop"
 
   livecheck do
     url :stable

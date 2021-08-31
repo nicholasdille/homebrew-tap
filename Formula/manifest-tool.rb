@@ -6,7 +6,8 @@ class ManifestTool < Formula
     tag:      "v1.0.3",
     revision: "505479b95ee682b7302a76e86f3b913d506ab3fc"
   license "Apache-2.0"
-  head "https://github.com/estesp/manifest-tool.git"
+  head "https://github.com/estesp/manifest-tool.git",
+    branch: "main"
 
   livecheck do
     url :stable

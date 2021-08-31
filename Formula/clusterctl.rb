@@ -6,7 +6,8 @@ class Clusterctl < Formula
     tag:      "v0.4.2",
     revision: "dd8048ce988bd7d7ab6dce760c2ce12e06c2482b"
   license "Apache-2.0"
-  head "https://github.com/kubernetes-sigs/cluster-api.git"
+  head "https://github.com/kubernetes-sigs/cluster-api.git",
+    branch: "master"
 
   livecheck do
     url :stable

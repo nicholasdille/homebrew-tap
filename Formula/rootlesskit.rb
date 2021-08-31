@@ -6,7 +6,8 @@ class Rootlesskit < Formula
     tag:      "v0.14.5",
     revision: "1216988f0e4f48a70ce849a8f690352aaeae8c13"
   license "Apache-2.0"
-  head "https://github.com/rootless-containers/rootlesskit.git"
+  head "https://github.com/rootless-containers/rootlesskit.git",
+    branch: "master"
 
   livecheck do
     url :stable

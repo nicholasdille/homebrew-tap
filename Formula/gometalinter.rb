@@ -6,7 +6,8 @@ class Gometalinter < Formula
   version "3.0.0"
   sha256 "2cab9691fa1f94184ea1df2b69c00990cdf03037c104e6a9deab6815cdbe6a77"
   license "MIT"
-  head "https://github.com/alecthomas/gometalinter.git"
+  head "https://github.com/alecthomas/gometalinter.git",
+    branch: "master"
 
   livecheck do
     url :stable

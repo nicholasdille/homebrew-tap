@@ -6,7 +6,8 @@ class Stargzify < Formula
     revision: "71d77da419c90be7b05d12e59945ac7a8c94a543"
   version "0.0.0"
   license "BSD-3-Clause"
-  head "https://github.com/google/crfs.git"
+  head "https://github.com/google/crfs.git",
+    branch: "master"
 
   livecheck do
     skip "No tags or releases"

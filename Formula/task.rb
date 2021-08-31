@@ -6,7 +6,8 @@ class Task < Formula
     tag:      "v3.7.0",
     revision: "ad05432bcf3d38f4a2fe55189a19c62fb295aed0"
   license "MIT"
-  head "https://github.com/go-task/task.git"
+  head "https://github.com/go-task/task.git",
+    branch: "master"
 
   livecheck do
     url :stable

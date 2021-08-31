@@ -6,7 +6,8 @@ class Trivy < Formula
     tag:      "v0.19.2",
     revision: "f3f302901476663b3edef629f5915236cce98bd4"
   license "Apache-2.0"
-  head "https://github.com/aquasecurity/trivy.git"
+  head "https://github.com/aquasecurity/trivy.git",
+    branch: "main"
 
   livecheck do
     url :stable
