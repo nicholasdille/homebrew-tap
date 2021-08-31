@@ -19,6 +19,7 @@ class Crun < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "6832567ae513cc165e327668953f9e3e0422a8c399e6231a635b2c8c2a4d3bf8"
   end
 
+  depends_on "nicholasdille/tap/docker" => :build
   depends_on :linux
 
   def install

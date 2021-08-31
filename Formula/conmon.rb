@@ -20,6 +20,7 @@ class Conmon < Formula
   end
 
   depends_on "go-md2man" => :build
+  depends_on "nicholasdille/tap/docker" => :build
   depends_on :linux
 
   def install
