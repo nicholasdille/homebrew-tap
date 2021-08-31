@@ -6,6 +6,7 @@ class Kubescape < Formula
     tag:      "v1.0.56",
     revision: "d3f4af0f9c4f43cdbbe32222cf67fa71ca90a639"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/armosec/kubescape.git",
     branch: "master"
 
@@ -34,9 +35,21 @@ class Kubescape < Formula
       "-o",
       bin/"kubescape",
       "."
+
+    # bash completion
+    output = Utils.safe_popen_read(bin/"kubescape", "completion", "bash")
+    (bash_completion/"kubescape").write output
+
+    # fish completion
+    output = Utils.safe_popen_read(bin/"kubescape", "completion", "fish")
+    (zsh_completion/"kubescape.fish").write output
+
+    # zsh completion
+    output = Utils.safe_popen_read(bin/"kubescape", "completion", "zsh")
+    (zsh_completion/"_kubescape").write output
   end
 
   test do
-    system "whereis", "kubescape"
+    system bin/"kubescape", "help"
   end
 end
