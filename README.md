@@ -128,6 +128,7 @@ Formulae for useful tools:
 Formulae for fun:
 
 - emojisum
+- mp3binder
 
 ## Noteworthy formulae
 
