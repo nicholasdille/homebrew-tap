@@ -6,7 +6,7 @@ class ContainerdRootless < Formula
     tag:      "v0.11.1",
     revision: "95071bf1c5ec9c844931bcedeff049d0ce6f3584"
   license "Apache-2.0"
-  head "https://github.com/containerd/containerd.git"
+  head "https://github.com/containerd/nerdctl.git"
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containerd-rootless-0.11.1"
