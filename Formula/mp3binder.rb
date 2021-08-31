@@ -15,13 +15,21 @@ class Mp3binder < Formula
   end
 
   depends_on "go" => :build
+  depends_on arch: :x86_64
 
   def install
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "run",
       "cmd/build/build.go", "-p"
-    bin.install "dist/release/linux/mp3binder"
+
+    on_linux do
+      os = "linux"
+    end
+    on_macos do
+      os = "darwin"
+    end
+    bin.install "dist/release/#{os}/mp3binder"
   end
 
   test do
