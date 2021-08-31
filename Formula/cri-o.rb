@@ -63,7 +63,7 @@ class CriO < Formula
       "exec",
       "--interactive",
       "#{image_name}-build",
-      "cp", "-r", "nix-build:/src/result/", "."
+      "cp", "-rL", "nix-build:/src/result/", "."
     # Remove build container
     system "docker",
       "rm",
