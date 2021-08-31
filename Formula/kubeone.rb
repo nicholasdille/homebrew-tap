@@ -6,6 +6,7 @@ class Kubeone < Formula
     tag:      "v1.2.3",
     revision: "7e290081fe4bfe38f93ecf6d8fa68e53be469711"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/kubermatic/kubeone.git"
 
   livecheck do
@@ -36,7 +37,7 @@ class Kubeone < Formula
 
     # zsh completion
     output = Utils.safe_popen_read(bin/"kubeone", "completion", "zsh")
-    (zsh_completion/"kubeone").write output
+    (zsh_completion/"_kubeone").write output
   end
 
   test do
