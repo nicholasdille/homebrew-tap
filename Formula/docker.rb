@@ -20,7 +20,7 @@ class Docker < Formula
   depends_on "pkg-config" => :build
 
   conflicts_with "docker-completion", because: "docker already includes these completion scripts"
-  conflicts_with "docker"
+  #conflicts_with "docker"
 
   def install
     dir = buildpath/"src/github.com/docker/cli"
