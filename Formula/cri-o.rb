@@ -58,12 +58,18 @@ class CriO < Formula
       "--interactive",
       "#{image_name}-build",
       "chown", "-R", "#{Process.uid}:#{Process.gid}", "."
+    # Create target directory
+    system "docker",
+      "exec",
+      "--interactive",
+      "#{image_name}-build",
+      "mkdir", "-p", "bin"
     # Copy binaries
     system "docker",
       "exec",
       "--interactive",
       "#{image_name}-build",
-      "cp", "-rL", "result/", "."
+      "cp", "result/bin/*", "bin"
     # Remove build container
     system "docker",
       "rm",
