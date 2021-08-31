@@ -157,6 +157,7 @@ Formulae for fun:
 - [k3sup](https://formulae.brew.sh/formula/k3sup#default) (official)
 - [kind](https://formulae.brew.sh/formula/kind#default) (official)
 - [krew](https://formulae.brew.sh/formula/krew#default) (official)
+- [kubeaudit](https://formulae.brew.sh/formula/kubeaudit#default) (official)
 - [kubeconform](https://github.com/yannh/kubeconform) (3rd party)
 - [kubernetes-cli (kubectl)](https://formulae.brew.sh/formula/kubernetes-cli#default) (official)
 - [kustomize](https://formulae.brew.sh/formula/kustomize#default) (official)
