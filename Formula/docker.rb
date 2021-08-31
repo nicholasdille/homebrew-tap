@@ -34,7 +34,7 @@ class Docker < Formula
         bin.install "build/docker-linux-amd64" => "docker"
       end
       on_macos do
-        puts Utils.safe_popen_read("ls", "-l", "build")
+        bin.install "build/docker-darwin-amd64" => "docker"
       end
 
       Pathname.glob("man/*.[1-8].md") do |md|
