@@ -32,16 +32,10 @@ class CriO < Formula
       "--tag", image_name,
       "github.com/NixOS/docker"
 
-    # Build custom image
-    system "docker",
-      "build",
-      "--tag", "#{image_name}-build",
-      "."
-
     # Remove build container
     system "docker",
       "rm",
-      "-f",
+      "--force",
       "#{image_name}-build"
     # Start build container
     system "docker",
@@ -51,7 +45,7 @@ class CriO < Formula
       "--rm",
       "--mount", "type=bind,src=#{buildpath},dst=/src",
       "--workdir", "/src",
-      "#{image_name}",
+      image_name,
       "sh", "-c", "while true; do sleep 10; done"
     # Run build
     system "docker",
@@ -74,7 +68,7 @@ class CriO < Formula
     # Remove build container
     system "docker",
       "rm",
-      "-f",
+      "--force",
       "#{image_name}-build"
 
     bin.install "bin/crio"
