@@ -19,7 +19,6 @@ class CriO < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "7537ace7c45159e24299f93d1e93c8e660fc3d76cef118e1b9151dbc38c1b5db"
   end
 
-  depends_on "docker" => :build
   depends_on "go-md2man" => :build
   depends_on "make" => :build
   depends_on :linux
