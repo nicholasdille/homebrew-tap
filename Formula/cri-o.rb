@@ -45,30 +45,42 @@ class CriO < Formula
       "--tag", "#{image_name}-build",
       "."
 
-    # Run build
+    # Start build container
     system "docker",
       "run",
+      "--name", "#{image_name}-build",
       "--interactive",
       "--rm",
       "--mount", "type=bind,src=#{buildpath},dst=/src",
       "--workdir", "/src",
       "#{image_name}-build",
+      "sh", "-c", "while true; do sleep 10; done"
+    # Run build
+    system "docker",
+      "exec",
+      "--interactive",
+      "#{image_name}-build",
       "nix", "build", "-f", "nix"
     # Fix permission
     system "docker",
-      "run",
+      "exec",
       "--interactive",
-      "--rm",
-      "--mount", "type=bind,src=#{buildpath},dst=/src",
-      "--workdir", "/src",
-      "alpine",
+      "#{image_name}-build",
       "chown", "-R", "#{Process.uid}:#{Process.gid}", "."
-    puts Utils.safe_popen_read("find", buildpath, "-type", "d")
-    puts Utils.safe_popen_read("find", buildpath, "-type", "f", "-name", "crio")
+    # Copy binaries
+    system "docker",
+      "exec",
+      "--interactive",
+      "#{image_name}-build",
+      "cp", "-r", "nix-build:/src/result/", "."
+    # Remove build container
+    system "docker",
+      "rm",
+      "#{image_name}-build"
 
-    bin.install "result/bin/crio"
-    bin.install "result/bin/crio-status"
-    bin.install "result/bin/pinns"
+    bin.install "bin/crio"
+    bin.install "bin/crio-status"
+    bin.install "bin/pinns"
 
     system "make", "docs"
     man5.install Dir["docs/*.5"]
