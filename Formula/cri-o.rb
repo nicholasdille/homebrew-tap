@@ -19,6 +19,7 @@ class CriO < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "7537ace7c45159e24299f93d1e93c8e660fc3d76cef118e1b9151dbc38c1b5db"
   end
 
+  depends_on "docker" => :build
   depends_on "go-md2man" => :build
   depends_on "make" => :build
   depends_on :linux
@@ -31,29 +32,26 @@ class CriO < Formula
       "--tag", image_name,
       "github.com/NixOS/docker"
 
-    # Create Dockerfile
-    (buildpath/"Dockerfile").write <<~EOS
-      FROM #{image_name}
-      RUN apk update \
-       && apk add \
-              bash
-    EOS
-
     # Build custom image
     system "docker",
       "build",
       "--tag", "#{image_name}-build",
       "."
 
+    # Remove build container
+    system "docker",
+      "rm",
+      "-f",
+      "#{image_name}-build"
     # Start build container
     system "docker",
       "run",
       "--name", "#{image_name}-build",
-      "--interactive",
+      "--detach",
       "--rm",
       "--mount", "type=bind,src=#{buildpath},dst=/src",
       "--workdir", "/src",
-      "#{image_name}-build",
+      "#{image_name}",
       "sh", "-c", "while true; do sleep 10; done"
     # Run build
     system "docker",
@@ -76,6 +74,7 @@ class CriO < Formula
     # Remove build container
     system "docker",
       "rm",
+      "-f",
       "#{image_name}-build"
 
     bin.install "bin/crio"
