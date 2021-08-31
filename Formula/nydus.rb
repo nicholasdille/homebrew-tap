@@ -23,7 +23,8 @@ class Nydus < Formula
   depends_on :linux
 
   def install
-    system "make", "release", "nydusify", "nydus-snapshotter", "ctr-remote"
+    # system "make", "release", "nydusify", "nydus-snapshotter", "ctr-remote"
+    system "make", "release", "nydusify", "nydus-snapshotter"
     system "make", "all-static-release"
     bin.install "target-fusedev/x86_64-unknown-linux-musl/release/nydusd"
     bin.install "target-fusedev/x86_64-unknown-linux-musl/release/nydus-image"
