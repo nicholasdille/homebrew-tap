@@ -10,6 +10,7 @@ class Gvisor < Formula
 
   depends_on "go" => :build
   depends_on "make" => :build
+  depends_on :linux
   depends_on "nicholasdille/tap/cni"
 
   def install
