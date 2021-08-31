@@ -19,6 +19,7 @@ Containers (Docker):
 - cni-isolation
 - containerd
 - distribution
+- docker
 - dockerd
 - docker-app
 - docker-compose (binary formula)
