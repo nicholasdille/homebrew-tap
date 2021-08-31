@@ -14,6 +14,11 @@ class Docker < Formula
     regex(/^v?(\d+(?:\.\d+)+)(?:[._-]ce)?$/i)
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/docker-20.10.8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "841179051d99c160d174676530ad27b4fa57d18a62b9d612d7c602b734f1ef13"
+  end
+
   depends_on "go" => :build
   depends_on "go-md2man" => :build
   depends_on "make" => :build
