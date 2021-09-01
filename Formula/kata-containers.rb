@@ -3,8 +3,8 @@ class KataContainers < Formula
   homepage "https://katacontainers.io/"
 
   url "https://github.com/kata-containers/kata-containers.git",
-    tag:      "2.1.1",
-    revision: "0e2be438bdd6d213ac4a3d7d300a5757c4137799"
+    tag:      "2.2.0",
+    revision: "caafd0f9525dfdd26b9e0fd22930b9995f1399bb"
   license "Apache-2.0"
   head "https://github.com/kata-containers/kata-containers.git"
 
