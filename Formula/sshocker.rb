@@ -3,8 +3,8 @@ class Sshocker < Formula
   homepage "https://github.com/AkihiroSuda/sshocker"
 
   url "https://github.com/AkihiroSuda/sshocker.git",
-    tag:      "v0.2.0",
-    revision: "15054fbfd23d8a20d5ade832c86de67faada0281"
+    tag:      "v0.2.1",
+    revision: "2ad309c8547b756819c3db393847d4058e024f4c"
   license "Apache-2.0"
   head "https://github.com/AkihiroSuda/sshocker.git",
     branch: "master"
