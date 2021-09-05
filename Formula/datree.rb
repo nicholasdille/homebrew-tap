@@ -16,8 +16,8 @@ class Datree < Formula
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/datree-0.12.0"
-    sha256 cellar: :any_skip_relocation, catalina:     "8ee5b221553efe9a9d78ae66384c4f2df14c635b712cf91d698f81b7a7afa6ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d7a488611d1d63bb91e0573c7f78d90a8874b51bbbc551eb4e7fe1f3d47f51ab"
+    sha256 cellar: :any_skip_relocation, catalina:     "62d40ffb5207ea19d8f534116156fda96de6f0518ea37bd90977fcf6949f375e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e6b0d8ef0502ffdc24597af7c55e2c3a82265ed7bce96038b6c7697872ab8722"
   end
 
   depends_on "go" => :build
