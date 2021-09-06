@@ -15,9 +15,9 @@ class HubTool < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/hub-tool-0.4.1"
-    sha256 cellar: :any_skip_relocation, catalina:     "5946a25183d9944026078b6760dcfdfa5a9a20d08fe495918ff494cefed7bb75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9f36d13e0356a8eec6c0d2a5744bda9ea547bb4caba3b8c844540245c29c2958"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/hub-tool-0.4.2"
+    sha256 cellar: :any_skip_relocation, catalina:     "375bd0029f2eaa198dfb4c7464505eba3296359d29c5aed3b3bcd730228f8a53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9f48c66d063d892f61632668263cda19d44dc564093cd0db81894f7736193f5f"
   end
 
   depends_on "go" => :build
