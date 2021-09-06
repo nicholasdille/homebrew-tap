@@ -3,8 +3,8 @@ class Diun < Formula
   homepage "https://crazy-max.github.io/diun/"
 
   url "https://github.com/crazy-max/diun.git",
-    tag:      "v4.19.0",
-    revision: "28d15947bf65a94f7cc921c03cbf23df67bbce44"
+    tag:      "v4.20.1",
+    revision: "727e256d9506368a6311d3273742da8d1a28ee3b"
   license "MIT"
   head "https://github.com/crazy-max/diun.git",
     branch: "master"
