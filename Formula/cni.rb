@@ -3,8 +3,8 @@ class Cni < Formula
   homepage "https://github.com/containernetworking/plugins"
 
   url "https://github.com/containernetworking/plugins.git",
-    tag:      "v1.0.0",
-    revision: "8632ace977f4126c8ded601975f564571c66b922"
+    tag:      "v1.0.1",
+    revision: "189d0c06aa6da0c4f052d3831b091e6ea79e6675"
   license "Apache-2.0"
   head "https://github.com/containernetworking/plugins.git",
     branch: "master"
