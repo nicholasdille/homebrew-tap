@@ -14,6 +14,12 @@ class Cloudflared < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cloudflared-2021.8.7"
+    sha256 cellar: :any_skip_relocation, catalina:     "67ccddbad4ebfed551ca89be17fb466c553fba77a16b3a7a5775966480acea7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ed864c6dcdaa8245eff8c31965de57353d59dbd4b3dc236accb49582a6d19fe9"
+  end
+
   depends_on "go" => :build
 
   def install
