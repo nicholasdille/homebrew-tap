@@ -118,6 +118,7 @@ Formulae related to containers:
 Formulae for useful tools:
 
 - bin
+- cloudflared
 - criu
 - npiperelay (binary formula)
 - reptyr
