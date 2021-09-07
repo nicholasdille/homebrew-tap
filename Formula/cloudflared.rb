@@ -1,6 +1,6 @@
 class Cloudflared < Formula
   desc "CloudFlare Tunnel client"
-  homepage "https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/"
+  homepage "https://github.com/cloudflare/cloudflared"
 
   url "https://github.com/cloudflare/cloudflared.git",
     tag:      "2021.8.7",
