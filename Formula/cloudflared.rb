@@ -1,6 +1,6 @@
 class Cloudflared < Formula
   desc "CloudFlare Tunnel client"
-  homepage "https://developers.cloudflare.com/argo-tunnel/"
+  homepage "https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/"
 
   url "https://github.com/cloudflare/cloudflared.git",
     tag:      "2021.8.7",
