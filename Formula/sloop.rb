@@ -14,6 +14,12 @@ class Sloop < Formula
     strategy :git
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/sloop-1.1"
+    sha256 cellar: :any_skip_relocation, catalina:     "88d72b55e4be4fff7c5d30fe3a85c5f9a263f5a7e4cc999f7145f162e4471b26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7b471478977a966ec22f065ae05c64035f595274e03f241b630bbe2fd1c4a7f1"
+  end
+
   depends_on "go" => :build
 
   def install
