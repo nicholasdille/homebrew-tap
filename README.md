@@ -79,6 +79,7 @@ Kubernetes:
 - kubescape
 - kubeswitch
 - kube-bench
+- kustomizer
 - kwt
 - localizer
 - loft (binary formula)
