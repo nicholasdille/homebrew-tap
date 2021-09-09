@@ -36,12 +36,8 @@ class Docker < Formula
       ENV["GO111MODULE"] = "auto"
       ENV["DISABLE_WARN_OUTSIDE_CONTAINER"] = "1"
       system "make", "binary"
-      on_linux do
-        bin.install "build/docker-linux-amd64" => "docker"
-      end
-      on_macos do
-        bin.install "build/docker-darwin-amd64" => "docker"
-      end
+      bin.install "build/docker-linux-amd64" => "docker" if OS.linux?
+      bin.install "build/docker-darwin-amd64" => "docker" if OS.mac?
 
       Pathname.glob("man/*.[1-8].md") do |md|
         section = md.to_s[/\.(\d+)\.md\Z/, 1]

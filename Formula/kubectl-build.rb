@@ -27,9 +27,7 @@ class KubectlBuild < Formula
     system "make", "build"
 
     goos = "linux"
-    on_macos do
-      goos = "darwin"
-    end
+    goos = "darwin" if OS.mac?
 
     bin.install "bin/#{goos}/kubectl-buildkit"
     bin.install "bin/#{goos}/kubectl-build"
