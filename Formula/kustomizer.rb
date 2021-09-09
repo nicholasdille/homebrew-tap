@@ -14,6 +14,12 @@ class Kustomizer < Formula
     strategy :git
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kustomizer-1.0.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "e004b34cd3789030f5a683471815f5d22a2e4ddc0501acc160a52bb79d12005d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "73d0e9c38b7c9dc755c89c828a8132176c70a01fb3ada9d007af189542e0479d"
+  end
+
   depends_on "go" => :build
 
   def install
