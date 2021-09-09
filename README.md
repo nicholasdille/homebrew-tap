@@ -83,6 +83,7 @@ Kubernetes:
 - kwt
 - localizer
 - loft (binary formula)
+- sloop
 - vcluster
 - ytt
 
