@@ -14,6 +14,11 @@ class SuExec < Formula
     strategy :git
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/su-exec-0.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "942c7b5362d54018412d1cdffb900a5eadd276e683f0bb57d4bc0cd54a92e7d5"
+  end
+
   depends_on "gcc" => :build
   depends_on "make" => :build
   depends_on :linux
