@@ -14,6 +14,11 @@ class Gosu < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/gosu-1.14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a540844d3aace7b592899f1e6dda5226a7459b5657e5a229466b1f920ea6c5ad"
+  end
+
   depends_on "go" => :build
   depends_on :linux
 
