@@ -15,6 +15,7 @@ class Yasu < Formula
   end
 
   depends_on "go" => :build
+  depends_on :linux
 
   def install
     ENV["CGO_ENABLED"] = "0"
