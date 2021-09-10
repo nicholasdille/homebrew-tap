@@ -100,6 +100,7 @@ Formulae related to containers:
 - firecracker-containerd
 - firejail
 - footloose
+- gosu
 - gvisor (pull request)
 - ignite
 - kata-containers (pull request)
@@ -112,14 +113,18 @@ Formulae related to containers:
 - runq
 - sshocker
 - stacker (pull request)
+- su-exec
 - sysbox
 - tini
+- yasu
 - youki (pull request)
 - zot
 
 Formulae for useful tools:
 
+- artifactory-cleanup
 - bin
+- chisel
 - cloudflared
 - criu
 - npiperelay (binary formula)
@@ -184,6 +189,7 @@ Formulae for fun:
 - [socat](https://formulae.brew.sh/formula/socat#default) (official)
 - [toast](https://formulae.brew.sh/formula/toast#default) (official)
 - [toilet](https://formulae.brew.sh/formula/toilet#default) (official)
+- [tunnelto](https://github.com/agrinman/tunnelto) (3rd party)
 - [yamllint](https://formulae.brew.sh/formula/yamllint#default) (official)
 - [yq](https://formulae.brew.sh/formula/yq#default) (official)
 
