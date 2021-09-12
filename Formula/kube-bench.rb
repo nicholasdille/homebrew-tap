@@ -15,9 +15,9 @@ class KubeBench < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kube-bench-0.6.3"
-    sha256 catalina:     "eab07fee8561b6d707b5e7338acdee42bf7e0aa3f17e9bd5d40bd4a3c2334b5d"
-    sha256 x86_64_linux: "728ca849b9703da5ea274b5a6f3b58e1f2b2cebf225be54efa6730657600fd73"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kube-bench-0.6.4"
+    sha256 catalina:     "95797944a7e452f4413cde868b28843a544766a831d90fa592ae02e9ce94a412"
+    sha256 x86_64_linux: "b197dd8e861987b6eb9230130cc137e7087ed020e213330b35ebe581887a928d"
   end
 
   depends_on "go" => :build
