@@ -15,9 +15,9 @@ class Kustomizer < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kustomizer-1.1.0"
-    sha256 cellar: :any_skip_relocation, catalina:     "b1de3497cf8f7420e1a97bd39ae0c2811776c133dfe3afc217835a4154234c49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d17fc13caa6cafe0cfd8bc24a66579305dbb63c043f6525dbd934757587716f9"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kustomizer-1.1.1"
+    sha256 cellar: :any_skip_relocation, catalina:     "cb3019dac7e8b0590031217cb9765a05c2c459eb097e4f0b44055461cce9cbb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a966ca3e07d43fd0fd65a3cb14ef956062331e33265049fa18c190a419e4f9fd"
   end
 
   depends_on "go" => :build
