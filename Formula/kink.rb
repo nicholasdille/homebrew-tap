@@ -6,6 +6,7 @@ class Kink < Formula
     tag:      "v0.1.1",
     revision: "4d3a01f4e1817fe62c2ba48efa36f3ae21ddae50"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/Trendyol/kink.git",
     branch: "main"
 
@@ -37,6 +38,18 @@ class Kink < Formula
                   " -X #{pkg}.gitTreeState=clean",
       "-o",
       bin/"kink"
+
+      # bash completion
+      output = Utils.safe_popen_read(bin/"kink", "completion", "bash")
+      (bash_completion/"kink").write output
+  
+      # fish completion
+      output = Utils.safe_popen_read(bin/"kink", "completion", "fish")
+      (zsh_completion/"kink.fish").write output
+  
+      # zsh completion
+      output = Utils.safe_popen_read(bin/"kink", "completion", "zsh")
+      (zsh_completion/"_kink").write output
   end
 
   test do
