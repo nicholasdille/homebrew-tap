@@ -6,6 +6,7 @@ class DockerComposeBin < Formula
     tag:      "1.29.2",
     revision: "5becea4ca9f68875334c92f191a13482bcd6e5cf"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,6 +14,9 @@ class DockerComposeBin < Formula
   end
 
   bottle :unneeded
+
+  deprecate! date:    "2021-09-15",
+             because: "Docker compose v2 now builds correctly"
 
   conflicts_with "docker-compose"
 
