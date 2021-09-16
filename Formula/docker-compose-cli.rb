@@ -20,6 +20,12 @@ class DockerComposeCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "1d5c43a44af9a8f1bf017f07e0393fc90ff7bcc58803329bfdfbcac554f729d5"
   end
 
+  disable! date:    "2021-09-04",
+           because: "does not offer the next v2 release candidate"
+
+  deprecate! date:    "2021-09-02",
+             because: "installs Docker compose v2 from a deprecated source"
+
   depends_on "go" => :build
   depends_on "docker" => :optional
 
