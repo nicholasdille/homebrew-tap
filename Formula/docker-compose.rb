@@ -6,8 +6,6 @@ class DockerCompose < Formula
   tag:      "v2.0.0-rc.3",
   revision: "1a73d1412d562e32effbe7b322f17e8d77ad7755"
   license "Apache-2.0"
-  head "https://github.com/docker/compose.git",
-    branch: "v2"
 
   livecheck do
     url :stable
