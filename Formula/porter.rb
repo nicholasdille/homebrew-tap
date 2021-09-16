@@ -15,9 +15,9 @@ class Porter < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/porter-0.38.5"
-    sha256 cellar: :any_skip_relocation, catalina:     "a6b0fd6ad7a0108b5c0056f0fd317627a5af0b9eb4ee96b25a8c29d8c42acdc9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "cb41ad443e3875ffcc419babb10af04e2899f47d47b7cb039b5b725bc627e96e"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/porter-0.38.6"
+    sha256 cellar: :any_skip_relocation, catalina:     "28b9f16900ba3e800965f921a3d712048542f7b29280e4844e9f943adcdc6536"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "190b95fc54643ce7abf1c288cc62acabd58fc3dea7254e296b0a4402f3896d71"
   end
 
   option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
