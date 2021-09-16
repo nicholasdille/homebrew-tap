@@ -39,17 +39,17 @@ class Kink < Formula
       "-o",
       bin/"kink"
 
-      # bash completion
-      output = Utils.safe_popen_read(bin/"kink", "completion", "bash")
-      (bash_completion/"kink").write output
-  
-      # fish completion
-      output = Utils.safe_popen_read(bin/"kink", "completion", "fish")
-      (zsh_completion/"kink.fish").write output
-  
-      # zsh completion
-      output = Utils.safe_popen_read(bin/"kink", "completion", "zsh")
-      (zsh_completion/"_kink").write output
+    # bash completion
+    output = Utils.safe_popen_read(bin/"kink", "completion", "bash")
+    (bash_completion/"kink").write output
+
+    # fish completion
+    output = Utils.safe_popen_read(bin/"kink", "completion", "fish")
+    (zsh_completion/"kink.fish").write output
+
+    # zsh completion
+    output = Utils.safe_popen_read(bin/"kink", "completion", "zsh")
+    (zsh_completion/"_kink").write output
   end
 
   test do
