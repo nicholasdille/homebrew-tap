@@ -12,6 +12,12 @@ class DockerCompose < Formula
     strategy :git
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/docker-compose-2.0.0-rc.3"
+    sha256 cellar: :any_skip_relocation, catalina:     "a8e496a36d3b7a2aeccc83cbf66bec436f649b3914d225045b55be1601457e03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "206803e01f5ccdc426cd83ee02e5169ef5f258824b398a38eb7bf335bfcf4d78"
+  end
+
   depends_on "go" => :build
   depends_on "docker" => :optional
 
