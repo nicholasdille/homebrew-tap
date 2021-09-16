@@ -16,9 +16,9 @@ class Kink < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kink-0.1.1"
-    sha256 cellar: :any_skip_relocation, catalina:     "fb3a0203382a7def56a1530a01a1febb9283e5ed6ef06e3d24b1de49c69c5475"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "edeffdfdbd609bf3d0dcb4e805f869e4b374072d88eb5020dab5a2cc0c6ede8c"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kink-0.1.1_1"
+    sha256 cellar: :any_skip_relocation, catalina:     "63d3af3a8a31d1503857b5efb2d74fb68f11b5319d953e9f9e50b27a40a0721f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5653dc2ba3bda9fb7e6bcdc946108d9316e88bea62bbc1f3d492e71ccd8c3e24"
   end
 
   depends_on "go" => :build
