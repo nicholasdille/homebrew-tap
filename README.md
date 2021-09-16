@@ -74,6 +74,7 @@ Kubernetes:
 - imgpkg
 - kapp
 - kbld
+- kink
 - kubectl-build
 - kubeone
 - kubescape
