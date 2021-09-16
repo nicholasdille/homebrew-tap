@@ -15,8 +15,6 @@ class DockerCompose < Formula
   depends_on "go" => :build
   depends_on "docker" => :optional
 
-  conflicts_with "docker-compose"
-
   def install
     pkg = "github.com/docker/compose/v2"
     ENV["CGO_ENABLED"] = "0"
