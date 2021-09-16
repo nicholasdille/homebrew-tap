@@ -7,7 +7,7 @@ class DockerCompose < Formula
   revision: "1a73d1412d562e32effbe7b322f17e8d77ad7755"
   license "Apache-2.0"
   head "https://github.com/docker/compose.git",
-  branch: "v2"
+    branch: "v2"
 
   livecheck do
     url :stable
