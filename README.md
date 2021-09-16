@@ -22,8 +22,8 @@ Containers (Docker):
 - docker
 - dockerd
 - docker-app
-- docker-compose (binary formula)
-- docker-compose-cli
+- docker-compose v1 (binary formula)
+- docker-compose v2
 - docker-proxy
 - docker-scan
 - fuse-overlay (binary formula)
