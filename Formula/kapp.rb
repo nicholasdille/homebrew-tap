@@ -4,7 +4,7 @@ class Kapp < Formula
 
   url "https://github.com/vmware-tanzu/carvel-kapp.git",
     tag:      "v0.40.0",
-    revision: "f67bce5c15ed2268bbe4332c21c2e07d831c5d65"
+    revision: "0dbf7046f54ad192b9e9e3e14445fe379ad77a98"
   license "Apache-2.0"
   head "https://github.com/vmware-tanzu/carvel-kapp.git",
     branch: "develop"
