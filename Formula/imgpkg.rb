@@ -15,9 +15,9 @@ class Imgpkg < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/imgpkg-0.17.0"
-    sha256 cellar: :any_skip_relocation, catalina:     "6f959f08664367e95079877a4a9865e79d45d2d599d8f2c1865716519b8d4d2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "44066584dbdebd235bd104d5607414d9022a34bb29d31ddb56d694b4b3935433"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/imgpkg-0.18.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "00d7c8c37b6398b49052cae75b38a892d6b6b46339535e60147ee5a8c954c1df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e30a173f6f804eb1fc4061b010461da2e1e8187ada04fdf19a452d1b54c084cd"
   end
 
   depends_on "go" => :build
