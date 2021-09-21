@@ -15,9 +15,9 @@ class Kbld < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kbld-0.30.0"
-    sha256 cellar: :any_skip_relocation, catalina:     "4dd9f34c2c0f175fe5a9ca31569d33e98953c83404c45638c54f20f94dab52f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "32ba7ed0fdbd1483398f1f2a64e536ec56cde9441f153b73a2c9166a80a8b4c5"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kbld-0.31.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "a4b7159671d3238b79f4d93928d927c7c7a96620b65681a8ef4b0a6f05d9fd1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "14ab37208558f6fdc1c017fd4fa445e5f2257b3bee3ed02adcb165231f7d90d7"
   end
 
   depends_on "go" => :build
