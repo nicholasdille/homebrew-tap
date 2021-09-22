@@ -117,6 +117,7 @@ Formulae related to containers:
 - su-exec
 - sysbox
 - tini
+- uptodate
 - yasu
 - youki (pull request)
 - zot
