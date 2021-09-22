@@ -13,6 +13,12 @@ class Uptodate < Formula
     skip "Repository has no tags/releases yet"
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/uptodate-0.0.1"
+    sha256 cellar: :any_skip_relocation, catalina:     "f198de3b7ed0bcfa36b41157244da9d9ec93b5ab49aeba504fa752ec8ef9c5ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9badaee4a1b72b7d7989a1a7677e4a366ce61088b6351d3f4141ba6fd601d733"
+  end
+
   depends_on "go" => :build
 
   def install
