@@ -31,6 +31,6 @@ class Uptodate < Formula
   end
 
   test do
-    system bin/"uptodate", "--version"
+    system bin/"uptodate", "version"
   end
 end
