@@ -4,7 +4,7 @@ class Uptodate < Formula
 
   url "https://github.com/vsoch/uptodate.git",
     tag: "main"
-  version "0.0.0"
+  version "0.0.1"
   license "Apache-2.0"
   head "https://github.com/vsoch/uptodate.git",
     branch: "main"
