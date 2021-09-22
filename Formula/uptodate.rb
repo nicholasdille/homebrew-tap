@@ -10,8 +10,7 @@ class Uptodate < Formula
     branch: "main"
 
   livecheck do
-    url :stable
-    strategy :git
+    skip "Repository has no tags/releases yet"
   end
 
   depends_on "go" => :build
