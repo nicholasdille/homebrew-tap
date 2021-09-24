@@ -54,7 +54,6 @@ Containers (RedHat)
 - crun
 - podman
 - podman-remote
-- podman-static
 - umoci
 
 Rootless containers
