@@ -20,10 +20,6 @@ class Localizer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "3de3bae5eae4032c2d5080f83d453497d51fa866d779a095418070647e6dc4cd"
   end
 
-  option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
-  option "without-devmapper", "Support device mapper"
-  option "without-cri", "Support CRI"
-
   depends_on "go" => :build
   depends_on "protobuf" => :build
 
