@@ -14,6 +14,12 @@ class SshKeyConfirmer < Formula
     strategy :git
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/ssh-key-confirmer-0.1"
+    sha256 cellar: :any_skip_relocation, catalina:     "7034f4f26900608bbde6fdae63e4860012806389693a82532155b206e797b23e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d740fed57a41d1fd46b4e8e7ed42ae8da52a756aa9b741bbb41abf1493d13128"
+  end
+
   depends_on "go" => :build
 
   def install
