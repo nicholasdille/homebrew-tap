@@ -6,6 +6,7 @@ class PodmanRemote < Formula
     tag:      "v3.3.1",
     revision: "4c5283fabff2de5145838f1847a5a7b2b1fbc0a5"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/containers/podman.git",
     branch: "main"
 
@@ -25,13 +26,12 @@ class PodmanRemote < Formula
   depends_on "make" => :build
 
   conflicts_with "podman"
-  conflicts_with "nicholasdille/tap/podman-static"
-  # conflicts_with "nicholasdille/tap/podman"
 
   def install
     system "make", "podman-remote-static"
-    bin.install "bin/podman-remote-static" => "podman" if OS.linux?
-    bin.install "bin/darwin/podman-remote-static" => "podman" if OS.mac?
+    subdir = "" if OS.linux?
+    subdir = "/darwin" if OS.mac?
+    bin.install "bin#{subdir}/podman-remote-static" => "podman-remote"
 
     system "make", "docs", "GOMD2MAN=go-md2man"
     man1.install Dir["docs/build/man/*.1"]
