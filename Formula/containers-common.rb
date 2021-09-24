@@ -27,7 +27,7 @@ class ContainersCommon < Formula
     system "make", "-C", "docs", "GOMD2MAN=go-md2man"
     man5.install Dir["docs/*.5"]
 
-    (etc/"containers/policy.json").write <<~EOS
+    (buildpath/"policy.json").write <<~EOS
       {
         "default": [
             {
@@ -36,8 +36,9 @@ class ContainersCommon < Formula
         ]
       }
     EOS
+    (etc/"containers/policy.json").install "policy.json"
 
-    (etc/"containers/registries.conf.d/shortnames.conf").write <<~EOS
+    (buildpath/"shortnames.conf").write <<~EOS
       [aliases]
         # centos
         "centos" = "registry.centos.org/centos"
@@ -85,6 +86,7 @@ class ContainersCommon < Formula
         # Ubuntu
         "ubuntu" = "docker.io/library/ubuntu"
     EOS
+    (etc/"containers/registries.conf.d/shortnames.conf").install "shortnames.conf"
   end
 
   def caveats
