@@ -20,10 +20,6 @@ class Porter < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "190b95fc54643ce7abf1c288cc62acabd58fc3dea7254e296b0a4402f3896d71"
   end
 
-  option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
-  option "without-devmapper", "Support device mapper"
-  option "without-cri", "Support CRI"
-
   depends_on "go" => :build
   depends_on "make" => :build
   depends_on "packr" => :build

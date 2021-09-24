@@ -20,13 +20,13 @@ class CriO < Formula
   end
 
   option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
-  option "with-devmapper", "Support device mapper"
 
   depends_on "go" => :build
   depends_on "go-md2man" => :build
   depends_on "gpgme" => [:build, :recommended]
   depends_on "make" => :build
   depends_on "pkg-config" => :build
+  depends_on "device-mapper" => :recommended
   depends_on :linux
   depends_on "libseccomp" => :recommended
 
@@ -37,8 +37,8 @@ class CriO < Formula
     # buildtags << "apparmor" # libapparmor
     buildtags << "exclude_graphdriver_btrfs" if build.without? "btrfs"
     buildtags << "btrfs_noversion" if build.without? "btrfs"
-    buildtags << "exclude_graphdriver_devicemapper" if build.without? "devmapper"
-    buildtags << "libdm_no_deferred_remove" if build.without? "devmapper"
+    buildtags << "exclude_graphdriver_devicemapper" if build.without? "device-mapper"
+    buildtags << "libdm_no_deferred_remove" if build.without? "device-mapper"
     buildtags << "containers_image_openpgp" if build.with? "gpgme"
     buildtags << "seccomp" if build.with? "libseccomp"
     # buildtags << "selinux" # selinux

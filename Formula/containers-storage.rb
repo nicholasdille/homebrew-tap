@@ -21,7 +21,6 @@ class ContainersStorage < Formula
   end
 
   option "with-btrfs", "Add support for btrfs"
-  option "with-devicemapper", "Add support for devicemapper"
   option "without-aufs", "Remove support auf aufs"
   option "without-vfs", "Remove support for vfs"
 
@@ -29,6 +28,7 @@ class ContainersStorage < Formula
   depends_on "go-md2man" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
+  depends_on "device-mapper" => :recommended
 
   def install
     dir = buildpath/"src/github.com/containers/storage"
@@ -40,7 +40,7 @@ class ContainersStorage < Formula
       autotags = []
       autotags << "exclude_graphdriver_aufs" if build.without? "aufs"
       autotags << "exclude_graphdriver_btrfs" if build.without? "btrfs"
-      autotags << "exclude_graphdriver_devicemapper" if build.without? "devicemapper"
+      autotags << "exclude_graphdriver_devicemapper" if build.without? "device-mapper"
       autotags << "exclude_graphdriver_vfs" if build.without? "vfs"
 
       system "make", "binary", "AUTOTAGS=#{autotags.join(" ")}"

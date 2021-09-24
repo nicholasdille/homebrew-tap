@@ -20,7 +20,6 @@ class Containerd < Formula
   end
 
   option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
-  option "without-devmapper", "Support device mapper"
   option "without-cri", "Support CRI"
 
   depends_on "go" => :build
@@ -29,6 +28,7 @@ class Containerd < Formula
   depends_on "make" => :build
   depends_on "pkg-config" => :build
   depends_on :linux
+  depends_on "device-mapper" => :recommended
   depends_on "nicholasdille/tap/runc"
   depends_on "nicholasdille/tap/cni" => :recommended
 
@@ -41,7 +41,7 @@ class Containerd < Formula
 
       buildtags = []
       buildtags << "no_btrfs"     if build.without? "btrfs"
-      buildtags << "no_devmapper" if build.without? "devmapper"
+      buildtags << "no_devmapper" if build.without? "device-mapper"
       buildtags << "no_cri"       if build.without? "cri"
 
       system "make", "binaries", "BUILDTAGS=#{buildtags.join(" ")}"
