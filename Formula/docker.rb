@@ -25,6 +25,7 @@ class Docker < Formula
   depends_on "make" => :build
   depends_on "pkg-config" => :build
   depends_on arch: :x86_64
+  depends_on :linux
 
   conflicts_with "docker-completion", because: "docker already includes these completion scripts"
   # conflicts_with "docker"
