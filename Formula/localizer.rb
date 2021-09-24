@@ -16,8 +16,9 @@ class Localizer < Formula
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/localizer-1.12.0"
-    sha256 cellar: :any_skip_relocation, catalina:     "9cc47b46c869da091f919762afcdc943ecc58ee7a5320f426fcd506533796b69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3de3bae5eae4032c2d5080f83d453497d51fa866d779a095418070647e6dc4cd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, catalina:     "8268179529ccbbfb6335b1f23ca2b58a56d6a11b432193bd2e25245e546e971f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a9beaaeda04b1f2397dbd5b6eeea64ab45a7715ed720aacf75facf746a965ecf"
   end
 
   depends_on "go" => :build
