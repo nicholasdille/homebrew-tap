@@ -19,64 +19,32 @@ class CriO < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "7537ace7c45159e24299f93d1e93c8e660fc3d76cef118e1b9151dbc38c1b5db"
   end
 
+  option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
+  option "with-devmapper", "Support device mapper"
+
+  depends_on "go" => :build
   depends_on "go-md2man" => :build
+  depends_on "gpgme" => [:build, :recommended]
   depends_on "make" => :build
-  depends_on "nicholasdille/tap/docker" => :build
+  depends_on "pkg-config" => :build
   depends_on :linux
+  depends_on "libseccomp" => :recommended
 
   def install
-    # Build base from https://github.com/NixOS/docker
-    image_name = "nix"
-    system "docker",
-      "build",
-      "--tag", image_name,
-      "github.com/NixOS/docker"
+    ENV.O0
 
-    # Remove build container
-    system "docker",
-      "rm",
-      "--force",
-      "#{image_name}-build"
-    # Start build container
-    system "docker",
-      "run",
-      "--name", "#{image_name}-build",
-      "--detach",
-      "--rm",
-      "--mount", "type=bind,src=#{buildpath},dst=/src",
-      "--workdir", "/src",
-      image_name,
-      "sh", "-c", "while true; do sleep 10; done"
-    # Run build
-    system "docker",
-      "exec",
-      "--interactive",
-      "#{image_name}-build",
-      "nix", "build", "-f", "nix"
-    # Fix permission
-    system "docker",
-      "exec",
-      "--interactive",
-      "#{image_name}-build",
-      "chown", "-R", "#{Process.uid}:#{Process.gid}", "."
-    # Create target directory
-    system "docker",
-      "exec",
-      "--interactive",
-      "#{image_name}-build",
-      "mkdir", "-p", "bin"
-    # Copy binaries
-    system "docker",
-      "exec",
-      "--interactive",
-      "#{image_name}-build",
-      "cp", "result/bin/*", "bin"
-    # Remove build container
-    system "docker",
-      "rm",
-      "--force",
-      "#{image_name}-build"
+    buildtags = ["containers_image_ostree_stub"]
+    # buildtags << "apparmor" # libapparmor
+    buildtags << "exclude_graphdriver_btrfs" if build.without? "btrfs"
+    buildtags << "btrfs_noversion" if build.without? "btrfs"
+    buildtags << "exclude_graphdriver_devicemapper" if build.without? "devmapper"
+    buildtags << "libdm_no_deferred_remove" if build.without? "devmapper"
+    buildtags << "containers_image_openpgp" if build.with? "gpgme"
+    buildtags << "seccomp" if build.with? "libseccomp"
+    # buildtags << "selinux" # selinux
+    # buildtags << "libsubid" # shadow
 
+    system "make", "bin/crio", "bin/crio-status", "bin/pinns", "BUILDTAGS=#{buildtags.join(",")}"
     bin.install "bin/crio"
     bin.install "bin/crio-status"
     bin.install "bin/pinns"
@@ -111,7 +79,8 @@ class CriO < Formula
 
     # configuration
     output = Utils.safe_popen_read("#{bin}/crio", "--config-dir=", "--config=", "config")
-    (etc/"crio.conf").write output
+    (buildpath/"crio.conf").write output
+    etc.install "crio.conf"
   end
 
   test do
