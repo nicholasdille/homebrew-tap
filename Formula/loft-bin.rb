@@ -29,23 +29,20 @@ class LoftBin < Formula
 
   def install
     resource("binary").stage do
-      os = "linux"  if OS.linux?
-      os = "darwin" if OS.mac?
-      arch = "amd64"
-      bin.install "loft-#{os}-#{arch}" => "loft"
+      bin.install resource.url.split("/")[-1] => "loft"
     end
 
     # bash completion
-    # output = Utils.safe_popen_read(bin/"loft", "completion", "bash")
-    # (bash_completion/"loft").write output
+    output = Utils.safe_popen_read(bin/"loft", "completion", "bash")
+    (bash_completion/"loft").write output
 
     # fish completion
-    # output = Utils.safe_popen_read(bin/"loft", "completion", "fish")
-    # (fish_completion/"loft.fish").write output
+    output = Utils.safe_popen_read(bin/"loft", "completion", "fish")
+    (fish_completion/"loft.fish").write output
 
     # zsh completion
-    # output = Utils.safe_popen_read(bin/"loft", "completion", "zsh")
-    # (zsh_completion/"_loft").write output
+    output = Utils.safe_popen_read(bin/"loft", "completion", "zsh")
+    (zsh_completion/"_loft").write output
   end
 
   test do
