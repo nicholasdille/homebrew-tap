@@ -20,53 +20,14 @@ class Conmon < Formula
   end
 
   depends_on "go-md2man" => :build
-  depends_on "nicholasdille/tap/docker" => :build
+  depends_on "libseccomp" => :build
+  depends_on "pkg-config" => :build
+  depends_on "glib"
   depends_on :linux
+  depends_on "systemd"
 
   def install
-    # Build base from https://github.com/NixOS/docker
-    system "docker",
-      "build",
-      "--tag", "nix",
-      "github.com/NixOS/docker"
-
-    # Create Dockerfile
-    (buildpath/"Dockerfile").write <<~EOS
-      FROM nix
-      RUN apk update \
-       && apk add \
-              bash \
-              make \
-              git \
-              go
-    EOS
-
-    # Build custom image
-    system "docker",
-      "build",
-      "--tag", "conmon",
-      "."
-
-    # Run build
-    system "docker",
-      "run",
-      "--interactive",
-      "--rm",
-      "--mount", "type=bind,src=#{buildpath},dst=/src",
-      "--workdir", "/src",
-      "conmon",
-      "make", "static"
-
-    # Fix permission
-    system "docker",
-      "run",
-      "--interactive",
-      "--rm",
-      "--mount", "type=bind,src=#{buildpath},dst=/src",
-      "--workdir", "/src",
-      "alpine",
-      "chown", "-R", "#{Process.uid}:#{Process.gid}", "."
-
+    system "make", "bin/conmon"
     bin.install "bin/conmon"
 
     system "make", "-C", "docs", "GOMD2MAN=go-md2man"
