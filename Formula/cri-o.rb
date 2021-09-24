@@ -26,8 +26,8 @@ class CriO < Formula
   depends_on "gpgme" => [:build, :recommended]
   depends_on "make" => :build
   depends_on "pkg-config" => :build
-  depends_on "device-mapper" => :recommended
   depends_on :linux
+  depends_on "device-mapper" => :recommended
   depends_on "libseccomp" => :recommended
 
   def install
