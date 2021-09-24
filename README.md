@@ -89,7 +89,7 @@ Kubernetes:
 
 Formulae related to containers:
 
-- bst (pull request)
+- bst ([PR #339](https://github.com/nicholasdille/homebrew-tap/pull/339))
 - containerssh
 - cosign
 - diun
@@ -101,24 +101,24 @@ Formulae related to containers:
 - firejail
 - footloose
 - gosu
-- gvisor (pull request)
+- gvisor ([PR #177](https://github.com/nicholasdille/homebrew-tap/pull/177))
 - ignite
-- kata-containers (pull request)
+- kata-containers ([PR #179](https://github.com/nicholasdille/homebrew-tap/pull/179))
 - kim
 - norouter
-- nydus (pull request)
+- nydus ([PR #612](https://github.com/nicholasdille/homebrew-tap/pull/612))
 - porter
-- quark (pull request)
+- quark ([PR #211](https://github.com/nicholasdille/homebrew-tap/pull/211))
 - rekor
-- runq
+- runq ([PR #353](https://github.com/nicholasdille/homebrew-tap/pull/353))
 - sshocker
-- stacker (pull request)
+- stacker ([PR #606](https://github.com/nicholasdille/homebrew-tap/pull/606))
 - su-exec
 - sysbox
 - tini
 - uptodate
 - yasu
-- youki (pull request)
+- youki ([PR #609](https://github.com/nicholasdille/homebrew-tap/pull/609))
 - zot
 
 Formulae for useful tools:
@@ -127,7 +127,7 @@ Formulae for useful tools:
 - bin
 - chisel
 - cloudflared
-- criu
+- criu ([PR #350](https://github.com/nicholasdille/homebrew-tap/pull/350))
 - npiperelay (binary formula)
 - reptyr
 - task
