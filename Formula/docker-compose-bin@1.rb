@@ -28,10 +28,8 @@ class DockerComposeBinAT1 < Formula
   end
 
   def install
-    resource("binary").stage do
-      os = "Linux"  if OS.linux?
-      os = "Darwin" if OS.mac?
-      bin.install "docker-compose-#{os}-#{Hardware::CPU.arch}" => "docker-compose"
+    resource("binary").stage do |resource|
+      bin.install resource.url.split("/")[-1] => "docker-compose"
     end
 
     bash_completion.install "contrib/completion/bash/docker-compose"
