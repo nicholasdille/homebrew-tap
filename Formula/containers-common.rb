@@ -36,7 +36,7 @@ class ContainersCommon < Formula
         ]
       }
     EOS
-    (etc/"containers/policy.json").install "policy.json"
+    (etc/"containers").install "policy.json"
 
     (buildpath/"shortnames.conf").write <<~EOS
       [aliases]
@@ -86,12 +86,12 @@ class ContainersCommon < Formula
         # Ubuntu
         "ubuntu" = "docker.io/library/ubuntu"
     EOS
-    (etc/"containers/registries.conf.d/shortnames.conf").install "shortnames.conf"
+    (etc/"containers/registries.conf.d").install "shortnames.conf"
   end
 
   def caveats
     <<~EOS
-      You should create a symlink:
+      You should create symlinks for the configuration to take effect:
 
       mkdir -p $HOME/.config/containers
       ln -s #{etc}/containers $HOME/.config/containers
