@@ -20,7 +20,6 @@ class Buildah < Formula
   end
 
   option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
-  option "with-devmapper", "Support device mapper"
 
   depends_on "go" => :build
   depends_on "go-md2man" => :build
@@ -30,6 +29,7 @@ class Buildah < Formula
   depends_on "libassuan"
   depends_on "libgpg-error"
   depends_on :linux
+  depends_on "device-mapper" => :recommended
   depends_on "libseccomp" => :recommended
 
   def install
@@ -40,7 +40,7 @@ class Buildah < Formula
     buildtags << "seccomp" if build.with? "libseccomp"
     buildtags << "exclude_graphdriver_btrfs" if build.without? "btrfs"
     buildtags << "btrfs_noversion" if build.with? "btrfs"
-    buildtags << "libdm_no_deferred_remove" if build.without? "devmapper"
+    buildtags << "libdm_no_deferred_remove" if build.without? "device-mapper"
     # buildtags << "libsubid" # shadow
 
     system "make", "bin/buildah", "TAGS=#{buildtags.join(",")}"
