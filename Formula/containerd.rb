@@ -28,8 +28,8 @@ class Containerd < Formula
   depends_on "make" => :build
   depends_on "pkg-config" => :build
   depends_on :linux
-  depends_on "device-mapper" => :recommended
   depends_on "nicholasdille/tap/runc"
+  depends_on "device-mapper" => :recommended
   depends_on "nicholasdille/tap/cni" => :recommended
 
   def install
