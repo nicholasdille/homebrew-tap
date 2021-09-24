@@ -16,9 +16,9 @@ class Mp3binder < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/mp3binder-3.0.0"
-    sha256 cellar: :any_skip_relocation, catalina:     "6725b69e64e5d9d57711480c5ea68a78fbd473a04aa353931e53c0bf8aa990f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "952794b63dcf3b382da730fd5c1f8d13f0415529291439ff70c02d47b8d9e703"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/mp3binder-3.0.0_1"
+    sha256 cellar: :any_skip_relocation, catalina:     "7490828fbbe5933b0f60613b2f92e14e832956b23a52406c4c5ddab8729222f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0de5687bec86b568e36f49efe22e1ccb5f55023ec9eb4767e57737cf9a1dd901"
   end
 
   depends_on "go" => :build
