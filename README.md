@@ -130,6 +130,7 @@ Formulae for useful tools:
 - criu
 - npiperelay (binary formula)
 - reptyr
+- ssh-key-confirmer
 - task
 - tl
 - trillian
