@@ -42,6 +42,6 @@ class PodmanRemote < Formula
   end
 
   test do
-    assert_match "podman version #{version}", shell_output("#{bin}/podman -v")
+    system bin/"podman-remote", "-v"
   end
 end
