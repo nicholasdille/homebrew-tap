@@ -6,6 +6,7 @@ class Mp3binder < Formula
     tag:      "3.0.0",
     revision: "8eb964dbde9116f972e85f82e730d434b833eb3d"
   license "Unlicense"
+  revision 1
   head "https://github.com/crra/mp3binder.git",
     branch: "master"
 
@@ -29,8 +30,9 @@ class Mp3binder < Formula
       "run",
       "cmd/build/build.go", "-p"
 
-    bin.install "dist/release/linux/mp3binder" if OS.linux?
-    bin.install "dist/release/darwin/mp3binder" if OS.mac?
+    os = "linux" if OS.linux?
+    os = "darwin" if OS.mac?
+    bin.install "dist/release/#{os}/mp3binder"
   end
 
   test do

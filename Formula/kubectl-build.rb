@@ -6,6 +6,7 @@ class KubectlBuild < Formula
     tag:      "v0.1.4",
     revision: "3cdb0965332177c4f254ea81b96c9ce7b8c46d3d"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/vmware-tanzu/buildkit-cli-for-kubectl.git",
     branch: "main"
 
@@ -26,11 +27,10 @@ class KubectlBuild < Formula
   def install
     system "make", "build"
 
-    goos = "linux"
-    goos = "darwin" if OS.mac?
-
-    bin.install "bin/#{goos}/kubectl-buildkit"
-    bin.install "bin/#{goos}/kubectl-build"
+    os = "linux" if OS.linux?
+    os = "darwin" if OS.mac?
+    bin.install "bin/#{os}/kubectl-buildkit"
+    bin.install "bin/#{os}/kubectl-build"
   end
 
   test do

@@ -6,6 +6,7 @@ class Docker < Formula
       tag:      "v20.10.8",
       revision: "3967b7d28e15a020e4ee344283128ead633b3e0c"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/docker/cli.git",
     branch: "master"
 
@@ -23,7 +24,7 @@ class Docker < Formula
   depends_on "go-md2man" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
-  depends_on :linux
+  depends_on arch: :x86_64
 
   conflicts_with "docker-completion", because: "docker already includes these completion scripts"
   # conflicts_with "docker"
@@ -36,8 +37,11 @@ class Docker < Formula
       ENV["GO111MODULE"] = "auto"
       ENV["DISABLE_WARN_OUTSIDE_CONTAINER"] = "1"
       system "make", "binary"
-      bin.install "build/docker-linux-amd64" => "docker" if OS.linux?
-      bin.install "build/docker-darwin-amd64" => "docker" if OS.mac?
+
+      os = "linux" if OS.linux?
+      os = "darwin" if OS.mac?
+      arch = "amd64"
+      bin.install "build/docker-#{os}-#{arch}" => "docker"
 
       Pathname.glob("man/*.[1-8].md") do |md|
         section = md.to_s[/\.(\d+)\.md\Z/, 1]

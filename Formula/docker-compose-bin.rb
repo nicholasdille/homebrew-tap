@@ -6,7 +6,7 @@ class DockerComposeBin < Formula
     tag:      "1.29.2",
     revision: "5becea4ca9f68875334c92f191a13482bcd6e5cf"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -17,8 +17,6 @@ class DockerComposeBin < Formula
 
   deprecate! date:    "2021-09-15",
              because: "Docker compose v2 now builds correctly"
-
-  conflicts_with "docker-compose"
 
   resource "binary" do
     on_linux do
@@ -32,10 +30,8 @@ class DockerComposeBin < Formula
   end
 
   def install
-    resource("binary").stage do
-      os = "Linux"  if OS.linux?
-      os = "Darwin" if OS.mac?
-      bin.install "docker-compose-#{os}-#{Hardware::CPU.arch}" => "docker-compose"
+    resource("binary").stage do |resource|
+      bin.install resource.url.split("/")[-1] => "docker-compose"
     end
 
     bash_completion.install "contrib/completion/bash/docker-compose"
