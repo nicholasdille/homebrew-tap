@@ -189,6 +189,7 @@ Formulae for fun:
 - [singularity](https://formulae.brew.sh/formula/singularity#default) (official)
 - [skopeo](https://formulae.brew.sh/formula/skopeo#default) (official)
 - [socat](https://formulae.brew.sh/formula/socat#default) (official)
+- [terrascan](https://formulae.brew.sh/formula/terrascan) (official)
 - [toast](https://formulae.brew.sh/formula/toast#default) (official)
 - [toilet](https://formulae.brew.sh/formula/toilet#default) (official)
 - [tunnelto](https://github.com/agrinman/tunnelto) (3rd party)
