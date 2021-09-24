@@ -130,6 +130,7 @@ Formulae for useful tools:
 - criu ([PR #350](https://github.com/nicholasdille/homebrew-tap/pull/350))
 - npiperelay (binary formula)
 - reptyr
+- ssh-key-confirmer
 - task
 - tl
 - trillian
