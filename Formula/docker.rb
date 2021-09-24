@@ -37,7 +37,7 @@ class Docker < Formula
       ENV["GO111MODULE"] = "auto"
       ENV["DISABLE_WARN_OUTSIDE_CONTAINER"] = "1"
       system "make", "binary"
-      
+
       os = "linux" if OS.linux?
       os = "darwin" if OS.mac?
       arch = "amd64"
