@@ -6,6 +6,7 @@ class CniIsolation < Formula
     tag:      "v0.0.4",
     revision: "a703d960bee6c8d368c99526f3defc12ae9ac410"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/AkihiroSuda/cni-isolation.git",
     branch: "master"
 
@@ -14,13 +15,9 @@ class CniIsolation < Formula
     strategy :github_latest
   end
 
-  bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cni-isolation-0.0.3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "af0d6007f6a0ecf0b14ed1dc650e30249b4c6f24b4a6c43f76babf92eece6ebc"
-  end
-
   depends_on "go" => :build
   depends_on "make" => :build
+  depends_on :linux
 
   def install
     system "make"
