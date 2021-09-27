@@ -3,8 +3,8 @@ class CniIsolation < Formula
   homepage "https://github.com/containernetworking/plugins/issues/573"
 
   url "https://github.com/AkihiroSuda/cni-isolation.git",
-    tag:      "v0.0.3",
-    revision: "30b5a600a99fa573414f7658f501736a8e2542bd"
+    tag:      "v0.0.4",
+    revision: "a703d960bee6c8d368c99526f3defc12ae9ac410"
   license "Apache-2.0"
   head "https://github.com/AkihiroSuda/cni-isolation.git",
     branch: "master"
