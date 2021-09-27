@@ -17,6 +17,8 @@ class KataContainers < Formula
   depends_on :linux
 
   def install
+    ENV.O0
+
     dir = buildpath/"src/github.com/kata-containers/kata-containers"
     (buildpath/"src").rename "src2"
     dir.install (buildpath/"").children
