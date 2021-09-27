@@ -15,6 +15,11 @@ class CniIsolation < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cni-isolation-0.0.4_1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "864d758ff75dc27a9b526ff62ae56c8b7e5e234ec01932ac27ba89d832eeccd7"
+  end
+
   depends_on "go" => :build
   depends_on "make" => :build
   depends_on :linux
