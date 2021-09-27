@@ -9,6 +9,11 @@ class KataContainers < Formula
   head "https://github.com/kata-containers/kata-containers.git",
     branch: "main"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kata-containers-2.2.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "353294d0c935bc76ef5588e6a8d0bfa082529b6bf6bb505d66f3766f69c8984a"
+  end
+
   depends_on "gcc" => :build
   depends_on "go" => :build
   depends_on "make" => :build
