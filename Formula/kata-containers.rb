@@ -26,14 +26,13 @@ class KataContainers < Formula
     cd dir/"src/runtime" do
       ENV["GOPATH"] = buildpath
 
-      # https://github.com/kata-containers/kata-containers/blob/main/docs/Developer-Guide.md#build-and-install-the-kata-containers-runtime
       system "make", "PREFIX=#{prefix}"
       bin.install "kata-runtime"
       bin.install "kata-monitor"
       bin.install "kata-netmon"
       bin.install "containerd-shim-kata-v2"
-      # configuration.toml
-      bash_completion.install "src/runtime/data/completions/bash/kata-runtime"
+
+      bash_completion.install "data/completions/bash/kata-runtime"
     end
   end
 
