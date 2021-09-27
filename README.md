@@ -103,7 +103,7 @@ Formulae related to containers:
 - gosu
 - gvisor ([PR #177](https://github.com/nicholasdille/homebrew-tap/pull/177))
 - ignite
-- kata-containers ([PR #179](https://github.com/nicholasdille/homebrew-tap/pull/179))
+- kata-containers
 - kim
 - norouter
 - nydus ([PR #612](https://github.com/nicholasdille/homebrew-tap/pull/612))
