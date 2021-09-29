@@ -19,7 +19,7 @@ class PortainerBin < Formula
   depends_on "kubernetes-cli"
   depends_on :linux
   depends_on "nicholasdille/tap/docker"
-  depends_on "nicholasdille/tap/docker-compose-bin"
+  depends_on "nicholasdille/tap/docker-compose"
   depends_on "immortal" => :recommended
 
   def install
