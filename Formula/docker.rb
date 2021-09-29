@@ -6,7 +6,7 @@ class Docker < Formula
       tag:      "v20.10.8",
       revision: "3967b7d28e15a020e4ee344283128ead633b3e0c"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/docker/cli.git",
     branch: "master"
 
@@ -34,6 +34,7 @@ class Docker < Formula
     dir = buildpath/"src/github.com/docker/cli"
     dir.install (buildpath/"").children
     cd dir do
+      ENV["CGO_ENABLED"] = "0"
       ENV["GOPATH"] = buildpath
       ENV["GO111MODULE"] = "auto"
       ENV["DISABLE_WARN_OUTSIDE_CONTAINER"] = "1"
