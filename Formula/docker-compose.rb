@@ -6,6 +6,7 @@ class DockerCompose < Formula
   tag:      "v2.0.0",
   revision: "7c47673d4af41d79900e6c70bc1a3f9f17bdd387"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -20,6 +21,8 @@ class DockerCompose < Formula
 
   depends_on "go" => :build
   depends_on "docker" => :optional
+  conflicts_with "docker-compose"
+  conflicts_with "nicholasdille/tap/docker-compose-bin"
 
   def install
     pkg = "github.com/docker/compose/v2"
@@ -37,6 +40,11 @@ class DockerCompose < Formula
     (bin/"com.docker.cli").write <<~EOS
       #!/usr/bin/env bash
       exec #{HOMEBREW_PREFIX}/bin/docker "$@"
+    EOS
+
+    (bin/"docker-compose").write <<~EOS
+      #!/bin/bash
+      exec #{lib}/docker/cli-plugins/docker-compose compose "$@"
     EOS
   end
 
