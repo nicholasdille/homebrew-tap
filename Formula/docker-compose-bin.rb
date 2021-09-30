@@ -18,6 +18,7 @@ class DockerComposeBin < Formula
              because: "Docker compose v2 now builds correctly"
 
   conflicts_with "docker-compose"
+  conflicts_with "nicholasdille/tap/docker-compose"
 
   resource "binary" do
     on_linux do
