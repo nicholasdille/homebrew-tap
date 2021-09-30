@@ -17,7 +17,7 @@ class DockerComposeBin < Formula
   deprecate! date:    "2021-09-15",
              because: "Docker compose v2 now builds correctly"
 
-  # conflicts_with "docker-compose"
+  conflicts_with "docker-compose"
   conflicts_with "nicholasdille/tap/docker-compose"
 
   resource "binary" do

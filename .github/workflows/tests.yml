@@ -28,14 +28,6 @@ jobs:
           path: ${{ steps.set-up-homebrew.outputs.gems-path }}
           key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
           restore-keys: ${{ runner.os }}-rubygems-
-      
-      - name: Remove conflicting formulae
-        run: |
-          brew list
-          which docker-compose || true
-          for FORMULA in docker-compose; do
-              brew unlink ${FORMULA} || true
-          done
 
       - name: Install Homebrew Bundler RubyGems
         if: steps.cache.outputs.cache-hit != 'true'
@@ -49,14 +41,6 @@ jobs:
 
       - run: brew test-bot --only-formulae
         if: github.event_name == 'pull_request'
-      
-      - run: |
-          brew list
-          cat /home/linuxbrew/.linuxbrew/Cellar/docker-compose/*/INSTALL_RECEIPT.json
-        if: ${{ failure() }}
-
-      - run: |
-          false
 
       - name: Upload bottles as artifact
         if: always() && github.event_name == 'pull_request'
