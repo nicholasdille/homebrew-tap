@@ -3,7 +3,7 @@ class Youki < Formula
   homepage "https://github.com/containers/youki"
 
   url "https://github.com/containers/youki.git",
-    revision: "d86932dd130a11789b51d654d6843d3611599dc7"
+    revision: "c206d88e630a0102faa069f9798aee7986a56bc7"
   version "0.0.0"
   license "Apache-2.0"
   head "https://github.com/containers/youki.git",
