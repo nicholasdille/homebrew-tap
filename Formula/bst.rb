@@ -6,7 +6,8 @@ class Bst < Formula
     revision: "ffbc8d5adbc460c217ddcdeb4fc57771eedfb6d4"
   version "1.0.0-rc2"
   license "MIT"
-  head "https://github.com/aristanetworks/bst.git"
+  head "https://github.com/aristanetworks/bst.git",
+    branch: "main"
 
   depends_on "libcap" => :build
   depends_on "libnfnetlink" => :build
