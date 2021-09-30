@@ -21,7 +21,7 @@ class DockerCompose < Formula
 
   depends_on "go" => :build
   depends_on "docker" => :optional
-  # conflicts_with "docker-compose"
+  conflicts_with "docker-compose"
   conflicts_with "nicholasdille/tap/docker-compose-bin"
 
   def install
