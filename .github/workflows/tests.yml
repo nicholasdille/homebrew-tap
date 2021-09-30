@@ -30,7 +30,10 @@ jobs:
           restore-keys: ${{ runner.os }}-rubygems-
       
       - name: Remove conflicting formulae
-        run: brew unlink docker-compose
+        run: |
+          for FORMULA in docker-compose; do
+              brew unlink ${FORMULA} || true
+          done
 
       - name: Install Homebrew Bundler RubyGems
         if: steps.cache.outputs.cache-hit != 'true'
