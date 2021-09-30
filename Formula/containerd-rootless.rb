@@ -3,8 +3,8 @@ class ContainerdRootless < Formula
   homepage "https://containerd.io"
 
   url "https://github.com/containerd/nerdctl.git",
-    tag:      "v0.11.2",
-    revision: "d1641120d48d8b81671179322ba37494ff4e9e76"
+    tag:      "v0.12.0",
+    revision: "aab5de3ae24e7203307cbb030b1114d652f0be01"
   license "Apache-2.0"
   head "https://github.com/containerd/nerdctl.git",
     branch: "master"
