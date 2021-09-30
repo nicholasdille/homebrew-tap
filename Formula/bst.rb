@@ -3,8 +3,8 @@ class Bst < Formula
   homepage "https://github.com/aristanetworks/bst"
 
   url "https://github.com/aristanetworks/bst.git",
-    tag:      "v1.0.0-rc1",
-    revision: "b12072dd253777358540e7f68142618ac7693580"
+    revision: "ffbc8d5adbc460c217ddcdeb4fc57771eedfb6d4"
+  version "1.0.0-rc2"
   license "MIT"
   head "https://github.com/aristanetworks/bst.git"
 
