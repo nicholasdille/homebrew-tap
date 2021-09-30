@@ -55,6 +55,9 @@ jobs:
           cat /home/linuxbrew/.linuxbrew/Cellar/docker-compose/*/INSTALL_RECEIPT.json
         if: ${{ failure() }}
 
+      - run: |
+          false
+
       - name: Upload bottles as artifact
         if: always() && github.event_name == 'pull_request'
         uses: actions/upload-artifact@main
