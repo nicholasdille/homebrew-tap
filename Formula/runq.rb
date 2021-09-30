@@ -3,7 +3,7 @@ class Runq < Formula
   homepage "https://containerd.io"
 
   url "https://github.com/gotoz/runq.git",
-    revision: "09048dc5f51cb5935a03918a727d94c40d9deff4"
+    revision: "2ae87b563ca4d4aff7522ba4dcef5b509e51864a"
   version "0.0.0"
   license "Apache-2.0"
   head "https://github.com/gotoz/runq.git",
