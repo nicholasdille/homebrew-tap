@@ -50,7 +50,9 @@ jobs:
       - run: brew test-bot --only-formulae
         if: github.event_name == 'pull_request'
       
-      - run: brew list
+      - run: |
+          brew list
+          brew info docker-compose
         if: ${{ failure() }}
 
       - name: Upload bottles as artifact
