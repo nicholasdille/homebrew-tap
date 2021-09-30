@@ -6,7 +6,8 @@ class Runq < Formula
     revision: "09048dc5f51cb5935a03918a727d94c40d9deff4"
   version "0.0.0"
   license "Apache-2.0"
-  head "https://github.com/gotoz/runq.git"
+  head "https://github.com/gotoz/runq.git",
+    branch: "master"
 
   depends_on "go" => :build
   depends_on "libseccomp" => :build
