@@ -52,7 +52,7 @@ jobs:
       
       - run: |
           brew list
-          brew info docker-compose
+          cat /home/linuxbrew/.linuxbrew/Cellar/docker-compose/*/INSTALL_RECEIPT.json
         if: ${{ failure() }}
 
       - name: Upload bottles as artifact
