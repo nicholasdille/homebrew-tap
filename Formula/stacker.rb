@@ -6,7 +6,8 @@ class Stacker < Formula
     tag:      "v0.11.0",
     revision: "7113229dcc00cd1a27dbf825160e9a90b49b70f8"
   license "Apache-2.0"
-  head "https://github.com/anuvu/stacker.git"
+  head "https://github.com/anuvu/stacker.git",
+    branch: "master"
 
   livecheck do
     url :stable
