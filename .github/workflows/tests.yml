@@ -31,7 +31,8 @@ jobs:
       
       - name: Remove conflicting formulae
         run: |
-          which docker-compose
+          brew list
+          which docker-compose || true
           for FORMULA in docker-compose; do
               brew unlink ${FORMULA} || true
           done
