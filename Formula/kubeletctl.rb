@@ -28,6 +28,6 @@ class Kubeletctl < Formula
   end
 
   test do
-    system bin/"kubeletctl", "--version"
+    system bin/"kubeletctl", "version"
   end
 end
