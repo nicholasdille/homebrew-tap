@@ -14,6 +14,11 @@ class Cntr < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cntr-1.5.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "836e038ed399dbb716c35c456a37d7694209142b87ab7e8e813f12a37f63cac6"
+  end
+
   depends_on "make" => :build
   depends_on "rust" => :build
   depends_on :linux
