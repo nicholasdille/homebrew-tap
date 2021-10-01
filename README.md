@@ -129,6 +129,7 @@ Formulae for useful tools:
 - cloudflared
 - criu ([PR #350](https://github.com/nicholasdille/homebrew-tap/pull/350))
 - npiperelay (binary formula)
+- promql
 - reptyr
 - ssh-key-confirmer
 - task
