@@ -14,6 +14,12 @@ class Kubeletctl < Formula
     strategy :git
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kubeletctl-1.8"
+    sha256 cellar: :any_skip_relocation, catalina:     "898ec7902fdfb9f85bde9166d3243e4be2a14c02ace75fe455c6abf5a99d9377"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "562aba1f093c3f7600ca2ceba52f0ceb46179053aee23a54fdc3c6ebfacf4472"
+  end
+
   depends_on "go" => :build
 
   def install
