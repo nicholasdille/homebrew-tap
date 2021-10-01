@@ -14,6 +14,12 @@ class Promql < Formula
     strategy :git
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/promql-0.2.1"
+    sha256 cellar: :any_skip_relocation, catalina:     "821c83e0ac034fda100857d40ff1c119847c6fcca38b7c714e1af28dc74d225f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9ca7b80f314feaf7e1cc52001cb9d7dcc8693f75eafea150fd05c1594569f79b"
+  end
+
   depends_on "go" => :build
 
   def install
