@@ -75,6 +75,7 @@ Kubernetes:
 - kbld
 - kink
 - kubectl-build
+- kubeletctl
 - kubeone
 - kubescape
 - kubeswitch
