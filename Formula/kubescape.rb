@@ -15,9 +15,9 @@ class Kubescape < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kubescape-1.0.90"
-    sha256 cellar: :any_skip_relocation, catalina:     "fda8ac42a8e335f6795cf6374fe9861be3ede72f123630e4c011dba4a2a9a0af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3e85f34dd45fa666751bb4d2718a0174e345ccbae516e117f9a4f05e70f6a3e9"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kubescape-1.0.93"
+    sha256 cellar: :any_skip_relocation, catalina:     "de1cbd2e23af43fde150957fdf062e2720162608a007ef7299ad3dbf1ae37744"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b8aad0cd7f8d631c690c18e9410597b7e76f2e5ff19a0ad75e8a8b77e38c9637"
   end
 
   depends_on "go" => :build
