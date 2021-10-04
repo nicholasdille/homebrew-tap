@@ -133,6 +133,7 @@ Formulae for useful tools:
 - envcli
 - envsub
 - npiperelay (binary formula)
+- patat
 - promql
 - reptyr
 - ssh-key-confirmer
@@ -182,6 +183,7 @@ Formulae for fun:
 - [lab](https://formulae.brew.sh/formula/lab#default) (official)
 - [logcli](https://formulae.brew.sh/formula/logcli#default) (official)
 - [lolcat](https://formulae.brew.sh/formula/lolcat#default) (official)
+- [marp](https://formulae.brew.sh/formula/marp-cli#default) (official)
 - [minikube](https://formulae.brew.sh/formula/minikube) (official)
 - [mitmproxy](https://formulae.brew.sh/formula/mitmproxy#default) (official)
 - [oras](https://formulae.brew.sh/formula/oras#default) (official)
