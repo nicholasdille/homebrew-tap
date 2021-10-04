@@ -15,9 +15,8 @@ class Dockerd < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/dockerd-20.10.8"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "cf4273c575e15257dd62fdd1ef2c777a716318e51da308d63c462190283789c0"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/dockerd-20.10.9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ec3d74e4625bf815744232e5298676e735b4874302cb523e752e9ee74b4d7659"
   end
 
   depends_on "go" => :build
