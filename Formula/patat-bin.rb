@@ -3,8 +3,8 @@ class PatatBin < Formula
   homepage "https://github.com/jaspervdj/patat"
 
   url "https://github.com/jaspervdj/patat/releases/download/v0.8.7.0/patat-v0.8.7.0-linux-x86_64.tar.gz"
-  sha256 "6ddd248448c83806d5233842c39e0c4f9a7948946ac5ddf977702c9dfbc22052"
   version "0.8.7.0"
+  sha256 "6ddd248448c83806d5233842c39e0c4f9a7948946ac5ddf977702c9dfbc22052"
   license "GPL-2.0-only"
 
   livecheck do
