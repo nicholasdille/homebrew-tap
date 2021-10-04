@@ -20,7 +20,7 @@ class Patat < Formula
 
   def install
     system "cabal", "update"
-    system "cabal", "v2-build", *std_cabal_v2_args
+    system "cabal", "v2-build"
     bin.install "patat"
 
     timestamp = Utils.safe_popen_read("git", "log", "-1", "--format=%cd", "--date=rfc")
