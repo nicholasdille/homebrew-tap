@@ -21,8 +21,10 @@ class Patat < Formula
   def install
     system "cabal", "update"
     system "cabal", "v2-build"
+    puts Utils.safe_popen_read("find", ".", "-type", "f", "-name", "patat")
     bin.install "patat"
 
+    puts Utils.safe_popen_read("find", ".", "-type", "f", "-name", "patat-make-man")
     timestamp = Utils.safe_popen_read("git", "log", "-1", "--format=%cd", "--date=rfc")
     ENV["SOURCE_DATE_EPOCH"] = Utils.safe_popen_read("date", "'+%s'", "--date=#{timestamp}")
     Utils.safe_popen_read("patat-make-man")
