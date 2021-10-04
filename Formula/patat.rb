@@ -20,7 +20,16 @@ class Patat < Formula
 
   def install
     system "cabal", "update"
-    system "cabal", "v2-install", *std_cabal_v2_args
+    system "cabal", "v2-build", *std_cabal_v2_args
+    bin.install "patat"
+
+    timestamp = Utils.safe_popen_read("git", "log", "-1", "--format=%cd", "--date=rfc")
+    ENV["SOURCE_DATE_EPOCH"] = Utils.safe_popen_read("date", "'+%s'", "--date=#{timestamp}")
+    Utils.safe_popen_read("patat-make-man")
+    (man1/"patat.1").write output
+
+    output = Utils.safe_popen_read(bin/"patat", "--bash-completion-script", "patat")
+    (bash_completion/"patat").write output
   end
 
   test do
