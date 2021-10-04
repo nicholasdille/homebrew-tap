@@ -131,6 +131,7 @@ Formulae for useful tools:
 - cloudflared
 - criu ([PR #350](https://github.com/nicholasdille/homebrew-tap/pull/350))
 - envcli
+- envsub
 - npiperelay (binary formula)
 - promql
 - reptyr
