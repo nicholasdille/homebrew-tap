@@ -14,6 +14,11 @@ class Envsub < Formula
     strategy :git
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/envsub-0.1.3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8a5aca98a96e1dbfa425cce93151092c19aae17972a7ed7f4ce5a9f27db2bc4f"
+  end
+
   depends_on "make" => :build
   depends_on "rust" => :build
   depends_on :linux
