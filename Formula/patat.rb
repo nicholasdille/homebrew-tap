@@ -21,9 +21,6 @@ class Patat < Formula
   def install
     system "cabal", "update"
     system "cabal", "v2-build"
-
-    output = Utils.safe_popen_read(bin/"patat", "--bash-completion-script", "patat")
-    (bash_completion/"patat").write output
   end
 
   test do
