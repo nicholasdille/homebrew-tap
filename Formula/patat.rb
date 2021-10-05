@@ -22,6 +22,7 @@ class Patat < Formula
   def install
     system "cabal", "update"
     system "cabal", "v2-build"
+    system "cabal", "v2-install", *std_cabal_v2_args
   end
 
   test do
