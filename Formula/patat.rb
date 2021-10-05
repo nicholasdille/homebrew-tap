@@ -15,6 +15,12 @@ class Patat < Formula
     strategy :git
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/patat-0.8.7.0_1"
+    sha256 cellar: :any,                 catalina:     "808c71bd0c1a113b5b443320e58fe9fc9d6c786337cbae505a2d354fd3c213b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6ce0863a438203dd93871fcdf79a04c21b2673b7958ab3bdaaf3d351b6960f49"
+  end
+
   depends_on "cabal-install" => :build
   depends_on "ghc" => :build
   depends_on "zlib"
