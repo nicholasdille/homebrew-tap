@@ -25,6 +25,7 @@ class Patat < Formula
     timestamp = Utils.safe_popen_read("git", "log", "-1", "--format=%cd", "--date=rfc")
     unix_epoch = DateTime.parse(timestamp).to_time.to_i
     ENV["SOURCE_DATE_EPOCH"] = unix_epoch.to_s
+    puts Utils.safe_popen_read("find", ".", "-type", "f", "-name", "patat-make-man")
     Utils.safe_popen_read("patat-make-man")
     (man1/"patat.1").write output
 
