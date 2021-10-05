@@ -23,7 +23,8 @@ class Patat < Formula
     system "cabal", "v2-build"
 
     timestamp = Utils.safe_popen_read("git", "log", "-1", "--format=%cd", "--date=rfc")
-    ENV["SOURCE_DATE_EPOCH"] = Utils.safe_popen_read("date", "'+%s'", "--date=#{timestamp}")
+    unix_epoch = DateTime.parse(timestamp).to_time.to_i
+    ENV["SOURCE_DATE_EPOCH"] = unix_epoch.to_s
     Utils.safe_popen_read("patat-make-man")
     (man1/"patat.1").write output
 
