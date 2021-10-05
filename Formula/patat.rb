@@ -6,6 +6,7 @@ class Patat < Formula
     tag:      "v0.8.7.0",
     revision: "911d8281997a7fd95b60bbeb58ec24e115d808ee"
   license "GPL-2.0-only"
+  revision 1
   head "https://github.com/marcosnils/bin.git",
     branch: "master"
 
