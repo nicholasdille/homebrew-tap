@@ -15,8 +15,8 @@ class Nerdctl < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/nerdctl-0.12.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b5cdcb42c8a67738b68770445ada80cc8a3964c6235379279a6c9acff310bee6"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/nerdctl-0.12.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7e56be5a8d1d4c6a445eebce60755be95b8b3a048345504ba0910b6b00abb57e"
   end
 
   depends_on "go" => :build
