@@ -24,6 +24,6 @@ class Patat < Formula
   end
 
   test do
-    system bin/"patat", "--version"
+    assert_match "#{version}\n", shell_output("#{bin}/patat --version")
   end
 end
