@@ -14,6 +14,12 @@ class Ekz < Formula
     strategy :git
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/ekz-0.8.0"
+    sha256 cellar: :any_skip_relocation, catalina:     "e36490a822697f17d23470c670ce825d0dcaeb4987dd283c6a041908d73e7094"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "35f791b91899aad2c22027c9f34519346a34f260753e283ca99d3f65acaffed8"
+  end
+
   depends_on "go" => :build
 
   def install
