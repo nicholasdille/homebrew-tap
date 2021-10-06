@@ -133,7 +133,7 @@ Formulae for useful tools:
 - envcli
 - envsub
 - npiperelay (binary formula)
-- patat
+- patat / patat-bin
 - promql
 - reptyr
 - ssh-key-confirmer
