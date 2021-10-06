@@ -132,6 +132,7 @@ Formulae for useful tools:
 - criu ([PR #350](https://github.com/nicholasdille/homebrew-tap/pull/350))
 - envcli
 - envsub
+- goss
 - npiperelay (binary formula)
 - patat / patat-bin
 - promql
