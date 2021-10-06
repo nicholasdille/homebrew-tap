@@ -6,6 +6,7 @@ class Dockerd < Formula
     tag:      "v20.10.9",
     revision: "79ea9d3080181d755855d5924d0f4f116faa9463"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/moby/moby.git",
     branch: "master"
 
@@ -37,7 +38,6 @@ class Dockerd < Formula
 
     bin.install "bundles/binary-daemon/dockerd-#{version}" => "dockerd"
     bin.install "bundles/binary-daemon/docker-proxy"
-    ln_s HOMEBREW_PREFIX/"bin/tini", bin/"docker-init"
 
     (buildpath/"daemon.json").write <<~EOS
       {
@@ -66,6 +66,10 @@ class Dockerd < Formula
       - containerd
     EOS
     (etc/"immortal").install "dockerd.yml"
+  end
+
+  def post_install
+    ln_s HOMEBREW_PREFIX/"bin/tini", bin/"docker-init"
   end
 
   def caveats
