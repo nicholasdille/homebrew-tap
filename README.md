@@ -70,6 +70,7 @@ Kubernetes:
 - cri-o
 - crictl
 - datree
+- havener
 - imgpkg
 - kapp
 - kbld
