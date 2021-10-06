@@ -14,6 +14,12 @@ class Havener < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/havener-2.0.6"
+    sha256 cellar: :any_skip_relocation, catalina:     "27611f03e7d2fa5416a55feb2cf084b6d6a2f9d674c538e209c16f0b24aa9f1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "62adca12f8480cf8f5a65ee02550b0939c5d3ce24d20e78bda3b4875a20e1b09"
+  end
+
   depends_on "go" => :build
 
   def install
