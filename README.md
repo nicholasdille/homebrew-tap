@@ -130,6 +130,7 @@ Formulae for useful tools:
 - chisel
 - cloudflared
 - criu ([PR #350](https://github.com/nicholasdille/homebrew-tap/pull/350))
+- dyff
 - envcli
 - envsub
 - npiperelay (binary formula)
