@@ -14,6 +14,12 @@ class Dyff < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/dyff-1.4.5"
+    sha256 cellar: :any_skip_relocation, catalina:     "e7de3f94267bb6ce5e678814063442e294484b71f73ecf12ee941c1645b99d2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2a849b106b8ce4dff7d0e1fcfbaeb789186cc33870498a2fce41ad975dd43fb5"
+  end
+
   depends_on "go" => :build
 
   def install
