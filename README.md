@@ -136,6 +136,7 @@ Formulae for useful tools:
 - patat / patat-bin
 - promql
 - reptyr
+- semver-tool
 - ssh-key-confirmer
 - task
 - tl
