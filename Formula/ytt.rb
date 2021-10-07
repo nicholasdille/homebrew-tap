@@ -3,8 +3,8 @@ class Ytt < Formula
   homepage "https://get-ytt.io"
 
   url "https://github.com/vmware-tanzu/carvel-ytt.git",
-    tag:      "v0.36.0",
-    revision: "ecab3989ffcd7733152047bf8b4c5f237803a56f"
+    tag:      "v0.37.0",
+    revision: "4cb1eb86f263e2c6e5290a7a111dddd2c67ca78e"
   license "Apache-2.0"
   head "https://github.com/vmware-tanzu/carvel-ytt.git",
     branch: "develop"
