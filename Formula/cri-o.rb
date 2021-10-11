@@ -29,8 +29,8 @@ class CriO < Formula
   depends_on "make" => :build
   depends_on "pkg-config" => :build
   depends_on :linux
-  depends_on "device-mapper" => :optional
   depends_on "libseccomp" => :recommended
+  depends_on "device-mapper" => :optional
 
   def install
     ENV.O0

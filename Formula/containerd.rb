@@ -30,8 +30,8 @@ class Containerd < Formula
   depends_on "pkg-config" => :build
   depends_on :linux
   depends_on "nicholasdille/tap/runc"
-  depends_on "device-mapper" => :optional
   depends_on "nicholasdille/tap/cni" => :recommended
+  depends_on "device-mapper" => :optional
 
   def install
     dir = buildpath/"src/github.com/containerd/containerd"
