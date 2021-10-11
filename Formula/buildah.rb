@@ -6,7 +6,6 @@ class Buildah < Formula
     tag:      "v1.23.1",
     revision: "d9a41b85188e10afc3caff696e5d923b6d64ceed"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/containers/buildah.git",
     branch: "main"
 
@@ -31,7 +30,7 @@ class Buildah < Formula
   depends_on "libgpg-error"
   depends_on :linux
   depends_on "libseccomp" => :recommended
-  depends_on "device-mapper" => :optional
+  depends_on "device-mapper" => :recommended
 
   def install
     ENV.O0
