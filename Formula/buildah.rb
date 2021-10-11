@@ -29,8 +29,8 @@ class Buildah < Formula
   depends_on "libassuan"
   depends_on "libgpg-error"
   depends_on :linux
-  depends_on "libseccomp" => :recommended
   depends_on "device-mapper" => :recommended
+  depends_on "libseccomp" => :recommended
 
   def install
     ENV.O0
