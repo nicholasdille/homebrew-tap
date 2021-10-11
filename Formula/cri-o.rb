@@ -6,6 +6,7 @@ class CriO < Formula
     tag:      "v1.22.0",
     revision: "6becad23eadd7dfdd25fd8df386bf3b706cf7758"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/cri-o/cri-o.git",
     branch: "master"
 
@@ -28,7 +29,7 @@ class CriO < Formula
   depends_on "make" => :build
   depends_on "pkg-config" => :build
   depends_on :linux
-  depends_on "device-mapper" => :recommended
+  depends_on "device-mapper" => :optional
   depends_on "libseccomp" => :recommended
 
   def install

@@ -6,6 +6,7 @@ class ContainersStorage < Formula
     tag:      "v1.37.0",
     revision: "bdb2b620538b817bd07f62c5c3b5644781ac54b3"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/containers/storage.git",
     branch: "main"
 
@@ -27,7 +28,7 @@ class ContainersStorage < Formula
   depends_on "go-md2man" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
-  depends_on "device-mapper" => :recommended
+  depends_on "device-mapper" => :optional
 
   def install
     dir = buildpath/"src/github.com/containers/storage"

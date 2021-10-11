@@ -6,6 +6,7 @@ class Containerd < Formula
     tag:      "v1.5.7",
     revision: "8686ededfc90076914c5238eb96c883ea093a8ba"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/containerd/containerd.git",
     branch: "main"
 
@@ -29,7 +30,7 @@ class Containerd < Formula
   depends_on "pkg-config" => :build
   depends_on :linux
   depends_on "nicholasdille/tap/runc"
-  depends_on "device-mapper" => :recommended
+  depends_on "device-mapper" => :optional
   depends_on "nicholasdille/tap/cni" => :recommended
 
   def install
