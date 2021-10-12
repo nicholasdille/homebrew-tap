@@ -197,6 +197,7 @@ Formulae for fun:
 - [ponysay](https://formulae.brew.sh/formula/ponysay#default) (official)
 - [powerline-go](https://formulae.brew.sh/formula/powerline-go#default) (official)
 - [qrencode](https://formulae.brew.sh/formula/qrencode#default) (official)
+- [scorecard](https://formulae.brew.sh/formula/scorecard#default) (official)
 - [shellcheck](https://formulae.brew.sh/formula/shellcheck#default) (official)
 - [shellinabox](https://formulae.brew.sh/formula/shellinabox#default) (official)
 - [singularity](https://formulae.brew.sh/formula/singularity#default) (official)
