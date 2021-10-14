@@ -11,7 +11,7 @@ class KataContainers < Formula
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kata-containers-2.2.2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "353294d0c935bc76ef5588e6a8d0bfa082529b6bf6bb505d66f3766f69c8984a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "280d21e9ad5d7c3750ece5114a976c93ab3f923ad6a4b29a667fd09fbe618790"
   end
 
   depends_on "gcc" => :build
