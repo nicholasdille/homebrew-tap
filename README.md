@@ -10,7 +10,7 @@ Or `brew tap nicholasdille/tap` and then `brew install <formula>`.
 
 ## Formulae in this tap
 
-Containers (Docker):
+Containers (Docker/OCI):
 
 - buildkitd
 - buildkitd-dockerfile
