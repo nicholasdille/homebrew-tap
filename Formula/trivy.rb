@@ -3,8 +3,8 @@ class Trivy < Formula
   homepage "https://github.com/aquasecurity/trivy"
 
   url "https://github.com/aquasecurity/trivy.git",
-    tag:      "v0.20.0",
-    revision: "f12446d3ba26b89f5c443abcd5aee2bad2dea1c8"
+    tag:      "v0.20.1",
+    revision: "bcfa0287b9321710158d7edce6dbc234b3c9cdbf"
   license "Apache-2.0"
   head "https://github.com/aquasecurity/trivy.git",
     branch: "main"
