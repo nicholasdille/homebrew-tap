@@ -34,6 +34,7 @@ Containers (Docker/OCI):
 - manifest-tool
 - nerdctl
 - notation (notary v2)
+- notary v1
 - oci-image-tool
 - oci-runtime-tool
 - oras
