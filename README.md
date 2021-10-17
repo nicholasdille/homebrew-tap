@@ -29,6 +29,7 @@ Containers (Docker/OCI):
 - fuse-overlay (binary formula)
 - fuse-overlay-snapshotter (binary formula)
 - hub-tool
+- img
 - manifest-tool
 - nerdctl
 - oci-image-tool
