@@ -1,9 +1,9 @@
 class Notation < Formula
-  desc "Notation adds signatures as standard items in the registry ecosystem"
+  desc "Signatures as standard items in the registry ecosystem (Notary v2)"
   homepage "https://github.com/notaryproject/notation"
 
   url "https://github.com/notaryproject/notation.git",
-    tag:      "main"
+    tag: "main"
   version "0.0.0"
   license "Apache-2.0"
   head "https://github.com/notaryproject/notation.git",
