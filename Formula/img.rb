@@ -42,6 +42,11 @@ class Img < Formula
     strategy :git
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/img-0.5.11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "064911afdb0a9a86ef97a0613bd5c62eff34c9a2a786a5ac4dd68a3302bb09db"
+  end
+
   depends_on "go" => :build
   depends_on "libseccomp" => :build
   depends_on "pkg-config" => :build
