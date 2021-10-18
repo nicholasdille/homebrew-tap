@@ -11,7 +11,7 @@ class Goss < Formula
 
   livecheck do
     url :stable
-    regex(%r{^v(\d+\.\d+\.\d+)$}i)
+    regex(/^v(\d+\.\d+\.\d+)$/i)
   end
 
   bottle do
