@@ -23,6 +23,6 @@ class Imgcrypt < Formula
   end
 
   test do
-    system bin/"bin", "--version"
+    system bin/"ctd-decoder", "--help"
   end
 end
