@@ -9,7 +9,7 @@ class FuseOverlayfsBin < Formula
 
   livecheck do
     url :stable
-    strategy :github_latest
+    strategy :git
   end
 
   bottle :unneeded

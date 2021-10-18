@@ -9,7 +9,7 @@ class DockerComposeBin < Formula
 
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(%r{^(1\.\d+\.\d+)$}i)
   end
 
   bottle :unneeded

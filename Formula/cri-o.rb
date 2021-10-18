@@ -12,7 +12,7 @@ class CriO < Formula
 
   livecheck do
     url :stable
-    strategy :github_latest
+    strategy :git
   end
 
   bottle do

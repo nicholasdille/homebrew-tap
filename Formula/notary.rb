@@ -11,7 +11,7 @@ class Notary < Formula
 
   livecheck do
     url :stable
-    strategy :git
+    regex(%r{^v(\d+\.\d+\.\d+)$}i)
   end
 
   bottle do
