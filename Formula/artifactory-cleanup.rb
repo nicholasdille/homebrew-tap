@@ -27,7 +27,7 @@ class ArtifactoryCleanup < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go", "build",
       *std_go_args(
-        ldflags: "-s -w -X main.Version=#{version}"
+        ldflags: "-s -w -X main.version=#{version}"
       ),
       "./cmd/main.go"
   end
