@@ -60,6 +60,6 @@ class Notary < Formula
   end
 
   test do
-    system bin/"notary", "--version"
+    system bin/"notary", "version"
   end
 end
