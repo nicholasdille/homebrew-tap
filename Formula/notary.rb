@@ -24,8 +24,7 @@ class Notary < Formula
     go_ldflags = "-w #{ctimevar}"
 
     buildtags = [
-      #"pkcs11",
-      "netgo"
+      "netgo",
     ]
 
     ENV["GO111MODULE"] = "auto"
