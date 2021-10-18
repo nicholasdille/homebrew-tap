@@ -23,29 +23,41 @@ class Notary < Formula
     ctimevar = "-X #{pkg}/version.GitCommit=#{commit} -X #{pkg}/version.NotaryVersion=#{version}"
     go_ldflags = "-w #{ctimevar}"
 
+    buildtags = [
+      #"pkcs11",
+      "netgo"
+    ]
+
+    ENV["GO111MODULE"] = "auto"
+    ENV["GOPATH"] = buildpath
+
     if OS.linux?
       ENV["CGO_ENABLED"] = "0"
       ENV["GOFLAGS"] = "-mod=vendor"
       go_ldflags += " -extldflags -static"
     end
 
-    system "go", "build",
-      "-tags", "pkcs11 netgo",
-      "-ldflags", go_ldflags,
-      "-o", bin/"notary-server",
-      "./cmd/notary-server"
+    dir = buildpath/"src/github.com/theupdateframework/notary"
+    dir.install (buildpath/"").children
+    cd dir do
+      system "go", "build",
+        "-tags", buildtags.join(" "),
+        "-ldflags", go_ldflags,
+        "-o", bin/"notary-server",
+        "./cmd/notary-server"
 
-    system "go", "build",
-      "-tags", "pkcs11 netgo",
-      "-ldflags", go_ldflags,
-      "-o", bin/"notary-signer",
-      "./cmd/notary-signer"
+      system "go", "build",
+        "-tags", buildtags.join(" "),
+        "-ldflags", go_ldflags,
+        "-o", bin/"notary-signer",
+        "./cmd/notary-signer"
 
-    system "go", "build",
-      "-tags", "pkcs11 netgo",
-      "-ldflags", go_ldflags,
-      "-o", bin/"notary",
-      "./cmd/notary"
+      system "go", "build",
+        "-tags", buildtags.join(" "),
+        "-ldflags", go_ldflags,
+        "-o", bin/"notary",
+        "./cmd/notary"
+    end
   end
 
   test do
