@@ -10,8 +10,7 @@ class Notation < Formula
     branch: "main"
 
   livecheck do
-    url :stable
-    strategy :git
+    skip "No version information available"
   end
 
   depends_on "go" => :build
