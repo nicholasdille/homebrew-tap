@@ -34,8 +34,8 @@ jobs:
         run: brew install-bundler-gems
 
       - run: |
-          brew uninstall docker-compose
-          rm /usr/local/bin/docker-compose
+          brew uninstall docker-compose || true
+          rm /usr/local/bin/docker-compose || true
 
       - run: brew test-bot --only-cleanup-before
 
