@@ -13,8 +13,9 @@ class DockerCompose < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/docker-compose-2.0.0_1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f86eed40d2f44eeffbf94abb8da86fe0947845bc34bc41b7f1876baceb390495"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/docker-compose-2.0.1"
+    sha256 cellar: :any_skip_relocation, big_sur:      "53fb4936175a9cb90a4e3dc2f4e314df638fcc2a1beff7b9ff21047d09eefd07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "bade2d570834e601760a5e76c7f8dcac3347451fbf26224cca4ab1395a4cb5f2"
   end
 
   depends_on "go" => :build
