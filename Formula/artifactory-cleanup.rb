@@ -16,9 +16,9 @@ class ArtifactoryCleanup < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/artifactory-cleanup-1.5.0"
-    sha256 cellar: :any_skip_relocation, catalina:     "5b9ef32b59f9d748a97d9e5b32098e6bf24bbec4347709ee36d239512f0d321d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7dc8b836cabe74abd90724064db534d805d143687e5b6d7eec55d4c0b3cf5c38"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/artifactory-cleanup-1.5.0_1"
+    sha256 cellar: :any_skip_relocation, big_sur:      "6bdef84eb46c6e85cf45570b8e0d0ba8cdf5cc9464179467152a5f0b9c1469f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "739d897b2d4b90dc084e11b0df7edad52aff08591b4e0a98107c77aff7b27ae2"
   end
 
   depends_on "go" => :build
