@@ -33,11 +33,6 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: brew install-bundler-gems
 
-      - name: Sanitize
-        run: |
-          brew uninstall docker-compose || true
-          rm /usr/local/bin/docker-compose || true
-
       - run: brew test-bot --only-cleanup-before
 
       - run: brew test-bot --only-setup
@@ -53,11 +48,6 @@ jobs:
         with:
           name: bottles
           path: '*.bottle.*'
-      
-      - name: Debug
-        if: always()
-        run: |
-          brew list -1 --full-name
 
   trigger-merge:
     needs:
