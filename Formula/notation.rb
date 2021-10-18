@@ -13,6 +13,12 @@ class Notation < Formula
     skip "No version information available"
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/notation-0.0.0"
+    sha256 cellar: :any_skip_relocation, big_sur:      "1cf162ed99f375a8e129c368535053aad0215281568beaf67403f07915bdf2c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5250ad9fe5293455a8eb278d92c34e1d1d514ada6da07365ac0e6681c42a7b7d"
+  end
+
   depends_on "go" => :build
 
   def install
