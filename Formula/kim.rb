@@ -3,8 +3,8 @@ class Kim < Formula
   homepage "https://github.com/rancher/kim"
 
   url "https://github.com/rancher/kim.git",
-    tag:      "v0.1.0-beta.6",
-    revision: "8733bde7b7a942d53c4885fcaace9903132eda8c"
+    tag:      "v0.1.0-beta.7",
+    revision: "e597b9564b47213734787b3e0c540a635b250bbf"
   license "Apache-2.0"
   head "https://github.com/rancher/kim.git",
     branch: "main"
