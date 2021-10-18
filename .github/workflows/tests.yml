@@ -57,7 +57,7 @@ jobs:
       - name: Debug
         if: always()
         run: |
-          brew list
+          brew list -1 --full-name
 
   trigger-merge:
     needs:
