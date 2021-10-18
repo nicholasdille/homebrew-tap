@@ -33,7 +33,8 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: brew install-bundler-gems
 
-      - run: |
+      - name: Sanitize
+        run: |
           brew uninstall docker-compose || true
           rm /usr/local/bin/docker-compose || true
 
@@ -52,6 +53,11 @@ jobs:
         with:
           name: bottles
           path: '*.bottle.*'
+      
+      - name: Debug
+        if: always()
+        run: |
+          brew list
 
   trigger-merge:
     needs:
