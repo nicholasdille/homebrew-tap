@@ -1,5 +1,5 @@
 class Notary < Formula
-  desc "Notary allows anyone to have trust over arbitrary collections of data"
+  desc "Allows anyone to have trust over arbitrary collections of data"
   homepage "https://github.com/notaryproject/notary"
 
   url "https://github.com/notaryproject/notary.git",
@@ -21,52 +21,31 @@ class Notary < Formula
     pkg = "github.com/theupdateframework/notary"
     commit = Utils.git_short_head
     ctimevar = "-X #{pkg}/version.GitCommit=#{commit} -X #{pkg}/version.NotaryVersion=#{version}"
-
     go_ldflags = "-w #{ctimevar}"
-    go_ldflags_static = "-w #{ctimevar} -extldflags -static"
 
-    on_linux do
+    if OS.linux?
       ENV["CGO_ENABLED"] = "0"
       ENV["GOFLAGS"] = "-mod=vendor"
-
-      system "go", "build",
-        "-tags", "pkcs11 netgo",
-        "-ldflags", go_ldflags_static,
-        "-o", bin/"notary-server",
-        "./cmd/notary-server"
-
-      system "go", "build",
-        "-tags", "pkcs11 netgo",
-        "-ldflags", go_ldflags_static,
-        "-o", bin/"notary-signer",
-        "./cmd/notary-signer"
-
-      system "go", "build",
-        "-tags", "pkcs11 netgo",
-        "-ldflags", go_ldflags_static,
-        "-o", bin/"notary",
-        "./cmd/notary"
+      go_ldflags += " -extldflags -static"
     end
 
-    on_mac do
-      system "go", "build",
-        "-tags", "pkcs11 netgo",
-        "-ldflags", go_ldflags,
-        "-o", bin/"notary-server",
-        "./cmd/notary-server"
+    system "go", "build",
+      "-tags", "pkcs11 netgo",
+      "-ldflags", go_ldflags,
+      "-o", bin/"notary-server",
+      "./cmd/notary-server"
 
-      system "go", "build",
-        "-tags", "pkcs11 netgo",
-        "-ldflags", go_ldflags,
-        "-o", bin/"notary-signer",
-        "./cmd/notary-signer"
+    system "go", "build",
+      "-tags", "pkcs11 netgo",
+      "-ldflags", go_ldflags,
+      "-o", bin/"notary-signer",
+      "./cmd/notary-signer"
 
-      system "go", "build",
-        "-tags", "pkcs11 netgo",
-        "-ldflags", go_ldflags,
-        "-o", bin/"notary",
-        "./cmd/notary"
-    end
+    system "go", "build",
+      "-tags", "pkcs11 netgo",
+      "-ldflags", go_ldflags,
+      "-o", bin/"notary",
+      "./cmd/notary"
   end
 
   test do
