@@ -14,6 +14,12 @@ class Notary < Formula
     strategy :git
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/notary-0.6.1"
+    sha256 cellar: :any_skip_relocation, big_sur:      "47c7e2417945927283a9abc431d1981dc0c4752234a136430fc7ecd0dcc153f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "502a72d2c8bf3bac31f1a86178613be30d9c26297b9d4c8f099ed304f20da5db"
+  end
+
   depends_on "go" => :build
   depends_on "make" => :build
 
