@@ -26,6 +26,6 @@ class Lxc < Formula
   end
 
   test do
-    #
+    assert_match version.to_s, shell_output("#{bin}/#{name}-ls --version")
   end
 end
