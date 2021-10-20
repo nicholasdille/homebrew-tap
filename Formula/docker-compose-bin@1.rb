@@ -12,8 +12,6 @@ class DockerComposeBinAT1 < Formula
     regex(/^(1\..+)/i)
   end
 
-  bottle :unneeded
-
   keg_only :versioned_formula
 
   resource "binary" do

@@ -12,8 +12,6 @@ class LoftBin < Formula
     strategy :github_latest
   end
 
-  bottle :unneeded
-
   depends_on arch: :x86_64
 
   resource "binary" do

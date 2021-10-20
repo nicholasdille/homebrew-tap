@@ -12,8 +12,6 @@ class DockerComposeBin < Formula
     regex(/^(1\.\d+\.\d+)$/i)
   end
 
-  bottle :unneeded
-
   deprecate! date:    "2021-09-15",
              because: "Docker compose v2 now builds correctly"
 

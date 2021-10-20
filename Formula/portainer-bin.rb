@@ -12,8 +12,6 @@ class PortainerBin < Formula
     strategy :github_latest
   end
 
-  bottle :unneeded
-
   depends_on arch: :x86_64
   depends_on "kompose"
   depends_on "kubernetes-cli"

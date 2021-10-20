@@ -14,8 +14,6 @@ class Gometalinter < Formula
     strategy :github_latest
   end
 
-  bottle :unneeded
-
   depends_on :linux
 
   def install

@@ -12,8 +12,6 @@ class PatatBin < Formula
     strategy :git
   end
 
-  bottle :unneeded
-
   def install
     bin.install "patat"
     man1.install "patat.1"

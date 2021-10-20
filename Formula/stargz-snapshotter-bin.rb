@@ -12,8 +12,6 @@ class StargzSnapshotterBin < Formula
     strategy :github_latest
   end
 
-  bottle :unneeded
-
   depends_on arch: :x86_64
   depends_on :linux
   depends_on "nicholasdille/tap/containerd"

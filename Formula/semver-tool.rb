@@ -14,8 +14,6 @@ class SemverTool < Formula
     strategy :git
   end
 
-  bottle :unneeded
-
   depends_on "go" => :build
 
   def install
