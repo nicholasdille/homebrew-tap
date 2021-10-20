@@ -14,8 +14,6 @@ class Firejail < Formula
     strategy :github_latest
   end
 
-  bottle :unneeded
-
   depends_on "gcc" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
