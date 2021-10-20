@@ -8,7 +8,7 @@ class CriO < Formula
   license "Apache-2.0"
   revision 1
   head "https://github.com/cri-o/cri-o.git",
-    branch: "master"
+    branch: "main"
 
   livecheck do
     url :stable
