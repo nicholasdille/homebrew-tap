@@ -17,11 +17,15 @@ class Lxc < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
+  depends_on "gcc"
+  depends_on "libcap"
+  depends_on "libseccomp"
   depends_on :linux
+  depends_on "openssl@1.1"
 
   def install
     system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}", "--with-systemdsystemunitdir=#{lib}"
+    system "./configure", "--prefix=#{prefix}", "--with-systemdsystemunitdir=#{etc}/systemd/system"
     system "make"
     system "make", "install"
   end
