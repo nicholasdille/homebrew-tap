@@ -17,7 +17,7 @@ class Stacker < Formula
   depends_on "go" => :build
   depends_on "gpgme" => :build
   depends_on "libcap" => :build
-  depends_on "lxc" => :build
+  depends_on "nicholasdille/tap/lxc" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
   depends_on "squashfs"
