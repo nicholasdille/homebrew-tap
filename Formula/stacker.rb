@@ -20,6 +20,7 @@ class Stacker < Formula
   depends_on "lxc" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
+  depends_on "squashfs"
 
   def install
     system "go",
