@@ -113,6 +113,7 @@ Formulae related to containers:
 - ignite
 - kata-containers
 - kim
+- lxc
 - norouter
 - nydus ([PR #612](https://github.com/nicholasdille/homebrew-tap/pull/612))
 - porter
