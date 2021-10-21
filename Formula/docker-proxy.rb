@@ -3,8 +3,8 @@ class DockerProxy < Formula
   homepage "https://github.com/moby/libnetwork"
 
   url "https://github.com/moby/libnetwork.git",
-    revision: "fa125a3512ee0f6187721c88582bf8c4378bd4d7"
-  version "20.10.7"
+    revision: "64b7a4574d1426139437d20e81c0b6d391130ec8"
+  version "20.10.9"
   license "Apache-2.0"
   head "https://github.com/moby/libnetwork.git",
     branch: "master"
@@ -19,11 +19,7 @@ class DockerProxy < Formula
   end
 
   depends_on "go" => :build
-  depends_on "make" => :build
-  depends_on "pkg-config" => :build
   depends_on :linux
-
-  conflicts_with "nicholasdille/tap/dockerd"
 
   def install
     dir = buildpath/"src/github.com/docker/libnetwork"

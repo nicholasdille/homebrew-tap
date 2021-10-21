@@ -20,24 +20,34 @@ class Dockerd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "430f0a16493f32d584ca81db2d49ce8acf02a464b2eb77d973a3bf4ce8a37a5b"
   end
 
+  option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
+
   depends_on "go" => :build
   depends_on "make" => :build
+  depends_on "nicholasdille/tap/docker" => :build
   depends_on "pkg-config" => :build
   depends_on :linux
+  depends_on "nicholasdille/tap/buildx"
   depends_on "nicholasdille/tap/containerd"
+  #depends_on "nicholasdille/tap/docker-proxy"
   depends_on "nicholasdille/tap/runc"
   depends_on "nicholasdille/tap/tini"
-
-  conflicts_with "nicholasdille/tap/docker-proxy"
+  depends_on "device-mapper" => :optional
 
   def install
     ENV["AUTO_GOPATH"] = "1"
     ENV["GO111MODULE"] = "auto"
 
-    system "make", "binary", "VERSION=#{version}"
+    buildtags = []
+    buildtags << "exclude_graphdriver_btrfs" unless build.with? "btrfs"
+
+    ENV["VERSION"] = version
+    ENV["DOCKER_BUILDTAGS"] = buildtags.join(" ")
+    system "./hack/make.sh", "binary"
 
     bin.install "bundles/binary-daemon/dockerd-#{version}" => "dockerd"
-    bin.install "bundles/binary-daemon/docker-proxy"
+    (etc/"init.d").install "contrib/init/sysvinit-debian/docker"
+    (etc/"default").install "contrib/init/sysvinit-debian/docker.default" => "docker"
 
     (buildpath/"daemon.json").write <<~EOS
       {
