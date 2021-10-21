@@ -29,7 +29,7 @@ class Dockerd < Formula
   depends_on :linux
   depends_on "nicholasdille/tap/buildx"
   depends_on "nicholasdille/tap/containerd"
-  #depends_on "nicholasdille/tap/docker-proxy"
+  depends_on "nicholasdille/tap/docker-proxy"
   depends_on "nicholasdille/tap/runc"
   depends_on "nicholasdille/tap/tini"
   depends_on "device-mapper" => :optional
@@ -39,7 +39,7 @@ class Dockerd < Formula
     ENV["GO111MODULE"] = "auto"
 
     buildtags = []
-    buildtags << "exclude_graphdriver_btrfs" unless build.with? "btrfs"
+    buildtags << "exclude_graphdriver_btrfs" if build.without? "btrfs"
 
     ENV["VERSION"] = version
     ENV["DOCKER_BUILDTAGS"] = buildtags.join(" ")
