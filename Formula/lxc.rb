@@ -25,7 +25,10 @@ class Lxc < Formula
 
   def install
     system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}", "--with-systemdsystemunitdir=#{etc}/systemd/system"
+    system "./configure",
+      "--prefix=#{prefix}",
+      "--with-systemdsystemunitdir=#{etc}/systemd/system",
+      "--without-selinux"
     system "make"
     system "make", "install"
   end
