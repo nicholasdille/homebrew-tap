@@ -14,8 +14,8 @@ class DockerProxy < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/docker-proxy-20.10.7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d70113a134fcef5d02d08d10d1244da60aa3601d19549afa4ee9fc85a7a7b6d1"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/docker-proxy-20.10.9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1f14b6dfefbf498c1612425d3d9cbb09e36969e8f03b5dbc05cf53b2e2ec2b84"
   end
 
   depends_on "go" => :build
