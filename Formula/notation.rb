@@ -14,6 +14,12 @@ class Notation < Formula
     strategy :git
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/notation-0.7.0-alpha.1"
+    sha256 cellar: :any_skip_relocation, big_sur:      "93a7377139bf220ed2d2a002c83c114515f5b5482fbee2557cdf31345dce95bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d2181c2c8e29e0d2b1d0f23149545662b70807a13ce5abbcee065e4b54222090"
+  end
+
   depends_on "go" => :build
 
   def install
