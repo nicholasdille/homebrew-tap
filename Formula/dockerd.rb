@@ -48,7 +48,9 @@ class Dockerd < Formula
     bin.install "bundles/binary-daemon/dockerd-#{version}" => "dockerd"
 
     inreplace "contrib/init/sysvinit-debian/docker", "export PATH=", "export PATH=/home/linuxbrew/.linuxbrew/bin:"
-    inreplace "contrib/init/sysvinit-debian/docker", "DOCKERD=/usr/bin/dockerd", "DOCKERD=/home/linuxbrew/.linuxbrew/bin/dockerd"
+    inreplace "contrib/init/sysvinit-debian/docker",
+      "DOCKERD=/usr/bin/dockerd",
+      "DOCKERD=/home/linuxbrew/.linuxbrew/bin/dockerd"
     (etc/"init.d").install "contrib/init/sysvinit-debian/docker"
     (etc/"default").install "contrib/init/sysvinit-debian/docker.default" => "docker"
 
