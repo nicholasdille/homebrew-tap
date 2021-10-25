@@ -87,7 +87,7 @@ class Dockerd < Formula
 
   def caveats
     output = Utils.safe_popen_read("iptables", "--version")
-    if output.include? "legacy"
+    if output.exclude? "legacy"
       <<~EOS
         You must switch to legacy iptables to use dockerd.
       EOS
