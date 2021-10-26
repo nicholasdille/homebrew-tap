@@ -12,6 +12,11 @@ class PortainerBin < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/portainer-bin-2.9.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0e0f8434888f22351ef71d59eb25194cc3a3ebf2e0342b0cb1c457f97ea1acbd"
+  end
+
   depends_on arch: :x86_64
   depends_on "kompose"
   depends_on "kubernetes-cli"
