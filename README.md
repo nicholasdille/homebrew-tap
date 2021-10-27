@@ -96,6 +96,7 @@ Kubernetes:
 Formulae related to containers:
 
 - bst ([PR #339](https://github.com/nicholasdille/homebrew-tap/pull/339))
+- cado
 - catatonit
 - cntr
 - containerssh
