@@ -17,8 +17,6 @@ class Binfmt < Formula
   depends_on "go" => :build
 
   def install
-    commit = Utils.git_short_head
-
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
