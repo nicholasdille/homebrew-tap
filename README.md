@@ -124,6 +124,7 @@ Formulae related to containers:
 - su-exec
 - sysbox
 - tini
+- uidmap
 - uptodate
 - yasu
 - youki ([PR #609](https://github.com/nicholasdille/homebrew-tap/pull/609))
