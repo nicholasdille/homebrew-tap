@@ -14,6 +14,11 @@ class Binfmt < Formula
     strategy :git
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/binfmt-6.1.0-20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5c03a61f2d366944b2c3e59f82e4fcdcdc77724073976dbbef6f4daa6f1d09f5"
+  end
+
   depends_on "go" => :build
   depends_on :linux
 
