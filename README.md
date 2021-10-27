@@ -114,6 +114,7 @@ Formulae related to containers:
 - kata-containers
 - kim
 - norouter
+- nsutils
 - nydus ([PR #612](https://github.com/nicholasdille/homebrew-tap/pull/612))
 - porter
 - quark ([PR #211](https://github.com/nicholasdille/homebrew-tap/pull/211))
