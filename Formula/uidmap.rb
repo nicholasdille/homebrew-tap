@@ -14,6 +14,11 @@ class Uidmap < Formula
     strategy :git
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/uidmap-4.9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "dcb86cd2b7c6416e8598a77d68df9cc458f6a3dadb3e904068db3eaf8c791b41"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "binutils" => :build
