@@ -89,6 +89,6 @@ class Uidmap < Formula
   end
 
   test do
-    system bin/"bin", "--version"
+    system "whereis", "newuidmap"
   end
 end
