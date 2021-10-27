@@ -18,16 +18,17 @@ class Uidmap < Formula
   depends_on "automake" => :build
   depends_on "binutils" => :build
   depends_on "byacc" => :build
-  depends_on "gettext" => :build
-  depends_on "libtool" => :build
-  depends_on "libxslt" => :build
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
+  depends_on "gettext" => :build
+  depends_on "itstool" => :build
+  depends_on "libtool" => :build
   depends_on "libxml2" => :build
+  depends_on "libxslt" => :build
   depends_on "llvm" => :build
   depends_on "make" => :build
-  depends_on "itstool" => :build
   depends_on "pkg-config" => :build
+  depends_on :linux
 
   resource "manpages" do
     url "https://github.com/shadow-maint/shadow/releases/download/v4.9/shadow-4.9.tar.gz"
@@ -63,14 +64,14 @@ class Uidmap < Formula
       "--without-btrfs"
 
     system "make"
-    
+
     bin.install "src/newuidmap"
     bin.install "src/newgidmap"
 
-    #man1.install man/"man1/newuidmap.1"
-    #man1.install man/"man1/newgidmap.1"
-    #man5.install man/"man5/subuid.5"
-    #man5.install man/"man5/subgid.5"
+    # man1.install man/"man1/newuidmap.1"
+    # man1.install man/"man1/newgidmap.1"
+    # man5.install man/"man5/subuid.5"
+    # man5.install man/"man5/subgid.5"
 
     resource("manpages").stage do
       puts Utils.safe_popen_read("ls", "-l")
