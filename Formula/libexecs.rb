@@ -5,7 +5,7 @@ class Libexecs < Formula
   url "https://github.com/virtualsquare/s2argv-execs.git",
     tag:      "1.3",
     revision: "2f3f79c8141ec6d3a671f34ecab60f70d3f39593"
-  license "LGPL-2.1"
+  license "LGPL-2.1-only"
   head "https://github.com/virtualsquare/s2argv-execs.git",
     branch: "master"
 
