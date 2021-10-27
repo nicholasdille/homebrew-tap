@@ -8,14 +8,16 @@ class Nsutils < Formula
   license "GPL-2.0-only"
 
   livecheck do
-    skip "???"
+    skip "No tags or releases"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "gcc" => :build
+  depends_on "libcap" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
+  depends_on :linux
 
   def install
     system "autoreconf", "-if"
