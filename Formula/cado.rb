@@ -16,6 +16,7 @@ class Cado < Formula
 
   depends_on "cmake" => :build
   depends_on "gcc" => :build
+  depends_on "libcap" => :build
   depends_on "mhash" => :build
   depends_on "nicholasdille/tap/libexecs" => :build
   depends_on "pkg-config" => :build
