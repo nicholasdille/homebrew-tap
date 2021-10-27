@@ -92,6 +92,19 @@ class Dockerd < Formula
         You must switch to legacy iptables to use dockerd.
       EOS
     end
+
+    <<~EOS
+      You can now run a rootful dockerd.
+
+      Option 1:
+      - Copy #{etc}/init.d/docker /etc/init.d/docker
+      - sudo service docker start
+
+      Option 2:
+      - brew tap nicholasdille/service
+      - brew service install docker
+      - brew service start docker
+    EOS
   end
 
   test do
