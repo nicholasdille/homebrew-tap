@@ -14,9 +14,10 @@ class Nsutils < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "gcc" => :build
-  depends_on "libcap" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
+  depends_on "libbsd"
+  depends_on "libcap"
   depends_on :linux
 
   def install
