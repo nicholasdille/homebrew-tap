@@ -24,9 +24,45 @@ class Nsutils < Formula
     system "autoreconf", "-if"
     system "./configure", "--prefix=#{prefix}"
     system "make"
+
+    programs = %w[
+      nshold
+      nslist
+      nsrelease
+    ]
+    namespaces = %w[
+      cgroups
+      ipc
+      mnt
+      net
+      pid
+      user
+      uts
+    ]
+
+    programs.each do |program|
+      bin.install program
+      man1.install "#{program}.1"
+
+      namespaces.each do |namespace|
+        bin.install_symlink program => "#{namespace}#{program}"
+        man1.install_symlink "#{program}.1" => "#{namespace}#{program}.1"
+      end
+    end
+
+    bin.install "netnsjoin"
+    man1.install "netnsjoin.1"
+  end
+
+  def caveats
+    <<~EOS
+      For netnsjoin to work correctly, you must run the following:
+
+          sudo setcap cap_sys_ptrace,cap_sys_admin+p #{bin}/netnsjoin
+    EOS
   end
 
   test do
-    system bin/"bin", "--version"
+    system "whereis", "nslist"
   end
 end
