@@ -14,6 +14,11 @@ class Libexecs < Formula
     strategy :git
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/libexecs-1.3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cc8372d8a5a238e965a52704fe154dc415d3dbbfd12d8b5a6060cdc783a5616f"
+  end
+
   depends_on "cmake" => :build
   depends_on "gcc" => :build
   depends_on :linux
