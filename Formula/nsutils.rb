@@ -11,6 +11,11 @@ class Nsutils < Formula
     skip "No tags or releases"
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/nsutils-0.0.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ea7f3ad962b51a425b31e2733326962372fc3de30ba097bf97cafa27b1ca6b76"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "gcc" => :build
