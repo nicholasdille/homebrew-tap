@@ -14,6 +14,11 @@ class Cado < Formula
     strategy :git
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cado-0.9.5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2cc57c0fdfe3de0cc3a548c6848eb77597c0be9d8d6bc25085903c305f51903e"
+  end
+
   depends_on "cmake" => :build
   depends_on "gcc" => :build
   depends_on "nicholasdille/tap/libexecs" => :build
