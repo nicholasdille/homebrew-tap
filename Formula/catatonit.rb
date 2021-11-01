@@ -3,8 +3,8 @@ class Catatonit < Formula
   homepage "https://github.com/openSUSE/catatonit"
 
   url "https://github.com/openSUSE/catatonit.git",
-    tag:      "v0.1.6",
-    revision: "32421869e1f15ee7fc17e41da749e66ef193cde2"
+    tag:      "v0.1.7",
+    revision: "4045634d6255b63d285d73ffc522822a73f4bd03"
   license "GPL-3.0-only"
   head "https://github.com/openSUSE/catatonit.git",
     branch: "master"
