@@ -26,6 +26,9 @@ class Catatonit < Formula
   depends_on "make" => :build
   depends_on :linux
 
+  # Removes duplicate expansion of AM_INIT_AUTOMAKE
+  patch :DATA
+
   def install
     system "./autogen.sh"
     ENV["LDFLAGS"] = "-static"
@@ -38,3 +41,14 @@ class Catatonit < Formula
     system bin/"catatonit", "--version"
   end
 end
+
+__END__
+diff --git a/configure.ac b/configure.ac
+index 2842f04..a3b41bc 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -31,4 +31,3 @@ AC_FUNC_FORK
+
+ AC_CONFIG_FILES([Makefile config.h])
+ AC_OUTPUT
+-AM_INIT_AUTOMAKE
