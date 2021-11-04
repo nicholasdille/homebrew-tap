@@ -3,8 +3,8 @@ class Cloudflared < Formula
   homepage "https://github.com/cloudflare/cloudflared"
 
   url "https://github.com/cloudflare/cloudflared.git",
-    tag:      "2021.10.5",
-    revision: "58538619eaea4424ea3fbeba6d08fad8fc90c29d"
+    tag:      "2021.11.0",
+    revision: "43f1c6ba82acd65e98c087a1cd9723cd6dc5e4fa"
   # license "MIT"
   head "https://github.com/cloudflare/cloudflared.git",
     branch: "master"
@@ -15,7 +15,7 @@ class Cloudflared < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cloudflared-2021.10.5"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cloudflared-2021.11.0"
     sha256 cellar: :any_skip_relocation, big_sur:      "a6bd721feb036391093ecb824c0c5f31b174dbc5c5b4d895075d28a04b5849cb"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0b2f981fac545c6c7b5064fc89bf20a9e34c3aedfc14a0eb36ce7099ff032e0e"
   end
