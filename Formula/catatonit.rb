@@ -15,8 +15,8 @@ class Catatonit < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/catatonit-0.1.6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7be880e581a6c5701bf310409314d6726b464d0c39772985fd9ef40017e764a5"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/catatonit-0.1.7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0b3b26745099f66da52a0a852ad21b6d10fcf885959bf8ec17c44e8f2c1611be"
   end
 
   depends_on "autoconf" => :build
