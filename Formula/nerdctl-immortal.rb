@@ -15,8 +15,8 @@ class NerdctlImmortal < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/nerdctl-immortal-0.12.1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "141b48877a64ab108abc05896ce6047776cd54d0469705088ec1abb8bef0984d"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/nerdctl-immortal-0.13.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "538c7d35a02eb233ece9043e95f0d78fad9efdf59200e15cdec238b2c91f7207"
   end
 
   depends_on "immortal"
