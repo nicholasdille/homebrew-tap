@@ -13,6 +13,11 @@ class FuseOverlayfsBin < Formula
     strategy :git
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/fuse-overlayfs-bin-1.6_1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "18824dd42e072b1b9aed0d5fc88664b32e140a047bea9866ed560b5dba0fe213"
+  end
+
   depends_on arch: :x86_64
   depends_on :linux
 
