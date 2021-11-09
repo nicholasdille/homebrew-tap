@@ -6,7 +6,7 @@ class Containerd < Formula
     tag:      "v1.5.7",
     revision: "8686ededfc90076914c5238eb96c883ea093a8ba"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/containerd/containerd.git",
     branch: "main"
 
@@ -46,7 +46,10 @@ class Containerd < Formula
       buildtags << "no_cri"       if build.without? "cri"
 
       system "make", "binaries", "BUILDTAGS=#{buildtags.join(" ")}"
+      system "make", "man"
       system "make", "install", "DESTDIR=#{prefix}"
+      man5.install Dir["man/*.5"]
+      man8.install Dir["man/*.8"]
     end
 
     (buildpath/"containerd.yml").write <<~EOS
