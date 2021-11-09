@@ -44,11 +44,10 @@ class Docker < Formula
       arch = "amd64"
       bin.install "build/docker-#{os}-#{arch}" => "docker"
 
-      Pathname.glob("man/*.[1-8].md") do |md|
-        section = md.to_s[/\.(\d+)\.md\Z/, 1]
-        (man/"man#{section}").mkpath
-        system "go-md2man", "-in=#{md}", "-out=#{man/"man#{section}"/md.stem}"
-      end
+      system "make", "manpages"
+      man1.install Dir["man/man1/*"]
+      man5.install Dir["man/man5/*"]
+      man8.install Dir["man/man8/*"]
 
       bash_completion.install "contrib/completion/bash/docker"
       fish_completion.install "contrib/completion/fish/docker.fish"
