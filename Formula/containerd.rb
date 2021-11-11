@@ -6,7 +6,7 @@ class Containerd < Formula
     tag:      "v1.5.7",
     revision: "8686ededfc90076914c5238eb96c883ea093a8ba"
   license "Apache-2.0"
-  revision 2
+  revision 3
   head "https://github.com/containerd/containerd.git",
     branch: "main"
 
@@ -21,9 +21,9 @@ class Containerd < Formula
   end
 
   option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
-  option "with-device-mapper", "Support device mapper, requires libdevmapper"
   option "without-cri", "Support CRI"
 
+  depends_on "device-mapper" => :build
   depends_on "go" => :build
   depends_on "go-md2man" => :build
   depends_on "libseccomp" => :build
@@ -40,14 +40,22 @@ class Containerd < Formula
       ENV["GO111MODULE"] = "auto"
       ENV["GOPATH"] = buildpath
 
-      buildtags = []
+      ENV["EXTRA_FLAGS"] = "-buildmode=pie"
+	    ENV["EXTRA_LDFLAGS"] = '-extldflags "-fno-PIC -static"'
+
+      buildtags = [
+        "netgo",
+        "osusergo",
+        "static_build",
+      ]
       buildtags << "no_btrfs"     if build.without? "btrfs"
-      buildtags << "no_devmapper" if build.without? "device-mapper"
+      # buildtags << "no_devmapper" if build.without? "device-mapper"
       buildtags << "no_cri"       if build.without? "cri"
 
       system "make", "binaries", "BUILDTAGS=#{buildtags.join(" ")}"
-      system "make", "man"
       system "make", "install", "DESTDIR=#{prefix}"
+      
+      system "make", "man"
       man5.install Dir["man/*.5"]
       man8.install Dir["man/*.8"]
     end
@@ -72,6 +80,6 @@ class Containerd < Formula
   end
 
   test do
-    system bin/"containerd", "--version"
+    assert_match version.to_s, shell_output("#{bin}/#{name} --version")
   end
 end
