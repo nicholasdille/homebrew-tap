@@ -28,40 +28,16 @@ class Runc < Formula
   depends_on :linux
 
   def install
-    commit = Utils.git_short_head
-
     buildtags = []
     buildtags << "seccomp" if build.with?("libseccomp")
     buildtags << "nokmem" if build.with?("nokmem")
 
-    ENV["CGO_ENABLED"] = "1"
-    ldflags = [
-      "-w",
-      "-extldflags",
-      "-static",
-      "-X",
-      "main.gitCommit=#{commit}",
-      "-X",
-      "main.version=#{version}",
-    ]
-    system "go", "build",
-      "-trimpath",
-      "-mod=vendor",
-      "-tags", "#{buildtags.join(" ")} netgo osusergo",
-      "-ldflags", ldflags.join(" "),
-      "-o", bin/"runc",
-      "."
-
-    Pathname.glob("man/*.[1-8].md") do |md|
-      section = md.to_s[/\.(\d+)\.md\Z/, 1]
-      (man/"man#{section}").mkpath
-      system "go-md2man", "-in=#{md}", "-out=#{man/"man#{section}"/md.stem}"
-    end
-
-    bash_completion.install "contrib/completions/bash/runc"
+    ENV.O0
+    system "make", "static", "BUILDTAGS=#{buildtags.join(" ")}"
+    system "make", "install", "install-man", "install-bash", "DESTDIR=#{prefix}", "PREFIX="
   end
 
   test do
-    system bin/"runc", "--version"
+    assert_match version.to_s, shell_output("#{sbin}/runc --version")
   end
 end
