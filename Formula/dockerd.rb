@@ -47,7 +47,9 @@ class Dockerd < Formula
     system "./hack/make.sh", "binary"
     bin.install "bundles/binary-daemon/dockerd-#{version}" => "dockerd"
 
-    inreplace "contrib/init/sysvinit-debian/docker", "export PATH=", "export PATH=#{HOMEBREW_PREFIX}/sbin:#{HOMEBREW_PREFIX}/bin:"
+    inreplace "contrib/init/sysvinit-debian/docker",
+      "export PATH=",
+      "export PATH=/home/linuxbrew/.linuxbrew/bin:"
     inreplace "contrib/init/sysvinit-debian/docker",
       "DOCKERD=/usr/bin/dockerd",
       "DOCKERD=/home/linuxbrew/.linuxbrew/bin/dockerd"
