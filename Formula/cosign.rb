@@ -6,6 +6,7 @@ class Cosign < Formula
     tag:      "v1.3.0",
     revision: "a91aa202a01b830dafa969bb46f168e9c44580bd"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/sigstore/cosign.git",
     branch: "main"
 
@@ -23,25 +24,23 @@ class Cosign < Formula
   end
 
   depends_on "go" => :build
+  depends_on "make" => :build
 
   def install
-    pkg = "github.com/sigstore/cosign/cmd/cosign/cli"
-    commit = Utils.git_short_head
-    build_date = Utils.safe_popen_read("date", "+'%Y-%m-%dT%H:%M:%SZ'")
-
-    ENV["CGO_ENABLED"] = "0"
-    system "go",
-      "build",
-      "-ldflags", "-s -w"\
-                  " -X #{pkg}.gitVersion=#{version}"\
-                  " -X #{pkg}.gitCommit=#{commit}"\
-                  " -X #{pkg}.gitTreeState=clean"\
-                  " -X #{pkg}.buildDate=#{build_date}",
-      "-o", bin/"cosign",
-      "./cmd/cosign"
+    system "make",
+      "cosign",
+      "cosign-pivkey",
+      "cosign-pkcs11key",
+      "cosigned",
+      "sget"
+    bin.install "cosign"
+    bin.install "cosign-pivkey"
+    bin.install "cosign-pkcs11key"
+    bin.install "cosigned"
+    bin.install "sget"
   end
 
   test do
-    system bin/"cosign", "version"
+    assert_match version.to_s, shell_output("#{bin}/#{name} version")
   end
 end
