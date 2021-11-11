@@ -29,13 +29,9 @@ class Cosign < Formula
   def install
     system "make",
       "cosign",
-      "cosign-pivkey",
-      "cosign-pkcs11key",
       "cosigned",
       "sget"
     bin.install "cosign"
-    bin.install "cosign-pivkey"
-    bin.install "cosign-pkcs11key"
     bin.install "cosigned"
     bin.install "sget"
   end
