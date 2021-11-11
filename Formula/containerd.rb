@@ -41,7 +41,7 @@ class Containerd < Formula
       ENV["GOPATH"] = buildpath
 
       ENV["EXTRA_FLAGS"] = "-buildmode=pie"
-	    ENV["EXTRA_LDFLAGS"] = '-extldflags "-fno-PIC -static"'
+      ENV["EXTRA_LDFLAGS"] = '-extldflags "-fno-PIC -static"'
 
       buildtags = [
         "netgo",
@@ -54,7 +54,7 @@ class Containerd < Formula
 
       system "make", "binaries", "BUILDTAGS=#{buildtags.join(" ")}"
       system "make", "install", "DESTDIR=#{prefix}"
-      
+
       system "make", "man"
       man5.install Dir["man/*.5"]
       man8.install Dir["man/*.8"]
