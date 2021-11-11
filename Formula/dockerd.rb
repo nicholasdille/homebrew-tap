@@ -22,6 +22,7 @@ class Dockerd < Formula
 
   option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
 
+  depends_on "device-mapper" => :build
   depends_on "go" => :build
   depends_on "make" => :build
   depends_on "nicholasdille/tap/docker" => :build
@@ -32,7 +33,6 @@ class Dockerd < Formula
   depends_on "nicholasdille/tap/docker-proxy"
   depends_on "nicholasdille/tap/runc"
   depends_on "nicholasdille/tap/tini"
-  depends_on "device-mapper" => :optional
 
   def install
     ENV["AUTO_GOPATH"] = "1"
