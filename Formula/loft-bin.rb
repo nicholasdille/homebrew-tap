@@ -3,8 +3,8 @@ class LoftBin < Formula
   homepage "https://loft.sh/"
 
   url "https://github.com/loft-sh/loft.git",
-    tag:      "v1.15.0",
-    revision: "f5d81c98b53c97d30f1f40239fd1bb2daf23aa25"
+    tag:      "v2.0.0",
+    revision: "80c9d18ff957e023f2f70824c4d903d22b550855"
   license "Apache-2.0"
 
   livecheck do
@@ -16,11 +16,11 @@ class LoftBin < Formula
 
   resource "binary" do
     on_linux do
-      url "https://github.com/loft-sh/loft/releases/download/v1.15.0/loft-linux-amd64"
+      url "https://github.com/loft-sh/loft/releases/download/v2.0.0/loft-linux-amd64"
       sha256 "93de5fd32ed0acaf477717055fd1327c681a550355984892216354016ee1cf02"
     end
     on_macos do
-      url "https://github.com/loft-sh/loft/releases/download/v1.15.0/loft-darwin-amd64"
+      url "https://github.com/loft-sh/loft/releases/download/v2.0.0/loft-darwin-amd64"
       sha256 "a64cd96f62ac26eb363b257bf4a2a83e0a23c918f72ea7e3e869f11b9733056a"
     end
   end
