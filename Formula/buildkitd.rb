@@ -15,8 +15,8 @@ class Buildkitd < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildkitd-0.9.2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "bb6a61a5cf0ddb240a161790d3fdb4027f6bdb25f5f745b1d543d341df9f6b07"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildkitd-0.9.3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "934791ef55b84ec44277b9a2f52de027fa635efd92a3fd73884dd50c7fa6bcfb"
   end
 
   depends_on "go" => :build
