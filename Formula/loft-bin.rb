@@ -12,6 +12,7 @@ class LoftBin < Formula
     strategy :github_latest
   end
 
+  depends_on "git-lfs" => :build
   depends_on arch: :x86_64
 
   resource "binary" do
