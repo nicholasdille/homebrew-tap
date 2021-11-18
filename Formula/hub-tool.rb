@@ -3,8 +3,8 @@ class HubTool < Formula
   homepage "https://github.com/docker/hub-tool"
 
   url "https://github.com/docker/hub-tool.git",
-    tag:      "v0.4.3",
-    revision: "a01a01bd3b91e6616dfad794a7c10ea855acac9c"
+    tag:      "v0.4.4",
+    revision: "c9cb0ac822ad431a252d462d80ab0dcc21d49e6f"
   license "Apache-2.0"
   head "https://github.com/docker/hub-tool.git",
     branch: "main"
