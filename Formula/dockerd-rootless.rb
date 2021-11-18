@@ -42,6 +42,11 @@ class DockerdRootless < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/dockerd-rootless-20.10.11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e71d5737cd5b1767dc8089aa0e60791960b3e03bd6db17286222273c0c1b0f9d"
+  end
+
   depends_on "immortal"
   depends_on :linux
   depends_on LinuxNewgidmapRequirement
