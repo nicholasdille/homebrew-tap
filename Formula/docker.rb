@@ -15,9 +15,8 @@ class Docker < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/docker-20.10.10"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9b3c6070f8e12c31f3f94e79a02048a6db657cd613ce7ab8ade065b978914afa"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/docker-20.10.11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5dc7465b245cd91fce88bd183635895137717c9de9d763af88b4f88f8bb51c22"
   end
 
   depends_on "go" => :build
