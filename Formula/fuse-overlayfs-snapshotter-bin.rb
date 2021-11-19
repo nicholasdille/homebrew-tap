@@ -12,6 +12,11 @@ class FuseOverlayfsSnapshotterBin < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/fuse-overlayfs-snapshotter-bin-1.0.4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "617d0997c44fc07b4f9382d49f4d7fa1f237bb6bdf26d890f7749349636c9705"
+  end
+
   depends_on arch: :x86_64
   depends_on :linux
   depends_on "nicholasdille/tap/containerd"
