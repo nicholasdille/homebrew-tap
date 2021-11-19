@@ -2,9 +2,9 @@ class FuseOverlayfsSnapshotterBin < Formula
   desc "Plugin for rootless containerd"
   homepage "https://github.com/containers/fuse-overlayfs"
 
-  url "https://github.com/containerd/fuse-overlayfs-snapshotter/releases/download/v1.0.3/containerd-fuse-overlayfs-1.0.3-linux-amd64.tar.gz"
-  version "1.0.3"
-  sha256 "26c7af08d292f21e7067c0424479945bb9ff6315b49851511b2917179c5ae59a"
+  url "https://github.com/containerd/fuse-overlayfs-snapshotter/releases/download/v1.0.4/containerd-fuse-overlayfs-1.0.4-linux-amd64.tar.gz"
+  version "1.0.4"
+  sha256 "228417cc97fea4df26ed85182443ee4d5799f65ada0b3ce663bf7e6bc8920f6b"
   license "GPL-3.0-only"
 
   livecheck do
