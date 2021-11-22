@@ -3,8 +3,8 @@ class Stacker < Formula
   homepage "https://github.com/anuvu/stacker"
 
   url "https://github.com/anuvu/stacker.git",
-    tag:      "v0.15.1",
-    revision: "f19d2769f3293c7d4eae2be925ee2db8f29747f9"
+    tag:      "v0.15.2",
+    revision: "c420aedc75d9fc3caec3378ca88e10a000212f1f"
   license "Apache-2.0"
   head "https://github.com/anuvu/stacker.git",
     branch: "master"
