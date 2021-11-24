@@ -27,8 +27,8 @@ class LoftBin < Formula
   end
 
   def install
-    resource("binary").stage do
-      bin.install resource.url.split("/")[-1] => "loft"
+    resource("binary").stage do |binary|
+      bin.install binary.url.split("/")[-1] => "loft"
     end
 
     # bash completion
