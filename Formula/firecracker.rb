@@ -3,8 +3,8 @@ class Firecracker < Formula
   homepage "http://firecracker-microvm.io/"
 
   url "https://github.com/firecracker-microvm/firecracker.git",
-    tag:      "v0.25.1",
-    revision: "f082a91c5351443c7b802e2a59bf7c1ef10e08a1"
+    tag:      "v0.25.2",
+    revision: "176c655196373657ae5b3ae6e97129af0965cd92"
   license "Apache-2.0"
   head "https://github.com/firecracker-microvm/firecracker.git",
     branch: "main"
