@@ -34,6 +34,7 @@ class Podman < Formula
   depends_on "libgpg-error"
   depends_on :linux
   depends_on "libseccomp" => :recommended
+  depends_on "nicholasdille/tap/cni"
 
   def install
     dir = buildpath/"src/github.com/containers/podman"
@@ -59,7 +60,23 @@ class Podman < Formula
 
       bash_completion.install "completions/bash/podman"
       zsh_completion.install "completions/zsh/_podman"
+
+      (buildpath/"containers.conf").write <<~EOS
+        [network]
+        cni_plugin_dirs = [ "/home/linuxbrew/.linuxbrew/bin" ]
+      EOS
+      (etc/"containers").install "containers.conf"
     end
+  end
+
+  def caveats
+    <<~EOS
+      This formula comes with a containers.conf located in #{etc}/containers.
+      You can link or copy this file to \${HOME}/.config/containers or set the
+      environment CONTAINERS_CONF:
+      
+          export CONTAINERS_CONF=#{etc}/containers/containers.conf
+    EOS
   end
 
   test do
