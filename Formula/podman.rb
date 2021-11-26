@@ -33,8 +33,8 @@ class Podman < Formula
   depends_on "libassuan"
   depends_on "libgpg-error"
   depends_on :linux
-  depends_on "libseccomp" => :recommended
   depends_on "nicholasdille/tap/cni"
+  depends_on "libseccomp" => :recommended
 
   def install
     dir = buildpath/"src/github.com/containers/podman"
@@ -74,7 +74,7 @@ class Podman < Formula
       This formula comes with a containers.conf located in #{etc}/containers.
       You can link or copy this file to \${HOME}/.config/containers or set the
       environment CONTAINERS_CONF:
-      
+
           export CONTAINERS_CONF=#{etc}/containers/containers.conf
     EOS
   end
