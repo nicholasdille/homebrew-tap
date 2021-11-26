@@ -60,13 +60,16 @@ class Podman < Formula
 
       bash_completion.install "completions/bash/podman"
       zsh_completion.install "completions/zsh/_podman"
-
-      (buildpath/"containers.conf").write <<~EOS
-        [network]
-        cni_plugin_dirs = [ "/home/linuxbrew/.linuxbrew/bin" ]
-      EOS
-      (etc/"containers").install "containers.conf"
     end
+  end
+
+  def post_install
+    (buildpath/"containers.conf").write <<~EOS
+      [network]
+      cni_plugin_dirs = [ "/home/linuxbrew/.linuxbrew/bin" ]
+    EOS
+    mkdir buildpath/"containers"
+    (etc/"containers").install "containers.conf"
   end
 
   def caveats
