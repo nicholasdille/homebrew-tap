@@ -6,6 +6,7 @@ class Podman < Formula
     tag:      "v3.4.2",
     revision: "2ad1fd3555de12de34e20898cc2ef901f08fe5ed"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/containers/podman.git",
     branch: "main"
 
@@ -34,6 +35,7 @@ class Podman < Formula
   depends_on "libgpg-error"
   depends_on :linux
   depends_on "nicholasdille/tap/cni"
+  depends_on "nicholasdille/tap/conmon"
   depends_on "libseccomp" => :recommended
 
   def install
@@ -61,18 +63,16 @@ class Podman < Formula
       bash_completion.install "completions/bash/podman"
       zsh_completion.install "completions/zsh/_podman"
     end
-  end
-
-  def post_install
-    puts "XXX"
+ 
     (buildpath/"containers.conf").write <<~EOS
       [network]
       cni_plugin_dirs = [ "#{HOMEBREW_PREFIX}/bin" ]
     EOS
-    puts "YYY"
-    mkdir etc/"containers"
-    puts "ZZZ"
-    (etc/"containers").install "containers.conf"
+    pkgshare.install buildpath/"containers.conf"
+  end
+
+  def post_install
+    cp pkgshare/"containers.conf", etc/"containers"
   end
 
   def caveats
