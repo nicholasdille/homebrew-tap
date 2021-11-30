@@ -66,9 +66,9 @@ class Podman < Formula
   def post_install
     (buildpath/"containers.conf").write <<~EOS
       [network]
-      cni_plugin_dirs = [ "/home/linuxbrew/.linuxbrew/bin" ]
+      cni_plugin_dirs = [ "#{HOMEBREW_PREFIX}/bin" ]
     EOS
-    mkdir buildpath/"containers"
+    mkdir etc/"containers"
     (etc/"containers").install "containers.conf"
   end
 
