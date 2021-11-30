@@ -43,14 +43,16 @@ class PortainerBin < Formula
           size: 1
           timestamp: true
       EOS
-      (etc/"immortal").install "portainer.yml"
+      pkgshare.install "portainer.yml"
     end
   end
 
   def post_install
-    (var/"run/portainer").mkpath
-    (var/"log").mkpath
-    (HOMEBREW_PREFIX/"lib/portainer").mkpath
+    mkdir_p etc/"immortal"
+    cp pkgshare/"portainer.yml", etc/"immortal"
+    mkdir_p var/"run/portainer"
+    mkdir_p var/"log"
+    mkdir_p HOMEBREW_PREFIX/"lib/portainer"
   end
 
   def caveats

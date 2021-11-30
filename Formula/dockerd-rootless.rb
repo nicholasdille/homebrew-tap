@@ -74,12 +74,14 @@ class DockerdRootless < Formula
         size: 1
         timestamp: true
     EOS
-    (etc/"immortal").install "dockerd-rootless.yml"
+    pkgshare.install "dockerd-rootless.yml"
   end
 
   def post_install
-    (var/"run/dockerd").mkpath
-    (var/"log").mkpath
+    mkdir_p etc/"immortal"
+    cp pkgshare/"dockerd-rootless.yml", etc/"immortal"
+    mkdir_p var/"run/dockerd"
+    mkdir_p var/"log"
   end
 
   def caveats

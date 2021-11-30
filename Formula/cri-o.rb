@@ -80,7 +80,11 @@ class CriO < Formula
     # configuration
     output = Utils.safe_popen_read("#{bin}/crio", "--config-dir=", "--config=", "config")
     (buildpath/"crio.conf").write output
-    etc.install "crio.conf"
+    pkgshare.install "crio.conf"
+  end
+
+  def post_install
+    cp pkgshare/"crio.conf", etc
   end
 
   test do
