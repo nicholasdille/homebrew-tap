@@ -36,7 +36,7 @@ class ContainersCommon < Formula
         ]
       }
     EOS
-    (etc/"containers").install "policy.json"
+    pkgshare.install "policy.json"
 
     (buildpath/"shortnames.conf").write <<~EOS
       [aliases]
@@ -86,7 +86,14 @@ class ContainersCommon < Formula
         # Ubuntu
         "ubuntu" = "docker.io/library/ubuntu"
     EOS
-    (etc/"containers/registries.conf.d").install "shortnames.conf"
+    pkgshare.install "shortnames.conf"
+  end
+
+  def post_install
+    mkdir_p etc/"containers"
+    cp pkgshare/"policy.json", etc/"containers"
+    mkdir_p etc/"containers/registries.conf.d"
+    cp pkgshare/"shortnames.conf", etc/"containers/registries.conf.d"
   end
 
   def caveats

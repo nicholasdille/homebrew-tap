@@ -43,10 +43,8 @@ class FaasdRootless < Formula
       require:
       - faasd-provider
     EOS
-    (etc/"immortal").install "faasd.yml"
+    pkgshare.install "faasd.yml"
 
-    (var/"run/faasd-provider").mkpath
-    (var/"log").mkpath
     (buildpath/"faasd-provider.yml").write <<~EOS
       cmd: #{HOMEBREW_PREFIX}/bin/faasd provider
       cwd: #{var}/lib/faasd-provider
@@ -65,12 +63,16 @@ class FaasdRootless < Formula
       require:
       - containerd
     EOS
-    (etc/"immortal").install "faasd-provider.yml"
+    pkgshare.install "faasd-provider.yml"
   end
 
   def post_install
-    (var/"run/faasd").mkpath
-    (var/"log").mkpath
+    mkdir_p etc/"immortal"
+    cp pkgshare/"faasd.yml", etc/"immortal"
+    cp pkgshare/"faasd-provider.yml", etc/"immortal"
+    mkdir_p var/"run/faasd"
+    mkdir_p var/"run/faasd-provider"
+    mkdir_p var/"log"
   end
 
   def caveats

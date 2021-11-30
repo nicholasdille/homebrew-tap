@@ -38,7 +38,7 @@ class ContainerdRootless < Formula
         size: 1
         timestamp: true
     EOS
-    (etc/"immortal").install "containerd-rootless.yml"
+    pkgshare.install "containerd-rootless.yml"
 
     (buildpath/"config.toml").write Utils.safe_popen_read(
       HOMEBREW_PREFIX/"bin/containerd",
@@ -70,12 +70,16 @@ class ContainerdRootless < Formula
       "-E",
       "s|/etc/containerd|/home/linuxbrew/.linuxbrew/etc/containerd|",
       buildpath/"config.toml"
-    (etc/"containerd-rootless").install "config.toml"
+    pkgshare.install "config.toml"
   end
 
   def post_install
-    (var/"run/containerd").mkpath
-    (var/"log").mkpath
+    mkdir_p etc/"immortal"
+    cp pkgshare/"containerd-rootless.yml", etc/"immortal"
+    mkdir_p etc/"containerd-rootless"
+    cp pkgshare/"config.toml", etc/"containerd-rootless"
+    mkdir_p var/"run/containerd"
+    mkdir_p var/"log"
   end
 
   def caveats

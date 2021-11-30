@@ -55,7 +55,7 @@ class NerdctlImmortal < Formula
         size: 1
         timestamp: true
     EOS
-    (etc/"immortal").install "nerdctl-containerd.yml"
+    pkgshare.install "nerdctl-containerd.yml"
 
     (buildpath/"nerdctl-buildkitd.yml").write <<~EOS
       cmd: #{HOMEBREW_PREFIX}/bin/containerd-rootless-setuptool.sh nsenter #{HOMEBREW_PREFIX}/buildkitd
@@ -71,13 +71,16 @@ class NerdctlImmortal < Formula
         size: 1
         timestamp: true
     EOS
-    (etc/"immortal").install "nerdctl-buildkitd.yml" if build.with? "buildkitd-rootless"
+    pkgshare.install "nerdctl-buildkitd.yml"
   end
 
   def post_install
-    (var/"run/nerdctl-containerd").mkpath
-    (var/"run/nerdctl-buildkitd").mkpath if build.with? "buildkitd-rootless"
-    (var/"log").mkpath
+    mkdir_p etc/"immortal"
+    cp pkgshare/"nerdctl-containerd.yml", etc/"immortal"
+    cp pkgshare/"nerdctl-buildkitd.yml", etc/"immortal" if build.with? "buildkitd-rootless"
+    mkdir_p var/"run/nerdctl-containerd"
+    mkdir_p var/"run/nerdctl-buildkitd" if build.with? "buildkitd-rootless"
+    mkdir_p var/"log"
   end
 
   def caveats

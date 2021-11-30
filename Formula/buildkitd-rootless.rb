@@ -46,12 +46,14 @@ class BuildkitdRootless < Formula
         size: 1
         timestamp: true
     EOS
-    (etc/"immortal").install "buildkitd-rootless.yml"
+    (pkgshare/"immortal").install "buildkitd-rootless.yml"
   end
 
   def post_install
-    (var/"run/buildkitd").mkpath
-    (var/"log").mkpath
+    mkdir_p etc/"immortal"
+    cp pkgshare/"buildkitd-rootless.yml", etc/"immortal"
+    mkdir_p var/"run/buildkitd"
+    mkdir_p var/"log"
   end
 
   def caveats

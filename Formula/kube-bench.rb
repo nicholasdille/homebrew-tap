@@ -35,7 +35,12 @@ class KubeBench < Formula
       bin/"kube-bench",
       "."
 
-    (etc/"kube-bench").install Dir["cfg/*"]
+    pkgshare.install Dir["cfg/*"]
+  end
+
+  def post_install
+    mkdir_p etc/"kube-bench"
+    cp Dir[pkgshare/"*.cfg"], etc/"kube-bench"
   end
 
   test do

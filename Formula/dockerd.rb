@@ -51,8 +51,8 @@ class Dockerd < Formula
     inreplace "contrib/init/sysvinit-debian/docker",
       "DOCKERD=/usr/bin/dockerd",
       "DOCKERD=/home/linuxbrew/.linuxbrew/bin/dockerd"
-    (etc/"init.d").install "contrib/init/sysvinit-debian/docker"
-    (etc/"default").install "contrib/init/sysvinit-debian/docker.default" => "docker"
+    pkgshare.install "contrib/init/sysvinit-debian/docker" => "docker-init"
+    pkgshare.install "contrib/init/sysvinit-debian/docker.default" => "docker-default"
 
     (buildpath/"daemon.json").write <<~EOS
       {
@@ -61,7 +61,7 @@ class Dockerd < Formula
         }
       }
     EOS
-    (etc/"docker").install "daemon.json"
+    pkgshare.install "daemon.json"
 
     (buildpath/"dockerd.yml").write <<~EOS
       cmd: #{bin}/dockerd --config-file #{etc}/docker/daemon.json
@@ -80,11 +80,19 @@ class Dockerd < Formula
       require:
       - containerd
     EOS
-    (etc/"immortal").install "dockerd.yml"
+    pkgshare.install "dockerd.yml"
   end
 
   def post_install
     ln_s HOMEBREW_PREFIX/"bin/tini", bin/"docker-init"
+    mkdir_p etc/"init.d"
+    cp pkgshare/"docker-init", etc/"init.d/docker"
+    mkdir_p etc/"default"
+    cp pkgshare/"docker-default", etc/"default/docker"
+    mkdir_p etc/"docker"
+    cp pkgshare/"daemon.json", etc/"docker"
+    mkdir_p etc/"immortal"
+    cp pkgshare/"docker.yml", etc/"immortal"
   end
 
   def caveats

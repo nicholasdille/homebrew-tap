@@ -67,7 +67,7 @@ class Buildkitd < Formula
         size: 1
         timestamp: true
     EOS
-    (etc/"immortal").install "buildkitd.yml"
+    pkgshare.install "buildkitd.yml"
 
     (buildpath/"buildkit-init").write <<~EOS
       #!/bin/sh
@@ -200,7 +200,7 @@ class Buildkitd < Formula
       esac
     EOS
     chmod 0755, "buildkit-init"
-    (etc/"init.d").install "buildkit-init" => "buildkit"
+    pkgshare.install "buildkit-init"
 
     (buildpath/"buildkit-default").write <<~EOS
       # Daemon Upstart and SysVinit configuration file
@@ -221,7 +221,16 @@ class Buildkitd < Formula
       # If you need to use an HTTP proxy, it can also be specified here.
       #export http_proxy="http://127.0.0.1:3128/"
     EOS
-    (etc/"default").install "buildkit-default" => "buildkit"
+    pkgshare.install "buildkit-default"
+  end
+
+  def post_install
+    mkdir_p etc/"immortal"
+    mkdir_p etc/"init.d"
+    mkdir_p etc/"default"
+    cp pkgshare/"buildkitd.yml", etc/"immortal"
+    cp pkgshare/"buildkit-init", etc/"init.d/buildkit"
+    cp pkgshare/"buildkit-default", etc/"default/buildkit"
   end
 
   def caveats
