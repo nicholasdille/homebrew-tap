@@ -64,11 +64,14 @@ class Podman < Formula
   end
 
   def post_install
+    puts "XXX"
     (buildpath/"containers.conf").write <<~EOS
       [network]
       cni_plugin_dirs = [ "#{HOMEBREW_PREFIX}/bin" ]
     EOS
+    puts "YYY"
     mkdir etc/"containers"
+    puts "ZZZ"
     (etc/"containers").install "containers.conf"
   end
 
