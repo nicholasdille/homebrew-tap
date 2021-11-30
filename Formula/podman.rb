@@ -63,7 +63,7 @@ class Podman < Formula
       bash_completion.install "completions/bash/podman"
       zsh_completion.install "completions/zsh/_podman"
     end
- 
+
     (buildpath/"containers.conf").write <<~EOS
       [network]
       cni_plugin_dirs = [ "#{HOMEBREW_PREFIX}/bin" ]
