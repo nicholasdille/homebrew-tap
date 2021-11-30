@@ -92,7 +92,7 @@ class Dockerd < Formula
     mkdir_p etc/"docker"
     cp pkgshare/"daemon.json", etc/"docker"
     mkdir_p etc/"immortal"
-    cp pkgshare/"docker.yml", etc/"immortal"
+    cp pkgshare/"dockerd.yml", etc/"immortal"
   end
 
   def caveats
