@@ -84,7 +84,7 @@ class Dockerd < Formula
   end
 
   def post_install
-    ln_s HOMEBREW_PREFIX/"bin/tini", bin/"docker-init"
+    ln_sf HOMEBREW_PREFIX/"bin/tini", bin/"docker-init"
     mkdir_p etc/"init.d"
     cp pkgshare/"docker-init", etc/"init.d/docker"
     mkdir_p etc/"default"
