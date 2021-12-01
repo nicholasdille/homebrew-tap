@@ -13,7 +13,8 @@ class FaasdRootless < Formula
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/faasd-rootless-1.0.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "599b322b3e634f8c23c39f96937dc9ced80f9b9b3bdf814f2ec417a83eb85b05"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ae8282381b89c6ce8d0468e60b3010f16a8758192dbe91fd75d9130b292f7500"
   end
 
   depends_on "immortal"
