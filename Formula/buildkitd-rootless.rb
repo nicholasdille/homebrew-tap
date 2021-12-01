@@ -46,7 +46,7 @@ class BuildkitdRootless < Formula
         size: 1
         timestamp: true
     EOS
-    (pkgshare/"immortal").install "buildkitd-rootless.yml"
+    pkgshare.install "buildkitd-rootless.yml"
   end
 
   def post_install
