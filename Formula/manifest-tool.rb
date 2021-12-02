@@ -27,7 +27,7 @@ class ManifestTool < Formula
     ENV["GO111MODULE"] = "auto"
 
     (buildpath/"src/github.com/estesp").mkpath
-    ln_s buildpath, buildpath/"src/github.com/estesp/manifest-tool"
+    ln_sf buildpath, buildpath/"src/github.com/estesp/manifest-tool"
 
     system "make", "static"
     bin.install "manifest-tool"
