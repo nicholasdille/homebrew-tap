@@ -15,9 +15,8 @@ class Zot < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/zot-1.3.4"
-    sha256 cellar: :any_skip_relocation, big_sur:      "820b819f19f07b36f77c3ced24242c335a2cb724bebf96fc562a5960c693420c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "18fcd50a8df48ebd8d01638984c6bca64ebacebe6bb2ffc4364590b5ef4465eb"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/zot-1.3.5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8ec06a2145592bfa210d9e79f7e33a36852d738178aead6d9e2da6ab0a17976c"
   end
 
   depends_on "go" => :build
