@@ -14,6 +14,12 @@ class Cmctl < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cmctl-1.6.1"
+    sha256 cellar: :any_skip_relocation, big_sur:      "d6bdbb4d307de9bbe614c87222c96faa1efa548676a8bb9715cc643befe2e4de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6aa536147b722e306ada5785a23452182753ffe3ace837beb6edd1806753e49f"
+  end
+
   depends_on "go" => :build
 
   def install
