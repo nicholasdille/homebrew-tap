@@ -71,6 +71,7 @@ Kubernetes:
 
 - clusterctl
 - clusterawsadm
+- cmctl
 - cri-o
 - crictl
 - datree
