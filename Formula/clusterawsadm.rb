@@ -14,9 +14,9 @@ class Clusterawsadm < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/clusterawsadm-1.1.0"
-    sha256 cellar: :any_skip_relocation, big_sur:      "0efcaee326467d180beb064402caf2eeff6a4687b4964443bc915446c9074411"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d38d0b55a97b6ab16801251bb4753fbcd10a341c8449f4e29fcaa79c8b827545"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/clusterawsadm-1.2.0"
+    sha256 cellar: :any_skip_relocation, big_sur:      "3277fe85657d2f5eb4440db806d5c87f22b1270eaf21dd554b94b9560f0bceda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "07090ced40093cb8ac086da1994ecd78cef710f3760408b77cee64ccde21a6b6"
   end
 
   depends_on "go" => :build
