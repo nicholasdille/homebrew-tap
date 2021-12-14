@@ -114,6 +114,7 @@ Formulae related to containers:
 - gvisor ([PR #177](https://github.com/nicholasdille/homebrew-tap/pull/177))
 - ignite
 - kata-containers
+- ipfs
 - kim
 - norouter
 - nsutils
