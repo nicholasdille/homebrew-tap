@@ -31,8 +31,8 @@ class DockerdRootless < Formula
   homepage "https://www.docker.com"
 
   url "https://github.com/moby/moby.git",
-    tag:      "v20.10.11",
-    revision: "847da184ad5048b27f5bdf9d53d070f731b43180"
+    tag:      "v20.10.12",
+    revision: "459d0dfbbb51fb2423a43655e6c62368ec0f36c9"
   license "Apache-2.0"
   head "https://github.com/moby/moby.git",
     branch: "master"
