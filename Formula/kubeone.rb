@@ -15,9 +15,9 @@ class Kubeone < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kubeone-1.3.2"
-    sha256 cellar: :any_skip_relocation, big_sur:      "5ac80224563b623459dfab383efe21393fb02f71ccd80a850ab7d35e6024bdde"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "45e87e7419612e2351522eeac09e29624b27c9baab97ce041305df169101809a"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kubeone-1.3.3"
+    sha256 cellar: :any_skip_relocation, big_sur:      "8e4e5d816703f40dfe2ab9c913640bc759bbbc96b0041aa54b5088a7d788cb91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3c2a56e9f37e66ac244dc943df424b85ef4d22a6a9b79d7272760f427ff3b62f"
   end
 
   depends_on "go" => :build
