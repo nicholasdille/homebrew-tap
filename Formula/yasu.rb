@@ -15,8 +15,8 @@ class Yasu < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/yasu-1.17.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1d6e8633e9e0998e9e3d2294ee527b291af1f61c9a0be1f4d640dd4b851b6b71"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/yasu-1.18.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fbac1e3857327012b2e1abe42ccb276fd25b609208d760631181d608f936bc61"
   end
 
   depends_on "go" => :build
