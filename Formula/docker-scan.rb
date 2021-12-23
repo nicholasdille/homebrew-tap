@@ -15,9 +15,9 @@ class DockerScan < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/docker-scan-0.13.0"
-    sha256 cellar: :any_skip_relocation, big_sur:      "7efe4e2656adb13f9449cf37908a904543ffa15656be2e58ef0ccd99b861b83d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4afb143680457588a22b822fcfabe97f4e3d8000312fc64f348b931c3e58a015"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/docker-scan-0.15.0"
+    sha256 cellar: :any_skip_relocation, big_sur:      "3f2af2c471d16ed7462202b12dfcc7c7f6a3f6e4687ccf75c8d63b8c7d2739ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c20c992405399b1f77dd77fcda1051b8a499bcaef5e0025da9bce2e57596e4a1"
   end
 
   depends_on "go" => :build
