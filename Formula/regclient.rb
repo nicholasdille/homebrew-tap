@@ -3,8 +3,8 @@ class Regclient < Formula
   homepage "https://github.com/regclient/regclient"
 
   url "https://github.com/regclient/regclient.git",
-    tag:      "v0.3.9",
-    revision: "0cb9b4c8bc5394be47432b3c884ff7933d40d0b8"
+    tag:      "v0.3.10",
+    revision: "6a1a13c410f734f5e18a6032936bc6764814eae7"
   license "Apache-2.0"
   head "https://github.com/regclient/regclient.git",
     branch: "main"
