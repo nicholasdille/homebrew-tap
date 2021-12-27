@@ -3,10 +3,9 @@ class Kink < Formula
   homepage "https://github.com/Trendyol/kink"
 
   url "https://github.com/Trendyol/kink.git",
-    tag:      "v0.1.1",
-    revision: "4d3a01f4e1817fe62c2ba48efa36f3ae21ddae50"
+    tag:      "v0.2.1",
+    revision: "b8e45f558ff2bd67fa90211e4365a8bb8fe67875"
   license "Apache-2.0"
-  revision 1
   head "https://github.com/Trendyol/kink.git",
     branch: "main"
 
