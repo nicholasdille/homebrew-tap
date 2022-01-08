@@ -15,9 +15,9 @@ class Bin < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/bin-0.12.0"
-    sha256 cellar: :any_skip_relocation, big_sur:      "b3cd6de1be7d308ad5edc855c68856fc4d3789a06d004b00e5df0aea5647e93a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "68dc745359dc8d06d3c4c7747033feac76ef8cbd327f6a579b6b5c62fde09675"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/bin-0.12.1"
+    sha256 cellar: :any_skip_relocation, big_sur:      "bdd5dd227ff6dbaa225beb76a3a40965f9311490f00d4b23c090df0d73111c60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "57f5278b0636190876151c4dfa1e7adef692a12f03d48e4cef02ce3f69553f2f"
   end
 
   depends_on "go" => :build
