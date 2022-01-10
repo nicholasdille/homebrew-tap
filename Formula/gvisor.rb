@@ -9,14 +9,16 @@ class Gvisor < Formula
   head "https://github.com/google/gvisor.git",
     branch: "master"
 
+  depends_on "bazel" => :build
   depends_on "go" => :build
   depends_on "make" => :build
   depends_on :linux
   depends_on "nicholasdille/tap/cni"
 
   def install
-    system "make", "runsc"
-    bin.install "bazel-bin/runsc/linux_amd64_pure_stripped/runsc"
+    system "bazel", "build", "//runsc", "--sandbox_debug"
+    puts Utils.safe_popen_read("find", ".", "-type", "f", "-name", "runsc")
+    #bin.install "bazel-bin/runsc/linux_amd64_pure_stripped/runsc"
   end
 
   test do
