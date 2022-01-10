@@ -5,8 +5,8 @@ class Gvisor < Formula
   url "https://github.com/google/gvisor.git",
     tag:      "release-20220103.0",
     revision: "b488df0a2f15ba21603610bdb13d8656b856218f"
-  license "Apache-2.0"
   version "20220103.0"
+  license "Apache-2.0"
   head "https://github.com/google/gvisor.git",
     branch: "master"
 
@@ -24,10 +24,10 @@ class Gvisor < Formula
   end
 
   def install
-    resource("runsc").stage do |resource|
+    resource("runsc").stage do
       bin.install "runsc"
     end
-    resource("containerd-shim-runsc-v1").stage do |resource|
+    resource("containerd-shim-runsc-v1").stage do
       bin.install "containerd-shim-runsc-v1"
     end
   end
