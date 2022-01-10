@@ -18,7 +18,7 @@ class Gvisor < Formula
   def install
     system "bazel", "build", "//runsc", "--sandbox_debug"
     puts Utils.safe_popen_read("find", ".", "-type", "f", "-name", "runsc")
-    #bin.install "bazel-bin/runsc/linux_amd64_pure_stripped/runsc"
+    # bin.install "bazel-bin/runsc/linux_amd64_pure_stripped/runsc"
   end
 
   test do
