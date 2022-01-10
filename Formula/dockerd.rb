@@ -6,6 +6,7 @@ class Dockerd < Formula
     tag:      "v20.10.12",
     revision: "459d0dfbbb51fb2423a43655e6c62368ec0f36c9"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/moby/moby.git",
     branch: "master"
 
@@ -44,6 +45,8 @@ class Dockerd < Formula
     ENV["DOCKER_BUILDTAGS"] = buildtags.join(" ")
     system "./hack/make.sh", "binary"
     bin.install "bundles/binary-daemon/dockerd-#{version}" => "dockerd"
+    puts Utils.safe_popen_read("find", "bundles", "-type", "f")
+    #bin.install "bundles/binary-daemon/dockerd-#{version}" => "dockerd"
 
     inreplace "contrib/init/sysvinit-debian/docker",
       "export PATH=",
@@ -84,7 +87,7 @@ class Dockerd < Formula
   end
 
   def post_install
-    ln_sf HOMEBREW_PREFIX/"bin/tini", bin/"docker-init"
+    ln_sf HOMEBREW_PREFIX/"bin/tini", HOMEBREW_PREFIX/"bin/docker-init"
     mkdir_p etc/"init.d"
     cp pkgshare/"docker-init", etc/"init.d/docker"
     mkdir_p etc/"default"
