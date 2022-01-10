@@ -45,8 +45,6 @@ class Dockerd < Formula
     ENV["DOCKER_BUILDTAGS"] = buildtags.join(" ")
     system "./hack/make.sh", "binary"
     bin.install "bundles/binary-daemon/dockerd-#{version}" => "dockerd"
-    puts Utils.safe_popen_read("find", "bundles", "-type", "f")
-    #bin.install "bundles/binary-daemon/dockerd-#{version}" => "dockerd"
 
     inreplace "contrib/init/sysvinit-debian/docker",
       "export PATH=",
