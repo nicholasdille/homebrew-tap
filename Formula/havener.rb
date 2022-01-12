@@ -15,9 +15,9 @@ class Havener < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/havener-2.0.7"
-    sha256 cellar: :any_skip_relocation, big_sur:      "fa329689579fc436934512e4fc94999d074ca95fcd30702477ce49a854809410"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fe492221a42252c458b79bcd009d03a895a0f6b0bc2c6b07fe536a2eaa4847a8"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/havener-2.0.8"
+    sha256 cellar: :any_skip_relocation, big_sur:      "ca7d5bbf1288858a36de2198825b8ddf07db6153933b6cec17acf1b77cca8899"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "649994cb5e08d06f5d61ee1a8db730ca6ed1dcfe1bc36c5e883902899d6814a7"
   end
 
   depends_on "go" => :build
