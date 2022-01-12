@@ -3,8 +3,8 @@ class KubeBench < Formula
   homepage "https://github.com/aquasecurity/kube-bench"
 
   url "https://github.com/aquasecurity/kube-bench.git",
-    tag:      "v0.6.5",
-    revision: "0e6184186f1c32016608785141194b9611c7a3cc"
+    tag:      "v0.6.6",
+    revision: "d3cbc6447630129ab02d2c77b9418e258ed5a846"
   license "Apache-2.0"
   head "https://github.com/aquasecurity/kube-bench.git",
     branch: "main"
