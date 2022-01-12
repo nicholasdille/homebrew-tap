@@ -3,8 +3,8 @@ class Havener < Formula
   homepage "https://github.com/homeport/havener"
 
   url "https://github.com/homeport/havener.git",
-    tag:      "v2.0.7",
-    revision: "5117deba6f0b015820bc9e6f280637de4948db4d"
+    tag:      "v2.0.8",
+    revision: "93478c612c93dece4cd98f4192fe783ee1dae586"
   license "MIT"
   head "https://github.com/homeport/havener.git",
     branch: "main"
