@@ -3,8 +3,8 @@ class SemverTool < Formula
   homepage "https://github.com/fsaintjacques/semver-tool"
 
   url "https://github.com/fsaintjacques/semver-tool.git",
-    tag:      "3.2.0",
-    revision: "20028cb53f340a300b460b423e43f0eac13bcd9a"
+    tag:      "3.3.0",
+    revision: "1306402f127fef8044ef594995aa24811bb39670"
   license "Apache-2.0"
   head "https://github.com/fsaintjacques/semver-tool.git",
     branch: "master"
