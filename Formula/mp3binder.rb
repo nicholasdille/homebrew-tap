@@ -14,8 +14,8 @@ class Mp3binder < Formula
     strategy :git
   end
 
-  depends_on "go-task/tap/go-task" => :build
   depends_on "go" => :build
+  depends_on "go-task/tap/go-task" => :build
   depends_on arch: :x86_64
 
   def install
