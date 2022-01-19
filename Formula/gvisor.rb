@@ -3,9 +3,9 @@ class Gvisor < Formula
   homepage "https://gvisor.dev/"
 
   url "https://github.com/google/gvisor.git",
-    tag:      "release-20220103.0",
+    tag:      "release-20220117.0",
     revision: "b488df0a2f15ba21603610bdb13d8656b856218f"
-  version "20220103"
+  version "20220117.0"
   license "Apache-2.0"
   head "https://github.com/google/gvisor.git",
     branch: "master"
@@ -14,13 +14,13 @@ class Gvisor < Formula
   depends_on "nicholasdille/tap/cni"
 
   resource "runsc" do
-    url "https://storage.googleapis.com/gvisor/releases/release/20220103/x86_64/runsc"
-    sha256 "6be7e228dbb1a9e8bb1c443183de9f2910ceb3aeb67c93d1d899358b117d9b5e"
+    url "https://storage.googleapis.com/gvisor/releases/release/20220117/x86_64/runsc"
+    sha256 "7c583955080698d097fad69f22cf56d642885e0242bc8b9cdc1ed2086301cd0b"
   end
 
   resource "containerd-shim-runsc-v1" do
-    url "https://storage.googleapis.com/gvisor/releases/release/20220103/x86_64/containerd-shim-runsc-v1"
-    sha256 "797e10587af1fdca4dc3d00577bd9a90a91a5e88c7d1e9b3eadad7335ab032c8"
+    url "https://storage.googleapis.com/gvisor/releases/release/20220117/x86_64/containerd-shim-runsc-v1"
+    sha256 "69cfcb049fe9fe3823c96a9672c4b77d63f3e274d50e18d662afbab234247762"
   end
 
   def install
