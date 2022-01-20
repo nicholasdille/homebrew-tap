@@ -3,8 +3,8 @@ class Vcluster < Formula
   homepage "https://www.vcluster.com/"
 
   url "https://github.com/loft-sh/vcluster.git",
-    tag:      "v0.5.2",
-    revision: "17d43c8795cafae9588a5ab11b7344190b4e5d0b"
+    tag:      "v0.5.3",
+    revision: "e86061ec411aecb034fb2350b92ed6d283d00e86"
   license "Apache-2.0"
   head "https://github.com/loft-sh/vcluster.git",
     branch: "main"
