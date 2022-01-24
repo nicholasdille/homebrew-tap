@@ -17,9 +17,9 @@ class Cosign < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cosign-1.4.1"
-    sha256 cellar: :any_skip_relocation, big_sur:      "279d621679eca9a5ba83c32bcbea5bf5a2f10de520b7bdc8589f742dac1f5360"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ca0df6e676ecfa74e14847f61a8cc4c6068980787939a482a54a2e6468a99a23"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cosign-1.5.0"
+    sha256 cellar: :any_skip_relocation, big_sur:      "beeccd08058efa8510ee139dd0cf51d73951084bb77650566ff93cee89f25e6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f1bfa4b076b0e1b91ca50538fe99eb8904d6aba0f5688a67f7285e8f79cb7c6e"
   end
 
   depends_on "go" => :build
