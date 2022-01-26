@@ -3,8 +3,8 @@ class ContainersCommon < Formula
   homepage "https://github.com/containers/common"
 
   url "https://github.com/containers/common.git",
-    tag:      "v0.47.0",
-    revision: "ed2840c80e47bdadaff2c7d827111d401dff282d"
+    tag:      "v0.47.1",
+    revision: "524b3b157c206177629eebb68fec315abb2b9932"
   license "Apache-2.0"
   head "https://github.com/containers/common.git",
     branch: "main"
