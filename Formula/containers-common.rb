@@ -15,9 +15,9 @@ class ContainersCommon < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containers-common-0.47.0"
-    sha256 cellar: :any_skip_relocation, big_sur:      "52fbde4f94cfdc42d2801b944b73968d6a72d23413e528fdc2c4869fa5508bf7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2965cc2491f906ed04ec227ec885fe4896346ec57cdfae739d3c1356600b69b5"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containers-common-0.47.1"
+    sha256 cellar: :any_skip_relocation, big_sur:      "0c0d3390a06a98aeb110902dad01fd7fdc57b531a4516f75cf073b37279c33ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cf7149a194c2ac6c5f6caff6fb7826bbdd66909b0049a59ae5d61a1df1cd1062"
   end
 
   depends_on "go-md2man" => :build
