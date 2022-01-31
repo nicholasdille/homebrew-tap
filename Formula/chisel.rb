@@ -15,9 +15,9 @@ class Chisel < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/chisel-1.7.6"
-    sha256 cellar: :any_skip_relocation, catalina:     "bb63cc6dd37ecf04c1f7a803cc1b30a1bad1e5626d16984f52a6c680cc269329"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8551cb65153661285291e38081e716d61f91eed44d90ee604bca6ed61c7c7bdc"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/chisel-1.7.7"
+    sha256 cellar: :any_skip_relocation, big_sur:      "6b815038283977f3baeafdb64ee9b6fcb70498e7e0614fb047a7ad982d937796"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fc2e38fb3ab1bc505e6524d64a01dc5e3fef8aeefc9e6546d760846c23b67c71"
   end
 
   depends_on "go" => :build
