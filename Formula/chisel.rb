@@ -3,8 +3,8 @@ class Chisel < Formula
   homepage "https://github.com/jpillora/chisel"
 
   url "https://github.com/jpillora/chisel.git",
-    tag:      "v1.7.6",
-    revision: "02a4be16607c0655cb55d87b28201b618b98ae75"
+    tag:      "v1.7.7",
+    revision: "a47b1b318e8017d088bc978703e1212121b38449"
   license "MIT"
   head "https://github.com/jpillora/chisel.git",
     branch: "master"
