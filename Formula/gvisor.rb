@@ -9,6 +9,11 @@ class Gvisor < Formula
   head "https://github.com/google/gvisor.git",
     branch: "master"
 
+  bottle do
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/gvisor-20220131.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f054f682295fed4520e2f215871cebdbe0f7dc4a83e904b876f97185ea6477c2"
+  end
+
   depends_on :linux
   depends_on "nicholasdille/tap/cni"
 
