@@ -3,10 +3,9 @@ class Mp3binder < Formula
   homepage "https://github.com/crra/mp3binder"
 
   url "https://github.com/crra/mp3binder.git",
-    tag:      "3.0.0",
-    revision: "8eb964dbde9116f972e85f82e730d434b833eb3d"
+    tag:      "5.0.0",
+    revision: "7e69866e1463e1c99a1bf8d6d1b2018c4849145f"
   license "Unlicense"
-  revision 1
   head "https://github.com/crra/mp3binder.git",
     branch: "master"
 
@@ -16,7 +15,7 @@ class Mp3binder < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/mp3binder-3.0.0_1"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/mp3binder-5.0.0_1"
     sha256 cellar: :any_skip_relocation, catalina:     "7490828fbbe5933b0f60613b2f92e14e832956b23a52406c4c5ddab8729222f0"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0de5687bec86b568e36f49efe22e1ccb5f55023ec9eb4767e57737cf9a1dd901"
   end
