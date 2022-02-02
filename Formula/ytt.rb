@@ -15,9 +15,9 @@ class Ytt < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/ytt-0.38.0"
-    sha256 cellar: :any_skip_relocation, big_sur:      "ec75ff09951bcc2358cc2112567a8287c86276d840d1f4b4ee3dc00aa6469f15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d0e731bae4e64570339364e8c809778fc798b2712936942760dff59fc486971a"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/ytt-0.39.0"
+    sha256 cellar: :any_skip_relocation, big_sur:      "67e7fdaeb2213b176d9ca94694e786c02f420c5de915bbcbac9fadb7e31d683e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "045783ed06603390671c28328d19266f326899c5ec651de96e8bcfecfa3576f2"
   end
 
   depends_on "go" => :build
