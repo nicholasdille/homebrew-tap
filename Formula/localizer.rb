@@ -3,8 +3,8 @@ class Localizer < Formula
   homepage "https://blog.jaredallard.me/localizer-an-adventure-in-creating-a-reverse-tunnel-and-tunnel-manager-for-kubernetes/"
 
   url "https://github.com/getoutreach/localizer.git",
-    tag:      "v1.14.0",
-    revision: "9cf3702aec9d59de6c944c076f86c43988e2261a"
+    tag:      "v1.14.1",
+    revision: "1abc14e877faca5ea0ad1c1b436438bef1efd9f8"
   license "Apache-2.0"
   head "https://github.com/getoutreach/localizer.git",
     branch: "main"
