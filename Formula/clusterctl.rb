@@ -15,9 +15,9 @@ class Clusterctl < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/clusterctl-1.1.0"
-    sha256 cellar: :any_skip_relocation, big_sur:      "6666790c1c8e61cbf526d1c58a2da149f5452bfdc589d35fbedf8d01f2aff0ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c2214946e25bb4227b867cdb400aebe259008445fffddf125333f2f72f605e79"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/clusterctl-1.1.1"
+    sha256 cellar: :any_skip_relocation, big_sur:      "4418de8aee51287d7c8e534a35f4fbb696c454ab4d98cc7697c1cc68aaa99012"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7e3fa2f8fabf06f8ba7b970f82cde062304c4750eba3ed903a44909c4384c23b"
   end
 
   depends_on "go" => :build
