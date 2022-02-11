@@ -15,8 +15,8 @@ class CriO < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cri-o-1.23.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "94ca8282d88f889c51dfa6e66e779e3cb69e61f2280b6f4d2166bf205b3580af"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cri-o-1.23.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6b344ff448283fa58763cbf3cbab9de5328e220e3c2cd38d89ffd479190544e8"
   end
 
   option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
