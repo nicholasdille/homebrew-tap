@@ -3,8 +3,8 @@ class Kustomizer < Formula
   homepage "https://kustomizer.dev/"
 
   url "https://github.com/stefanprodan/kustomizer.git",
-    tag:      "v2.0.0",
-    revision: "21ed535461386d1a170e8f0257ef16d899084964"
+    tag:      "v2.1.0",
+    revision: "a056fad4e5b695d07ea2caeb27a3ca94eda649b5"
   license "Apache-2.0"
   head "https://github.com/stefanprodan/kustomizer.git",
     branch: "main"
