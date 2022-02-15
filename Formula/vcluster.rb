@@ -3,8 +3,8 @@ class Vcluster < Formula
   homepage "https://www.vcluster.com/"
 
   url "https://github.com/loft-sh/vcluster.git",
-    tag:      "v0.5.3",
-    revision: "e86061ec411aecb034fb2350b92ed6d283d00e86"
+    tag:      "v0.6.0",
+    revision: "a24df2aad83851065acc967485a879f91083a8bb"
   license "Apache-2.0"
   head "https://github.com/loft-sh/vcluster.git",
     branch: "main"
@@ -24,19 +24,19 @@ class Vcluster < Formula
   depends_on arch: :x86_64
 
   def install
-    os = "linux"  if OS.linux?
-    os = "darwin" if OS.mac?
-    arch = "amd64"
-
-    ENV["VCLUSTER_BUILD_PLATFORMS"] = os
-    ENV["VCLUSTER_BUILD_ARCHS"] = arch
-    name = "vcluster-#{os}-#{arch}"
-
-    system "bash", "./hack/build-cli.sh"
-    bin.install "release/#{name}" => "vcluster"
+    commit = Utils.git_short_head
+    build_date = Utils.safe_popen_read("date", "+%Y-%m-%dT%H:%M:%SZ")
+    system "go", "build",
+      "-a",
+      "-ldflags", "-s -w"\
+                  " -X main.commitHash=#{commit} "\
+                  " -X main.buildDate=#{build_date}"\
+                  " -X main.version=#{version}",
+      "-o", bin/"vcluster",
+      "cmd/vclusterctl/main.go"
   end
 
   test do
-    system bin/"vcluster", "--help"
+    assert_match version.to_s, shell_output("#{bin}/#{name} --version")
   end
 end
