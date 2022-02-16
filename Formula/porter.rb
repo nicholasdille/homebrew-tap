@@ -15,9 +15,9 @@ class Porter < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/porter-0.38.8"
-    sha256 cellar: :any_skip_relocation, big_sur:      "9fdb20a3706841c9c93bcda57a48710b1ebf281adb9bab8fcee736b4fa8178d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e24e7233684189d9a929fde12bab4aa9cf2f8273f3c9d68268ba056cf059f61f"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/porter-0.38.9"
+    sha256 cellar: :any_skip_relocation, big_sur:      "ddd072370f6facf2fcacbd036d2dde54e4ab3ccda23aadca29b5a36db9828bd9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5c85d51e780107e71700d9ecfa222370e59f74cc252f584edc3ff4e971a7a626"
   end
 
   depends_on "go" => :build
