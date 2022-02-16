@@ -10,8 +10,8 @@ class ContainerdRootless < Formula
     branch: "master"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containerd-rootless-0.16.1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5e01b4837813575ac62ffb230d629b769002efba870885f9e6214c4beed623ac"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containerd-rootless-0.17.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8f9ec4da7676c07eb47c145f50f5cd057fb22ba1b61810dcb3c097a62c9e35af"
   end
 
   depends_on "immortal"
