@@ -3,8 +3,8 @@ class Containerd < Formula
   homepage "https://containerd.io"
 
   url "https://github.com/containerd/containerd.git",
-    tag:      "v1.5.9",
-    revision: "1407cab509ff0d96baa4f0eb6ff9980270e6e620"
+    tag:      "v1.6.0",
+    revision: "39259a8f35919a0d02c9ecc2871ddd6ccf6a7c6e"
   license "Apache-2.0"
   head "https://github.com/containerd/containerd.git",
     branch: "main"
@@ -33,31 +33,24 @@ class Containerd < Formula
   depends_on "nicholasdille/tap/cni" => :recommended
 
   def install
-    dir = buildpath/"src/github.com/containerd/containerd"
-    dir.install (buildpath/"").children
-    cd dir do
-      ENV["GO111MODULE"] = "auto"
-      ENV["GOPATH"] = buildpath
+    ENV["EXTRA_FLAGS"] = "-buildmode=pie"
+    ENV["EXTRA_LDFLAGS"] = '-extldflags "-fno-PIC -static"'
 
-      ENV["EXTRA_FLAGS"] = "-buildmode=pie"
-      ENV["EXTRA_LDFLAGS"] = '-extldflags "-fno-PIC -static"'
+    buildtags = [
+      "netgo",
+      "osusergo",
+      "static_build",
+    ]
+    buildtags << "no_btrfs"     if build.without? "btrfs"
+    # buildtags << "no_devmapper" if build.without? "device-mapper"
+    buildtags << "no_cri"       if build.without? "cri"
 
-      buildtags = [
-        "netgo",
-        "osusergo",
-        "static_build",
-      ]
-      buildtags << "no_btrfs"     if build.without? "btrfs"
-      # buildtags << "no_devmapper" if build.without? "device-mapper"
-      buildtags << "no_cri"       if build.without? "cri"
+    system "make", "BUILDTAGS=#{buildtags.join(" ")}"
+    system "make", "install", "PREFIX=#{prefix}"
 
-      system "make", "binaries", "BUILDTAGS=#{buildtags.join(" ")}"
-      system "make", "install", "DESTDIR=#{prefix}"
-
-      system "make", "man"
-      man5.install Dir["man/*.5"]
-      man8.install Dir["man/*.8"]
-    end
+    system "make", "man"
+    man5.install Dir["man/*.5"]
+    man8.install Dir["man/*.8"]
 
     (buildpath/"containerd.yml").write <<~EOS
       cmd: #{bin}/containerd --config #{etc}/containerd/config.toml
