@@ -3,8 +3,8 @@ class PodmanRemote < Formula
   homepage "https://podman.io/"
 
   url "https://github.com/containers/podman.git",
-    tag:      "v3.4.4",
-    revision: "f6526ada1025c2e3f88745ba83b8b461ca659933"
+    tag:      "v4.0.0",
+    revision: "84c8870ac236578c41713113fc09a29a5f727bdd"
   license "Apache-2.0"
   head "https://github.com/containers/podman.git",
     branch: "main"
@@ -27,7 +27,7 @@ class PodmanRemote < Formula
   conflicts_with "podman"
 
   def install
-    system "make", "podman-remote-static"
+    system "make", "podman-remote-static", "CGO_ENABLED=0"
     subdir = "" if OS.linux?
     subdir = "/darwin" if OS.mac?
     bin.install "bin#{subdir}/podman-remote-static" => "podman-remote"
