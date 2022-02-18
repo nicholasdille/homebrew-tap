@@ -15,9 +15,9 @@ class Kapp < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kapp-0.45.0"
-    sha256 cellar: :any_skip_relocation, big_sur:      "2890c5f806b58c11cf98ff002ab2ad13d2f7a57b6b68edb78c8ad0b7dd454e91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f9912b3f438bd06463df95ca3a1633d83cc9113c1e54558c5259cd6601af15d4"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kapp-0.46.0"
+    sha256 cellar: :any_skip_relocation, big_sur:      "f253ebe02cd25ff808b5cf7e26ed395c0a188ed2b87e9635fe348184d6dcf7e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a1970cb51cd83ac7e05f0d802a44e3a5708fbf19fec420b6ac1fa5549dce0df4"
   end
 
   depends_on "go" => :build
