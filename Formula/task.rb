@@ -3,8 +3,8 @@ class Task < Formula
   homepage "https://taskfile.dev/"
 
   url "https://github.com/go-task/task.git",
-    tag:      "v3.10.0",
-    revision: "79f595d8d194d82e278360d40537c87ea209e889"
+    tag:      "v3.11.0",
+    revision: "d8555e5a5ded8230b203a995d9b0bd7e62316cfd"
   license "MIT"
   head "https://github.com/go-task/task.git",
     branch: "master"
