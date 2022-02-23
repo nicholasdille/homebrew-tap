@@ -15,8 +15,8 @@ class Cni < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cni-1.0.1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9088348d8935c61dfa672269839d369ceb1517d366f44a6b2330f9d15ddde2c0"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cni-1.1.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4eb859bdb443db8b262d939e74fb46c9f92a5c1253b94d057690a88b41c77ca0"
   end
 
   depends_on "go" => :build
