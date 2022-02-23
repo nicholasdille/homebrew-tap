@@ -16,8 +16,8 @@ class Cloudflared < Formula
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cloudflared-2022.2.2"
-    sha256 cellar: :any_skip_relocation, big_sur:      "81ce34d89f60627b6dc6f58559f114cc5d2f7857be145c84665bafdd36fc795d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1ad873b000c925d3fec890de1a581a59b03cb9aae5c3992862a720f98e90ee92"
+    sha256 cellar: :any_skip_relocation, big_sur:      "8acde8359dfe3a0fa60da7b133e47fba1c0f01e8f5e80e78fcb3724b2982cb12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7071476a4941a6cb5d4a6574aba88afe32b6b1607ef8a79f9d3e54cb01fca91b"
   end
 
   depends_on "go" => :build
