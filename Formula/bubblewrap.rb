@@ -15,8 +15,8 @@ class Bubblewrap < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/bubblewrap-0.6.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e6cf371976ac2959d3672c97069db7f37e93febd38d78cbcb72c2da1c5c5431b"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/bubblewrap-0.6.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "eabac858a0350114a5298a42cd5503a321735c61bb8abc823f82585c71e6f0ac"
   end
 
   depends_on "autoconf" => :build
