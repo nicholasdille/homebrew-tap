@@ -3,8 +3,8 @@ class Zot < Formula
   homepage "https://github.com/anuvu/zot"
 
   url "https://github.com/anuvu/zot.git",
-    tag:      "v1.3.7",
-    revision: "cac7fe48544b7712f880bd9d6e063129e1799a89"
+    tag:      "v1.3.8",
+    revision: "408f043f1e619cf3b9913fdf9d2c52249d537b35"
   license "Apache-2.0"
   head "https://github.com/anuvu/zot.git",
     branch: "master"
@@ -24,7 +24,7 @@ class Zot < Formula
 
   def install
     system "make", "binary"
-    bin.install "bin/zot"
+    bin.install "bin/zot-linux-amd64" => "zot"
   end
 
   test do
