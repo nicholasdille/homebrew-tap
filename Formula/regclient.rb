@@ -3,8 +3,8 @@ class Regclient < Formula
   homepage "https://github.com/regclient/regclient"
 
   url "https://github.com/regclient/regclient.git",
-    tag:      "v0.3.10",
-    revision: "6a1a13c410f734f5e18a6032936bc6764814eae7"
+    tag:      "v0.4.0",
+    revision: "9546658ede6901191b9692a7f720c37150940ddd"
   license "Apache-2.0"
   head "https://github.com/regclient/regclient.git",
     branch: "main"
@@ -24,7 +24,7 @@ class Regclient < Formula
   depends_on "make" => :build
 
   def install
-    system "make"
+    system "make", "binaries"
     bin.install "bin/regctl"
     bin.install "bin/regsync"
     bin.install "bin/regbot"
