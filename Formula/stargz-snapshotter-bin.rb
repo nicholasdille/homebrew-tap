@@ -14,7 +14,7 @@ class StargzSnapshotterBin < Formula
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/stargz-snapshotter-bin-0.11.2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "04fa02790a509bded869372e96b992ccae13b1fad03959987c4cdb4f69d2b0c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "34329ec267261fb49c6632c6d1db46b71d362801f914db385cacaad868d74cb0"
   end
 
   depends_on arch: :x86_64
