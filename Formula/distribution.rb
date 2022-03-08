@@ -3,8 +3,8 @@ class Distribution < Formula
   homepage "https://github.com/distribution/distribution"
 
   url "https://github.com/distribution/distribution.git",
-    tag:      "v2.8.0",
-    revision: "dcf66392d606f50bf3a9286dcb4bdcdfb7c0e83a"
+    tag:      "v2.8.1",
+    revision: "b5ca020cfbe998e5af3457fda087444cf5116496"
   license "Apache-2.0"
   head "https://github.com/distribution/distribution.git",
     branch: "main"
