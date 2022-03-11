@@ -33,31 +33,24 @@ class Containerd < Formula
   depends_on "nicholasdille/tap/cni" => :recommended
 
   def install
-    dir = buildpath/"src/github.com/containerd/containerd"
-    dir.install (buildpath/"").children
-    cd dir do
-      ENV["GO111MODULE"] = "auto"
-      ENV["GOPATH"] = buildpath
+    ENV["EXTRA_FLAGS"] = "-buildmode=pie"
+    ENV["EXTRA_LDFLAGS"] = '-extldflags "-fno-PIC -static"'
 
-      ENV["EXTRA_FLAGS"] = "-buildmode=pie"
-      ENV["EXTRA_LDFLAGS"] = '-extldflags "-fno-PIC -static"'
+    buildtags = [
+      "netgo",
+      "osusergo",
+      "static_build",
+    ]
+    buildtags << "no_btrfs"     if build.without? "btrfs"
+    # buildtags << "no_devmapper" if build.without? "device-mapper"
+    buildtags << "no_cri"       if build.without? "cri"
 
-      buildtags = [
-        "netgo",
-        "osusergo",
-        "static_build",
-      ]
-      buildtags << "no_btrfs"     if build.without? "btrfs"
-      # buildtags << "no_devmapper" if build.without? "device-mapper"
-      buildtags << "no_cri"       if build.without? "cri"
+    system "make", "BUILDTAGS=#{buildtags.join(" ")}"
+    system "make", "install", "DESTDIR=#{prefix}"
 
-      system "make", "BUILDTAGS=#{buildtags.join(" ")}"
-      system "make", "install", "DESTDIR=#{prefix}"
-
-      system "make", "man"
-      man5.install Dir["man/*.5"]
-      man8.install Dir["man/*.8"]
-    end
+    system "make", "man"
+    man5.install Dir["man/*.5"]
+    man8.install Dir["man/*.8"]
 
     (buildpath/"containerd.yml").write <<~EOS
       cmd: #{bin}/containerd --config #{etc}/containerd/config.toml
