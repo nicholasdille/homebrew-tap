@@ -24,16 +24,16 @@ class Vcluster < Formula
   depends_on arch: :x86_64
 
   def install
-    os = "linux"  if OS.linux?
-    os = "darwin" if OS.mac?
-    arch = "amd64"
-
-    ENV["VCLUSTER_BUILD_PLATFORMS"] = os
-    ENV["VCLUSTER_BUILD_ARCHS"] = arch
-    name = "vcluster-#{os}-#{arch}"
-
-    system "bash", "./hack/build-cli.sh"
-    bin.install "release/#{name}" => "vcluster"
+    commit = Utils.git_short_head
+    build_date = Utils.safe_popen_read("date", "+%Y-%m-%dT%H:%M:%SZ")
+    system "go", "build",
+      "-a",
+      "-ldflags", "-s -w"\
+                  " -X main.commitHash=#{commit} "\
+                  " -X main.buildDate=#{build_date}"\
+                  " -X main.version=#{version}",
+      "-o", "bin/vcluster",
+      "cmd/vclusterctl/main.go"
   end
 
   test do
