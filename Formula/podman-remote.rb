@@ -27,7 +27,7 @@ class PodmanRemote < Formula
   conflicts_with "podman"
 
   def install
-    system "make", "podman-remote-static"
+    system "make", "podman-remote-static", "CGO_ENABLED=0"
     subdir = "" if OS.linux?
     subdir = "/darwin" if OS.mac?
     bin.install "bin#{subdir}/podman-remote-static" => "podman-remote"
