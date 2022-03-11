@@ -36,6 +36,6 @@ class Cosign < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/#{name} version")
+    assert_match version.to_s, shell_output("#{bin}/#{name} version 2>&1")
   end
 end
