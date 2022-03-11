@@ -24,7 +24,7 @@ class Regclient < Formula
   depends_on "make" => :build
 
   def install
-    system "make"
+    system "make", "binaries"
     bin.install "bin/regctl"
     bin.install "bin/regsync"
     bin.install "bin/regbot"
