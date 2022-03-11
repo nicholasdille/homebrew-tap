@@ -24,7 +24,7 @@ class Zot < Formula
 
   def install
     system "make", "binary"
-    bin.install "bin/zot"
+    bin.install "bin/zot-linux-amd64" => "zot"
   end
 
   test do
