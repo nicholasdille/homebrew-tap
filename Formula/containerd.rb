@@ -46,7 +46,7 @@ class Containerd < Formula
     buildtags << "no_cri"       if build.without? "cri"
 
     system "make", "BUILDTAGS=#{buildtags.join(" ")}"
-    system "make", "install", "DESTDIR=#{prefix}"
+    system "make", "install", "PREFIX=#{prefix}"
 
     system "make", "man"
     man5.install Dir["man/*.5"]
