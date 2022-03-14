@@ -18,11 +18,11 @@ class LoftBin < Formula
   resource "binary" do
     on_linux do
       url "https://github.com/loft-sh/loft/releases/download/v2.1.5/loft-linux-amd64"
-      sha256 "2a41a67e9876aa5e8c4aabec27443c10b3f92e9752f0ad33edd841b7d3808d6f"
+      sha256 "abb4562877f5dc7ec636e59514963e013091d41a7d9218b6f364ee940d475105"
     end
     on_macos do
       url "https://github.com/loft-sh/loft/releases/download/v2.1.5/loft-darwin-amd64"
-      sha256 "7152f210ed1ef699c2c361c2abc26bd2f3c801c38c7bcc5b75844db6dda48d6b"
+      sha256 "1a083caebdffb0299aa5fa2a2399dd30af3d99b786a0b2a5acd1eb3a0cebd662"
     end
   end
 
