@@ -37,6 +37,6 @@ class Vcluster < Formula
   end
 
   test do
-    system bin/"vcluster", "--help"
+    assert_match version.to_s, shell_output("#{bin}/#{name} --version")
   end
 end
