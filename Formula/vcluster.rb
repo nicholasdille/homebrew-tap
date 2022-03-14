@@ -32,7 +32,7 @@ class Vcluster < Formula
                   " -X main.commitHash=#{commit} "\
                   " -X main.buildDate=#{build_date}"\
                   " -X main.version=#{version}",
-      "-o", "bin/vcluster",
+      "-o", bin/"vcluster",
       "cmd/vclusterctl/main.go"
   end
 
