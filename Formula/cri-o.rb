@@ -3,8 +3,8 @@ class CriO < Formula
   homepage "https://cri-o.io/"
 
   url "https://github.com/cri-o/cri-o.git",
-    tag:      "v1.23.1",
-    revision: "53ada6de691b5c48f03b7975f3e8d5216fc13cea"
+    tag:      "v1.23.2",
+    revision: "c0b2474b80fd0844b883729bda88961bed7b472b"
   license "Apache-2.0"
   head "https://github.com/cri-o/cri-o.git",
     branch: "main"
