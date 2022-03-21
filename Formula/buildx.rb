@@ -3,8 +3,8 @@ class Buildx < Formula
   homepage "https://www.docker.com"
 
   url "https://github.com/docker/buildx.git",
-    tag:      "v0.8.0",
-    revision: "c8f7c1e93ffa9cfcf926cd3e6450af957f235b07"
+    tag:      "v0.8.1",
+    revision: "5fac64c2c49dae1320f2b51f1a899ca451935554"
   license "Apache-2.0"
   head "https://github.com/docker/buildx.git",
     branch: "master"
