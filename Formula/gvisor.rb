@@ -10,8 +10,8 @@ class Gvisor < Formula
     branch: "master"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/gvisor-20220314.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9c71f3e4393f319eb4b228a4b9356c5cb12f275b527ebb7fe41bbf11e7466e9d"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/gvisor-20220321.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6961f8a17c8192ecee63b13b63d8a1290f6b3a443eca8675130ba10c68f6d741"
   end
 
   depends_on :linux
