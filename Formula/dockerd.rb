@@ -3,8 +3,8 @@ class Dockerd < Formula
   homepage "https://www.docker.com"
 
   url "https://github.com/moby/moby.git",
-    tag:      "v20.10.13",
-    revision: "906f57ff5b7100013dfef066ea8fe367706468df"
+    tag:      "v20.10.14",
+    revision: "87a90dc786bda134c9eb02adbae2c6a7342fb7f6"
   license "Apache-2.0"
   head "https://github.com/moby/moby.git",
     branch: "master"
