@@ -3,8 +3,8 @@ class Crun < Formula
   homepage "https://github.com/containers/crun"
 
   url "https://github.com/containers/crun.git",
-    tag:      "1.4.3",
-    revision: "61c9600d1335127eba65632731e2d72bc3f0b9e8"
+    tag:      "1.4.4",
+    revision: "6521fcc5806f20f6187eb933f9f45130c86da230"
   license "Apache-2.0"
   head "https://github.com/containers/crun.git",
     branch: "main"
@@ -15,7 +15,7 @@ class Crun < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/crun-1.4.3"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/crun-1.4.4"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "cc113345e3aea4bebdbf9797dad0506a5386723f6e0c4418bc10bc5a7be0bc00"
   end
 
