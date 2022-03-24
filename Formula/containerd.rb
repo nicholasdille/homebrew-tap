@@ -15,8 +15,8 @@ class Containerd < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containerd-1.6.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8dbb5788d27baa58eb81265e2aef6e45086dc54c2e705a0002afeaebb69d45cd"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containerd-1.6.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "30c4a2e5b73665c52c6607c435089ae470c781ddcdff32b78bdc8f38ab71e811"
   end
 
   option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
