@@ -3,8 +3,8 @@ class Imgcrypt < Formula
   homepage "https://github.com/containerd/imgcrypt"
 
   url "https://github.com/containerd/imgcrypt.git",
-    tag:      "v1.1.1",
-    revision: "f385f6ca972ac8169ce321830911d0253cb0b194"
+    tag:      "v1.1.3",
+    revision: "65d749cef36547473d1c1b0b67ed8a4b9e3d13d4"
   license "Apache-2.0"
   head "https://github.com/containerd/imgcrypt.git",
     branch: "master"
