@@ -21,20 +21,23 @@ class Mp3binder < Formula
   end
 
   depends_on "go" => :build
-  depends_on arch: :x86_64
 
   def install
     ENV["CGO_ENABLED"] = "0"
-    system "go",
-      "run",
-      "cmd/build/build.go", "-p"
-
-    os = "linux" if OS.linux?
-    os = "darwin" if OS.mac?
-    bin.install "dist/release/#{os}/mp3binder"
+    system "go", "build",
+      "-trimpath",
+      "-ldflags", "-w -s"\
+                  " -X main.name=mp3binder"\
+                  " -X main.version=#{version}"\
+                  " -X main.realm=mp3binder"\
+                  " -extldflags=-static",
+      "-a",
+      "-buildvcs=false",
+      "-o", bin/"mp3binder",
+      "./cmd/tui"
   end
 
   test do
-    system bin/"mp3binder", "--version"
+    assert_match version.to_s, shell_output("#{bin}/#{name} --version")
   end
 end
