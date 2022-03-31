@@ -5,7 +5,7 @@ class Cloudflared < Formula
   url "https://github.com/cloudflare/cloudflared.git",
     tag:      "2022.3.2",
     revision: "e1a9e98cca27d3fba0a858d87f4c2d6d2f6013d5"
-  # license "MIT"
+  license "Apache-2.0"
   head "https://github.com/cloudflare/cloudflared.git",
     branch: "master"
 
