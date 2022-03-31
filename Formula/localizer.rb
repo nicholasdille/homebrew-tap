@@ -20,7 +20,7 @@ class Localizer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0da5f602d53787e6ceebf2a5938574cb37b9a113f60efd9cb696c3e19ab24b2f"
   end
 
-  depends_on "go" => :build
+  depends_on "go@1.17" => :build
   depends_on "protobuf" => :build
 
   def install
