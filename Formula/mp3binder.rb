@@ -5,7 +5,7 @@ class Mp3binder < Formula
   url "https://github.com/crra/mp3binder.git",
     tag:      "5.0.0",
     revision: "7e69866e1463e1c99a1bf8d6d1b2018c4849145f"
-  license "Unlicense"
+  license "MIT"
   head "https://github.com/crra/mp3binder.git",
     branch: "master"
 
