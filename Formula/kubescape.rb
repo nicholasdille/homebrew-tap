@@ -20,7 +20,7 @@ class Kubescape < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "4ccb030c5c6b8d0d295251500005db1e10e29ce1fdc220d47aa03e9f01c3bcd9"
   end
 
-  depends_on "go@1.17" => :build
+  depends_on "go" => :build
 
   def install
     system "go",
