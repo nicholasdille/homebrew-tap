@@ -3,14 +3,14 @@ class KataContainers < Formula
   homepage "https://katacontainers.io/"
 
   url "https://github.com/kata-containers/kata-containers.git",
-    tag:      "2.3.3",
-    revision: "97cd5939532a6688f769039a352458fe496019c8"
+    tag:      "2.4.0",
+    revision: "0ad6f05dee04dec2a653806dc7d84d2bebf50175"
   license "Apache-2.0"
   head "https://github.com/kata-containers/kata-containers.git",
     branch: "main"
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kata-containers-2.3.3"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kata-containers-2.4.0"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "1d304a7419c6ebf7c961e5d585b6ba66a61a5f22c2c7df44cf98164a3e444d44"
   end
 
