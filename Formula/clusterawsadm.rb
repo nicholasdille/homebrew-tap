@@ -2,8 +2,8 @@ class Clusterawsadm < Formula
   desc "Kubernetes Cluster API Provider AWS provides consistent deployment and day 2"
   homepage "https://cluster-api-aws.sigs.k8s.io/"
   url "https://github.com/kubernetes-sigs/cluster-api-provider-aws.git",
-    tag:      "v1.3.0",
-    revision: "5bf5c5c264e56a8555f25fb73299b7923229cd84"
+    tag:      "v1.4.0",
+    revision: "b038843096636cbfd6992b52a2aef145d0dd12f1"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cluster-api-provider-aws.git",
     branch: "main"
