@@ -3,8 +3,8 @@ class Cosign < Formula
   homepage "https://github.com/sigstore/cosign"
 
   url "https://github.com/sigstore/cosign.git",
-    tag:      "v1.7.0",
-    revision: "7c271975d0bde39a51042a143c24c6a70ddf5633"
+    tag:      "v1.7.1",
+    revision: "53c28e44f10548c8839d4c72e5909fa74e08b5f6"
   license "Apache-2.0"
   head "https://github.com/sigstore/cosign.git",
     branch: "main"
