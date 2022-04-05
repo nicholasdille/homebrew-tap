@@ -3,8 +3,8 @@ class Cmctl < Formula
   homepage "https://cert-manager.io/docs/usage/cmctl/"
 
   url "https://github.com/jetstack/cert-manager.git",
-    tag:      "v1.7.2",
-    revision: "2e0bfc87d0c63c473c31a17f4c8c65e89806dc16"
+    tag:      "v1.8.0",
+    revision: "e466a521bc5455def8c224599c6edcd37e86410c"
   license "Apache-2.0"
   head "https://github.com/jetstack/cert-manager.git",
     branch: "master"
@@ -23,7 +23,7 @@ class Cmctl < Formula
   depends_on "go" => :build
 
   def install
-    pkg = "github.com/jetstack/cert-manager"
+    pkg = "github.com/cert-manager/cert-manager"
     ctl = "#{pkg}/cmd/ctl"
 
     commit = Utils.git_short_head
