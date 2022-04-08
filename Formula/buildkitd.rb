@@ -3,8 +3,8 @@ class Buildkitd < Formula
   homepage "https://github.com/moby/moby/issues/34227"
 
   url "https://github.com/moby/buildkit.git",
-    tag:      "v0.10.0",
-    revision: "068cf686a7e5c3254244d0acc54636f4f393611e"
+    tag:      "v0.10.1",
+    revision: "5bc9c7b15891eecab8d1e0c34ed62a0177c45ae7"
   license "Apache-2.0"
   head "https://github.com/moby/buildkit.git",
     branch: "master"
