@@ -3,8 +3,8 @@ class Ipfs < Formula
   homepage "https://ipfs.io/"
 
   url "https://github.com/ipfs/go-ipfs.git",
-    tag:      "v0.12.1",
-    revision: "da2b9bd71aa5d02203be5a0b67f8a9116e8535f5"
+    tag:      "v0.12.2",
+    revision: "0e8b121aba103e2053f6bcfebe1a491b43694a30"
   license "MIT"
   license "Apache-2.0"
   head "https://github.com/ipfs/go-ipfs.git",
@@ -21,11 +21,12 @@ class Ipfs < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "fab01e7cceef6d21f27fb5214dcc589839beca58d78891880486e4798f34dde0"
   end
 
-  depends_on "go" => :build
+  depends_on "go@1.17" => :build
   depends_on "make" => :build
 
   def install
     ENV["CGO_ENABLED"] = "0"
+
     system "make", "build"
     bin.install "cmd/ipfs/ipfs"
   end
