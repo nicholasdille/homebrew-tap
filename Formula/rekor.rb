@@ -3,8 +3,8 @@ class Rekor < Formula
   homepage "https://github.com/sigstore/rekor"
 
   url "https://github.com/sigstore/rekor.git",
-    tag:      "v0.5.0",
-    revision: "09ecf71dff57de24ec5e779b4077b187956edf0e"
+    tag:      "v0.6.0",
+    revision: "5c52ad228cb698ea4320dada5cd0a7cd31a5eb9a"
   license "Apache-2.0"
   head "https://github.com/sigstore/rekor.git",
     branch: "main"
