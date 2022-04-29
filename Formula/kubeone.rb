@@ -3,8 +3,8 @@ class Kubeone < Formula
   homepage "https://kubeone.io"
 
   url "https://github.com/kubermatic/kubeone.git",
-    tag:      "v1.4.1",
-    revision: "d44b1a474a3894f1cf685b299fae1c725c1ccb1f"
+    tag:      "v1.4.2",
+    revision: "e1ef6466e56fb543b011239faa42e32cd712101c"
   license "Apache-2.0"
   head "https://github.com/kubermatic/kubeone.git",
     branch: "master"
