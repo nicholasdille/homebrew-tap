@@ -23,7 +23,7 @@ class Cmctl < Formula
   depends_on "go" => :build
 
   def install
-    pkg = "github.com/jetstack/cert-manager"
+    pkg = "github.com/cert-manager/cert-manager"
     ctl = "#{pkg}/cmd/ctl"
 
     commit = Utils.git_short_head
