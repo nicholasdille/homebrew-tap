@@ -34,7 +34,6 @@ class KataContainers < Formula
       system "make", "PREFIX=#{prefix}"
       bin.install "kata-runtime"
       bin.install "kata-monitor"
-      bin.install "kata-netmon"
       bin.install "containerd-shim-kata-v2"
 
       bash_completion.install "data/completions/bash/kata-runtime"
