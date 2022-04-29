@@ -26,6 +26,7 @@ class Ipfs < Formula
 
   def install
     ENV["CGO_ENABLED"] = "0"
+
     system "make", "build"
     bin.install "cmd/ipfs/ipfs"
   end
