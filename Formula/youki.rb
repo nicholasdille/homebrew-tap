@@ -3,8 +3,8 @@ class Youki < Formula
   homepage "https://github.com/containers/youki"
 
   url "https://github.com/containers/youki.git",
-    tag:      "v0.0.2",
-    revision: "0f662dd9794f54f42ec26ed569efd3ba016555b9"
+    tag:      "v0.0.3",
+    revision: "541bf4a26cc0c3ec397398ed5971f08285a24076"
   license "Apache-2.0"
   head "https://github.com/containers/youki.git",
     branch: "main"
