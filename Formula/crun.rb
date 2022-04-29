@@ -16,7 +16,7 @@ class Crun < Formula
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/crun-1.4.5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c88f7b08620c268906a4e4ea141ea8464e2e4bbbd6f9bce2ce09b188ff663ef7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c501056f9bddd2fd0f8dc228b33fb99c58eacc6e05c974d98f06432157931137"
   end
 
   depends_on "autoconf" => :build
