@@ -15,9 +15,9 @@ class Sshocker < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/sshocker-0.2.3"
-    sha256 cellar: :any_skip_relocation, big_sur:      "8ffa4dcdf09cf142c90aa1bc2bed511ed563f2f7eba4a9e4a0e0809632781e7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "16654d288a2b3fb30e9269331a83cd8e4cb5e46e1973970a8e25287081b02311"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/sshocker-0.3.0"
+    sha256 cellar: :any_skip_relocation, big_sur:      "222c38393fa61164aaed6d9e525cc13c5935859b2eaed06e63da943ced3c3bbc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4246ca7e5417f00cce23ffb9866102958ee274f830b611d9803eb1f4700457d8"
   end
 
   depends_on "go" => :build
