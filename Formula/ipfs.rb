@@ -21,7 +21,7 @@ class Ipfs < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "fab01e7cceef6d21f27fb5214dcc589839beca58d78891880486e4798f34dde0"
   end
 
-  depends_on "go" => :build
+  depends_on "go@1.17" => :build
   depends_on "make" => :build
 
   def install
