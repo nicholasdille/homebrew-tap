@@ -31,7 +31,9 @@ class Kubescape < Formula
                     " -X github.com/armosec/kubescape/core/cautils.BuildNumber=v#{version}",
         "-o", bin/"kubescape"
     end
+  end
 
+  def post_install
     # bash completion
     output = Utils.safe_popen_read(bin/"kubescape", "completion", "bash")
     (bash_completion/"kubescape").write output
