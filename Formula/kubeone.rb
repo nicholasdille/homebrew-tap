@@ -30,7 +30,9 @@ class Kubeone < Formula
     # manpages
     (man/"man1").mkpath
     system bin/"kubeone", "document", "man", "-o", man/"man1"
+  end
 
+  def post_install
     # bash completion
     output = Utils.safe_popen_read(bin/"kubeone", "completion", "bash")
     (bash_completion/"kubeone").write output
