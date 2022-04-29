@@ -2,9 +2,9 @@ class StargzSnapshotterBin < Formula
   desc "Fast docker image distribution plugin for containerd, based on CRFS/stargz"
   homepage "https://github.com/containerd/containerd/issues/3731"
 
-  url "https://github.com/containerd/stargz-snapshotter/releases/download/v0.11.3/stargz-snapshotter-v0.11.3-linux-amd64.tar.gz"
-  version "0.11.3"
-  sha256 "3500a7bd7b44200a80588afd2590feba1655092722c7739fa10242d09c2976f4"
+  url "https://github.com/containerd/stargz-snapshotter/releases/download/v0.11.4/stargz-snapshotter-v0.11.4-linux-amd64.tar.gz"
+  version "0.11.4"
+  sha256 "56933aa04a64d3bf6991f9b1be127ac9896fe597d2fba194c67c2dd4368bbae3"
   license "Apache-2.0"
 
   livecheck do
@@ -13,7 +13,7 @@ class StargzSnapshotterBin < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/stargz-snapshotter-bin-0.11.3"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/stargz-snapshotter-bin-0.11.4"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "baa0539187a78e5394a205eb1f6d63def9757a4bb6bbdb3a043e2809b06fb0e9"
   end
 
