@@ -3,8 +3,8 @@ class Zot < Formula
   homepage "https://github.com/anuvu/zot"
 
   url "https://github.com/anuvu/zot.git",
-    tag:      "v1.3.8",
-    revision: "408f043f1e619cf3b9913fdf9d2c52249d537b35"
+    tag:      "v1.4.0",
+    revision: "ad90a4975f896fa6ea0140107b7a0c87edfcae76"
   license "Apache-2.0"
   head "https://github.com/anuvu/zot.git",
     branch: "master"
