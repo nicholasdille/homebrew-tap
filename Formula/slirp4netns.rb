@@ -15,8 +15,8 @@ class Slirp4netns < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/slirp4netns-1.1.12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fae51357458ef58c49f53b9cfe2e8adaec5b151986236daec86f4ba6adfa0e29"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/slirp4netns-1.2.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fdf6978445965a7271609060b9770329aac044afa617273f2828596496cb7ef0"
   end
 
   depends_on "autoconf" => :build
