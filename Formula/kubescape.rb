@@ -14,12 +14,6 @@ class Kubescape < Formula
     strategy :git
   end
 
-  bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/kubescape-2.0.150"
-    sha256 cellar: :any_skip_relocation, big_sur:      "350e39760baee8fca6ea116ce93bef37df7ce7633e8b4ab693cc694fce4f11d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fd6dbbe8d9a9c3810651e23456f71c1bfafe8b7506a2f98110dbb9cdcc3e4a04"
-  end
-
   depends_on "go" => :build
 
   def install
