@@ -27,6 +27,20 @@ class Zot < Formula
     bin.install "bin/zot-linux-amd64" => "zot"
   end
 
+  def post_install
+    # bash completion
+    output = Utils.safe_popen_read(bin/"zot", "completion", "bash")
+    (bash_completion/"zot").write output
+
+    # fish completion
+    output = Utils.safe_popen_read(bin/"zot", "completion", "fish")
+    (zsh_completion/"zot.fish").write output
+
+    # zsh completion
+    output = Utils.safe_popen_read(bin/"zot", "completion", "zsh")
+    (zsh_completion/"_zot").write output
+  end
+
   test do
     system bin/"zot", "--version"
   end
