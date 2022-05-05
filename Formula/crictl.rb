@@ -15,9 +15,9 @@ class Crictl < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/crictl-1.23.0"
-    sha256 cellar: :any_skip_relocation, big_sur:      "e731a0f691e854a564459f56faeba8498f370afa1614af5d9fda6e29fad3ce43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "176fd5bd3fce7a531d67d13d1df52c0a57d7465aaecc62903a9973f2b6e44796"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/crictl-1.24.0"
+    sha256 cellar: :any_skip_relocation, big_sur:      "9713e63ccaa66c9e1396828ce7d21ca3c9cccc4211acfbe48f0c3fc68be9bdf4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "dab77493db0042f4fed298fed100d0ec4c6eccf2e3636239f08c8bbf3e2b32af"
   end
 
   depends_on "go" => :build
