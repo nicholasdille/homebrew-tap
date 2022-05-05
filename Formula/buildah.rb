@@ -3,8 +3,8 @@ class Buildah < Formula
   homepage "https://github.com/containers/buildah"
 
   url "https://github.com/containers/buildah.git",
-    tag:      "v1.26.0",
-    revision: "0a9d6e6eaef2e2e7936313d449a4e226022eb865"
+    tag:      "v1.26.1",
+    revision: "6e2ec2eb0f2d6c7ac1abdfe7e6a81e2595ca4c2e"
   license "Apache-2.0"
   head "https://github.com/containers/buildah.git",
     branch: "main"
