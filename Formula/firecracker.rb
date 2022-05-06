@@ -15,8 +15,8 @@ class Firecracker < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/firecracker-1.0.0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "470d34bd237e7ea69b073682967ea0eafbf11ee94c9b3ecb406e910f878f2c42"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/firecracker-1.1.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e7ad90ee8d6f6ec275e2466680495d59bd8029ad9778b006bfc2c3e09022bd1d"
   end
 
   depends_on arch: :x86_64
