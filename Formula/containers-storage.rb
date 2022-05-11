@@ -15,8 +15,8 @@ class ContainersStorage < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containers-storage-1.40.2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "040a0879a07450a9577bffeba708bf8bebbeec66d73a8e0b543bbd7cf44a1e01"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containers-storage-1.41.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cd930e8cd5ccea0cead00d6f87b2375b3105934ee6975af2607201413c717873"
   end
 
   option "with-btrfs", "Add support for btrfs"
