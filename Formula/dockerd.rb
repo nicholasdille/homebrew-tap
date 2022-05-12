@@ -15,8 +15,8 @@ class Dockerd < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/dockerd-20.10.15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5a93c4c14e15ec99721e815f583e180f49b12395b5a3ba2c95659208dd2c7801"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/dockerd-20.10.16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f10b68de3f848e671ab31fa05cad6db7a32501a91498efa7dec82fe8e700373c"
   end
 
   option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
