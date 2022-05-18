@@ -15,9 +15,9 @@ class Imgcrypt < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/imgcrypt-1.1.3"
-    sha256 cellar: :any_skip_relocation, big_sur:      "4d3d3ec1e38ba5143e9386442e224a430384d6b8c85f7db2622ac4b4f7575fd9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8f57685ac8cfd9a1f82ac2f0e4bb936f661b47150056f773f3142a32c98e420d"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/imgcrypt-1.1.5"
+    sha256 cellar: :any_skip_relocation, big_sur:      "2c7726bb2ac0928d66383d19e60f412704d68a77f18e55f64db77b2317216622"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "00957800fb608a614d59059616b73780654c7d6008d623f3d2d33f3515aa230a"
   end
 
   depends_on "go" => :build
