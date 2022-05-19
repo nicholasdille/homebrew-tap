@@ -15,9 +15,9 @@ class Goss < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/goss-0.3.16"
-    sha256 cellar: :any_skip_relocation, catalina:     "46c08f7f625da46b9cef170133e67365fe556671b8ba3934299d897bdb07e6a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3c1bf2dfb9a4d68f793fef66906ee36c920a077c06ae7e5dfa605d63e918eaa7"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/goss-0.3.18"
+    sha256 cellar: :any_skip_relocation, big_sur:      "12ac781991f06bf06a8bb121b3ffe05bbd3514f98f35f2e6686483595dfc7047"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b63f9c265095b181f48f7d83441188ea0dea1064011790546cb140ded667a756"
   end
 
   depends_on "go" => :build
