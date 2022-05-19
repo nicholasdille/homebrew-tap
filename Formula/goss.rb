@@ -3,8 +3,8 @@ class Goss < Formula
   homepage "https://goss.rocks/"
 
   url "https://github.com/aelsabbahy/goss.git",
-    tag:      "v0.3.16",
-    revision: "6e5d3e37bb1facb315fa9f49b523b7e41496dfa8"
+    tag:      "v0.3.18",
+    revision: "a2aa3d062b469aa790c92142f4af608a98dc64b0"
   license "Apache-2.0"
   head "https://github.com/aelsabbahy/goss.git",
     branch: "master"
