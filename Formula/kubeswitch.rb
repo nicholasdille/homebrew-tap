@@ -3,8 +3,8 @@ class Kubeswitch < Formula
   homepage "https://github.com/danielb42/kubeswitch"
 
   url "https://github.com/danielb42/kubeswitch.git",
-    tag:      "v1.4.0",
-    revision: "5b63579c97c9f7cec9529ba66fcfd5c7754f2890"
+    tag:      "v1.5.0",
+    revision: "49301a78da68560880520bc0d7538f5997d6d2a4"
   license "MIT"
   head "https://github.com/danielb42/kubeswitch.git",
     branch: "master"
