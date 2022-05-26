@@ -3,8 +3,8 @@ class Datree < Formula
   homepage "https://datree.io/"
 
   url "https://github.com/datreeio/datree.git",
-    tag:      "1.4.30",
-    revision: "8203b939a9d1f1bca87b4f1e6f384795746e8b63"
+    tag:      "1.4.32",
+    revision: "bd21e9964cfda26862cb4dcd7eda6f0e99e6661c"
   license "Apache-2.0"
   head "https://github.com/datreeio/datree.git",
     branch: "staging"
@@ -15,7 +15,7 @@ class Datree < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/datree-1.4.30"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/datree-1.4.32"
     sha256 cellar: :any_skip_relocation, big_sur:      "385f8c8592bec587232bd78c29631c2ff9774498b30d76f2e0138bc3c1af2363"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "9236e0cefbfe3c61cfaf70971987400b44463833eb8a3e1f0fb6cd9d979116a0"
   end
