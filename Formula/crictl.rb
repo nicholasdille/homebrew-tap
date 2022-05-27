@@ -3,8 +3,8 @@ class Crictl < Formula
   homepage "https://github.com/kubernetes-sigs/cri-tools"
 
   url "https://github.com/kubernetes-sigs/cri-tools.git",
-    tag:      "v1.24.1",
-    revision: "d1d0120c55730038c65fa6baf98418b199f4b919"
+    tag:      "v1.24.2",
+    revision: "d9642f137ca8d378782c6502fd345439bfb29777"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/cri-tools.git",
     branch: "master"
