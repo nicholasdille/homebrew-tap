@@ -3,8 +3,8 @@ class Bin < Formula
   homepage "https://github.com/marcosnils/bin"
 
   url "https://github.com/marcosnils/bin.git",
-    tag:      "v0.14.1",
-    revision: "e86fd0ee5cbacee29e989b4dfc741fbbc982dde8"
+    tag:      "v0.15.0",
+    revision: "a798f72f7d3cecb24a2078c391858293479f7eb4"
   license "MIT"
   head "https://github.com/marcosnils/bin.git",
     branch: "master"
