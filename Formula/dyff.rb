@@ -3,8 +3,8 @@ class Dyff < Formula
   homepage "https://github.com/homeport/dyff"
 
   url "https://github.com/homeport/dyff.git",
-    tag:      "v1.5.3",
-    revision: "2e6f1c072605bfdcc007294bb026539e486e1a7a"
+    tag:      "v1.5.4",
+    revision: "4b398d4df3aa6b443124657c37d3fe788568d1ad"
   license "MIT"
   head "https://github.com/homeport/dyff.git",
     branch: "main"
