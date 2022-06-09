@@ -3,8 +3,8 @@ class Firejail < Formula
   homepage "https://firejail.wordpress.com/"
 
   url "https://github.com/netblue30/firejail.git",
-    tag:      "0.9.68",
-    revision: "0845233a630a1f4224a83ae870b2d6141f978059"
+    tag:      "0.9.70",
+    revision: "b4b08d21cd95725c9d55dfdb6987fcc6d7893247"
   license "LGPL-2.0-only"
   head "https://github.com/netblue30/firejail.git",
     branch: "master"
@@ -15,7 +15,7 @@ class Firejail < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/firejail-0.9.68"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/firejail-0.9.70"
     sha256 x86_64_linux: "43d9c074d80f4f8e270785722633afe7cea646d7bd4b3751c83e13efdc092972"
   end
 
