@@ -16,7 +16,7 @@ class Firejail < Formula
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/firejail-0.9.70"
-    sha256 x86_64_linux: "43d9c074d80f4f8e270785722633afe7cea646d7bd4b3751c83e13efdc092972"
+    sha256 x86_64_linux: "a715facc87f48f24935ed6e0a0637ab85cdc0669f0cbc8d75cc94d3772504243"
   end
 
   depends_on "gcc" => :build
