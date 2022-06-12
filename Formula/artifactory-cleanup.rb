@@ -3,10 +3,9 @@ class ArtifactoryCleanup < Formula
   homepage "https://crazymax.dev/artifactory-cleanup/"
 
   url "https://github.com/crazy-max/artifactory-cleanup.git",
-    tag:      "v1.5.0",
-    revision: "05479368a3050635e03478dd744c8e6ac3b39b70"
+    tag:      "v1.6.0",
+    revision: "5099bf5609f769d3c0f7732140c9e3941a1239d0"
   license "MIT"
-  revision 1
   head "https://github.com/crazy-max/artifactory-cleanup.git",
     branch: "master"
 
