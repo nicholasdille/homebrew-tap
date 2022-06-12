@@ -3,10 +3,9 @@ class Reptyr < Formula
   homepage "https://github.com/nelhage/reptyr"
 
   url "https://github.com/nelhage/reptyr.git",
-    tag:      "reptyr-0.8.0",
-    revision: "d21a9b19df0fdccabd4c308839caf2d1cc66351d"
+    tag:      "reptyr-0.9.0",
+    revision: "a21260effc5bdf8879feb18252f02ebe03a1698c"
   license "MIT"
-  revision 1
   head "https://github.com/nelhage/reptyr.git",
     branch: "master"
 
@@ -16,7 +15,7 @@ class Reptyr < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/reptyr-0.8.0_1"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/reptyr-0.9.0_1"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "d7aa2516a3a7a745918a69450273397b34992070aa271e61411b05f7922aadbf"
   end
 
