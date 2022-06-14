@@ -15,8 +15,8 @@ class Conmon < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/conmon-2.1.1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "89427180b161f1d36dc03e34d36ce0b4524f8276e3a12bb1ff3c91afa0de3130"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/conmon-2.1.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "adafe56fbc382ad50e0319b79b2b0330dd1155c30b9d9c4dcec9a06c66a53dea"
   end
 
   depends_on "go-md2man" => :build
