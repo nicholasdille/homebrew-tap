@@ -3,8 +3,8 @@ class NerdctlImmortal < Formula
   homepage "https://github.com/containerd/nerdctl"
 
   url "https://github.com/containerd/nerdctl.git",
-    tag:      "v0.20.0",
-    revision: "e77e05b5fd252274e3727e0439e9a2d45622ccb9"
+    tag:      "v0.21.0",
+    revision: "9ddf5226eabcbb7b4b43987f3b0f8d53d86d3bca"
   license "Apache-2.0"
   head "https://github.com/containerd/nerdctl.git",
     branch: "master"
