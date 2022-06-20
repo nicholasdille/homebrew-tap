@@ -15,9 +15,9 @@ class Trivy < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/trivy-0.29.0"
-    sha256 cellar: :any_skip_relocation, big_sur:      "73066378c79cda58f2dde9f84dfb60289aa9b7b867b687b20f0fbe20aa2369d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a3513c13c684b6d31b043af57bfffc7967fd97054de4c931f644ecea8348e164"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/trivy-0.29.1"
+    sha256 cellar: :any_skip_relocation, big_sur:      "786033080279e6c25e5e33de4bafb0a6cf8f6dc120c8e6e6fb8fe5eef98b36e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9e306fa5bdb5998ca854faaeb4c3672fe33863e99dc3c3e08a8aa1aed8512a3c"
   end
 
   depends_on "go" => :build
