@@ -2,9 +2,9 @@ class PortainerBin < Formula
   desc "Making Docker and Kubernetes management easy"
   homepage "https://www.portainer.io/"
 
-  url "https://github.com/portainer/portainer/releases/download/2.13.1/portainer-2.13.1-linux-amd64.tar.gz"
-  version "2.13.1"
-  sha256 "d11e9a02a3559c98cb5caf60282487c2be66cfa28844ed8efb7a41827c4a527a"
+  url "https://github.com/portainer/portainer/releases/download/2.14.0/portainer-2.14.0-linux-amd64.tar.gz"
+  version "2.14.0"
+  sha256 "ff1d6e80f1876750e82f226f1fd6b3de02f21bd2e7da66110147dc523ee7cd65"
   license "Zlib"
 
   livecheck do
@@ -13,7 +13,7 @@ class PortainerBin < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/portainer-bin-2.13.1"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/portainer-bin-2.14.0"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "2d3cc78baa452f78899714321ea6f5bbe457fdfcc044e01215594e08cb93801a"
   end
 
