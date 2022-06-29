@@ -3,8 +3,8 @@ class Gvisor < Formula
   homepage "https://gvisor.dev/"
 
   url "https://github.com/google/gvisor.git",
-    tag:      "release-20220621.0",
-    revision: "9dfac31f0a577b0b9746b73594ecda5a7e328904"
+    tag:      "release-20220627.0",
+    revision: "45b06bbb763662579dcc35b9d70f56ce85cf3370"
   license "Apache-2.0"
   head "https://github.com/google/gvisor.git",
     branch: "master"
