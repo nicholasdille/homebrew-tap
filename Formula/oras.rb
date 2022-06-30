@@ -3,8 +3,8 @@ class Oras < Formula
   homepage "https://oras.land/"
 
   url "https://github.com/oras-project/oras.git",
-    tag:      "v0.12.0",
-    revision: "1e6a64e1789f5145bf669b75bebfe013100f6253"
+    tag:      "v0.13.0",
+    revision: "bb75f50fb5c21a59beb09ce1b632291182046632"
   license "MIT"
   head "https://github.com/oras-project/oras.git",
     branch: "main"
