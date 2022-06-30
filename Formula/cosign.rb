@@ -28,10 +28,10 @@ class Cosign < Formula
   def install
     system "make",
       "cosign",
-      "cosigned",
+      "policy-controller",
       "sget"
     bin.install "cosign"
-    bin.install "cosigned"
+    bin.install "policy-controller"
     bin.install "sget"
   end
 
