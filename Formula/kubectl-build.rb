@@ -3,8 +3,8 @@ class KubectlBuild < Formula
   homepage "https://github.com/vmware-tanzu/buildkit-cli-for-kubectl"
 
   url "https://github.com/vmware-tanzu/buildkit-cli-for-kubectl.git",
-    tag:      "v0.1.5",
-    revision: "ca22e6ce3e5679eda12f044ee33eb5df7d2a4ec0"
+    tag:      "v0.1.6",
+    revision: "16bb60cb76b8c758f8f29907928d218ad9cd7483"
   license "Apache-2.0"
   head "https://github.com/vmware-tanzu/buildkit-cli-for-kubectl.git",
     branch: "main"
