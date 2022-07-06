@@ -43,6 +43,6 @@ class Zot < Formula
   #  end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/#{name} --version")
+    system bin/"zot", "--version"
   end
 end
