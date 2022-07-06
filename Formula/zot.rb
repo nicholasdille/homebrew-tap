@@ -14,11 +14,6 @@ class Zot < Formula
     strategy :github_latest
   end
 
-  bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/zot-1.3.8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "befe1eb28a01f25a5be91bdf26388d84e593113854355f291a203b2c223a160a"
-  end
-
   depends_on "go" => :build
   depends_on arch: :x86_64
   depends_on :linux
@@ -28,19 +23,19 @@ class Zot < Formula
     bin.install "bin/zot-linux-amd64" => "zot"
   end
 
-  #  def post_install
-  # bash completion
-  # output = Utils.safe_popen_read({ "SHELL" => "bash" }, bin/"zot", "completion", "bash", { err: :err })
-  # (bash_completion/"zot").write output
+  def post_install
+    # bash completion
+    output = Utils.safe_popen_read({ "SHELL" => "bash" }, bin/"zot", "completion", "bash", { err: :err })
+    (bash_completion/"zot").write output
 
-  # fish completion
-  # output = Utils.safe_popen_read({ "SHELL" => "fish" }, bin/"zot", "completion", "fish", { err: :err })
-  # (zsh_completion/"zot.fish").write output
+    # fish completion
+    output = Utils.safe_popen_read({ "SHELL" => "fish" }, bin/"zot", "completion", "fish", { err: :err })
+    (zsh_completion/"zot.fish").write output
 
-  # zsh completion
-  # output = Utils.safe_popen_read({ "SHELL" => "zsh" }, bin/"zot", "completion", "zsh", { err: :err })
-  # (zsh_completion/"_zot").write output
-  #  end
+    # zsh completion
+    output = Utils.safe_popen_read({ "SHELL" => "zsh" }, bin/"zot", "completion", "zsh", { err: :err })
+    (zsh_completion/"_zot").write output
+  end
 
   test do
     output = shell_output(bin/"zot --version 2>&1")
