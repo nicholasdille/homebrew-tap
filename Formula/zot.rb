@@ -20,8 +20,8 @@ class Zot < Formula
   end
 
   depends_on "go" => :build
-  depends_on :linux
   depends_on arch: :x86_64
+  depends_on :linux
 
   def install
     system "make", "binary"
