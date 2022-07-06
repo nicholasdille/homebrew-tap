@@ -41,10 +41,10 @@ class Buildx < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
-      "-ldflags", "-s -w"\
-                  " -X #{pkg}/version.Version=#{tag}"\
-                  " -X #{pkg}/version.Revision=#{revision}"\
-                  " -X #{pkg}/version.Package=#{pkg}",
+      "-ldflags", "-s -w " \
+                  "-X #{pkg}/version.Version=#{tag} " \
+                  "-X #{pkg}/version.Revision=#{revision} " \
+                  "-X #{pkg}/version.Package=#{pkg}",
       "-o",
       bin/"docker-buildx",
       "./cmd/buildx"

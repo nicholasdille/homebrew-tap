@@ -26,8 +26,8 @@ class Goss < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
-      "-ldflags", "-s -w"\
-                  " -X main.version=#{version}",
+      "-ldflags", "-s -w " \
+                  "-X main.version=#{version}",
       "-o",
       bin/"goss",
       "github.com/aelsabbahy/goss/cmd/goss"

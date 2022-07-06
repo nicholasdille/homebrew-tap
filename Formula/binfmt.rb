@@ -26,8 +26,8 @@ class Binfmt < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
-      "-ldflags", " -X main.revision=#{version}"\
-                  " -X main.qemuVersion=#{version}",
+      "-ldflags", "-X main.revision=#{version} " \
+                  "-X main.qemuVersion=#{version}",
       "-o", bin/"binfmt",
       "./cmd/binfmt"
   end

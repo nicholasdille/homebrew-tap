@@ -29,11 +29,11 @@ class Bin < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
-      "-ldflags", "-s -w"\
-                  " -X main.version=#{version}"\
-                  " -X main.commit=#{commit}"\
-                  " -X main.date=#{build_date}"\
-                  " -X main.builtBy=Homebrew",
+      "-ldflags", "-s -w " \
+                  "-X main.version=#{version} " \
+                  "-X main.commit=#{commit} " \
+                  "-X main.date=#{build_date} " \
+                  "-X main.builtBy=Homebrew",
       "-o",
       bin/"bin",
       "."

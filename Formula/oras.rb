@@ -30,11 +30,11 @@ class Oras < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
-      "-ldflags", "-w -s"\
-                  " -X #{pkg}/internal/version.Version=#{version}"\
-                  " -X #{pkg}/internal/version.BuildMetadata=Homebrew"\
-                  " -X #{pkg}/internal/version.GitCommit=#{commit}"\
-                  " -X #{pkg}/internal/version.GitTreeState=clean",
+      "-ldflags", "-w -s " \
+                  "-X #{pkg}/internal/version.Version=#{version} " \
+                  "-X #{pkg}/internal/version.BuildMetadata=Homebrew " \
+                  "-X #{pkg}/internal/version.GitCommit=#{commit} " \
+                  "-X #{pkg}/internal/version.GitTreeState=clean",
       "-o", bin/"oras",
       "./cmd/oras"
   end

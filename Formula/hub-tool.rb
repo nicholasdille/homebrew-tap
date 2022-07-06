@@ -40,9 +40,9 @@ class HubTool < Formula
     system "go",
       "build",
       "-trimpath",
-      "-ldflags", "-s -w"\
-                  " -X #{pkg}/internal.GitCommit=#{commit}"\
-                  " -X #{pkg}/internal.Version=#{tag}",
+      "-ldflags", "-s -w " \
+                  "-X #{pkg}/internal.GitCommit=#{commit} " \
+                  "-X #{pkg}/internal.Version=#{tag}",
       "-o", bin/"hub-tool",
       "."
   end

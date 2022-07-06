@@ -21,8 +21,8 @@ class Kubescape < Formula
 
     cd "cmd" do
       system "go", "build",
-        "-ldflags", "-s -w"\
-                    " -X github.com/armosec/kubescape/core/cautils.BuildNumber=v#{version}",
+        "-ldflags", "-s -w " \
+                    "-X github.com/armosec/kubescape/core/cautils.BuildNumber=v#{version}",
         "-o", bin/"kubescape"
     end
   end

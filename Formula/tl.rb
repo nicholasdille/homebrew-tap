@@ -27,10 +27,10 @@ class Tl < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
-      "-ldflags", "-s -w"\
-                  " -X main.version=#{version}"\
-                  " -X main.commit=#{commit}"\
-                  " -X main.date=#{timestamp}",
+      "-ldflags", "-s -w " \
+                  "-X main.version=#{version} " \
+                  "-X main.commit=#{commit} " \
+                  "-X main.date=#{timestamp}",
       "-o", bin/"tl",
       "."
   end

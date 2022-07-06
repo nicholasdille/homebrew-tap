@@ -26,8 +26,8 @@ class Havener < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
-      "-ldflags", "-s -w -extldflags -static"\
-                  " -X github.com/homeport/havener/internal/cmd.version=#{version}",
+      "-ldflags", "-s -w -extldflags -static " \
+                  "-X github.com/homeport/havener/internal/cmd.version=#{version}",
       "-o", bin/"havener",
       "./cmd/havener/main.go"
 

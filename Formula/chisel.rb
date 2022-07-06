@@ -30,9 +30,9 @@ class Chisel < Formula
     system "go",
       "build",
       "-trimpath",
-      "-ldflags", "-s -w"\
-                  " -buildid=#{commit}"\
-                  " -X #{pkg}/share.BuildVersion=#{version}",
+      "-ldflags", "-s -w " \
+                  "-buildid=#{commit} " \
+                  "-X #{pkg}/share.BuildVersion=#{version}",
       "-o", bin/"chisel",
       "."
   end

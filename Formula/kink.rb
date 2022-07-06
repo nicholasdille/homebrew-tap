@@ -30,11 +30,11 @@ class Kink < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
-      "-ldflags", "-s -w"\
-                  " -X #{pkg}.GitVersion=#{version}"\
-                  " -X #{pkg}.gitCommit=#{commit}"\
-                  " -X #{pkg}.buildDate=#{build_date}"\
-                  " -X #{pkg}.gitTreeState=clean",
+      "-ldflags", "-s -w " \
+                  "-X #{pkg}.GitVersion=#{version} " \
+                  "-X #{pkg}.gitCommit=#{commit} " \
+                  "-X #{pkg}.buildDate=#{build_date} " \
+                  "-X #{pkg}.gitTreeState=clean",
       "-o",
       bin/"kink"
 

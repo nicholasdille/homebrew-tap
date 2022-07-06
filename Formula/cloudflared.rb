@@ -30,9 +30,9 @@ class Cloudflared < Formula
     system "go", "build",
       "-v",
       "-mod=vendor",
-      "-ldflags", "-s -w"\
-                  " -X main.Version=#{version}"\
-                  " -X main.BuildTime=#{timestamp}",
+      "-ldflags", "-s -w " \
+                  "-X main.Version=#{version} " \
+                  "-X main.BuildTime=#{timestamp}",
       "-o", "cloudflared",
       "#{pkg}/cmd/cloudflared"
 

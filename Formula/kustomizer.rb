@@ -26,8 +26,8 @@ class Kustomizer < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
-      "-ldflags", "-s -w"\
-                  " -X main.VERSION=#{version}",
+      "-ldflags", "-s -w " \
+                  "-X main.VERSION=#{version}",
       "-o", bin/"kustomizer",
       "./cmd/kustomizer"
 

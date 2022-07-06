@@ -30,8 +30,8 @@ class DockerCompose < Formula
         "build",
         "-trimpath",
         "-tags", "e2e,kube",
-        "-ldflags", "-s -w"\
-                    " -X #{pkg}/internal.Version=v#{version}",
+        "-ldflags", "-s -w " \
+                    "-X #{pkg}/internal.Version=v#{version}",
         "-o", lib/"docker/cli-plugins/docker-compose",
         "./cmd"
 

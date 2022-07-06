@@ -31,11 +31,11 @@ class Cmctl < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go", "build",
       *std_go_args(
-        ldflags: "-s -w "\
-                 "-X #{ctl}/pkg/build.name=cmctl "\
-                 "-X #{ctl}/pkg/build/commands.registerCompletion=true "\
-                 "-X #{pkg}/pkg/util.AppVersion=#{version} "\
-                 "-X #{pkg}/pkg/util.AppGitState=clean "\
+        ldflags: "-s -w " \
+                 "-X #{ctl}/pkg/build.name=cmctl " \
+                 "-X #{ctl}/pkg/build/commands.registerCompletion=true " \
+                 "-X #{pkg}/pkg/util.AppVersion=#{version} " \
+                 "-X #{pkg}/pkg/util.AppGitState=clean " \
                  "-X #{pkg}/pkg/util.AppGitCommit=#{commit}",
       ),
       "./cmd/ctl/main.go"

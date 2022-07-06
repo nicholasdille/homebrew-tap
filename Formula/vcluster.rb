@@ -28,10 +28,10 @@ class Vcluster < Formula
     build_date = Utils.safe_popen_read("date", "+%Y-%m-%dT%H:%M:%SZ")
     system "go", "build",
       "-a",
-      "-ldflags", "-s -w"\
-                  " -X main.commitHash=#{commit} "\
-                  " -X main.buildDate=#{build_date}"\
-                  " -X main.version=#{version}",
+      "-ldflags", "-s -w " \
+                  "-X main.commitHash=#{commit} " \
+                  "-X main.buildDate=#{build_date} " \
+                  "-X main.version=#{version}",
       "-o", bin/"vcluster",
       "cmd/vclusterctl/main.go"
   end

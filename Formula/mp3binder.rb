@@ -26,11 +26,11 @@ class Mp3binder < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go", "build",
       "-trimpath",
-      "-ldflags", "-w -s"\
-                  " -X main.name=mp3binder"\
-                  " -X main.version=#{version}"\
-                  " -X main.realm=mp3binder"\
-                  " -extldflags=-static",
+      "-ldflags", "-w -s " \
+                  "-X main.name=mp3binder " \
+                  "-X main.version=#{version} " \
+                  "-X main.realm=mp3binder " \
+                  "-extldflags=-static",
       "-a",
       "-buildvcs=false",
       "-o", bin/"mp3binder",

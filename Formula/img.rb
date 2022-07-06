@@ -65,9 +65,9 @@ class Img < Formula
     ]
     system "go", "build",
       "-tags", buildtags.join(" "),
-      "-ldflags", "-w"\
-                  " -X #{pkg}/version.GITCOMMIT=#{commit}"\
-                  " -X #{pkg}/version.VERSION=#{version}",
+      "-ldflags", "-w " \
+                  "-X #{pkg}/version.GITCOMMIT=#{commit} " \
+                  "-X #{pkg}/version.VERSION=#{version}",
       "-o", bin/"img",
       "."
   end

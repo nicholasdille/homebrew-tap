@@ -26,8 +26,8 @@ class Dyff < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
-      "-ldflags", "-s -w -extldflags -static"\
-                  " -X github.com/homeport/dyff/internal/cmd.version=#{version}",
+      "-ldflags", "-s -w -extldflags -static " \
+                  "-X github.com/homeport/dyff/internal/cmd.version=#{version}",
       "-o", bin/"dyff",
       "./cmd/dyff/main.go"
 

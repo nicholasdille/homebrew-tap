@@ -27,24 +27,24 @@ class Notation < Formula
 
     system "go",
       "build",
-      "-ldflags", "-s -w"\
-                  " -X $(MODULE)/internal/version.BuildMetadata=v#{version}",
+      "-ldflags", "-s -w " \
+                  "-X $(MODULE)/internal/version.BuildMetadata=v#{version}",
       "-o",
       bin/"notation",
       "./cmd/notation"
 
     system "go",
       "build",
-      "-ldflags", "-s -w"\
-                  " -X $(MODULE)/internal/version.BuildMetadata=v#{version}",
+      "-ldflags", "-s -w " \
+                  "-X $(MODULE)/internal/version.BuildMetadata=v#{version}",
       "-o",
       bin/"docker-generate",
       "./cmd/docker-generate"
 
     system "go",
       "build",
-      "-ldflags", "-s -w"\
-                  " -X $(MODULE)/internal/version.BuildMetadata=v#{version}",
+      "-ldflags", "-s -w " \
+                  "-X $(MODULE)/internal/version.BuildMetadata=v#{version}",
       "-o",
       bin/"docker-notation",
       "./cmd/docker-notation"

@@ -26,8 +26,8 @@ class Envcli < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
-      "-ldflags", "-s -w"\
-                  " -X main.Version=#{version}",
+      "-ldflags", "-s -w " \
+                  "-X main.Version=#{version}",
       "-o", bin/"envcli",
       "."
   end

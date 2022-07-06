@@ -27,8 +27,8 @@ class Yasu < Formula
     system "go",
       "build",
       "-trimpath",
-      "-ldflags", "-s -w"\
-                  " -X main.Version=#{version}",
+      "-ldflags", "-s -w " \
+                  "-X main.Version=#{version}",
       "-o", bin/"yasu",
       "."
   end

@@ -29,9 +29,9 @@ class Localizer < Formula
     ENV["CGO_ENABLED"] = "1"
 
     system "go", "build",
-      "-ldflags", "-w -s"\
-                  " -X github.com/getoutreach/gobox/pkg/app.Version=#{version}"\
-                  " -X github.com/getoutreach/go-outreach/v2/pkg/app.Version=#{version}",
+      "-ldflags", "-w -s " \
+                  "-X github.com/getoutreach/gobox/pkg/app.Version=#{version} " \
+                  "-X github.com/getoutreach/go-outreach/v2/pkg/app.Version=#{version}",
       "-v",
       "-tags=or_dev",
       "-o", buildpath,

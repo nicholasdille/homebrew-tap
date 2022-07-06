@@ -28,9 +28,9 @@ class KubeBench < Formula
     ENV["CGO_ENABLED"] = "0"
     system "go",
       "build",
-      "-ldflags", "-s -w"\
-                  " -X #{pkg}.KubeBenchVersion=#{version}"\
-                  " -X #{pkg}.cfgDir=#{etc}/kube-bench",
+      "-ldflags", "-s -w " \
+                  "-X #{pkg}.KubeBenchVersion=#{version} " \
+                  "-X #{pkg}.cfgDir=#{etc}/kube-bench",
       "-o",
       bin/"kube-bench",
       "."

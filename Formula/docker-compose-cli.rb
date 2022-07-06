@@ -40,8 +40,8 @@ class DockerComposeCli < Formula
       "build",
       "-trimpath",
       "-tags", "e2e,kube",
-      "-ldflags", "-s -w"\
-                  " -X #{pkg}/internal.Version=#{tag}",
+      "-ldflags", "-s -w " \
+                  "-X #{pkg}/internal.Version=#{tag}",
       "-o", lib/"docker/cli-plugins/docker-compose-cli",
       "./cli"
 
@@ -49,8 +49,8 @@ class DockerComposeCli < Formula
       "build",
       "-trimpath",
       "-tags", "e2e,kube",
-      "-ldflags", "-s -w"\
-                  " -X #{pkg}/internal.Version=#{tag}",
+      "-ldflags", "-s -w " \
+                  "-X #{pkg}/internal.Version=#{tag}",
       "-o", lib/"docker/cli-plugins/docker-compose",
       "./cmd"
 
