@@ -29,15 +29,15 @@ class Zot < Formula
 
   def post_install
     # bash completion
-    output = Utils.safe_popen_read(bin/"zot", "completion", "bash")
+    output = Utils.safe_popen_read({ "SHELL" => "bash" }, bin/"zot", "completion", "bash", { :err => :err })
     (bash_completion/"zot").write output
 
     # fish completion
-    output = Utils.safe_popen_read(bin/"zot", "completion", "fish")
+    output = Utils.safe_popen_read({ "SHELL" => "bash" }, bin/"zot", "completion", "fish", { :err => :err })
     (zsh_completion/"zot.fish").write output
 
     # zsh completion
-    output = Utils.safe_popen_read(bin/"zot", "completion", "zsh")
+    output = Utils.safe_popen_read({ "SHELL" => "bash" }, bin/"zot", "completion", "zsh", { :err => :err })
     (zsh_completion/"_zot").write output
   end
 
