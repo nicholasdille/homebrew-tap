@@ -15,9 +15,9 @@ class Vendir < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/vendir-0.28.0"
-    sha256 cellar: :any_skip_relocation, big_sur:      "bba88015d38f51afdc91cc019ac70a1b5388c8ca160b7a179baf48093c2d5396"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "99226a0b4d267a3f0df1d03d48392a250a37d7738cbe1b28eedc0125a5695e9c"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/vendir-0.28.1"
+    sha256 cellar: :any_skip_relocation, big_sur:      "e984457ad0565722eaae95287102c62e72d5fd23ce299c3d1a48aa6ed5fd49fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6c3155dc80a6dca0c5aaab9fde8df37d974e717606fd0cf9140cb7afc7c5c0f0"
   end
 
   depends_on "go" => :build
