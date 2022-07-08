@@ -15,9 +15,9 @@ class Task < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/task-3.13.0"
-    sha256 cellar: :any_skip_relocation, big_sur:      "804c9824f6c77d9e3d5e8a3449b579959d248860d8fcffe6dcacf1d1c3e1595e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d49a26a3ae14deb6942f459ecce1f9df26b93de3396c7111f37ee4e31b8efe79"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/task-3.14.0"
+    sha256 cellar: :any_skip_relocation, big_sur:      "fa102702d71a620ac36cc21b1e1a72f09055d0e74baa4900b6d53cc2145d3f6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0e518090793ddf2185625aabf5c35796137f22a3d587b71241111fe4d5ddff1b"
   end
 
   depends_on "go" => :build
