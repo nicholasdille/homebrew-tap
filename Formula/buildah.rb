@@ -15,8 +15,8 @@ class Buildah < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildah-1.26.1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a7be4e662d86c48c19125030a663aafa2a1c0bfde6e36907107ba5e277823b1d"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/buildah-1.26.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "dd9e427f8491b4f3b7eca68a2b5d06eedc242c0eaf992877bf53ede0d743ba95"
   end
 
   option "with-btrfs", "Support BTRFS, requires libbtrfs-dev"
