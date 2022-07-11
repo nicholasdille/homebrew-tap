@@ -16,7 +16,7 @@ class Faasd < Formula
 
   bottle do
     root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/faasd-0.16.2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8075d6ac3027624b69c4b7169b9130050519c9187aa557f5733bd76c43259bbb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "dbbafa2c42a88a55bfd4457e3c81c4bd582c43b25cfbc0a56e7b9358136b8f08"
   end
 
   depends_on "go" => :build
