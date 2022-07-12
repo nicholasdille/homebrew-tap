@@ -3,8 +3,8 @@ class Yasu < Formula
   homepage "https://github.com/crazy-max/yasu"
 
   url "https://github.com/crazy-max/yasu.git",
-    tag:      "v1.18.0",
-    revision: "c6bb3a43c59d8455d4c35244f97d105a0fec911d"
+    tag:      "v1.19.0",
+    revision: "5152cc27059d2302fa014a8c33b628de79260767"
   license "GPL-3.0-only"
   head "https://github.com/crazy-max/yasu.git",
     branch: "master"
