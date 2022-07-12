@@ -2,9 +2,9 @@ class PortainerBin < Formula
   desc "Making Docker and Kubernetes management easy"
   homepage "https://www.portainer.io/"
 
-  url "https://github.com/portainer/portainer/releases/download/2.14.0/portainer-2.14.0-linux-amd64.tar.gz"
-  version "2.14.0"
-  sha256 "ff1d6e80f1876750e82f226f1fd6b3de02f21bd2e7da66110147dc523ee7cd65"
+  url "https://github.com/portainer/portainer/releases/download/2.14.1/portainer-2.14.1-linux-amd64.tar.gz"
+  version "2.14.1"
+  sha256 "47b4f73a36c4e7bafb7bcb7f190b284a6176faa2e843631c525b91f31c052663"
   license "Zlib"
 
   livecheck do
