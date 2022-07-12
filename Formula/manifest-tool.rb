@@ -15,9 +15,9 @@ class ManifestTool < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/manifest-tool-2.0.3"
-    sha256 cellar: :any_skip_relocation, big_sur:      "f64701c308b2aff1987fc7bfa3b79549e29d5fd7de28825fb91bb94dbadfcdc5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "782a88b76233e4c2ac63d56a404e97fb723b16a27cb4b14036457a82a80a01c6"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/manifest-tool-2.0.4"
+    sha256 cellar: :any_skip_relocation, big_sur:      "c633d1f11a1837b0035697db39e68b70d091106f70652dab6cbd83f45c28659c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1ae18199b13022d8c74a3310e9a4601d057416ad4f8763814c8bcadc0663d085"
   end
 
   depends_on "go" => :build
