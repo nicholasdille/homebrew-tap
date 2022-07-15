@@ -3,8 +3,8 @@ class Vendir < Formula
   homepage "https://carvel.dev/vendir"
 
   url "https://github.com/vmware-tanzu/carvel-vendir.git",
-    tag:      "v0.28.1",
-    revision: "ed16945007090dec99252ca468e6bd525c8ac534"
+    tag:      "v0.29.0",
+    revision: "9a6109a4a47d934a9db6c279deaee0c91f0bad19"
   license "Apache-2.0"
   head "https://github.com/vmware-tanzu/carvel-vendir.git",
     branch: "develop"
