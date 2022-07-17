@@ -15,9 +15,9 @@ class Diun < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/diun-4.21.0"
-    sha256 cellar: :any_skip_relocation, big_sur:      "ee05b8e42e3ad1cec684073fa2799ca237c471116cea2cda89141db1d682cb8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d788c42fe0e3dc02c81e732203a7f11d83415441ea97067483b2c326ef2374eb"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/diun-4.22.0"
+    sha256 cellar: :any_skip_relocation, big_sur:      "279c57f51ead27514545a4608e6045e75e20c3b28a249728d226c74661b8c1b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f3d84156db771c0e231519776caddba65667d92271a56620fb1c6f308db83d82"
   end
 
   depends_on "go" => :build
