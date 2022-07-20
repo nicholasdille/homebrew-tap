@@ -3,8 +3,8 @@ class DockerCompose < Formula
   homepage "https://docs.docker.com/compose/"
 
   url "https://github.com/docker/compose.git",
-  tag:      "v2.6.1",
-  revision: "68cf8d5ca0d4852e17aca6fb2d9d08cf2baa3b73"
+  tag:      "v2.7.0",
+  revision: "0b2281348bd6acd5daed42aaafb52cbc04deba02"
   license "Apache-2.0"
 
   livecheck do
