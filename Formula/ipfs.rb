@@ -16,9 +16,9 @@ class Ipfs < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/ipfs-0.13.1"
-    sha256 cellar: :any_skip_relocation, big_sur:      "f8d7f0659375f926cfc322a7c71850e8987095cc8a42cd0e0dedb00a0e528673"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8b87815d1750aba72b190961be21de07871ef7f4310d6a536493d38ec630f420"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/ipfs-0.14.0"
+    sha256 cellar: :any_skip_relocation, big_sur:      "683b61c728e74b1b246143c7dd975fd59277338deeec0a8c3b07c79a41d4bac1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1f301ceaaa51a2da53b1fef695fa6ea629d02125b1bcc54e8f2ce4a9a913b208"
   end
 
   depends_on "go@1.17" => :build
