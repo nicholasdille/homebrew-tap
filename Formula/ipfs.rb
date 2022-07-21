@@ -3,8 +3,8 @@ class Ipfs < Formula
   homepage "https://ipfs.io/"
 
   url "https://github.com/ipfs/go-ipfs.git",
-    tag:      "v0.13.1",
-    revision: "8ffc7a8a6c0d9ecdffd3624688fbf0cf348752d2"
+    tag:      "v0.14.0",
+    revision: "e0fabd6dbf69624a259dd735065465e09ebb0a61"
   license "MIT"
   license "Apache-2.0"
   head "https://github.com/ipfs/go-ipfs.git",
