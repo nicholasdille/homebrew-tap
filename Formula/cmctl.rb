@@ -3,8 +3,8 @@ class Cmctl < Formula
   homepage "https://cert-manager.io/docs/usage/cmctl/"
 
   url "https://github.com/jetstack/cert-manager.git",
-    tag:      "v1.8.2",
-    revision: "f1943433be7056804e4f628ff0d6685a132c407b"
+    tag:      "v1.9.0",
+    revision: "feb7979cb463c792c3178b3bee3421d74662d7ce"
   license "Apache-2.0"
   head "https://github.com/jetstack/cert-manager.git",
     branch: "master"
