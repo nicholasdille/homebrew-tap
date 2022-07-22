@@ -15,9 +15,9 @@ class ContainersImage < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containers-image-5.21.1"
-    sha256 cellar: :any_skip_relocation, big_sur:      "5d0ba790a26d35377c416d71824dce2b5f4a3d3d44e884769239dd4125d99215"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "65a24867822d9d24cd18de23ada3c4c279a6a4e9a3e04008ba70c741933d15f7"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/containers-image-5.22.0"
+    sha256 cellar: :any_skip_relocation, big_sur:      "9ff956972cbdc022a60ad3f2197e2197b2a6cc3ca267dcdd7111b5f18ccef064"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6bb5d5502925245577fce347f1f1a31c3a5aa1ae14007adb66d5cca38887a287"
   end
 
   depends_on "go-md2man" => :build
