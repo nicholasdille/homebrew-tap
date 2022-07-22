@@ -15,9 +15,9 @@ class Cmctl < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cmctl-1.8.2"
-    sha256 cellar: :any_skip_relocation, big_sur:      "89896204bce83cf62c76c10e79a5fc5f3074977beee1d14667968d5ef5cd0fe2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f772f040556df007a23eed03652c2f7a2e76d425ec34aa0181a99d1c5ebaf8b8"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/cmctl-1.9.0"
+    sha256 cellar: :any_skip_relocation, big_sur:      "c82027ebb10b1bc236e0b1a611e4dc6cff32333b76c22e2934e8d8700614d2a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9aa155889f91456f10005d95480197aedbeff0b1934417226ffc536016b07295"
   end
 
   depends_on "go" => :build
