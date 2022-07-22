@@ -3,8 +3,8 @@ class ContainersImage < Formula
   homepage "https://github.com/containers/image"
 
   url "https://github.com/containers/image.git",
-    tag:      "v5.21.1",
-    revision: "3535abd765b81eb59981684532eca94e2e586127"
+    tag:      "v5.22.0",
+    revision: "40af9b508afc0268ee2731054e1916c52dd7af89"
   license "Apache-2.0"
   head "https://github.com/containers/image.git",
     branch: "main"
