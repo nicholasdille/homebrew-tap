@@ -3,8 +3,8 @@ class Conmon < Formula
   homepage "https://github.com/containers/conmon"
 
   url "https://github.com/containers/conmon.git",
-    tag:      "v2.1.2",
-    revision: "99eac3e82289c18465adeab5c522469ad14e5725"
+    tag:      "v2.1.3",
+    revision: "ab52a597278b20173440140cd810dc9fa8785c93"
   license "Apache-2.0"
   head "https://github.com/containers/conmon.git",
     branch: "main"
