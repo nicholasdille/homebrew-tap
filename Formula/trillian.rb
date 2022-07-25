@@ -3,8 +3,8 @@ class Trillian < Formula
   homepage "https://github.com/google/trillian"
 
   url "https://github.com/google/trillian.git",
-    tag:      "v1.4.1",
-    revision: "39951e750d9ae5bd45692867eb560fdc743fd52c"
+    tag:      "v1.4.2",
+    revision: "0501b8848a453ab661e05631eeaa2e22f420d7d3"
   license "Apache-2.0"
   head "https://github.com/google/trillian.git",
     branch: "master"
