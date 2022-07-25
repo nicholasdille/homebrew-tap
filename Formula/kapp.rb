@@ -3,8 +3,8 @@ class Kapp < Formula
   homepage "https://get-kapp.io/"
 
   url "https://github.com/vmware-tanzu/carvel-kapp.git",
-    tag:      "v0.49.0",
-    revision: "31e7abfc48f00ab81fda9ca0235062e9e33ca7c1"
+    tag:      "v0.50.0",
+    revision: "05fc421992f7dca524d40cf5b58244b0a96b32a7"
   license "Apache-2.0"
   head "https://github.com/vmware-tanzu/carvel-kapp.git",
     branch: "develop"
