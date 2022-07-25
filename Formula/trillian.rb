@@ -15,9 +15,9 @@ class Trillian < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/trillian-1.4.1"
-    sha256 cellar: :any_skip_relocation, big_sur:      "1dd495b5a01af95973a56d2a1c1542b69c3aa4a0eb204ea9dc5aa0bd4323cc19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "693f57cdfc31ad9756963ff4ff182d7c06476488a44a7174765b0529c7a4b2f5"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/trillian-1.4.2"
+    sha256 cellar: :any_skip_relocation, big_sur:      "c188ee6c957b00e6d194d0228354c2c0a5c6fa00a5aa2e4a814dc14de2e4f27d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "324ae84c75fe033d4e19b81482316f6de6fb585e2818725924a87679defa0ba5"
   end
 
   depends_on "go" => :build
