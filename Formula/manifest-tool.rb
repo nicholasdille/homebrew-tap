@@ -3,8 +3,8 @@ class ManifestTool < Formula
   homepage "https://github.com/estesp/manifest-tool"
 
   url "https://github.com/estesp/manifest-tool.git",
-    tag:      "v2.0.4",
-    revision: "0e4d8b32fec16134b7d0b7ea837af25cd10a1ed8"
+    tag:      "v2.0.5",
+    revision: "87f93c02a4ee1cdae9e768f097310a14129fdfcd"
   license "Apache-2.0"
   head "https://github.com/estesp/manifest-tool.git",
     branch: "main"
