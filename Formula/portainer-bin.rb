@@ -13,8 +13,8 @@ class PortainerBin < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/portainer-bin-2.14.1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0289b6f25732e726c1131238dae11c2384e965e3a5df90adbcda3d1feffefd85"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/portainer-bin-2.14.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8e1751410193acaeead322153521a8d2da15d1c07948b947e700dc5aa58c7f68"
   end
 
   depends_on arch: :x86_64
