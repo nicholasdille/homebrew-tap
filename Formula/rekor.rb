@@ -15,9 +15,9 @@ class Rekor < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/rekor-0.9.1"
-    sha256 cellar: :any_skip_relocation, big_sur:      "5e8f2ea692c8137ab870f330836ff8d1e3b5023272fb0fad16ed70f5616ad4eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "59af5087dbc88eba1ad90aba34268e3ebf4109100e61edf5ad8db95e205fef56"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/rekor-0.10.0"
+    sha256 cellar: :any_skip_relocation, big_sur:      "89d9eb90bcb625509f38527a5bcb41ad5dedca6c46441393aeb6b3c671eadc8f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "45636dd3dc04615f51759338434863a48293e3c091e00defd5e53ce707d397b7"
   end
 
   depends_on "go" => :build
