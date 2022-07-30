@@ -3,8 +3,8 @@ class LoftBin < Formula
   homepage "https://loft.sh/"
 
   url "https://github.com/loft-sh/loft.git",
-    tag:      "v2.2.1",
-    revision: "f642f05325fe203192389c325c638be67f8e6602"
+    tag:      "v2.2.2",
+    revision: "9d3c776903ec759a7cfce5506d9d644a297cfc81"
   license "Apache-2.0"
 
   livecheck do
