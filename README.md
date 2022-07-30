@@ -116,6 +116,7 @@ Formulae related to containers:
 - kata-containers
 - ipfs
 - kim
+- lxc
 - norouter
 - nsutils
 - nydus ([PR #612](https://github.com/nicholasdille/homebrew-tap/pull/612))
