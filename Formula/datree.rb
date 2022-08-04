@@ -3,8 +3,8 @@ class Datree < Formula
   homepage "https://datree.io/"
 
   url "https://github.com/datreeio/datree.git",
-    tag:      "1.6.0",
-    revision: "700da85a6542b6945b9617f77b64dbf148129ded"
+    tag:      "1.6.6",
+    revision: "8cfc3a1d32de79810ad4dac6b50070a60766c40a"
   license "Apache-2.0"
   head "https://github.com/datreeio/datree.git",
     branch: "staging"
