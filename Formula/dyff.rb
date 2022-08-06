@@ -15,9 +15,9 @@ class Dyff < Formula
   end
 
   bottle do
-    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/dyff-1.5.4"
-    sha256 cellar: :any_skip_relocation, big_sur:      "800443a4e34a7bfaa7f800b337eadc7cb7fd680829409360e794b9ce2600903e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1b1041083f95a71e55ee595c5c95efa2b1f7835a3db258b770747085085fe26c"
+    root_url "https://github.com/nicholasdille/homebrew-tap/releases/download/dyff-1.5.5"
+    sha256 cellar: :any_skip_relocation, big_sur:      "321938194aab2ba16af907471c9355ec5cf28cc1c7443f94a825915a3a46e09d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b7ceb899e8faea16c312011eaf796a97e7f1cf88226c53b80042aa00b92dc957"
   end
 
   depends_on "go" => :build
