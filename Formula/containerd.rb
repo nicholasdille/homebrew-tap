@@ -3,8 +3,8 @@ class Containerd < Formula
   homepage "https://containerd.io"
 
   url "https://github.com/containerd/containerd.git",
-    tag:      "v1.6.7",
-    revision: "0197261a30bf81f1ee8e6a4dd2dea0ef95d67ccb"
+    tag:      "v1.6.8",
+    revision: "9cd3357b7fd7218e4aec3eae239db1f68a5a6ec6"
   license "Apache-2.0"
   head "https://github.com/containerd/containerd.git",
     branch: "main"
