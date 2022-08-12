@@ -1,5 +1,7 @@
 # Homebrew Tap with Container Formulae
 
+**This tap is deprecated. Please consider using my [docker-setup](https://github.com/nicholasdille/docker-setup) instead.**
+
 I am using many tools from the container ecosystem for which no automated installation exists. I decided to create Homebrew formulae for them.
 
 ## How do I install these formulae?
