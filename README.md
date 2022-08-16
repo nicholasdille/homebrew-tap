@@ -1,4 +1,4 @@
-# Homebrew Tap with Container Formulae
+# DEPRECATED: Homebrew Tap with Container Formulae
 
 **This tap is deprecated. Please consider using my [docker-setup](https://github.com/nicholasdille/docker-setup) instead.**
 
