@@ -3,8 +3,8 @@ class Cloudflared < Formula
   homepage "https://github.com/cloudflare/cloudflared"
 
   url "https://github.com/cloudflare/cloudflared.git",
-    tag:      "2022.8.0",
-    revision: "a768132d378f97cc4a3cabef67296f7aaa8738c9"
+    tag:      "2022.8.1",
+    revision: "e09c62a7961c73bdab1f2f71cdd6e8f5c56a0bc4"
   license "Apache-2.0"
   head "https://github.com/cloudflare/cloudflared.git",
     branch: "master"
